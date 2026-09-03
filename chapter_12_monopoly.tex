@@ -13,17 +13,46 @@ After completing this chapter, you should be able to:
 
 \section{What is monopoly?}
 
-A \keyterm{monopoly} is a market with one seller and substantial barriers to entry. A monopolist has market power: it recognises that selling more output requires a lower price. Monopoly is not defined merely by a firm's large size; it depends on whether alternatives and potential entry constrain the firm.
+A \keyterm{monopoly} is a market with one seller and substantial
+\keyterm{barriers to entry}. A monopolist has \keyterm{market power}: it
+recognises that selling more output requires a lower price. Monopoly is not
+defined merely by a firm's large size; it depends on whether alternatives and
+potential entry constrain the firm.
 
-Sources of market power include legal protection such as patents, control of an essential input, network effects, economies of scale, and regulatory barriers. Some sources may reward innovation or reduce costs; others may arise from exclusionary practices or political privilege. Their policy implications differ.
+Sources of market power include legal protection such as \keyterm{patents},
+control of an essential input, network effects, economies of scale, and
+regulatory barriers. Some sources may reward innovation or reduce costs; others
+may arise from exclusionary practices or political privilege. Their policy
+implications differ.
+
+In a competitive market, an individual firm takes price as given and produces
+where $p=MC$. A monopolist faces the market demand curve: selling more requires
+a lower price. That is why its marginal revenue is below price and why its
+choice rule changes to $MR=MC$.
 
 \section{Demand, revenue, and marginal revenue}
 
-The monopolist faces the market demand curve. If inverse demand is $p(Q)$, total revenue is
+For a \keyterm{uniform-price monopolist} facing downward-sloping inverse
+demand, marginal revenue is below price. To sell one additional unit, the firm
+lowers price not only on that unit but also on units it was already selling.
+If inverse demand is $p(Q)$, total revenue is
 \[
 TR(Q)=p(Q)Q.
 \]
-Unlike a competitive firm, the monopolist's marginal revenue is below price. To sell one additional unit, it must lower the price not only on that unit but normally on earlier units as well.
+Differentiating gives
+\[
+MR(Q)=\frac{dTR}{dQ}
+=p(Q)+Q\frac{dp(Q)}{dQ}.
+\]
+When demand slopes downward, $dp/dQ<0$, so $MR(Q)<p(Q)$ for positive output.
+
+\begin{exercisebox}
+\textbf{Why the next unit brings in less than its price.}
+If $p=20-Q$, selling $5$ units gives price $15$ and revenue $75$. Selling
+$6$ units requires price $14$ and gives revenue $84$. The sixth unit brings
+in marginal revenue of $9$, not $14$, because the lower price also applies to
+the first five units.
+\end{exercisebox}
 
 For linear inverse demand $p=a-bQ$,
 \[
@@ -31,46 +60,191 @@ TR(Q)=aQ-bQ^2
 \qquad\text{and}\qquad
 MR(Q)=a-2bQ.
 \]
-The marginal-revenue curve has the same vertical intercept as demand and twice its slope.
+The marginal-revenue curve has the same vertical intercept as demand and twice
+its slope.
 
 \section{Profit maximisation}
 
-The monopolist chooses output where marginal revenue equals marginal cost:
+The monopolist chooses output to maximise
 \[
+\pi(Q)=TR(Q)-C(Q).
+\]
+For a differentiable interior candidate,
+\[
+\frac{d\pi}{dQ}=MR(Q)-MC(Q)=0,
+\qquad\text{so}\qquad
 MR(Q)=MC(Q).
 \]
-It then uses the demand curve to find the price consumers are willing to pay for that quantity. The sequence matters: a monopolist does not set price equal to marginal cost, except in special cases.
+The firm must still check feasibility and confirm that marginal profit falls
+through zero. With a concave profit function, $\pi''(Q)<0$ confirms a local
+maximum. After choosing output, the firm reads price from the demand curve.
 
-Suppose $p=50-2Q$ and $C(Q)=10+2Q$. Then $MR=50-4Q$ and $MC=2$. Setting $MR=MC$ gives $Q_M=12$. Demand then gives $p_M=26$. Profit is revenue minus cost:
+\begin{keyidea}
+\textbf{The monopoly sequence.}
+\begin{enumerate}
+  \item Start with inverse demand, $p(Q)$.
+  \item Calculate $TR(Q)=p(Q)Q$ and then $MR(Q)$.
+  \item Set $MR(Q)=MC(Q)$ to find monopoly output.
+  \item Return to demand to find monopoly price.
+  \item Calculate profit and compare output with the competitive benchmark.
+\end{enumerate}
+\end{keyidea}
+
+Suppose
 \[
-\pi=26(12)-(10+2\cdot12)=278.
+p=50-2Q
+\qquad\text{and}\qquad
+C(Q)=10+2Q.
 \]
+Then $MR=50-4Q$ and $MC=2$. Setting $MR=MC$ gives
+\[
+50-4Q=2
+\quad\Longrightarrow\quad
+Q_M=12.
+\]
+Demand then gives $p_M=26$. Profit is revenue minus cost:
+\[
+\pi=26(12)-[10+2(12)]=278.
+\]
+
+A monopoly does not have a supply curve analogous to that of a competitive
+firm: its chosen quantity depends jointly on demand and cost, not on price
+alone.
 
 \section{Monopoly versus competition}
 
-With the same demand and marginal cost, a competitive market produces where $p=MC$. In the example, competition yields $Q_C=24$ and $p_C=2$. Monopoly restricts output and charges a higher price. Some consumers who value the good above marginal cost do not buy it, creating a \keyterm{deadweight loss}.
+With the same demand and marginal cost, a competitive market produces where
+$p=MC$. In the running example, competition yields
+\[
+Q_C=24
+\qquad\text{and}\qquad
+p_C=2.
+\]
+Monopoly restricts output and charges a higher price. Figure~\ref{fig:monopoly-welfare}
+shows the sequence $MR=MC\rightarrow Q_M\rightarrow p_M$ and the welfare
+comparison.
 
-Monopoly also redistributes surplus. Consumers who continue to buy pay more, transferring part of their surplus to the firm. This transfer is not itself a deadweight loss; the loss arises from units that are not traded even though their value to consumers exceeds their production cost.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.235cm,y=0.085cm]
+    \fill[PPEAccentLight] (12,26) -- (12,2) -- (24,2) -- cycle;
+    \draw[->,PPEInk] (0,0) -- (26.4,0) node[below,font=\small] {Output $Q$};
+    \draw[->,PPEInk] (0,0) -- (0,53) node[left,font=\small] {Price and revenue};
+    \draw[PPENavarraRed,very thick,domain=0:25,samples=70]
+      plot (\x,{50-2*\x});
+    \draw[PPEBurgundy,very thick,domain=0:12.5,samples=50]
+      plot (\x,{50-4*\x});
+    \draw[PPEInk,very thick] (0,2) -- (25.5,2);
+    \draw[PPEGold,densely dashed] (0,26) -- (12,26) -- (12,0);
+    \draw[PPEGold,densely dashed] (0,2) -- (24,2) -- (24,0);
+    \fill[PPEGold] (12,26) circle (2pt);
+    \fill[PPEGold] (24,2) circle (2pt);
+    \node[left,font=\scriptsize,text=PPEGold] at (0,26) {$p_M=26$};
+    \node[left,font=\scriptsize,text=PPEGold] at (0,2) {$p_C=MC$};
+    \node[below,font=\scriptsize,text=PPEGold] at (12,0) {$Q_M=12$};
+    \node[below,font=\scriptsize,text=PPEGold] at (24,0) {$Q_C=24$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (18.9,13.1) {$D=AR$};
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt] at (10.2,9.3) {$MR$};
+    \node[font=\scriptsize,text=PPEInk,fill=white,inner sep=1pt] at (18.6,4.7) {$MC$};
+    \node[font=\small,text=PPEBurgundy] at (15.7,8.4) {DWL};
+  \end{tikzpicture}
+  \caption{Monopoly choice and the competitive benchmark for
+  $p=50-2Q$ and $MC=2$. Deadweight loss is the value of trades between
+  $Q_M$ and $Q_C$ that no longer occur.}
+  \label{fig:monopoly-welfare}
+\end{figure}
+\FloatBarrier
+
+Some consumers who value the good above marginal cost do not buy it, creating
+a \keyterm{deadweight loss}. Monopoly also redistributes surplus. Consumers
+who continue to buy pay more, transferring part of their surplus to the firm.
+This \keyterm{transfer of surplus} is not itself a deadweight loss; the loss
+arises from units that are not traded even though their value to consumers
+exceeds their production cost.
+
+With linear demand and constant marginal cost, the deadweight-loss triangle is
+\[
+DWL=\frac{1}{2}(Q_C-Q_M)\bigl[p(Q_M)-MC\bigr].
+\]
+For the running example, this is
+\[
+DWL=\frac{1}{2}(24-12)(26-2)=144.
+\]
+
+More generally, if $p=a-bQ$, marginal cost is constant at $c$, and $a>c$, then
+\[
+Q_M=\frac{a-c}{2b},
+\qquad
+p_M=\frac{a+c}{2},
+\]
+whereas the competitive benchmark is
+\[
+Q_C=\frac{a-c}{b},
+\qquad
+p_C=c.
+\]
+Thus $Q_M<Q_C$ and $p_M>p_C$ under these standard assumptions.
 
 \section{Price discrimination}
 
-\keyterm{Price discrimination} occurs when a seller charges different prices to buyers for reasons other than differences in cost. It requires market power, the ability to distinguish buyers or their willingness to pay, and limited resale between buyers.
+\keyterm{Price discrimination} occurs when a seller charges different prices
+to buyers for reasons other than differences in cost. It requires market power,
+the ability to distinguish buyers or their willingness to pay, and limited
+resale between buyers. Different prices caused solely by different costs of
+serving buyers are not price discrimination in the economic sense.
 
-Under perfect first-degree price discrimination, the seller charges each buyer their maximum willingness to pay. Output can reach the efficient level, but the seller captures almost all surplus. More common forms include quantity discounts, student prices, peak pricing, and different fares for business and leisure travellers.
+Under perfect \keyterm{first-degree price discrimination}, the seller charges
+each buyer their maximum willingness to pay. Output can reach the efficient
+level, but the seller captures almost all surplus. More common forms include
+quantity discounts, student prices, peak pricing, and different fares for
+business and leisure travellers; these may reflect differences in willingness
+to pay or demand elasticity.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.23\textwidth}p{0.30\textwidth}p{0.30\textwidth}}
+\toprule
+ & Uniform monopoly price & Perfect first-degree discrimination \\
+\midrule
+Output & $Q_M<Q_C$ & $Q_C$ under standard assumptions \\
+Deadweight loss & Yes & No from the usual output restriction \\
+Consumer surplus & Some remains & Seller captures almost all \\
+Main issue & Lost efficient trades & Distribution of surplus \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section{Policy toward monopoly}
 
-Possible responses include competition law, price regulation, public ownership, procurement, and patent policy. No response is universally best. A natural monopoly, where one firm can serve the market at lower cost than several firms, may require regulation rather than forced fragmentation. Innovation incentives, administrative capacity, and distributional goals must be considered alongside static efficiency.
+Possible responses include \keyterm{competition law}, price regulation, public
+ownership, procurement, and patent policy. No response is universally best. A
+\keyterm{natural monopoly}, where one firm can serve the market at lower cost
+than several firms, may require regulation rather than forced fragmentation.
+
+\begin{exercisebox}
+\textbf{One network or many?}
+A town may be able to support one water-pipe network more cheaply than several
+duplicated networks. This is a natural-monopoly problem. It does not by itself
+tell us whether the provider should be private, public, regulated, or
+competitive at another stage; those are institutional and policy questions.
+\end{exercisebox}
+
+Innovation incentives, administrative capacity, and distributional goals must
+be considered alongside static efficiency. A high price alone is not proof of
+monopoly power: it may also reflect high cost, temporary scarcity, quality, or
+taxation. The relevant question is whether a seller can persistently raise price
+above competitive levels because entry and alternatives do not constrain it.
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
   \item \textbf{Monopoly}: one seller protected by barriers to entry.
-  \item \textbf{Market power}: ability to influence price or other market terms.
-  \item \textbf{Marginal revenue}: additional revenue from an additional unit sold.
-  \item \textbf{Deadweight loss}: surplus lost because monopoly output is below the efficient level.
-  \item \textbf{Price discrimination}: charging different buyers different prices not explained by cost differences.
+  \item \textbf{Uniform-price monopoly rule}: $MR=MC$, then read price from demand.
+  \item \textbf{Marginal revenue}: $MR=p(Q)+Q\,dp/dQ$, which is below price for downward-sloping demand.
+  \item \textbf{No competitive-style supply curve}: monopoly output depends on both demand and cost.
+  \item \textbf{Deadweight loss}: surplus from mutually beneficial units between $Q_M$ and $Q_C$ that are not traded.
+  \item \textbf{Price discrimination}: different prices not explained by cost; it can change both output and distribution.
 \end{itemize}
 
 \section*{Exercises}
@@ -78,15 +252,15 @@ Possible responses include competition law, price regulation, public ownership, 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
   \item List four possible barriers to entry. Which may be socially beneficial in some circumstances?
-  \item Why is marginal revenue below price for a monopoly with downward-sloping demand?
-  \item Distinguish a transfer of surplus from deadweight loss.
-  \item What conditions are needed for price discrimination?
+  \item Why is marginal revenue below price for a uniform-price monopoly with downward-sloping demand?
+  \item Why is a high price not, by itself, evidence of monopoly power?
+  \item Distinguish a transfer of surplus from deadweight loss. What conditions are needed for price discrimination?
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
   \item Draw demand, marginal revenue, and constant marginal cost. Mark monopoly output and price.
-  \item On the same diagram, mark the competitive output and the monopoly deadweight loss.
+  \item On the same diagram, mark the competitive output, the transfer from consumers to the firm, and the monopoly deadweight-loss triangle.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
@@ -105,4 +279,6 @@ Possible responses include competition law, price regulation, public ownership, 
 
 \subsection*{PPE discussion question}
 
-\noindent When a firm has a dominant position because of a successful innovation, should government limit its market power? Discuss the trade-off between static consumer welfare and incentives for innovation.
+\noindent When a firm has a dominant position because of a successful
+innovation, should government limit its market power? Discuss the trade-off
+between static consumer welfare and incentives for innovation.
