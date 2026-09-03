@@ -22,11 +22,54 @@ x=x(p_x,p_y,I;\text{preferences}).
 \]
 The semicolon reminds us that preferences are treated as given in the analysis. A change in $p_x$ generates a movement along the demand curve; a change in income, the price of $y$, or preferences can shift the entire demand curve.
 
+\begin{keyidea}
+\textbf{Ceteris paribus and comparative statics.}
+\keyterm{Ceteris paribus} means that other relevant factors are held fixed.
+Demand analysis is an exercise in \keyterm{comparative statics}: change one
+exogenous factor in the model, then trace its predicted effect on the
+consumer's endogenous choice.
+\end{keyidea}
+
+\begin{keyidea}
+\textbf{Worked example: from utility maximisation to demand.}
+Let
+\[
+u(x,y)=xy,
+\qquad
+I=100,
+\qquad
+p_y=5.
+\]
+At a smooth interior optimum,
+\[
+MRS_{x,y}=\frac{y}{x}=\frac{p_x}{5}.
+\]
+Thus $y=(p_x/5)x$. Substitution into the budget line gives
+\[
+p_xx+5y=100
+\quad\Longrightarrow\quad
+2p_xx=100.
+\]
+The individual demand for $x$ is therefore
+\[
+x^*(p_x)=\frac{50}{p_x},
+\]
+while $y^*=10$. As $p_x$ falls, the consumer demands more $x$. This
+downward-sloping relationship has been derived from preferences, income, and
+prices rather than assumed.
+\end{keyidea}
+
 \section{The law of demand}
 
-The \keyterm{law of demand} states that, other things equal, a decrease in the price of a good increases the quantity demanded. Graphically, an ordinary demand curve slopes downward. The law is not merely an empirical regularity: it follows from two forces created by a price change.
-
-First, when $p_x$ falls, $x$ becomes relatively cheaper than $y$. The consumer substitutes toward $x$. Second, the lower price increases purchasing power: the consumer can now afford more bundles than before. For a normal good, this income effect also increases demand for $x$.
+The \keyterm{law of demand} is the usual prediction that, \emph{ceteris
+paribus}, a decrease in the price of a good increases its quantity demanded.
+For an ordinary (non-Giffen) good, the demand curve therefore slopes
+downward. A fall in $p_x$ makes $x$ relatively cheaper than $y$, so the
+consumer substitutes toward $x$. It also raises purchasing power. For a
+normal good, the income effect reinforces the substitution effect; for an
+inferior good, it works in the opposite direction. Only in the rare Giffen
+case is that opposing income effect strong enough to overturn the usual
+downward slope.
 
 \section{Movements and shifts}
 
@@ -36,11 +79,87 @@ A \keyterm{shift in demand} occurs when another determinant changes. Important d
 
 Two goods are \keyterm{substitutes} when an increase in the price of one raises demand for the other, such as tea and coffee for some consumers. They are \keyterm{complements} when an increase in the price of one reduces demand for the other, such as printers and printer cartridges.
 
+\begin{keyidea}
+\textbf{Demand language: one distinction to remember.}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{p{0.24\textwidth}p{0.28\textwidth}p{0.27\textwidth}}
+\toprule
+What changes? & What happens? & Correct language \\
+\midrule
+The good's own price & Movement on the same curve & Change in quantity demanded \\
+Income, tastes, related prices, population, or rules & The whole curve moves & Change in demand \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{keyidea}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[x=1cm,y=1cm]
+    \begin{scope}
+      \draw[->] (0,0) -- (3.65,0) node[below] {quantity $q$};
+      \draw[->] (0,0) -- (0,3.15) node[left] {price $p$};
+      \draw[PPEBurgundy,very thick] (0.45,2.75) -- (3.25,0.55)
+        node[below right] {$D_0$};
+      \filldraw[PPEGold] (1.30,2.09) circle (1.6pt) node[above left] {$A$};
+      \filldraw[PPEGold] (2.30,1.31) circle (1.6pt) node[below right] {$B$};
+      \draw[densely dashed,PPEGold] (0,2.09) -- (1.30,2.09) -- (1.30,0);
+      \draw[densely dashed,PPEGold] (0,1.31) -- (2.30,1.31) -- (2.30,0);
+      \node[left,font=\scriptsize] at (0,2.09) {$p_1$};
+      \node[left,font=\scriptsize] at (0,1.31) {$p_2$};
+      \draw[ppearrow] (1.43,1.98) -- (2.16,1.41);
+      \node[font=\scriptsize,align=center] at (1.85,2.58)
+        {own price falls};
+      \node[font=\small\bfseries] at (1.75,-0.62)
+        {Movement along demand};
+    \end{scope}
+    \begin{scope}[xshift=6.15cm]
+      \draw[->] (0,0) -- (3.75,0) node[below] {quantity $q$};
+      \draw[->] (0,0) -- (0,3.15) node[left] {price $p$};
+      \draw[PPEBurgundy,very thick] (0.45,2.75) -- (3.05,0.65)
+        node[below right] {$D_0$};
+      \draw[PPENavarraRed,very thick] (0.80,2.75) -- (3.45,0.65)
+        node[below right] {$D_1$};
+      \draw[densely dashed,PPEGold] (0,1.65) -- (2.22,1.65);
+      \draw[densely dashed,PPEGold] (1.81,0) -- (1.81,1.65);
+      \draw[densely dashed,PPEGold] (2.22,0) -- (2.22,1.65);
+      \filldraw[PPEGold] (1.81,1.65) circle (1.6pt);
+      \filldraw[PPEGold] (2.22,1.65) circle (1.6pt);
+      \draw[ppearrow] (1.91,1.65) -- (2.11,1.65);
+      \node[left,font=\scriptsize] at (0,1.65) {$p_0$};
+      \node[font=\scriptsize,align=center] at (2.05,2.42)
+        {income rises\\or tastes change};
+      \node[font=\small\bfseries] at (1.85,-0.62)
+        {Shift in demand};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{A change in the good's own price moves the consumer along one demand curve. A change in another determinant shifts the entire curve.}
+  \label{fig:movement-versus-shift}
+\end{figure}
+
 \section{Income effects and Engel curves}
 
 The relationship between income and the quantity demanded of a good is summarised by an \keyterm{Engel curve}. A good is \keyterm{normal} if demand rises when income rises, other things equal. A good is \keyterm{inferior} if demand falls when income rises.
 
 Inferior does not mean low quality. It means that, as consumers become richer, they choose less of the good because they switch to alternatives they value more. For example, a student may reduce consumption of inexpensive ready-made meals as income rises and buy more fresh food instead.
+
+\[
+\frac{\partial x}{\partial I}>0
+\quad\text{for a normal good},
+\qquad
+\frac{\partial x}{\partial I}<0
+\quad\text{for an inferior good},
+\]
+holding prices and preferences fixed. Similarly, holding $p_x$, income, and
+preferences fixed,
+\[
+\frac{\partial x}{\partial p_y}>0
+\quad\text{for substitutes},
+\qquad
+\frac{\partial x}{\partial p_y}<0
+\quad\text{for complements}.
+\]
 
 The classification can depend on the income range. A good may be normal at low income levels and inferior at higher ones. Demand analysis is always conditional on the consumer, the alternatives available, and the relevant range of income.
 
@@ -50,16 +169,97 @@ When $p_x$ changes, the consumer's choice changes for two distinct reasons. The 
 
 The \keyterm{income effect} is the change caused by the resulting change in real purchasing power. A fall in $p_x$ makes the consumer effectively richer. For a normal good, this raises consumption of $x$; for an inferior good, it lowers consumption of $x$.
 
-For most goods, the substitution effect dominates any opposing income effect, so demand slopes downward. A \keyterm{Giffen good} is a rare case in which a sufficiently strong negative income effect outweighs the substitution effect, causing quantity demanded to rise when price rises. The concept is theoretically important, but it should not be confused with a conspicuous or fashionable good.
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{p{0.24\textwidth}p{0.34\textwidth}p{0.26\textwidth}}
+\toprule
+Effect & What changes? & Effect of a fall in $p_x$ on $x$ \\
+\midrule
+Substitution effect & The relative price of $x$ & Raises $x$ because it is relatively cheaper \\
+Income effect & Real purchasing power & Raises $x$ if it is normal; lowers $x$ if it is inferior \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{exercisebox}
+\textbf{A cheaper train journey.}
+When a student railcard lowers the price of train journeys, train travel
+becomes cheaper relative to other uses of the student's budget. This is the
+substitution effect. The same budget also reaches further, which is the income
+effect. If train journeys are a normal good, both effects raise the number of
+journeys demanded.
+\end{exercisebox}
+
+For most goods, the substitution effect dominates any opposing income effect,
+so demand slopes downward. A \keyterm{Giffen good} is a rare case in which a
+sufficiently strong negative income effect outweighs the substitution effect,
+causing quantity demanded to rise when price rises. A Giffen good must be
+inferior. A price-induced desire to buy a product because its price signals
+prestige is a different mechanism, often called a \keyterm{Veblen effect}.
 
 \section{Market demand}
 
 \keyterm{Market demand} is the total quantity demanded by all consumers at each price. It is obtained by horizontally adding individual demand curves: for a given price, add the quantities each consumer chooses.
 
-If Ana demands $q_A=20-p$ and Bruno demands $q_B=10-p/2$ at prices for which both quantities are positive, market demand is
+Suppose Ana demands $q_A=20-p$ and Bruno demands $q_B=10-p/2$ whenever
+those expressions are positive. For non-negative prices, the market demand is
 \[
-Q=q_A+q_B=30-\frac{3}{2}p.
+Q(p)=
+\begin{cases}
+30-\dfrac{3}{2}p, & 0\leq p\leq20,\\
+0, & p>20.
+\end{cases}
 \]
+At $p=10$, for example, Ana buys $10$ units and Bruno buys $5$, so market
+demand is $15$ units.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[x=0.15cm,y=0.12cm]
+    \begin{scope}
+      \draw[->] (0,0) -- (23,0) node[below] {$q$};
+      \draw[->] (0,0) -- (0,23) node[left] {$p$};
+      \draw[PPEBurgundy,very thick] (0,20) -- (20,0);
+      \draw[densely dashed,PPEGold] (0,10) -- (10,10) -- (10,0);
+      \filldraw[PPEGold] (10,10) circle (1.7pt);
+      \node[font=\scriptsize] at (12,11.7) {$q_A=10$};
+      \node[font=\small\bfseries,align=center] at (10,-6.5)
+        {Ana\\[-1pt] $q_A=20-p$};
+    \end{scope}
+    \node[font=\Large] at (26.2,10) {$+$};
+    \begin{scope}[xshift=4.35cm]
+      \draw[->] (0,0) -- (13,0) node[below] {$q$};
+      \draw[->] (0,0) -- (0,23) node[left] {$p$};
+      \draw[PPEBurgundy,very thick] (0,20) -- (10,0);
+      \draw[densely dashed,PPEGold] (0,10) -- (5,10) -- (5,0);
+      \filldraw[PPEGold] (5,10) circle (1.7pt);
+      \node[font=\scriptsize] at (6.3,11.7) {$q_B=5$};
+      \node[font=\small\bfseries,align=center] at (5,-6.5)
+        {Bruno\\[-1pt] $q_B=10-p/2$};
+    \end{scope}
+    \node[font=\Large] at (45.0,10) {$=$};
+    \begin{scope}[xshift=7.40cm]
+      \draw[->] (0,0) -- (33,0) node[below] {$Q$};
+      \draw[->] (0,0) -- (0,23) node[left] {$p$};
+      \draw[PPENavarraRed,very thick] (0,20) -- (30,0);
+      \draw[densely dashed,PPEGold] (0,10) -- (15,10) -- (15,0);
+      \filldraw[PPEGold] (15,10) circle (1.7pt);
+      \node[font=\scriptsize] at (18,11.7) {$Q=15$};
+      \node[font=\small\bfseries,align=center] at (15,-6.5)
+        {Market demand\\[-1pt] $Q=30-\frac{3}{2}p$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Market demand is the horizontal sum of individual quantities at a common price.}
+  \label{fig:market-demand-horizontal-sum}
+\end{figure}
+
+\begin{keyidea}
+\textbf{Do not add negative quantities.}
+When one consumer's demand reaches zero, set it equal to zero and aggregate
+only the remaining positive demands. This is why market demand is often a
+piecewise function.
+\end{keyidea}
+
 Market demand depends not only on individual preferences and incomes but also on the number and composition of consumers in the market.
 
 \section{Demand and empirical evidence}
@@ -88,7 +288,7 @@ Economic theory predicts how demand responds when other factors are held fixed. 
   \item Distinguish a movement along a demand curve from a shift of demand.
   \item Define normal and inferior goods. Why is ``inferior'' not a moral judgement about quality?
   \item Explain the substitution and income effects of a fall in the price of a normal good.
-  \item Why are Giffen goods expected to be unusual?
+  \item Why are Giffen goods expected to be unusual? Can a good be inferior without being Giffen?
 \end{enumerate}
 
 \subsection*{Graphical exercises}
@@ -100,7 +300,8 @@ Economic theory predicts how demand responds when other factors are held fixed. 
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Ana's demand is $q_A=16-2p$ and Bruno's demand is $q_B=10-p$, provided quantities are non-negative. Derive market demand and state the relevant price range.
+  \item Ana's demand is $q_A=16-2p$ and Bruno's demand is $q_B=10-p$, provided quantities are non-negative. Derive market demand as a piecewise function and state the relevant price range for each segment.
+  \item Let $u(x,y)=xy$, $I=120$, and $p_y=6$. Derive the demand function $x^*(p_x)$ for $p_x>0$. Calculate demand when $p_x=4$ and when $p_x=8$, and interpret the change.
   \item A consumer's demand for bus journeys falls when income increases, holding all prices constant. Classify bus journeys for this consumer and give a plausible explanation.
   \item The price of tea rises and demand for coffee rises. What does this suggest about the relationship between tea and coffee? What additional evidence would you want before reaching a conclusion?
 \end{enumerate}
@@ -110,6 +311,7 @@ Economic theory predicts how demand responds when other factors are held fixed. 
   \item A movement along a demand curve is caused by: (a) a change in income; (b) a change in the good's own price; (c) a change in tastes; or (d) a change in the price of a substitute.
   \item An inferior good is one whose demand: (a) rises when income rises; (b) falls when income rises; (c) rises when its own price rises; or (d) is always zero.
   \item Market demand is found by: (a) vertically adding individual demand curves; (b) averaging individual prices; (c) horizontally adding individual quantities at each price; or (d) choosing the demand of the richest consumer.
+  \item An inferior good: (a) must be a Giffen good; (b) can still have a downward-sloping demand curve; (c) is defined by a fall in demand when its own price falls; or (d) is necessarily of low quality.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
