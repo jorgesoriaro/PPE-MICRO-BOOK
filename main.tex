@@ -1,14 +1,37 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[11pt,oneside]{book}
 
-\title{PPE MICRO BOOK}
-\author{J Soria}
-\date{September 2026}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.7cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+\newcommand{\keyterm}[1]{\textbf{#1}}
+\newcommand{\term}[1]{\emph{#1}}
 
 \begin{document}
 
+\frontmatter
+\title{Microeconomics for PPE Students}
+\author{Jorge Soria}
+\date{}
 \maketitle
 
-\section{Introduction}
+\tableofcontents
+
+\mainmatter
+
+\part{Introduction and Economic Reasoning}
+\input{microeconomics_ppe}
 
 \end{document}
