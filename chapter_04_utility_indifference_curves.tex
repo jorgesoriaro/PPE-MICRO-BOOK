@@ -14,7 +14,17 @@ After completing this chapter, you should be able to:
 
 \section{Utility as a representation of preferences}
 
-Preferences rank consumption bundles. A \keyterm{utility function} assigns a number to each bundle in a way that represents this ranking. If $u(A)>u(B)$, then the consumer strictly prefers $A$ to $B$; if $u(A)=u(B)$, the consumer is indifferent between them.
+Preferences rank consumption bundles. A \keyterm{utility function} assigns a
+number to each bundle in a way that represents this ranking. More precisely,
+$u$ represents a preference relation $\succeq$ when, for every pair of
+bundles $A$ and $B$,
+\[
+A\succeq B
+\quad\Longleftrightarrow\quad
+u(A)\geq u(B).
+\]
+Consequently, $A\succ B$ if and only if $u(A)>u(B)$, and $A\sim B$ if and
+only if $u(A)=u(B)$.
 
 For example, the utility function
 \[
@@ -24,11 +34,39 @@ represents a consumer who values both goods. The bundle $(2,6)$ gives utility $1
 
 \section{Ordinal and cardinal utility}
 
-In standard consumer theory, utility is \keyterm{ordinal}. Only the ranking matters, not the size of utility differences. If $u(x,y)=xy$ represents a consumer's preferences, then $v(x,y)=100xy+7$ represents exactly the same preferences: both functions rank all bundles in the same order.
+In standard consumer theory, utility is \keyterm{ordinal}. Only the ranking
+matters, not the size of utility differences. If $u(x,y)=xy$ represents a
+consumer's preferences, then $v(x,y)=100xy+7$ represents exactly the same
+preferences: both functions rank all bundles in the same order. More
+generally, if $u(x,y)$ represents preferences, then
+\[
+v(x,y)=g(u(x,y))
+\]
+represents the same ordinal preferences whenever $g$ is strictly increasing.
+The transformation $v=100u+7$ is one simple example. Utility numbers can be
+rescaled without changing the consumer's ranking.
 
-This is different from \keyterm{cardinal utility}, in which numerical differences have an independent meaning. In an ordinal framework, we cannot say that a bundle giving utility $20$ makes a consumer twice as well off as a bundle giving utility $10$. We can say only that the former is preferred.
+This is different from \keyterm{cardinal utility}, in which numerical
+differences have a role within a specified model and the permissible
+transformations are more restricted. A cardinal interpretation still does not,
+by itself, justify comparisons of utility across different people. In an
+ordinal framework, we cannot say that a bundle giving utility $20$ makes a
+consumer twice as well off as a bundle giving utility $10$. We can say only
+that the former is preferred.
 
-The ordinal interpretation is important in welfare analysis. Comparing utility numbers across different individuals requires additional ethical assumptions. Economics can describe choices and trade-offs, but interpersonal comparisons of well-being cannot be read mechanically from a utility function.
+The ordinal interpretation is important in welfare analysis. Comparing utility
+numbers across different individuals requires additional ethical assumptions.
+Economics can describe choices and trade-offs, but interpersonal comparisons
+of well-being cannot be read mechanically from a utility function.
+
+\begin{keyidea}
+\textbf{PPE focus: utility numbers do not settle public policy.} If a policy
+changes Ana's utility from $10$ to $20$ and Bruno's from $100$ to $110$, the
+numbers do not show whose gain is larger. Each person's utility scale could be
+represented differently while preserving the same rankings. A social judgement
+therefore requires an explicit ethical principle, not only a utility
+calculation.
+\end{keyidea}
 
 \section{Indifference curves}
 
@@ -43,12 +81,17 @@ y=\frac{\bar{u}}{x}.
 
 For instance, the bundles $(2,6)$, $(3,4)$, and $(4,3)$ all lie on the indifference curve $xy=12$. The consumer is indifferent among them because each provides the same utility.
 
-Under the usual assumptions of monotonicity and convexity, indifference curves have three important properties:
+Indifference curves have three important properties, each supported by a
+different assumption:
 \begin{enumerate}
-  \item they slope downward: receiving less of one good requires more of the other to maintain utility;
-  \item higher curves represent higher utility; and
-  \item they do not cross: crossing curves would imply contradictory rankings.
+  \item with strongly monotonic preferences, they slope downward: receiving less of one good requires more of the other to maintain utility;
+  \item with strongly monotonic preferences, curves farther to the north-east represent preferred bundles;
+  \item distinct curves do not cross, because one bundle cannot be assigned two different utility levels.
 \end{enumerate}
+Convexity determines curvature: convex preferences give weakly bowed-in curves,
+whereas strict convexity gives strictly bowed-in curves. Perfect substitutes
+are the useful boundary case: their preferences are convex, but their
+indifference curves are straight lines.
 
 \section{Marginal utility}
 
@@ -69,9 +112,22 @@ An additional unit of $x$ is more valuable when the consumer has more $y$, becau
 
 \section{The marginal rate of substitution}
 
-The \keyterm{marginal rate of substitution} of $x$ for $y$, written $MRS_{x,y}$, measures how much $y$ a consumer is willing to give up for one additional unit of $x$ while remaining on the same indifference curve. It is the absolute value of the slope of an indifference curve:
+The \keyterm{marginal rate of substitution} of $x$ for $y$, written
+$MRS_{x,y}$, measures the amount of $y$ a consumer is willing to give up for a
+very small additional amount of $x$ at the current bundle, while remaining on
+the same indifference curve. At a smooth point where $MU_y>0$, utility is held
+fixed:
 \[
-MRS_{x,y}=\frac{MU_x}{MU_y}.
+0=du=MU_x\,dx+MU_y\,dy.
+\]
+Hence the slope and MRS are
+\[
+\left.\frac{dy}{dx}\right|_{\bar u}
+=-\frac{MU_x}{MU_y},
+\qquad
+MRS_{x,y}
+=-\left.\frac{dy}{dx}\right|_{\bar u}
+=\frac{MU_x}{MU_y}.
 \]
 
 For $u(x,y)=xy$,
@@ -79,6 +135,67 @@ For $u(x,y)=xy$,
 MRS_{x,y}=\frac{y}{x}.
 \]
 At a bundle with much $y$ and little $x$, the consumer is willing to give up a relatively large amount of $y$ for another unit of $x$. As $x$ becomes more abundant and $y$ scarcer, the willingness to substitute falls. This is the \keyterm{diminishing marginal rate of substitution}, which produces bowed-in indifference curves.
+
+\begin{keyidea}
+\textbf{Watch the sign.} The slope of an indifference curve is negative. By
+convention, the MRS is reported as a positive number:
+\[
+\left.\frac{dy}{dx}\right|_{\bar u}=-MRS_{x,y}.
+\]
+The formula applies only at smooth points with positive marginal utilities. At
+the kink of a perfect-complements indifference curve, there is no unique slope
+and no single MRS.
+\end{keyidea}
+
+\begin{exercisebox}
+\textbf{Worked example: diminishing MRS along one curve.} On the indifference
+curve $xy=12$,
+\[
+y=\frac{12}{x}
+\qquad\text{and}\qquad
+MRS_{x,y}=\frac{y}{x}=\frac{12}{x^2}.
+\]
+Thus, at $(2,6)$, $(3,4)$, and $(4,3)$, the MRS values are respectively
+$3$, $4/3$, and $3/4$. As $x$ rises along the same indifference curve, the
+consumer gives up less $y$ for an additional unit of $x$.
+\end{exercisebox}
+
+Diminishing MRS is not the same claim as diminishing marginal utility; it
+concerns the ratio of marginal utilities along an indifference curve.
+
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[x=.6cm,y=.6cm]
+  \draw[->,PPEInk] (0,0) -- (8.75,0) node[right] {good $x$};
+  \draw[->,PPEInk] (0,0) -- (0,8.75) node[above] {good $y$};
+  \draw[PPEBurgundy,line width=1.05pt]
+    plot[smooth,domain=1.5:8,samples=70] (\x,{12/\x});
+  \draw[PPENavarraRed,line width=1.05pt]
+    plot[smooth,domain=3:8,samples=70] (\x,{24/\x});
+  \node[PPEBurgundy,below left,font=\sffamily\scriptsize] at (6.2,1.94)
+    {$u=12$};
+  \node[PPENavarraRed,above right,font=\sffamily\scriptsize] at (6,4)
+    {$u=24$};
+  \draw[PPEMuted,dashed] (3,0) -- (3,4) -- (0,4);
+  \fill[PPENavarraRed] (3,4) circle (1.7pt);
+  \node[above left,PPENavarraRed] at (3,4) {$A=(3,4)$};
+  \draw[PPEGold,line width=.9pt] (2.25,5) -- (4.5,2);
+  \draw[PPEGold,line width=.8pt] (3,4) -- (4.5,4) -- (4.5,2);
+  \node[above,PPEGold,font=\sffamily\scriptsize] at (3.75,4)
+    {$\Delta x=1.5$};
+  \node[right,PPEGold,font=\sffamily\scriptsize] at (4.5,3)
+    {$\Delta y=-2$};
+  \node[below right,font=\sffamily\scriptsize] at (4.5,2)
+    {$\text{slope}=-4/3$};
+  \draw[PPEGold,-{Latex[length=2mm]},line width=.85pt] (5.6,5.15) -- (6.8,6.35);
+  \node[above,PPEGold,font=\sffamily\scriptsize] at (6.4,5.75)
+    {higher utility};
+\end{tikzpicture}
+\caption{An indifference map for $u(x,y)=xy$. At $A=(3,4)$, the tangent
+slope is $-MRS_{x,y}=-4/3$; bundles to the north-east lie on higher
+indifference curves.}
+\label{fig:indifference-map-mrs}
+\end{figure}
 
 \section{Common preference representations}
 
@@ -92,7 +209,12 @@ where $\alpha>0$ and $\beta>0$, is called \keyterm{Cobb--Douglas}. It represents
 \[
 MRS_{x,y}=\frac{\alpha}{\beta}\frac{y}{x}.
 \]
-The exponents influence the relative importance of the two goods.
+The exponents influence the relative importance of the two goods. Only the
+ratio $\alpha/\beta$ affects the ordinal preference ranking and the MRS.
+Multiplying both exponents by the same positive number changes the utility
+representation but not the underlying preferences. For example,
+$x^{1/3}y^{2/3}$ and $x^{2/3}y^{4/3}$ represent the same ordinal
+preferences.
 
 \subsection{Perfect substitutes}
 
@@ -118,9 +240,68 @@ u(x,y)=v(x)+y
 \]
 is called \keyterm{quasilinear}. Its marginal utility of $y$ is constant, while the marginal utility of $x$ may diminish. Such preferences are useful in analysing choices where one good is a general ``outside good,'' such as money spent on other consumption.
 
+When $v$ is differentiable,
+\[
+MU_x=v'(x),
+\qquad
+MU_y=1,
+\qquad
+MRS_{x,y}=v'(x).
+\]
+Its indifference curves are vertical translations of one another:
+\[
+y=\bar{u}-v(x).
+\]
+
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[x=.65cm,y=.65cm]
+  \begin{scope}[shift={(0,0)}]
+    \node[font=\sffamily\scriptsize] at (1.75,4.45) {Cobb--Douglas};
+    \draw[PPEGold,line width=.7pt] (.1,4.05) -- (3.4,4.05);
+    \draw[->,PPEInk] (0,0) -- (3.5,0);
+    \draw[->,PPEInk] (0,0) -- (0,3.55);
+    \draw[PPEBurgundy,line width=.85pt]
+      plot[smooth,domain=.65:3.15,samples=40] (\x,{1.65/\x});
+    \draw[PPENavarraRed,line width=.85pt]
+      plot[smooth,domain=1:3.15,samples=40] (\x,{3.15/\x});
+    \node[font=\sffamily\scriptsize,align=center] at (1.75,-.48)
+      {diminishing MRS};
+  \end{scope}
+  \begin{scope}[shift={(4.75,0)}]
+    \node[font=\sffamily\scriptsize] at (1.75,4.45) {Perfect substitutes};
+    \draw[PPEGold,line width=.7pt] (.1,4.05) -- (3.4,4.05);
+    \draw[->,PPEInk] (0,0) -- (3.5,0);
+    \draw[->,PPEInk] (0,0) -- (0,3.55);
+    \draw[PPEBurgundy,line width=.85pt] (.25,2.7) -- (3.25,1.2);
+    \draw[PPENavarraRed,line width=.85pt] (.25,3.35) -- (3.25,1.85);
+    \node[font=\sffamily\scriptsize,align=center] at (1.75,-.48)
+      {constant MRS};
+  \end{scope}
+  \begin{scope}[shift={(9.5,0)}]
+    \node[font=\sffamily\scriptsize] at (1.75,4.45) {Perfect complements};
+    \draw[PPEGold,line width=.7pt] (.1,4.05) -- (3.4,4.05);
+    \draw[->,PPEInk] (0,0) -- (3.5,0);
+    \draw[->,PPEInk] (0,0) -- (0,3.55);
+    \draw[PPEBurgundy,line width=.85pt] (.7,3.25) -- (.7,.7) -- (3.25,.7);
+    \draw[PPENavarraRed,line width=.85pt] (1.65,3.25) -- (1.65,1.65) -- (3.25,1.65);
+    \node[font=\sffamily\scriptsize,align=center] at (1.75,-.48)
+      {fixed proportions};
+  \end{scope}
+\end{tikzpicture}
+\caption{Three canonical indifference-curve shapes. Cobb--Douglas
+preferences have diminishing MRS, perfect substitutes have a constant MRS,
+and perfect complements require fixed-proportion consumption.}
+\label{fig:canonical-indifference-curves}
+\end{figure}
+
 \section{What indifference curves do not say}
 
 Indifference curves are not psychological maps. They do not imply that consumers consciously calculate marginal utilities, and they do not show how preferences were formed. They provide a compact way to represent observed or hypothetical rankings. Their value lies in showing the trade-offs implied by those rankings.
+
+Indifference curves describe the trade-offs a consumer is willing to make. A
+budget line will describe the trade-offs the market requires. Consumer choice
+occurs where these two elements meet.
 
 \section*{Chapter Review}
 
@@ -138,14 +319,15 @@ Indifference curves are not psychological maps. They do not imply that consumers
 \[
 MU_x=\frac{\partial u}{\partial x}, \qquad
 MU_y=\frac{\partial u}{\partial y}, \qquad
-MRS_{x,y}=\frac{MU_x}{MU_y}.
+MRS_{x,y}=\frac{MU_x}{MU_y}
+=-\left.\frac{dy}{dx}\right|_{\bar u}.
 \]
 
 \section*{Exercises}
 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
-  \item What does it mean for utility to be ordinal? Why can we replace $u(x,y)$ with $100u(x,y)+7$ without changing preferences?
+  \item What does it mean for utility to be ordinal? Why can we replace $u(x,y)$ with $100u(x,y)+7$ without changing preferences? Does $v(x,y)=-xy$ represent the same preferences as $u(x,y)=xy$? Explain.
   \item State and explain the three standard properties of indifference curves.
   \item Define marginal utility and the marginal rate of substitution.
   \item Explain why indifference curves do not normally cross.
@@ -154,9 +336,9 @@ MRS_{x,y}=\frac{MU_x}{MU_y}.
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Draw the indifference curves $u=6$, $u=12$, and $u=18$ for $u(x,y)=xy$. Mark the bundles $(2,3)$, $(3,4)$, and $(6,3)$.
+  \item For $u(x,y)=xy$, first rewrite the indifference curves $u=6$, $u=12$, and $u=18$ in the form $y=\bar{u}/x$. Then draw them and mark the bundles $(2,3)$, $(3,4)$, and $(6,3)$.
   \item Draw representative indifference curves for perfect substitutes and perfect complements. Explain their different shapes.
-  \item For $u(x,y)=x+2y$, calculate the slope of an indifference curve and draw two curves.
+  \item For $u(x,y)=x+2y$, write an equation for the indifference curve through $(4,3)$, calculate its slope and MRS, and draw two curves.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
@@ -164,6 +346,8 @@ MRS_{x,y}=\frac{MU_x}{MU_y}.
   \item Let $u(x,y)=x^{1/3}y^{2/3}$. Calculate $MU_x$, $MU_y$, and $MRS_{x,y}$.
   \item A consumer has utility $u(x,y)=xy+2x$. Find the equation of the indifference curve through $(3,4)$.
   \item For $u(x,y)=\min\{2x,y\}$, describe the bundles on the indifference curve associated with utility $10$.
+  \item Let $u(x,y)=xy$ and $v(x,y)=e^{xy}$. Show that $v$ represents the same ordinal preferences as $u$. Calculate the MRS under both representations.
+  \item On the indifference curve $xy=24$, calculate the MRS at $(2,12)$, $(4,6)$, and $(6,4)$. Explain the pattern.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
