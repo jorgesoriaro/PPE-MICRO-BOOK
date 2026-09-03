@@ -1,10 +1,14 @@
-% Visual system adapted from the supplied lecture-note reference:
-% serif text, sans-serif hierarchy, a cyan accent, and restrained callouts.
+% Visual system adapted from the supplied lecture-note reference and the
+% University of Navarra visual identity: serif text, sans-serif hierarchy,
+% Navarra red, burgundy, and gold accents, and restrained callouts.
 
-\definecolor{PPEAccent}{RGB}{52,177,201}
-\definecolor{PPEAccentLight}{RGB}{229,246,249}
-\definecolor{PPEInk}{RGB}{35,45,52}
-\definecolor{PPEMuted}{RGB}{93,108,117}
+\definecolor{PPEBurgundy}{RGB}{112,28,47}
+\definecolor{PPENavarraRed}{RGB}{211,32,46}
+\definecolor{PPEGold}{RGB}{185,143,57}
+\definecolor{PPEAccent}{RGB}{112,28,47}
+\definecolor{PPEAccentLight}{RGB}{248,235,238}
+\definecolor{PPEInk}{RGB}{37,31,33}
+\definecolor{PPEMuted}{RGB}{101,83,88}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.45em}
@@ -42,22 +46,22 @@
 
 \titleformat{\part}[display]
   {\sffamily\bfseries\color{PPEInk}\centering}
-  {\color{PPEAccent}\Large\partname\ \thepart}
+  {\color{PPENavarraRed}\Large\partname\ \thepart}
   {0.65em}
   {\Huge}
-  [\vspace{0.5em}\color{PPEAccent}\titlerule]
+  [\vspace{0.5em}\color{PPEGold}\titlerule]
 
 \titleformat{\chapter}[display]
   {\sffamily\bfseries\color{PPEInk}}
-  {\chaptercover\color{PPEAccent}\Large\chaptername\ \thechapter}
+  {\chaptercover\color{PPENavarraRed}\Large\chaptername\ \thechapter}
   {0.55em}
   {\fontsize{27}{32}\selectfont}
-  [\vspace{0.55em}\color{PPEAccent}\titlerule]
+  [\vspace{0.55em}\color{PPEGold}\titlerule]
 \titlespacing*{\chapter}{0pt}{0pt}{1.7em}
 
 \titleformat{\section}
   {\sffamily\bfseries\large\color{PPEInk}}
-  {\color{PPEAccent}\thesection}{0.9em}{}
+  {\color{PPEBurgundy}\thesection}{0.9em}{}
 \titlespacing*{\section}{0pt}{1.7em}{0.55em}
 
 \titleformat{\subsection}
@@ -66,7 +70,7 @@
 \titlespacing*{\subsection}{0pt}{1.1em}{0.35em}
 
 \titleformat{name=\section,numberless}
-  {\sffamily\bfseries\large\color{PPEAccent}}
+  {\sffamily\bfseries\large\color{PPEBurgundy}}
   {}{0pt}{}
 \titleformat{name=\subsection,numberless}
   {\sffamily\bfseries\normalsize\color{PPEInk}}
@@ -75,9 +79,9 @@
 \contentsmargin{0pt}
 \titlecontents{chapter}[1.4em]
   {\addvspace{0.8em}\sffamily\bfseries\large}
-  {\color{PPEAccent}\contentslabel{1.8em}}
+  {\color{PPEBurgundy}\contentslabel{1.8em}}
   {}
-  {\color{PPEAccent}\titlerule*[0.55pc]{.}\contentspage}
+  {\color{PPEGold}\titlerule*[0.55pc]{.}\contentspage}
 \titlecontents{section}[3.2em]
   {\addvspace{0.18em}\sffamily\small}
   {\contentslabel{2em}}
@@ -86,11 +90,11 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\sffamily\color{PPEAccent}\thepage}
+\fancyhead[LE,RO]{\sffamily\color{PPEBurgundy}\thepage}
 \fancyhead[LO]{\sffamily\small\nouppercase{\rightmark}}
 \fancyhead[RE]{\sffamily\small\nouppercase{\leftmark}}
 \renewcommand{\headrulewidth}{0.45pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{PPEAccent}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{PPEGold}\leaders\hrule height \headrulewidth\hfill}}
 \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
 \setlength{\headheight}{15pt}
 
@@ -99,7 +103,7 @@
   skipbelow=0.8em,
   leftline=true,rightline=false,topline=false,bottomline=false,
   linewidth=3pt,
-  linecolor=PPEAccent,
+  linecolor=PPEBurgundy,
   backgroundcolor=PPEAccentLight,
   innerleftmargin=0.8em,innerrightmargin=0.8em,
   innertopmargin=0.55em,innerbottommargin=0.55em
@@ -110,7 +114,7 @@
   skipbelow=0.8em,
   leftline=true,rightline=false,topline=false,bottomline=false,
   linewidth=3pt,
-  linecolor=PPEAccent,
+  linecolor=PPEBurgundy,
   innerleftmargin=0.8em,innerrightmargin=0.8em,
   innertopmargin=0.55em,innerbottommargin=0.55em
 ]{exercisebox}
