@@ -11,6 +11,35 @@
 \setlist[itemize]{topsep=0.35em,itemsep=0.2em,leftmargin=1.55em}
 \setlist[enumerate]{topsep=0.35em,itemsep=0.3em,leftmargin=1.8em}
 
+\newcommand{\PPEcoverimage}[1]{%
+  \par\noindent\includegraphics[width=\textwidth]{#1}\par\vspace{1.15em}%
+}
+\newcommand{\chaptercover}{%
+  \ifcase\value{chapter}
+  \or\PPEcoverimage{assets/covers/head1.png}% 1
+  \or\PPEcoverimage{assets/covers/band1.png}% 2
+  \or\PPEcoverimage{assets/covers/boat.png}% 3
+  \or\PPEcoverimage{assets/covers/head2.png}% 4
+  \or\PPEcoverimage{assets/covers/head1.png}% 5
+  \or\PPEcoverimage{assets/covers/band1.png}% 6
+  \or\PPEcoverimage{assets/covers/boat.png}% 7
+  \or\PPEcoverimage{assets/covers/head2.png}% 8
+  \or\PPEcoverimage{assets/covers/head1.png}% 9
+  \or\PPEcoverimage{assets/covers/band1.png}% 10
+  \or\PPEcoverimage{assets/covers/boat.png}% 11
+  \or\PPEcoverimage{assets/covers/head2.png}% 12
+  \or\PPEcoverimage{assets/covers/head1.png}% 13
+  \or\PPEcoverimage{assets/covers/band1.png}% 14
+  \or\PPEcoverimage{assets/covers/boat.png}% 15
+  \or\PPEcoverimage{assets/covers/head2.png}% 16
+  \or\PPEcoverimage{assets/covers/head1.png}% 17
+  \or\PPEcoverimage{assets/covers/band1.png}% 18
+  \or\PPEcoverimage{assets/covers/boat.png}% 19
+  \or\PPEcoverimage{assets/covers/head2.png}% 20
+  \else\PPEcoverimage{assets/covers/head1.png}% appendices and unnumbered back matter
+  \fi
+}
+
 \titleformat{\part}[display]
   {\sffamily\bfseries\color{PPEInk}\centering}
   {\color{PPEAccent}\Large\partname\ \thepart}
@@ -20,7 +49,7 @@
 
 \titleformat{\chapter}[display]
   {\sffamily\bfseries\color{PPEInk}}
-  {\color{PPEAccent}\Large\chaptername\ \thechapter}
+  {\chaptercover\color{PPEAccent}\Large\chaptername\ \thechapter}
   {0.55em}
   {\fontsize{27}{32}\selectfont}
   [\vspace{0.55em}\color{PPEAccent}\titlerule]
