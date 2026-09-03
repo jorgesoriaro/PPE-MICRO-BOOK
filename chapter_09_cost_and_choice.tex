@@ -11,45 +11,176 @@ After completing this chapter, you should be able to:
   \item formulate the firm's profit-maximisation problem.
 \end{itemize}
 
+\begin{keyidea}
+\textbf{The firm solves two connected problems.}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Question & Choice variable & Core condition \\
+\midrule
+How can a target output be produced cheaply? & Inputs $L,K$ & $MRTS_{L,K}=w/r$ \\
+How much output should be produced? & Output $q$ & $MR(q)=MC(q)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The first problem produces a cost function. The second combines that cost
+function with revenue. The equality in the second row identifies an interior
+candidate and will need further checks.
+\end{keyidea}
+
 \section{Economic cost}
 
 The economic cost of an action is its opportunity cost. A firm that owns a building still faces a cost from using it in production: the building could be rented to another business or sold. \keyterm{Economic profit} is revenue minus all opportunity costs, including the opportunity cost of the owner's time and capital.
 
 \keyterm{Accounting profit} deducts recorded monetary expenses from revenue. It may therefore exceed economic profit when the firm uses resources it already owns. The distinction matters when asking whether a firm should remain in an activity, not merely whether it has paid its bills.
 
+\begin{exercisebox}
+\textbf{The family bakery's premises.}
+A bakery may own its shop and pay no monthly rent, but the premises could be
+rented to another business. The forgone rent is an opportunity cost of using
+the building for baking. Accounting records may show no rent payment; economic
+analysis still counts the resource used.
+\end{exercisebox}
+
+\begin{keyidea}
+\textbf{From accounting profit to economic profit.}
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Revenue & \euro10{,}000 \\
+$-$ recorded expenses & \euro7{,}000 \\
+\midrule
+Accounting profit & \euro3{,}000 \\
+$-$ use of owned premises & \euro1{,}500 \\
+$-$ owner's time and capital & \euro1{,}000 \\
+\midrule
+\textbf{Economic profit} & \textbf{\euro500} \\
+\bottomrule
+\end{tabular}
+\end{center}
+The last two lines are implicit opportunity costs: no cash payment need occur
+for them to matter to an economic decision.
+\end{keyidea}
+
 \section{Cost minimisation}
 
-Suppose labour costs $w$ per unit and capital costs $r$ per unit. The cost of an input bundle is
-\[
-C=wL+rK.
-\]
-For a given output target $\bar q$, the firm chooses the least-cost input combination capable of producing it:
+Suppose labour costs $w$ per unit and capital costs $r$ per unit. The cost of
+an input bundle is $wL+rK$. Assume $L,K\geq0$ and $w,r>0$. For a given output
+target $\bar q$, the firm chooses the least-cost input combination capable of
+producing it:
 \[
 \min_{L,K}\; wL+rK
 \quad\text{subject to}\quad f(L,K)\geq \bar q.
 \]
 
-The constraint says that the firm must reach the target. Under monotonic technology, cost is minimised on the isoquant $f(L,K)=\bar q$: purchasing inputs beyond that isoquant would add cost without raising the required output.
+The constraint says that the firm must reach the target. With freely disposable
+inputs and monotonic technology, cost is minimised on the isoquant
+$f(L,K)=\bar q$: purchasing inputs beyond that isoquant would add cost without
+raising the required output.
 
 \section{Isocost lines}
 
-An \keyterm{isocost line} shows all input bundles with the same total cost. Solving $C=wL+rK$ for $K$ gives
+An \keyterm{isocost line} shows all input bundles with the same total cost.
+For a given expenditure level $\bar C$, solving $\bar C=wL+rK$ for $K$ gives
 \[
-K=\frac{C}{r}-\frac{w}{r}L.
+K=\frac{\bar C}{r}-\frac{w}{r}L.
 \]
-Its slope is $-w/r$, the negative of the relative price of labour in terms of capital. Higher isocost lines represent higher expenditure.
+Thus
+\[
+\left.\frac{dK}{dL}\right|_{\bar C}=-\frac{w}{r}.
+\]
+The slope is negative, while $w/r$ is the positive opportunity cost of one
+more unit of labour in units of capital. Higher isocost lines represent higher
+expenditure.
 
-With smooth technology, the least-cost bundle is the point where an isoquant is tangent to the lowest attainable isocost line. The tangency condition is
+With smooth technology, the least-cost bundle is the point where an isoquant
+is tangent to the lowest attainable isocost line. At a smooth interior cost
+minimum, with positive marginal products, the tangency condition is
 \[
 MRTS_{L,K}=\frac{MP_L}{MP_K}=\frac{w}{r}.
 \]
-The firm substitutes between inputs until its technological trade-off equals the market trade-off implied by input prices.
+Equivalently,
+\[
+\frac{MP_L}{w}=\frac{MP_K}{r}.
+\]
+The firm equalises the marginal product obtained from the last euro spent on
+each input. Corner and fixed-proportion technologies must be checked
+separately.
+
+\begin{keyidea}
+\textbf{Worked example: cost minimisation.}
+Let
+\[
+q=L^{1/2}K^{1/2},
+\qquad
+w=4,
+\qquad
+r=1.
+\]
+Since $MRTS_{L,K}=K/L$, cost minimisation requires
+\[
+\frac{K}{L}=\frac{w}{r}=4,
+\qquad\text{so}\qquad K=4L.
+\]
+To produce $\bar q$,
+\[
+\bar q=\sqrt{L(4L)}=2L.
+\]
+Hence
+\[
+L^*=\frac{\bar q}{2},
+\qquad
+K^*=2\bar q,
+\qquad
+C(\bar q)=4L^*+K^*=4\bar q.
+\]
+\end{keyidea}
 
 \section{Changes in input prices}
 
-If the wage $w$ rises while $r$ is fixed, isocost lines become steeper. Labour becomes relatively more expensive, so a cost-minimising firm generally substitutes capital for labour when the technology allows it. The extent of this response depends on the elasticity of substitution between inputs.
+If the wage $w$ rises while $r$ is fixed, isocost lines become steeper.
+Labour becomes relatively more expensive, so a cost-minimising firm generally
+substitutes capital for labour when the technology allows it. The extent of
+this response depends on the elasticity of substitution between inputs.
 
 With Leontief technology, substitution is impossible: the firm must use fixed proportions regardless of relative prices. With perfect-substitute inputs, the firm uses only the cheaper input per unit of effective service.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{scope}[x=0.62cm,y=0.62cm]
+      \draw[->] (0,0) -- (6.1,0) node[below] {labour $L$};
+      \draw[->] (0,0) -- (0,5.95) node[left] {capital $K$};
+      \draw[PPEBurgundy,very thick,domain=1.45:5.6,samples=100]
+        plot (\x,{8/\x});
+      \draw[PPEMuted,densely dashed] (0,4.7) -- (4.7,0);
+      \draw[PPEGold,very thick] (0,5.66) -- (5.66,0);
+      \filldraw[PPEGold] (2.83,2.83) circle (2.3pt)
+        node[above right,font=\scriptsize] {$A$};
+      \node[font=\scriptsize,text=PPEBurgundy] at (5.0,1.8) {$\bar q$};
+      \node[font=\scriptsize,text=PPEGold] at (4.45,1.55) {$\bar C_0$};
+      \node[font=\scriptsize,align=center] at (2.9,-0.95) {initial\\prices};
+    \end{scope}
+    \begin{scope}[xshift=6.0cm,x=0.62cm,y=0.62cm]
+      \draw[->] (0,0) -- (6.1,0) node[below] {labour $L$};
+      \draw[->] (0,0) -- (0,5.95) node[left] {capital $K$};
+      \draw[PPEBurgundy,very thick,domain=1.45:5.6,samples=100]
+        plot (\x,{8/\x});
+      \draw[PPEMuted,densely dashed] (0,5.66) -- (5.66,0);
+      \draw[PPENavarraRed,very thick] (1.15,5.7) -- (4,0);
+      \draw[densely dashed,PPEMuted] (2,0) -- (2,4) -- (0,4);
+      \filldraw[PPENavarraRed] (2,4) circle (2.3pt)
+        node[above right,font=\scriptsize] {$B$};
+      \draw[ppearrow] (2.75,2.95) -- (2.17,3.75);
+      \node[font=\scriptsize,text=PPEBurgundy] at (5.0,1.8) {$\bar q$};
+      \node[font=\scriptsize,text=PPENavarraRed] at (1.75,5.15) {$w\uparrow$};
+      \node[font=\scriptsize,align=center] at (2.9,-0.95) {wage\\increases};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{At a smooth cost minimum, an isoquant is tangent to an isocost line. When the wage rises, the isocost line becomes steeper and the firm uses relatively more capital if substitution is possible.}
+  \label{fig:cost-minimisation-wage}
+\end{figure}
+\FloatBarrier
 
 \section{Revenue and profit}
 
@@ -59,15 +190,37 @@ Revenue is the money received from sales. If output is $q$ and price is $p$, tot
 \]
 The firm's problem is to choose output, and indirectly inputs, to maximise profit. The precise form of the problem depends on market structure. A competitive firm treats price as given; a monopolist recognises that selling more output changes market price.
 
-The general marginal principle is that output should be expanded while marginal revenue is greater than marginal cost. At an interior profit maximum,
+The general marginal principle is that output should be expanded while marginal
+revenue is greater than marginal cost. For a differentiable interior
+candidate,
 \[
 MR(q)=MC(q).
 \]
-This condition will be developed in the following chapter and applied to competitive and monopolistic markets later in the book.
+The firm must also check feasibility, relevant boundary output choices, and
+whether marginal profit falls through zero. For a twice-differentiable profit
+function, $\pi''(q)<0$ confirms a local maximum. This condition will be
+developed in the following chapter and applied to competitive and monopolistic
+markets later in the book.
 
 \section{Short-run and long-run choice}
 
-In the short run, fixed inputs create costs that cannot be avoided immediately. In the long run, the firm can adjust all inputs, enter a market, exit it, or change scale. A firm can therefore make a loss in the short run yet continue operating if revenue covers variable costs and operating reduces the loss relative to shutting down. The distinction between fixed and variable cost is developed next.
+In the short run, fixed inputs create costs that cannot be avoided immediately.
+In the long run, the firm can adjust all inputs, enter a market, exit it, or
+change scale. A firm can therefore make a loss in the short run yet continue
+operating if revenue covers variable costs and operating reduces the loss
+relative to shutting down.
+
+\begin{keyidea}
+\textbf{Fixed is not the same as sunk.}
+A fixed cost does not vary with current output. A \keyterm{sunk cost} is a
+past expenditure that cannot be recovered. A sunk cost should not affect the
+current output decision, although it was relevant when the original investment
+was made. Some fixed costs are avoidable; others are sunk.
+\end{keyidea}
+
+Cost minimisation tells us the least expenditure needed for each output level.
+The next chapter turns this relationship into total, average, and marginal
+cost curves, and then derives the firm's supply decision.
 
 \section*{Chapter Review}
 
@@ -77,6 +230,7 @@ In the short run, fixed inputs create costs that cannot be avoided immediately. 
   \item \textbf{Isocost line}: input bundles with the same total cost.
   \item \textbf{Cost minimisation}: producing a target output at the lowest feasible cost.
   \item \textbf{Economic profit}: total revenue minus economic cost.
+  \item \textbf{Sunk cost}: unrecoverable past expenditure that should not affect a current output decision.
   \item \textbf{Profit maximisation}: choosing output where marginal revenue equals marginal cost, subject to relevant conditions.
 \end{itemize}
 
@@ -84,7 +238,7 @@ In the short run, fixed inputs create costs that cannot be avoided immediately. 
 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
-  \item Distinguish accounting profit from economic profit. Give an example of an implicit cost.
+  \item Distinguish accounting profit from economic profit. What implicit opportunity cost does a business incur when it uses a building it owns?
   \item Define an isocost line and interpret its slope.
   \item Explain why a cost-minimising firm normally chooses a point on, rather than above, the target isoquant.
   \item Explain how a rise in wages affects a cost-minimising firm's input choice.
@@ -94,12 +248,12 @@ In the short run, fixed inputs create costs that cannot be avoided immediately. 
 \begin{enumerate}[resume,label=\arabic*.]
   \item Draw an isoquant and three parallel isocost lines. Mark the cost-minimising input bundle.
   \item Show how an increase in the wage changes the slope of an isocost line.
-  \item Draw a Leontief isoquant and explain why the tangency condition is not applicable at the optimum.
+  \item Draw a Leontief isoquant, identify its kink, and explain why the tangency condition is not applicable at the optimum.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item A firm uses $q=L^{1/2}K^{1/2}$, with $w=4$ and $r=1$. Write the cost-minimisation condition for producing a given output.
+  \item A firm uses $q=L^{1/2}K^{1/2}$, with $w=4$ and $r=1$. For target output $\bar q$, derive the cost-minimising relation between $K$ and $L$, then find $L^*$, $K^*$, and $C(\bar q)$.
   \item Let $R(q)=80q-2q^2$ and $C(q)=10+8q$. Find $MR$, $MC$, and the profit-maximising quantity.
   \item A shop owner uses a premises she owns. The premises could be rented out for \euro2,000 per month. Explain how this affects economic and accounting profit.
 \end{enumerate}
