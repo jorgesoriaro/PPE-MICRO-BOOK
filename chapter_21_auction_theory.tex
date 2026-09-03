@@ -1,0 +1,64 @@
+\chapter{Auction Theory}
+\label{chap:auctions}
+
+\section{Learning objectives}
+
+After completing this chapter, you should be able to distinguish common auction formats, explain private and common values, identify the winner's curse, and assess basic auction-design objectives.
+
+\section{Why auctions?}
+
+Auctions allocate goods when prices are not known in advance or when buyers have different valuations. Governments use them for spectrum licences and procurement; firms use them for advertising and online sales; individuals use them for art, housing, and collectibles.
+
+In a \keyterm{private-value} auction, each bidder knows their own valuation and it does not depend on others' valuations. In a \keyterm{common-value} auction, the item has approximately the same underlying value for all bidders, but bidders have different information about it. Oil leases and some artworks have important common-value elements.
+
+\section{Auction formats}
+
+An English auction has ascending public bids; the last bidder remaining wins and pays the final price. A Dutch auction descends from a high price until someone accepts. In a first-price sealed-bid auction, the highest bidder wins and pays their bid. In a second-price sealed-bid auction, the highest bidder wins but pays the second-highest bid.
+
+In a private-value second-price auction, bidding one's true valuation is a dominant strategy: bidding higher risks paying more than the object is worth, while bidding lower risks losing an object that would have generated a surplus. The result depends on the format's assumptions and can fail with common values or additional strategic considerations.
+
+\section{The winner's curse and design}
+
+In common-value settings, winning may be bad news: the winner may have been the most optimistic bidder. This \keyterm{winner's curse} encourages rational bidders to shade bids below their estimates. Auction designers can reduce uncertainty through disclosure, inspection, reserve prices, and rules that discourage collusion.
+
+Good auction design balances efficiency, revenue, simplicity, participation, and resistance to manipulation. These goals may conflict. A format that raises revenue in one setting need not allocate efficiently or attract enough credible bidders in another.
+
+\section*{Chapter Review}
+
+\subsection*{Key concepts}
+\begin{itemize}
+  \item \textbf{Private value}: bidder valuation known to that bidder and independent of others'.
+  \item \textbf{Common value}: underlying value shared but uncertain.
+  \item \textbf{Winner's curse}: tendency for a winner to overpay in common-value settings.
+  \item \textbf{Second-price auction}: winner pays the second-highest bid.
+\end{itemize}
+
+\section*{Exercises}
+
+\subsection*{Conceptual questions}
+\begin{enumerate}[label=\arabic*.]
+  \item Distinguish private-value from common-value auctions.
+  \item Compare English, Dutch, first-price, and second-price auctions.
+  \item Explain the winner's curse.
+\end{enumerate}
+
+\subsection*{Graphical exercises}
+\begin{enumerate}[resume,label=\arabic*.]
+  \item Sketch the price path in an English auction and a Dutch auction.
+\end{enumerate}
+
+\subsection*{Analytical exercises}
+\begin{enumerate}[resume,label=\arabic*.]
+  \item Explain why truthful bidding is optimal in a private-value second-price auction.
+  \item A bidder estimates a common value at \euro100 but expects to be the most optimistic bidder if she wins. Explain why bidding \euro100 may be unwise.
+\end{enumerate}
+
+\subsection*{Exam-style multiple-choice questions}
+\begin{enumerate}[resume,label=\arabic*.]
+  \item In a second-price sealed-bid auction, the winner pays: (a) their own bid; (b) the reserve price only; (c) the second-highest bid; or (d) nothing.
+  \item The winner's curse is especially relevant in: (a) common-value auctions; (b) private-value auctions with no uncertainty; (c) perfectly competitive markets only; or (d) public goods.
+\end{enumerate}
+
+\subsection*{PPE discussion question}
+
+\noindent Should governments design auctions primarily to maximise public revenue or to allocate resources efficiently? Discuss using a public-spectrum or procurement example.
