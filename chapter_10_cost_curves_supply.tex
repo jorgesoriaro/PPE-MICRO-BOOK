@@ -1,4 +1,4 @@
-\chapter{Cost Curves and the Firm's Supply}
+\chapter{Cost Curves and Supply}
 \label{chap:cost-curves}
 
 \section{Learning objectives}
@@ -103,17 +103,21 @@ points, as Figure~\ref{fig:standard-cost-curves} illustrates.
     \foreach \y in {2,4,6}
       \draw[PPEMuted!25] (0.08,\y) -- (-0.08,\y) node[left,font=\scriptsize] {\y};
     \draw[PPEMuted,dashed,thick,domain=0.70:6.25,samples=80]
-      plot (\x,{4/\x}) node[pos=0.82,below right,fill=white,inner sep=1pt,font=\scriptsize] {$AFC$};
+      plot (\x,{4/\x});
     \draw[PPENavarraRed,thick,domain=0.70:6.25,samples=80]
-      plot (\x,{1.5+0.12*(\x-3)^2}) node[pos=0.82,above right,fill=white,inner sep=1pt,font=\scriptsize] {$AVC$};
+      plot (\x,{1.5+0.12*(\x-3)^2});
     \draw[PPEBurgundy,thick,domain=0.70:6.25,samples=80]
-      plot (\x,{1.5+0.12*(\x-3)^2+4/\x}) node[pos=0.86,above right,fill=white,inner sep=1pt,font=\scriptsize] {$ATC$};
+      plot (\x,{1.5+0.12*(\x-3)^2+4/\x});
     \draw[PPEInk,thick,domain=0.70:6.25,samples=80]
-      plot (\x,{2.58-1.44*\x+0.36*\x*\x}) node[pos=0.88,above left,fill=white,inner sep=1pt,font=\scriptsize] {$MC$};
+      plot (\x,{2.58-1.44*\x+0.36*\x*\x});
     \fill[PPEGold] (3,1.5) circle (1.5pt);
     \fill[PPEGold] (4.03,2.62) circle (1.5pt);
     \draw[PPEGold,densely dashed] (3,0) -- (3,1.5);
     \draw[PPEGold,densely dashed] (4.03,0) -- (4.03,2.62);
+    \node[font=\scriptsize,text=PPEMuted,fill=white,inner sep=1pt] at (5.72,0.72) {$AFC$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (5.72,2.38) {$AVC$};
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt] at (5.72,3.26) {$ATC$};
+    \node[font=\scriptsize,text=PPEInk,fill=white,inner sep=1pt] at (5.52,5.78) {$MC$};
   \end{tikzpicture}
   \caption{Standard short-run cost curves. Marginal cost crosses AVC and ATC
   where each average is at its minimum.}
@@ -182,11 +186,11 @@ endpoint.
     \draw[->,PPEInk] (0,0) -- (7.0,0) node[below,font=\small] {Output $q$};
     \draw[->,PPEInk] (0,0) -- (0,7.2) node[left,font=\small] {Price and cost};
     \draw[PPENavarraRed,thick,domain=0.70:6.25,samples=80]
-      plot (\x,{1.5+0.12*(\x-3)^2}) node[pos=0.88,above right,fill=white,inner sep=1pt,font=\scriptsize] {$AVC$};
+      plot (\x,{1.5+0.12*(\x-3)^2});
     \draw[PPEMuted,densely dashed,thick,domain=0.70:3.0,samples=50]
       plot (\x,{2.58-1.44*\x+0.36*\x*\x});
     \draw[PPEBurgundy,very thick,domain=3.0:6.25,samples=60]
-      plot (\x,{2.58-1.44*\x+0.36*\x*\x}) node[pos=0.84,above left,fill=white,inner sep=1pt,font=\scriptsize] {$MC$ = supply};
+      plot (\x,{2.58-1.44*\x+0.36*\x*\x});
     \draw[PPEGold,densely dashed] (0,1.5) -- (3,1.5) -- (3,0);
     \node[left,font=\scriptsize,text=PPEGold] at (0,1.5) {$\min AVC$};
     \draw[PPEGold,densely dashed] (0,5) -- (5.27,5) -- (5.27,0);
@@ -194,6 +198,8 @@ endpoint.
     \fill[PPEGold] (5.27,5) circle (1.7pt);
     \node[below,font=\scriptsize,text=PPEGold] at (5.27,0) {$q^s(p_H)$};
     \node[font=\scriptsize,text=PPEMuted,align=center] at (1.45,5.9) {not supplied\\below $\min AVC$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (5.65,2.53) {$AVC$};
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt] at (5.42,5.55) {$MC$ = supply};
   \end{tikzpicture}
   \caption{Short-run supply of a price-taking firm: the MC curve above
   minimum AVC. The dashed lower portion is not part of supply.}
