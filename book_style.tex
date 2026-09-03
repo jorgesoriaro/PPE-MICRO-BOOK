@@ -14,6 +14,11 @@
 \setlength{\parskip}{0.45em}
 \setlist[itemize]{topsep=0.35em,itemsep=0.2em,leftmargin=1.55em}
 \setlist[enumerate]{topsep=0.35em,itemsep=0.3em,leftmargin=1.8em}
+\tikzset{
+  ppebox/.style={draw=PPEBurgundy,fill=PPEAccentLight,rounded corners=3pt,
+    minimum height=1.25cm,align=center,font=\sffamily\small,inner sep=5pt},
+  ppearrow/.style={-{Latex[length=2.2mm]},draw=PPENavarraRed,line width=0.75pt}
+}
 
 \newcommand{\PPEcoverimage}[1]{%
   \par\noindent\includegraphics[width=\textwidth]{#1}\par\vspace{1.15em}%

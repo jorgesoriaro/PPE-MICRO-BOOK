@@ -44,6 +44,22 @@ Making a choice means rejecting an alternative. The value of the best alternativ
 
 Suppose that you have two hours available in the afternoon. You can revise for an exam, work in a paid job, or meet friends. If you choose to revise and the best alternative was the paid job, the income you could have earned is part of the opportunity cost of studying. If the best alternative was meeting friends, the lost leisure is part of the opportunity cost instead.
 
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.88cm,y=0.88cm]
+    \draw[->,PPEInk,line width=0.7pt] (0,0) -- (6.2,0) node[below right,font=\sffamily\small]{Education services};
+    \draw[->,PPEInk,line width=0.7pt] (0,0) -- (0,4.8) node[above left,font=\sffamily\small]{Health-care services};
+    \draw[PPENavarraRed,line width=1.15pt] (0,4.25) .. controls (2.3,4.05) and (4.75,2.65) .. (5.75,0);
+    \fill[PPEBurgundy] (3.05,3.32) circle (2.2pt) node[above right,font=\sffamily\small]{E: efficient};
+    \fill[PPEGold] (2.0,1.65) circle (2.2pt) node[below left,font=\sffamily\small]{I: inefficient};
+    \fill[PPENavarraRed] (4.55,3.62) circle (2.2pt) node[above right,font=\sffamily\small]{U: unattainable};
+    \draw[PPEGold,dashed] (3.05,0) -- (3.05,3.32) -- (0,3.32);
+    \draw[ppearrow] (2.38,3.73) to[bend right=16] node[above,font=\sffamily\scriptsize,text=PPEBurgundy]{opportunity cost} (3.68,2.90);
+  \end{tikzpicture}
+  \caption{Scarcity makes some combinations feasible, some unattainable, and some inefficient. Moving along the frontier requires a trade-off.}
+  \label{fig:scarcity-ppf}
+\end{figure}
+
 Opportunity cost is broader than a monetary payment. Attending university involves tuition and living expenses, but it may also involve forgone earnings, forgone leisure, and delayed entry into the labour market. Similarly, a government programme uses not only money but also public attention, administrative capacity, and political capital.
 
 \section{Incentives and marginal thinking}
@@ -54,6 +70,29 @@ Economic reasoning often focuses on small changes rather than all-or-nothing cho
 
 Marginal thinking does not imply that people always calculate precisely. Rather, it provides a disciplined way to identify the relevant trade-off. Later chapters will express this idea formally through marginal utility, marginal product, marginal cost, and marginal revenue.
 
+\begin{keyidea}
+\textbf{A discrete marginal decision.} Suppose that a student's additional study hours have the following estimated benefits and costs, expressed in euro equivalents.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Additional study hour & Marginal benefit & Marginal cost \\
+\midrule
+1 & \euro8 & \euro2 \\
+2 & \euro6 & \euro3 \\
+3 & \euro4 & \euro4 \\
+4 & \euro2 & \euro5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+The first three hours are worthwhile in this simple example; the fourth is not. For a continuous choice with a well-behaved objective, an interior optimum is normally characterised by marginal benefit equal to marginal cost.
+\end{keyidea}
+
+\section{Rationality and \emph{ceteris paribus}}
+
+Economists often model an agent as choosing the feasible option that best advances that agent's objectives. This is the \keyterm{rational-choice assumption}. It does not mean that people are selfish, perfectly informed, or able to calculate without error. A student may care about friendship or fairness; a firm may care about reputation; and a voter may care about principle. Rationality means only that the model treats choices as purposeful and constrained.
+
+\keyterm{Ceteris paribus} means ``with other relevant factors held constant.'' It allows economists to isolate one relationship at a time. For example, the law of demand asks how quantity demanded changes when price changes, holding income, tastes, and other determinants fixed. When this simplifying assumption is not adequate, later chapters consider strategic interaction, incomplete information, and behavioural economics.
+
 \section{Institutions matter}
 
 Choices are made within rules. \keyterm{Institutions} are the formal and informal rules that structure social interaction: laws, property rights, contracts, courts, social norms, political procedures, and market arrangements.
@@ -61,6 +100,29 @@ Choices are made within rules. \keyterm{Institutions} are the formal and informa
 The same resources can generate very different outcomes under different institutions. Secure property rights may encourage investment because people expect to benefit from the returns to their effort. Clear rules of contract may make exchange easier between people who do not know each other. Conversely, weak enforcement or corruption can discourage trade and productive investment.
 
 For PPE students, this point is particularly important. Microeconomics is not only a study of prices and firms; it is also a framework for examining how rules shape incentives, power, cooperation, and distribution.
+
+\begin{exercisebox}
+\textbf{Running example: changing the assessment rule.} Suppose a degree programme changes a module from one final examination to $60\%$ continuous assessment and $40\%$ final examination. Students still have the same limited time, but the new rule changes the return to attendance, weekly preparation, group work, and last-minute revision. It may also change which students perform best.
+
+The rule does not determine every student's behaviour. It changes the incentives within which students choose, and those choices shape the final distribution of marks. This sequence---rules, incentives, choices, and allocations---is one of the book's central themes.
+\end{exercisebox}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[node distance=0.32cm]
+    \node[ppebox,text width=2.65cm] (agent) {Decision-maker};
+    \node[ppebox,text width=2.65cm,right=of agent] (alternatives) {Feasible alternatives};
+    \node[ppebox,text width=2.65cm,right=of alternatives] (incentives) {Incentives and trade-offs};
+    \node[ppebox,text width=2.65cm,right=of incentives] (consequences) {Consequences for others};
+    \draw[ppearrow] (agent) -- (alternatives);
+    \draw[ppearrow] (alternatives) -- (incentives);
+    \draw[ppearrow] (incentives) -- (consequences);
+    \node[draw=PPEGold,fill=PPEGold!14,rounded corners=3pt,below=0.5cm of alternatives,minimum width=9.4cm,
+      minimum height=0.8cm,align=center,font=\sffamily\small] {Institutions: rules, rights, norms, and enforcement};
+  \end{tikzpicture}
+  \caption{A reusable framework for microeconomic reasoning in PPE.}
+  \label{fig:economic-lens}
+\end{figure}
 
 \section{Economic models and assumptions}
 
@@ -72,11 +134,25 @@ A useful model should be judged by the question it answers, the clarity of its l
 
 \section{Positive and normative economics}
 
-\keyterm{Positive economics} describes and explains the world as it is. For example, ``an increase in the tax on petrol reduces the quantity of petrol demanded, other things equal'' is a positive claim. It can be assessed using theory and evidence.
+\keyterm{Positive economics} describes and explains the world as it is. For example, ``a higher consumer price of petrol reduces the quantity of petrol demanded, other things equal'' is a positive claim. It can be assessed using theory and evidence. A petrol tax may produce this result to the extent that it raises the price paid by consumers.
 
 \keyterm{Normative economics} makes a judgement about what ought to be done. For example, ``the government should increase the tax on petrol'' is a normative claim. Such a claim may use positive economic analysis, but it also depends on values: how society weighs environmental protection, income distribution, mobility, and individual freedom.
 
 The distinction is essential in PPE. Economics can clarify the likely consequences of a policy, identify who gains and loses, and reveal trade-offs. It cannot by itself determine which distribution of costs and benefits is morally or politically desirable.
+
+\begin{keyidea}
+\begin{center}
+\begin{tabular}{p{0.41\textwidth}p{0.41\textwidth}}
+\textbf{\color{PPEBurgundy}Positive economics} & \textbf{\color{PPENavarraRed}Normative economics} \\
+\midrule
+\textit{What happens if \ldots?} & \textit{What ought to be done?} \\
+Uses theory and evidence to assess claims & Requires values and ethical or political judgement \\
+Example: a higher petrol price lowers quantity demanded & Example: petrol taxes should be increased \\
+\end{tabular}
+\end{center}
+\smallskip
+\textbf{Policy analysis combines predicted consequences with explicit value judgements.}
+\end{keyidea}
 
 \section{A roadmap for this book}
 
@@ -118,16 +194,23 @@ The central habit throughout is simple: identify the decision-maker, the feasibl
   \item What is an economic model? Why can a model be useful even when some of its assumptions are unrealistic?
 \end{enumerate}
 
-\subsection*{Applied and graphical exercises}
+\subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Ana can spend a Saturday afternoon either working for \euro40, attending a football match that she values at \euro25, or studying for an exam. She chooses to study. What is the opportunity cost of studying? Explain your answer.
-  \item Draw a production possibilities frontier for a society that can produce health-care services and education services. Mark a feasible point, an infeasible point, and an inefficient point. Explain what each point represents.
-  \item A city introduces a congestion charge for cars entering its centre. Identify two groups likely to be affected, and explain how their incentives change.
+  \item A university has at most $120$ teaching-assistant hours available each week. An economics support session, $x$, uses $3$ hours; a political-philosophy support session, $y$, uses $2$ hours. Treat sessions as divisible for this model.
+  \begin{enumerate}[label=(\alph*)]
+    \item Write the feasible set and the production possibilities frontier.
+    \item Find the intercepts and draw the frontier, with $x$ on the horizontal axis and $y$ on the vertical axis.
+    \item Classify $A=(20,30)$, $B=(20,15)$, and $C=(30,20)$ as efficient, feasible but inefficient, or infeasible.
+    \item What is the opportunity cost of one additional economics support session in units of political-philosophy support sessions? How does it relate to the slope of the frontier?
+  \end{enumerate}
+  \item A city introduces a congestion charge for cars entering its centre. Identify two groups likely to be affected, explain how their incentives change, and draw a simple diagram that represents one resulting trade-off.
 \end{enumerate}
 
-\subsection*{Positive and normative statements}
+\subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
+  \item Marta has one free evening. She values attending a public-policy lecture at \euro18, working a three-hour shift at \euro36 net of effort, and meeting friends at \euro25. She attends the lecture. Identify the opportunity cost and explain why the other two values should not be added.
   \item Classify each statement as positive or normative. Briefly justify your answer.
+  \textit{Classify the type of claim, not whether you believe it is empirically true.}
   \begin{enumerate}[label=(\alph*)]
     \item Increasing the minimum wage reduces employment among low-skilled workers.
     \item The government should increase the minimum wage.
@@ -138,12 +221,12 @@ The central habit throughout is simple: identify the decision-maker, the feasibl
 
 \subsection*{Exam-style multiple-choice questions}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item The opportunity cost of attending a two-hour lecture is:
+  \item A student declines a paid shift that would yield a net \euro45 and a concert valued at \euro30 in order to attend a voluntary revision workshop. Assuming these are the only relevant alternatives, the opportunity cost of attending the workshop is:
   \begin{enumerate}[label=(\alph*)]
-    \item always the tuition fee paid for the lecture.
-    \item the value of the best alternative use of those two hours.
-    \item the sum of the value of every possible alternative activity.
-    \item zero if the lecture is compulsory.
+    \item \euro75.
+    \item \euro45.
+    \item \euro30.
+    \item zero, because revision is educational.
   \end{enumerate}
 
   \item Which statement is normative?
