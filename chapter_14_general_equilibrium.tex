@@ -8,79 +8,248 @@
 After completing this chapter, you should be able to:
 \begin{itemize}
   \item distinguish partial from general equilibrium;
-  \item explain the Edgeworth box and Pareto efficiency;
-  \item state the two welfare theorems with their assumptions; and
-  \item distinguish efficiency from equity.
+  \item use an Edgeworth box to describe feasible exchange allocations;
+  \item identify Pareto improvements and the contract curve;
+  \item explain competitive equilibrium in an exchange economy; and
+  \item state what the welfare theorems do, and do not, establish.
 \end{itemize}
 
 \section{From partial to general equilibrium}
 
-Partial-equilibrium analysis studies one market while treating conditions in other markets as fixed. \keyterm{General equilibrium} recognises that markets are connected. A change in the price of electricity affects household budgets, firms' costs, demand for appliances, wages in energy-intensive sectors, and public revenue. General-equilibrium analysis asks whether all these choices are mutually consistent at the same time.
+Partial-equilibrium analysis studies one market while treating conditions in
+other markets as fixed. It is often a powerful approximation: the demand for
+cinema tickets can be studied while taking wages, housing costs, and transport
+prices as given.
+
+\keyterm{General equilibrium} recognises that markets are connected. A change
+in the price of electricity affects household budgets, firms' costs, demand
+for appliances, wages in energy-intensive sectors, and public revenue.
+General-equilibrium analysis asks whether all these decisions can be mutually
+consistent at the same time.
+
+\begin{keyidea}
+\textbf{An equilibrium is a system, not merely a price.}
+In a general equilibrium, consumers choose their preferred affordable bundles,
+firms choose profit-maximising plans, and every market clears together. A
+change in one market can therefore feed back into the others.
+\end{keyidea}
 
 \section{Exchange and the Edgeworth box}
 
-Consider two people, Ana and Bruno, and two goods, $x$ and $y$, with fixed total amounts. An \keyterm{Edgeworth box} represents every feasible allocation. Its width is the total amount of $x$ and its height is the total amount of $y$. Each point gives Ana's bundle from one origin and Bruno's remaining bundle from the opposite origin.
+Consider two people, Ana and Bruno, and two goods, $x$ and $y$. The total
+amounts are fixed at $\bar{x}$ and $\bar{y}$, so every feasible allocation
+satisfies
+\[
+x_A+x_B=\bar{x},
+\qquad
+y_A+y_B=\bar{y}.
+\]
+An \keyterm{Edgeworth box} represents all such allocations. Its width is
+$\bar{x}$ and its height is $\bar{y}$. Ana's origin is at the lower left;
+Bruno's is at the upper right. To read Bruno's bundle at any point, subtract
+Ana's coordinates from the totals.
 
-An allocation is \keyterm{Pareto efficient} if no feasible change can make at least one person better off without making anyone worse off. At an interior efficient allocation, both people have the same marginal rate of substitution:
+Figure~\ref{fig:edgeworth-box} uses $\bar{x}=\bar{y}=8$. The initial
+allocation $E$ gives Ana $(6,2)$ and Bruno $(2,6)$. The shaded lens contains
+allocations that both prefer to $E$ for the illustrated indifference curves.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.67cm,y=0.67cm]
+    \fill[PPEAccentLight]
+      plot[domain=2:6,samples=60] (\x,{12/\x})
+      -- plot[domain=6:2,samples=60] (\x,{8-12/(8-\x)}) -- cycle;
+    \draw[very thick,PPEInk] (0,0) rectangle (8,8);
+    \draw[PPEGold,densely dashed] (0,0) -- (8,8);
+    \draw[PPENavarraRed,very thick,domain=1.5:8,samples=80]
+      plot (\x,{12/\x});
+    \draw[PPEBurgundy,very thick,domain=0:6.5,samples=80]
+      plot (\x,{8-12/(8-\x)});
+    \fill[PPEInk] (6,2) circle (2pt);
+    \fill[PPEGold] (5,3) circle (2pt);
+    \node[below left,font=\scriptsize] at (0,0) {Ana's origin};
+    \node[above right,font=\scriptsize] at (8,8) {Bruno's origin};
+    \node[below,font=\scriptsize] at (4,0) {Ana's $x_A$};
+    \node[left,font=\scriptsize] at (0,4) {Ana's $y_A$};
+    \node[above,font=\scriptsize] at (4,8) {Bruno's $x_B$};
+    \node[right,font=\scriptsize] at (8,4) {Bruno's $y_B$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt]
+      at (6.85,2.55) {$u_A=12$};
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt]
+      at (1.05,6.85) {$u_B=12$};
+    \node[font=\scriptsize,text=PPEGold,fill=white,inner sep=1pt,rotate=45]
+      at (5.15,5.15) {contract curve};
+    \node[font=\scriptsize,text=PPEMuted,align=center] at (3.75,4.35)
+      {mutual-gain\\lens};
+    \node[below right,font=\scriptsize] at (6,2) {$E$};
+    \node[above left,font=\scriptsize,text=PPEGold] at (5,3) {$P$};
+  \end{tikzpicture}
+  \caption{An Edgeworth box for exchange. The red curve gives Ana utility
+  $12$ and the burgundy curve gives Bruno utility $12$. Point $P$ is a
+  Pareto improvement on the initial allocation $E$.}
+  \label{fig:edgeworth-box}
+\end{figure}
+\FloatBarrier
+
+A \keyterm{Pareto improvement} makes at least one person better off and no
+one worse off. An allocation is \keyterm{Pareto efficient} if no Pareto
+improvement is feasible. With smooth preferences and positive consumption,
+an interior efficient allocation must satisfy
 \[
 MRS^A_{x,y}=MRS^B_{x,y}.
 \]
-Otherwise, they could exchange goods in a way that benefits both.
+If the two marginal rates of substitution differed, there would be a small
+exchange that both people value. The \keyterm{contract curve} is the set of
+Pareto-efficient allocations in the box; under the preferences in the figure,
+it is the diagonal $y_A=x_A$.
 
-\section{Competitive equilibrium}
+\begin{exercisebox}
+\textbf{A mutually beneficial exchange.}
+Let both people have utility $u(x,y)=xy$. At $E$, Ana has $(6,2)$ and Bruno
+has $(2,6)$, so each has utility $12$. At $P$, Ana has $(5,3)$ and Bruno has
+$(3,5)$; each has utility $15$. The move from $E$ to $P$ is a Pareto
+improvement, not because it makes their bundles equal, but because each
+person receives a bundle they prefer.
+\end{exercisebox}
 
-A competitive equilibrium is a set of prices and allocations such that every consumer maximises utility subject to their budget and every firm maximises profit, while all markets clear. Prices coordinate dispersed decisions: they communicate scarcity and create incentives without requiring a central planner to know each person's preferences or each firm's technology.
+\section{Competitive equilibrium in an exchange economy}
+
+At prices $(p_x,p_y)$, each consumer chooses a preferred bundle subject to a
+budget constraint. For Ana,
+\[
+p_xx_A+p_yy_A\leq m_A,
+\]
+where income $m_A$ can come from her initial endowment and ownership of firms.
+A \keyterm{competitive equilibrium} consists of prices and choices such that
+each consumer optimises and the feasibility conditions hold.
+
+At a smooth interior competitive equilibrium,
+\[
+MRS^A_{x,y}=\frac{p_x}{p_y}=MRS^B_{x,y}.
+\]
+Prices therefore coordinate exchange: each person faces the same relative
+price, even though their tastes and initial holdings may differ.
+
+Return to the $8$-by-$8$ economy. If $p_x=p_y=1$ and each person has
+purchasing power $8$, a consumer with $u(x,y)=xy$ chooses
+\[
+(x,y)=(4,4).
+\]
+The two choices exhaust the total resources, so the allocation clears both
+markets. It also lies on the contract curve. This example illustrates how
+voluntary exchange can move an economy away from its initial endowment and
+toward an efficient allocation.
 
 \section{The welfare theorems}
 
-The \keyterm{First Welfare Theorem} states that, under demanding assumptions, every competitive equilibrium is Pareto efficient. Key assumptions include price-taking behaviour, complete markets, well-defined property rights, and the absence of externalities or significant information failures.
+The \keyterm{First Welfare Theorem} says that, under demanding assumptions,
+every competitive equilibrium is Pareto efficient. The assumptions include
+price-taking behaviour, well-defined property rights, no externalities,
+sufficiently complete markets, and the absence of relevant information failures.
+The theorem is conditional: it does not claim that every real-world market
+economy has these properties.
 
-The \keyterm{Second Welfare Theorem} states, again under strong assumptions, that any Pareto-efficient allocation can be decentralised as a competitive equilibrium after an appropriate redistribution of initial resources. It separates two questions: society can choose a distribution through transfers, then allow markets to allocate resources efficiently.
+The \keyterm{Second Welfare Theorem} says, under further conditions such as
+convex preferences and technologies, that a Pareto-efficient allocation can
+be decentralised as a competitive equilibrium after an appropriate
+redistribution of initial resources. In the theorem, redistribution is
+\keyterm{lump-sum}: it changes purchasing power without changing a marginal
+incentive. Real taxes and transfers rarely have this ideal form, which matters
+for policy design.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[node distance=0.38cm and 0.42cm]
+    \node[ppebox,minimum width=3.0cm] (fwt1)
+      {Strong competitive\\assumptions};
+    \node[ppebox,minimum width=3.0cm,right=of fwt1] (fwt2)
+      {Individual choice\\and market clearing};
+    \node[ppebox,minimum width=3.0cm,right=of fwt2] (fwt3)
+      {Pareto-efficient\\allocation};
+    \draw[ppearrow] (fwt1) -- (fwt2);
+    \draw[ppearrow] (fwt2) -- (fwt3);
+    \node[ppebox,minimum width=2.7cm,below=0.85cm of fwt1] (swt1)
+      {Equity objective};
+    \node[ppebox,minimum width=2.7cm,right=of swt1] (swt2)
+      {Lump-sum\\redistribution};
+    \node[ppebox,minimum width=2.7cm,right=of swt2] (swt3)
+      {Competitive\\price system};
+    \node[ppebox,minimum width=2.7cm,right=of swt3] (swt4)
+      {Chosen efficient\\allocation};
+    \draw[ppearrow] (swt1) -- (swt2);
+    \draw[ppearrow] (swt2) -- (swt3);
+    \draw[ppearrow] (swt3) -- (swt4);
+    \node[font=\sffamily\bfseries\scriptsize,text=PPEBurgundy,above=0.18cm of fwt2]
+      {First Welfare Theorem};
+    \node[font=\sffamily\bfseries\scriptsize,text=PPEBurgundy,above=0.18cm of swt2]
+      {Second Welfare Theorem};
+  \end{tikzpicture}
+  \caption{The welfare theorems separate conditional claims about efficient
+  coordination from the prior question of the distribution of resources.}
+  \label{fig:welfare-theorems}
+\end{figure}
+\FloatBarrier
 
 \section{Efficiency is not equity}
 
-Pareto efficiency does not say that an allocation is fair. A society in which one person owns nearly everything can be Pareto efficient if any transfer makes that person worse off. The welfare theorems therefore do not settle questions about equality, rights, needs, or political legitimacy. They show conditions under which markets can coordinate efficiently; they do not provide a complete theory of justice.
+Pareto efficiency does not say that an allocation is fair. A society in which
+one person owns nearly everything may be Pareto efficient if any transfer from
+that person makes them worse off. The welfare theorems therefore do not settle
+questions about equality, rights, needs, liberty, or political legitimacy.
+
+\begin{keyidea}
+\textbf{Keep three questions distinct.}
+Economics can ask whether gains from exchange remain, how a policy changes
+incentives, and who gains or loses. Deciding whether an outcome is just also
+requires ethical and political judgement. Efficiency is important evidence,
+not a complete theory of justice.
+\end{keyidea}
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
-  \item \textbf{General equilibrium}: simultaneous equilibrium in interconnected markets.
-  \item \textbf{Pareto efficiency}: no feasible Pareto improvement remains.
-  \item \textbf{Competitive equilibrium}: optimisation by agents plus market clearing.
-  \item \textbf{First Welfare Theorem}: competitive equilibrium is efficient under specified assumptions.
-  \item \textbf{Second Welfare Theorem}: redistribution can separate equity from efficient allocation under specified assumptions.
+  \item \textbf{Feasibility}: $x_A+x_B=\bar{x}$ and $y_A+y_B=\bar{y}$.
+  \item \textbf{Pareto improvement}: someone gains and no one loses.
+  \item \textbf{Contract curve}: efficient exchange allocations in an Edgeworth box.
+  \item \textbf{Competitive equilibrium}: individual optimisation plus market clearing.
+  \item \textbf{Interior exchange efficiency}: $MRS^A_{x,y}=MRS^B_{x,y}$.
+  \item \textbf{Welfare theorems}: conditional links between competitive
+  equilibrium, efficiency, and redistribution.
 \end{itemize}
 
 \section*{Exercises}
 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
-  \item Distinguish partial and general equilibrium using an example.
-  \item Define a Pareto improvement and Pareto efficiency.
-  \item Why must MRS values be equal at an interior efficient exchange allocation?
-  \item List three assumptions needed for the First Welfare Theorem.
+  \item Distinguish partial and general equilibrium using a change in the price of electricity.
+  \item What does each point in an Edgeworth box represent? How are Bruno's coordinates read?
+  \item Define a Pareto improvement. Why does Pareto efficiency not imply equality?
+  \item State two assumptions of the First Welfare Theorem and one reason they may fail in practice.
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Draw an Edgeworth box and identify a feasible allocation, a Pareto improvement, and a contract curve.
-  \item Use indifference curves to show why an allocation with unequal MRS values is not efficient.
+  \item Draw an $8$-by-$8$ Edgeworth box. Mark $E=(6,2)$ for Ana, the corresponding bundle for Bruno, and a Pareto improvement.
+  \item Draw two indifference curves that cross at an inefficient interior allocation. Mark the mutual-gain lens and a contract curve.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Ana has $u_A(x_A,y_A)=x_Ay_A$ and Bruno has $u_B(x_B,y_B)=x_By_B$. Write the condition for an interior Pareto-efficient allocation.
-  \item Explain why an allocation can be Pareto efficient while highly unequal.
+  \item Total resources are $\bar{x}=\bar{y}=8$, and both Ana and Bruno have $u(x,y)=xy$. Ana initially has $(6,2)$ and Bruno has $(2,6)$. Verify that the allocation $(5,3)$ to Ana is a Pareto improvement. Derive the interior contract curve and find the competitive allocation when $p_x=p_y=1$ and each person's income is $8$.
+  \item Total resources are $9$ units of each good. Ana has $u_A=x_A^2y_A$ and Bruno has $u_B=x_By_B^2$. At $p_x=p_y=1$, each has income $9$. Find their demands, check market clearing, and verify the MRS condition.
+  \item Why does the Second Welfare Theorem not imply that every real-world redistribution is costless or easy to implement?
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
 \begin{enumerate}[resume,label=\arabic*.]
   \item An allocation is Pareto efficient when: (a) everyone has equal income; (b) no Pareto improvement is feasible; (c) the government does not intervene; or (d) firms earn zero profit.
-  \item The First Welfare Theorem requires, among other conditions: (a) externalities; (b) price-taking behaviour; (c) monopoly; or (d) incomplete markets.
-  \item The Second Welfare Theorem highlights that: (a) equity and efficiency are identical; (b) redistribution may be considered separately from market allocation; (c) all redistributions are costless in reality; or (d) prices are unnecessary.
+  \item In an Edgeworth box, a movement from an initial allocation into the mutual-gain lens: (a) makes both people worse off; (b) can make both people better off; (c) must reduce total resources; or (d) proves the allocation is equal.
+  \item The Second Welfare Theorem highlights that: (a) equity and efficiency are identical; (b) distribution can be considered before competitive allocation under strong assumptions; (c) all redistributions are costless in reality; or (d) prices are unnecessary.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
 
-\noindent Do the welfare theorems support a political philosophy of laissez-faire? Discuss which of their assumptions and which concerns about justice must be examined before drawing that conclusion.
+\noindent Do the welfare theorems support a political philosophy of laissez-faire?
+Discuss which assumptions, feasibility constraints, and concerns about justice
+must be examined before drawing that conclusion.
