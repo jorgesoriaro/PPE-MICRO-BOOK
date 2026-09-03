@@ -3,18 +3,28 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[a4paper,margin=2.7cm]{geometry}
+\usepackage[a4paper,top=2.8cm,bottom=2.8cm,left=3.1cm,right=3.1cm,headsep=11pt]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{eurosym}
 \usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{avant}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+
+\input{book_style}
 
 \hypersetup{
   colorlinks=true,
-  linkcolor=blue,
-  urlcolor=blue,
-  citecolor=blue
+  linkcolor=PPEAccent,
+  urlcolor=PPEAccent,
+  citecolor=PPEAccent
 }
 
 \newcommand{\keyterm}[1]{\textbf{#1}}
@@ -23,10 +33,25 @@
 \begin{document}
 
 \frontmatter
-\title{Microeconomics for PPE Students}
-\author{Jorge Soria}
-\date{}
-\maketitle
+\begin{titlepage}
+  \thispagestyle{empty}
+  \color{PPEInk}
+  \vspace*{2.7cm}
+  {\sffamily\color{PPEAccent}\Large\textsc{Politics, Philosophy and Economics}\par}
+  \vspace{1.2cm}
+  {\color{PPEAccent}\rule{\textwidth}{1.8pt}\par}
+  \vspace{0.8cm}
+  {\sffamily\bfseries\fontsize{34}{39}\selectfont Microeconomics\par}
+  \vspace{0.35cm}
+  {\sffamily\fontsize{19}{24}\selectfont A first course for PPE students\par}
+  \vspace{0.8cm}
+  {\color{PPEAccent}\rule{0.42\textwidth}{1.8pt}\par}
+  \vfill
+  {\sffamily\Large Jorge Soria\par}
+  \vspace{0.35cm}
+  {\sffamily\color{PPEMuted}\large University of Navarra\par}
+  \vspace*{1.7cm}
+\end{titlepage}
 
 \tableofcontents
 
