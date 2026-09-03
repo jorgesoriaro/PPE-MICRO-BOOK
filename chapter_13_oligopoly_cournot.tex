@@ -6,63 +6,231 @@
 After completing this chapter, you should be able to:
 \begin{itemize}
   \item identify strategic interdependence in oligopoly;
-  \item explain the Cournot model and reaction functions;
-  \item solve a two-firm Cournot equilibrium; and
+  \item derive and interpret Cournot reaction functions;
+  \item solve a two-firm Cournot--Nash equilibrium; and
   \item compare monopoly, oligopoly, and competition.
 \end{itemize}
 
 \section{Oligopoly and strategic interaction}
 
-An \keyterm{oligopoly} is a market with a small number of firms. Each firm's decision affects market outcomes and therefore the profits of its rivals. This \keyterm{strategic interdependence} distinguishes oligopoly from both perfect competition and monopoly.
+An \keyterm{oligopoly} is a market with a small number of firms. Each firm's
+decision affects market outcomes and therefore the profits of its rivals. This
+\keyterm{strategic interdependence} distinguishes oligopoly from both perfect
+competition and monopoly.
 
-Firms may compete in quantities, prices, capacity, product characteristics, advertising, or research. The appropriate model depends on the strategic variable and timing. The Cournot model studies firms that choose output quantities simultaneously.
+Firms may compete in quantities, prices, capacity, product characteristics,
+advertising, or research. The appropriate model depends on the strategic
+variable and timing. Cournot competition studies firms that choose output
+quantities simultaneously. It is most useful when output or capacity is chosen
+before sales occur. If firms instead choose prices directly, a
+\keyterm{Bertrand competition} model may be more appropriate.
+
+\begin{exercisebox}
+\textbf{Two firms choosing capacity.}
+Imagine two firms that must decide how much bottled water to prepare before
+the market price is known. More total output lowers the eventual market price.
+Each firm therefore wants to produce more when its rival produces less. This
+is the logic captured by a downward-sloping reaction function.
+\end{exercisebox}
 
 \section{The Cournot model}
 
-Suppose two firms produce a homogeneous good. Firm $i$ chooses $q_i$, total output is $Q=q_1+q_2$, and inverse demand is $p(Q)$. Each firm takes its rival's output as given when choosing its own output.
+Suppose two firms produce a homogeneous good. Firm $i$ chooses $q_i$, total
+output is $Q=q_1+q_2$, and inverse demand is $p(Q)$. When firm $i$ chooses
+output, it treats the rival's current output $q_j$ as fixed. This does not mean
+that the firm believes its rival will never react; each firm solves a
+unilateral choice problem, and equilibrium requires the two resulting best
+responses to be mutually consistent.
 
-With $p=80-2Q$ and identical cost functions $C(q_i)=10+4q_i$, firm $i$'s profit is
+With
 \[
-\pi_i=(80-2(q_i+q_j))q_i-10-4q_i.
+p=80-2Q
+\qquad\text{and}\qquad
+C(q_i)=10+4q_i,
 \]
-Differentiating with respect to $q_i$ gives the best-response, or \keyterm{reaction}, function:
+firm $i$'s profit is
+\[
+\pi_i
+=(80-2(q_i+q_j))q_i-10-4q_i
+=76q_i-2q_i^2-2q_iq_j-10.
+\]
+Holding $q_j$ fixed,
+\[
+\frac{\partial\pi_i}{\partial q_i}
+=76-4q_i-2q_j,
+\qquad
+\frac{\partial^2\pi_i}{\partial q_i^2}=-4<0.
+\]
+The first-order condition therefore gives the unique unconstrained
+\keyterm{best response}:
 \[
 q_i=19-\frac{1}{2}q_j.
 \]
-It states the firm's profit-maximising quantity for every quantity chosen by its rival.
+Because output cannot be negative, the full \keyterm{reaction function} is
+\[
+BR_i(q_j)=\max\left\{0,\,
+19-\frac{1}{2}q_j\right\}.
+\]
+Its downward slope means that the firms' outputs are
+\keyterm{strategic substitutes}: when one firm produces more, the other
+firm's best response is to produce less. The fixed cost of \euro10 affects
+profit, but not this conditional output choice.
 
 \section{Cournot--Nash equilibrium}
 
-A \keyterm{Cournot--Nash equilibrium} is a pair of quantities such that each firm's quantity is a best response to the other's quantity. With identical firms, set $q_1=q_2=q$ in the reaction function:
+A \keyterm{Cournot--Nash equilibrium} is a pair of quantities such that each
+firm's quantity is a best response to the other's quantity. For the running
+example, the two reaction functions intersect at the mutual best response
+shown in Figure~\ref{fig:cournot-reaction-functions}.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.255cm,y=0.140cm]
+    \draw[->,PPEInk] (0,0) -- (22.4,0) node[below,font=\small] {Firm 1 output $q_1$};
+    \draw[->,PPEInk] (0,0) -- (0,40.8) node[left,font=\small] {Firm 2 output $q_2$};
+    \draw[PPEBurgundy,very thick] (0,38) -- (19,0);
+    \draw[PPENavarraRed,very thick] (0,19) -- (22,8);
+    \draw[PPEGold,densely dashed] (12.67,0) -- (12.67,12.67) -- (0,12.67);
+    \fill[PPEGold] (12.67,12.67) circle (2pt);
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt] at (15.7,7.2) {$BR_1$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (16.2,12.9) {$BR_2$};
+    \node[below,font=\scriptsize,text=PPEGold] at (12.67,0) {$38/3$};
+    \node[left,font=\scriptsize,text=PPEGold] at (0,12.67) {$38/3$};
+    \node[font=\scriptsize,text=PPEGold,align=left] at (15.9,17.7) {Cournot--Nash\\equilibrium};
+  \end{tikzpicture}
+  \caption{Reaction functions for the two-firm Cournot model. Their
+  intersection is the output pair at which each firm is choosing a best
+  response to the other.}
+  \label{fig:cournot-reaction-functions}
+\end{figure}
+\FloatBarrier
+
+With identical firms, set $q_1=q_2=q$ in the reaction function:
 \[
 q=19-\frac{1}{2}q,
 \]
-so $q^*=\frac{38}{3}$. Total output is $Q^*=\frac{76}{3}$, and price is $p^*=\frac{88}{3}$.
+so
+\[
+q_1^*=q_2^*=\frac{38}{3}.
+\]
+Total output and price are
+\[
+Q^*=\frac{76}{3},
+\qquad
+p^*=\frac{88}{3}.
+\]
+Each firm's equilibrium profit is
+\[
+\pi_i^*=\frac{2798}{9}.
+\]
 
-At equilibrium, neither firm can increase profit by changing its output alone. This does not mean that firms cooperate or that the outcome maximises joint profit. Each firm ignores the effect of its output decision on the rival's profit.
+At equilibrium, neither firm can increase profit by changing its output alone.
+This does not mean that firms cooperate or that the outcome maximises joint
+profit. Each firm ignores the effect of its output decision on the rival's
+profit. A Cournot--Nash equilibrium is a mutual-best-response outcome; the
+later game-theory chapter develops this idea for a wider range of strategic
+settings.
 
 \section{Comparison with monopoly and competition}
 
-In a monopoly, a single firm restricts output to maximise industry profit. In Cournot oligopoly, each additional firm expands total output and pushes price toward marginal cost. With $N$ identical Cournot firms, linear demand, and constant marginal cost $c$, equilibrium total output is
+In a monopoly, a single firm restricts output to maximise industry profit. In
+Cournot oligopoly, each additional firm expands total output and pushes price
+toward marginal cost. With the running demand curve $p=80-2Q$ and $MC=4$, the
+three static benchmarks are shown in Figure~\ref{fig:market-structure-comparison}:
 \[
-Q^*=\frac{N(a-c)}{b(N+1)}
+Q_M<Q_{\text{Cournot}}<Q_{PC},
+\qquad
+p_M>p_{\text{Cournot}}>p_{PC}.
 \]
-when inverse demand is $p=a-bQ$. As $N$ rises, output approaches the competitive level $(a-c)/b$ and price approaches $c$.
 
-The result gives a useful benchmark: more competitors usually reduce market power, but the number of firms alone does not determine market performance. Entry barriers, capacity, product differentiation, repeated interaction, and the possibility of collusion also matter.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.155cm,y=0.065cm]
+    \draw[->,PPEInk] (0,0) -- (42.5,0) node[below,font=\small] {Total output $Q$};
+    \draw[->,PPEInk] (0,0) -- (0,83) node[left,font=\small] {Price};
+    \draw[PPENavarraRed,very thick,domain=0:40,samples=80]
+      plot (\x,{80-2*\x});
+    \draw[PPEBurgundy,very thick] (0,4) -- (40.5,4);
+    \draw[PPEGold,densely dashed] (0,42) -- (19,42) -- (19,0);
+    \draw[PPEGold,densely dashed] (0,29.33) -- (25.33,29.33) -- (25.33,0);
+    \draw[PPEGold,densely dashed] (38,0) -- (38,4);
+    \fill[PPEGold] (19,42) circle (2pt);
+    \fill[PPEGold] (25.33,29.33) circle (2pt);
+    \fill[PPEGold] (38,4) circle (2pt);
+    \node[left,font=\scriptsize,text=PPEGold] at (0,42) {$p_M$};
+    \node[left,font=\scriptsize,text=PPEGold] at (0,29.33) {$p_D$};
+    \node[left,font=\scriptsize,text=PPEGold] at (0,4) {$p_C=MC$};
+    \node[below,font=\scriptsize,text=PPEGold] at (19,0) {$Q_M$};
+    \node[below,font=\scriptsize,text=PPEGold] at (25.33,0) {$Q_D$};
+    \node[below,font=\scriptsize,text=PPEGold] at (38,0) {$Q_C$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (31.8,18.2) {Demand};
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt] at (32.0,8.0) {$MC$};
+    \node[font=\scriptsize,text=PPEBurgundy] at (17.2,50.0) {Monopoly};
+    \node[font=\scriptsize,text=PPEBurgundy] at (27.7,35.6) {Cournot};
+    \node[font=\scriptsize,text=PPEBurgundy,align=left] at (35.8,12.5) {Perfect\\competition};
+  \end{tikzpicture}
+  \caption{Monopoly, Cournot duopoly, and perfect competition. Cournot
+  output and price lie between the monopoly and competitive benchmarks.}
+  \label{fig:market-structure-comparison}
+\end{figure}
+\FloatBarrier
+
+With $N$ identical active firms, inverse demand $p=a-bQ$, constant marginal
+cost $c$, and $a>c$, the symmetric Cournot solution is
+\[
+q_i^*=\frac{a-c}{b(N+1)},
+\qquad
+Q^*=\frac{N(a-c)}{b(N+1)},
+\qquad
+p^*=\frac{a+Nc}{N+1}.
+\]
+As $N$ rises, output approaches the competitive level $(a-c)/b$ and price
+approaches $c$. Fixed costs do not alter these conditional output choices, but
+they can affect whether entry is profitable and thus the number of active
+firms.
+
+The number of firms alone does not determine market performance. Entry
+barriers, capacity, product differentiation, repeated interaction, and the
+possibility of collusion also matter.
 
 \section{Collusion}
 
-Firms can increase joint profit by restricting output as a monopoly would. An agreement to do so is \keyterm{collusion}. It is difficult to sustain because every member has an incentive to secretly expand output or cut price. Competition policy commonly prohibits agreements that reduce competition, although assessing conduct in real markets can be complex.
+Firms can increase joint profit by restricting output as a monopoly would. An
+agreement to do so is \keyterm{collusion}; a group of firms that coordinates
+in this way is often called a \keyterm{cartel}. Collusion is difficult to
+sustain because every member has an incentive to secretly expand output or cut
+price.
+
+\begin{center}
+\small
+\begin{tabular}{c c c}
+\toprule
+ & \multicolumn{2}{c}{Firm 2} \\
+Firm 1 & Restrict output & Expand output \\
+\midrule
+Restrict output & $(\pi_C,\pi_C)$ & $(\pi_L,\pi_D)$ \\
+Expand output & $(\pi_D,\pi_L)$ & $(\pi_N,\pi_N)$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.35em}
+$\pi_D>\pi_C>\pi_N>\pi_L$: secretly expanding is tempting when the rival
+restricts output.
+\end{center}
+
+Competition policy commonly prohibits agreements that reduce competition,
+although assessing conduct in real markets can be complex. The payoff logic
+above foreshadows the prisoner's-dilemma structure analysed in Chapter~17.
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
   \item \textbf{Oligopoly}: a market with few strategically interdependent firms.
-  \item \textbf{Reaction function}: a firm's optimal action for each rival action.
+  \item \textbf{Reaction function}: a firm's best response for each rival action.
   \item \textbf{Cournot competition}: firms choose quantities simultaneously.
   \item \textbf{Cournot--Nash equilibrium}: each quantity is a best response to the other.
+  \item \textbf{Strategic substitutes}: more output by one firm reduces the other's best-response output.
   \item \textbf{Collusion}: coordination intended to raise joint profits by limiting competition.
 \end{itemize}
 
@@ -71,21 +239,22 @@ Firms can increase joint profit by restricting output as a monopoly would. An ag
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
   \item What does strategic interdependence mean? Give two examples outside quantity competition.
-  \item Explain why Cournot firms do not choose the monopoly quantity.
+  \item Explain why treating a rival's output as fixed in a Cournot choice does not mean believing that the rival will never react.
+  \item When is Cournot a more useful model than Bertrand competition?
   \item Why might a cartel be unstable even if all firms gain from cooperation compared with competition?
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
   \item Draw two downward-sloping reaction functions. Mark their intersection and explain its meaning.
-  \item On a demand diagram, compare the approximate output and price under monopoly, duopoly, and perfect competition.
+  \item On a demand diagram, compare monopoly, Cournot duopoly, and perfect competition. Label the three quantities and prices.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
   \item Two firms face $p=80-2Q$ and $C(q_i)=10+4q_i$. Derive both reaction functions and solve the Cournot equilibrium.
   \item $N$ identical firms face $p=120-3Q$ and constant marginal cost $10$. Find total output and price as functions of $N$. Evaluate the monopoly case, $N=5$, and the limit as $N\to\infty$.
-  \item Explain how a fall in marginal cost for only one Cournot firm affects its reaction function.
+  \item Explain how a fall in marginal cost for only one Cournot firm affects its reaction function and the equilibrium.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
@@ -97,4 +266,6 @@ Firms can increase joint profit by restricting output as a monopoly would. An ag
 
 \subsection*{PPE discussion question}
 
-\noindent Is a concentrated market necessarily harmful to society? Discuss how the answer depends on innovation, economies of scale, product quality, and the ability of institutions to prevent collusion or abuse of market power.
+\noindent Is a concentrated market necessarily harmful to society? Discuss how
+the answer depends on innovation, economies of scale, product quality, and the
+ability of institutions to prevent collusion or abuse of market power.
