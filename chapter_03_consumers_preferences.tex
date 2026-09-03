@@ -42,11 +42,48 @@ A\sim B
 \]
 means that the consumer is \keyterm{indifferent} between the two bundles: each is considered at least as good as the other.
 
+The strict and indifferent relations can be defined from the weak-preference
+relation:
+\[
+A\succ B
+\quad\Longleftrightarrow\quad
+A\succeq B \text{ and } B\not\succeq A,
+\]
+and
+\[
+A\sim B
+\quad\Longleftrightarrow\quad
+A\succeq B \text{ and } B\succeq A.
+\]
+With complete preferences, exactly one of $A\succ B$, $B\succ A$, or
+$A\sim B$ holds.
+
 Preferences rank alternatives. They do not yet explain \emph{why} one bundle is preferred. The reasons may be personal, cultural, moral, or social. The economic model works with the ranking itself.
+
+\begin{keyidea}
+\textbf{Three ideas that must not be confused.}
+\begin{itemize}
+  \item \textbf{Preferences} rank bundles: \emph{I consider $A$ at least as good as $B$.}
+  \item A \textbf{feasible set} lists the bundles that are actually available.
+  \item \textbf{Choice} selects a most-preferred feasible bundle.
+\end{itemize}
+A person may prefer one bundle but choose another because the preferred bundle
+is unaffordable, unavailable, or ruled out by time or institutional
+constraints.
+\end{keyidea}
+
+\begin{exercisebox}
+\textbf{Running example: the campus-caf\'e menu.} Laura ranks weekly bundles
+of coffees and lunches. Strong monotonicity tells us that $(4,5)$ is preferred
+to $(3,4)$, since it contains more of both goods. It does not tell us whether
+she prefers $(5,3)$ or $(3,5)$: that depends on her own preferences. If the
+caf\'e runs out of lunches, the feasible set changes even if Laura's
+preferences do not.
+\end{exercisebox}
 
 \section{Rational preferences}
 
-In introductory microeconomics, preferences are called \keyterm{rational} if they satisfy a set of consistency properties. Rationality here does not mean selfishness, perfect information, or moral superiority. It means that preferences can be represented coherently.
+In introductory microeconomics, preferences are called \keyterm{rational} if they satisfy a set of consistency properties. In this technical use, rational means internally coherent. It does not mean selfish, perfectly informed, emotionally detached, morally admirable, or always correct.
 
 \subsection{Completeness}
 
@@ -69,27 +106,112 @@ Preferences are \keyterm{reflexive} if every bundle is at least as good as itsel
 \[
 A\succeq A.
 \]
-This property is usually taken for granted, but it is necessary for a complete formal description of preferences.
+Under the usual definition of completeness, reflexivity follows immediately by
+comparing a bundle with itself. It is stated explicitly because it is useful
+to keep the weak-preference relation formally clear.
 
 \section{More is better: monotonicity}
 
-The assumption of \keyterm{monotonicity}, also called non-satiation, states that more of a good is preferred to less, holding everything else constant. If $A=(x_A,y_A)$ and $B=(x_B,y_B)$, with $x_A\geq x_B$ and $y_A\geq y_B$, and at least one inequality strict, then monotonicity implies $A\succ B$.
+The \keyterm{strong monotonicity} assumption, often described informally as
+\emph{more is better}, states that more of a desirable good is preferred to
+less, holding everything else constant. If $A=(x_A,y_A)$ and $B=(x_B,y_B)$,
+with $x_A\geq x_B$ and $y_A\geq y_B$, and at least one inequality strict,
+then strong monotonicity implies $A\succ B$.
+
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[x=.62cm,y=.62cm]
+  \fill[PPEGold!15] (0,0) rectangle (4,4);
+  \fill[PPEAccentLight] (4,4) rectangle (7.1,7.1);
+  \draw[->,PPEInk] (0,0) -- (7.45,0) node[right] {good $x$};
+  \draw[->,PPEInk] (0,0) -- (0,7.45) node[above] {good $y$};
+  \draw[PPEMuted,dashed] (4,0) -- (4,7.1);
+  \draw[PPEMuted,dashed] (0,4) -- (7.1,4);
+  \fill[PPENavarraRed] (4,4) circle (1.7pt);
+  \node[below left,PPENavarraRed] at (4,4) {$A$};
+  \node[align=center,font=\sffamily\scriptsize] at (5.65,5.65)
+    {strictly preferred\\to $A$};
+  \node[align=center,font=\sffamily\scriptsize] at (2,2)
+    {strictly worse\\than $A$};
+  \node[align=center,font=\sffamily\scriptsize] at (2,5.65)
+    {not ranked from\\monotonicity alone};
+  \node[align=center,font=\sffamily\scriptsize] at (5.65,2)
+    {not ranked from\\monotonicity alone};
+\end{tikzpicture}
+\caption{What strong monotonicity can rank relative to a reference bundle
+$A$. The north-west and south-east regions require additional information
+about preferences.}
+\label{fig:monotonicity-regions}
+\end{figure}
 
 For ordinary goods, this is often a reasonable starting point. It implies that a consumer will not voluntarily throw away a desirable good. However, some goods can become ``bads'' beyond a certain point: pollution, noise, risk, or even food after satiation. The assumption must therefore be matched to the question. We can define a good so that larger quantities are desirable within the relevant range, or use a model that explicitly allows satiation.
 
 \section{Continuity and convexity}
 
-\keyterm{Continuity} means that small changes in a bundle do not normally generate abrupt jumps in preferences. Technically, if a sequence of bundles approaches a bundle that is at least as good as another, then sufficiently close bundles should also be at least as good. Continuity helps ensure that preferences can be represented by a utility function.
+\keyterm{Continuity} rules out arbitrary jumps in preference rankings.
+Informally, if $A\succ B$, sufficiently small changes to either bundle should
+not reverse that strict ranking. Continuity is a regularity assumption that,
+together with completeness, transitivity, and standard assumptions about the
+consumption set, helps ensure that preferences can be represented by a
+continuous utility function.
 
-\keyterm{Convexity} captures a preference for variety or balanced bundles. If a consumer is indifferent between $A$ and $B$, then a mixture of the two is at least as good as either one. With \keyterm{strict convexity}, a genuine mixture is strictly preferred to either extreme.
+\keyterm{Convexity} often captures a preference for variety or balanced
+bundles. Let
+\[
+\lambda A+(1-\lambda)B
+=
+\bigl(\lambda x_A+(1-\lambda)x_B,\,
+      \lambda y_A+(1-\lambda)y_B\bigr),
+\qquad 0\leq\lambda\leq1.
+\]
+Preferences are convex if, whenever $A$ and $B$ are each at least as good as
+$C$, every mixture of $A$ and $B$ is also at least as good as $C$. In
+particular, if a consumer is indifferent between $A$ and $B$, a mixture is at
+least as good as either endpoint. With \keyterm{strict convexity}, a genuine
+mixture of two distinct indifferent bundles is strictly preferred to either
+extreme.
 
-For example, a student may prefer a balanced allocation of meals and leisure to an extreme allocation that gives only one of them. Convexity does not say that every consumer likes every mixture; it says that extreme bundles are not systematically preferred merely because they are extreme. The assumption will imply the familiar bowed-in shape of indifference curves.
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[x=.58cm,y=.58cm]
+  \draw[->,PPEInk] (0,0) -- (8.25,0) node[right] {good $x$};
+  \draw[->,PPEInk] (0,0) -- (0,8.25) node[above] {good $y$};
+  \draw[PPEGold,line width=.95pt] (1,7) -- (7,1);
+  \fill[PPENavarraRed] (1,7) circle (1.7pt);
+  \fill[PPENavarraRed] (7,1) circle (1.7pt);
+  \fill[PPEBurgundy] (4,4) circle (1.9pt);
+  \node[above right,PPENavarraRed] at (1,7) {$A=(1,7)$};
+  \node[below left,PPENavarraRed] at (7,1) {$B=(7,1)$};
+  \node[above right,PPEBurgundy,align=left,font=\sffamily\scriptsize] at (4,4)
+    {$M=(4,4)$\\$M\succeq A\sim B$};
+\end{tikzpicture}
+\caption{Convexity and mixtures. If $A\sim B$, their midpoint $M$ is at
+least as good as either endpoint; strict convexity makes the preference
+strict.}
+\label{fig:convexity-mixture}
+\end{figure}
+
+For example, a student may prefer a balanced allocation of meals and leisure to an extreme allocation that gives only one of them. This interpretation assumes that the goods are divisible, or that a mixture can be understood as an average across time. Convexity allows perfect substitutes, whose indifference curves are straight lines. Strict convexity gives the familiar strictly bowed-in indifference curves introduced in the next chapter.
 
 \section{From preferences to choice}
 
 Preferences alone do not determine an observed choice. A consumer may prefer a luxury holiday to a local holiday but lack the income to buy it. Choice requires both preferences and a \keyterm{feasible set}: the alternatives that are actually available. In the next chapter, utility functions and indifference curves will represent preferences; after that, budget constraints will describe the feasible set.
 
 The model is deliberately modest. It describes what a person chooses when their preferences and constraints are given. It does not claim that preferences are fixed forever or unaffected by social context. Advertising, habit, family, institutions, social norms, and political power can shape the alternatives people perceive and the preferences they express.
+
+\begin{keyidea}
+\textbf{The sequence of consumer theory.}
+\[
+\text{preferences}
+\longrightarrow
+\text{utility representation}
+\longrightarrow
+\text{indifference curves}
+\longrightarrow
+\text{constrained choice}.
+\]
+This chapter establishes the first step only.
+\end{keyidea}
 
 \section*{Chapter Review}
 
@@ -99,7 +221,7 @@ The model is deliberately modest. It describes what a person chooses when their 
   \item \textbf{Preference relation}: a ranking of alternative bundles.
   \item \textbf{Completeness}: every pair of bundles can be compared.
   \item \textbf{Transitivity}: preference rankings do not form cycles.
-  \item \textbf{Monotonicity}: more of a good is preferred to less, other things equal.
+  \item \textbf{Strong monotonicity}: more of a desirable good is preferred to less, other things equal.
   \item \textbf{Continuity}: small changes do not cause arbitrary jumps in preferences.
   \item \textbf{Convexity}: mixtures of equally valued bundles are at least as good as extremes.
   \item \textbf{Feasible set}: the alternatives available to the consumer.
@@ -131,16 +253,18 @@ $A\sim B$ & The consumer is indifferent between $A$ and $B$ \\
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item In a diagram with good $x$ on the horizontal axis and good $y$ on the vertical axis, place the bundles $A=(2,2)$, $B=(4,2)$, $C=(3,5)$, and $D=(6,6)$. Assuming monotonicity, compare $A$ with $B$, $A$ with $C$, and $A$ with $D$. Can you compare $B$ and $C$ without more information?
-  \item Draw two bundles that illustrate convex preferences. Explain why their midpoint is weakly preferred to each endpoint.
-  \item Draw a case in which monotonicity holds and identify the direction in which preferred bundles lie.
+  \item In a diagram with good $x$ on the horizontal axis and good $y$ on the vertical axis, place the bundles $A=(2,2)$, $B=(4,2)$, $C=(3,5)$, and $D=(6,6)$. Assuming strong monotonicity, compare $A$ with $B$, $A$ with $C$, and $A$ with $D$. Can you compare $B$ and $C$ without more information?
+  \item Let $A=(4,0)$ and $B=(0,4)$, and suppose $A\sim B$. Plot both bundles and their midpoint $M=(2,2)$. What does convexity imply about $M$? What additional conclusion follows under strict convexity?
+  \item Draw a case in which strong monotonicity holds and identify the direction in which preferred bundles lie.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Suppose $A\succ B$, $B\sim C$, and $C\succeq D$. What can transitivity tell us about the relation between $A$ and $D$?
-  \item A consumer has the following rankings: $A\succ B$, $B\succ C$, and $C\succ A$. Does this consumer satisfy transitivity? Explain the practical problem caused by this pattern.
-  \item Let $A=(4,3)$ and $B=(2,3)$. Under monotonicity, write the relevant preference relation and justify it.
+  \item Suppose $A\succ B$, $B\sim C$, and $C\succeq D$. Show that $A\succ D$.
+  \item Holding the decision context fixed, a consumer has the following rankings: $A\succ B$, $B\succ C$, and $C\succ A$. Does this consumer satisfy transitivity? Explain the practical problem caused by this pattern.
+  \item Let $A=(4,3)$ and $B=(2,3)$. Under strong monotonicity, write the relevant preference relation and justify it.
+  \item Suppose the feasible set is $F=\{B,C\}$. If $A\succ B\succ C$, but $A\notin F$, which bundle is chosen? Explain why preferences alone do not determine observed choice.
+  \item Suppose $A\sim B$ and $B\sim C$. Use the definition of indifference and transitivity to show that $A\sim C$.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}

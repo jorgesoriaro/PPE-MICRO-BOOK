@@ -1,0 +1,31 @@
+name: Build LaTeX book
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+
+      - name: Compile the book
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+      - name: Upload the compiled PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: microeconomics-ppe-book
+          path: main.pdf
+          if-no-files-found: error
