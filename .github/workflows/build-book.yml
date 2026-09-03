@@ -26,10 +26,16 @@ jobs:
       - name: Report PDF length
         shell: bash
         run: |
-          if command -v pdfinfo >/dev/null 2>&1; then
-            pdfinfo main.pdf | awk '/^Pages:/ {print}'
+          if [[ -s ppe-page-count.txt ]]; then
+            page_count=$(tr -d '[:space:]' < ppe-page-count.txt)
+            echo "Book pages: ${page_count}"
+            if (( page_count > 200 )); then
+              echo "::error::The compiled book exceeds the 200-page limit."
+              exit 1
+            fi
           else
-            echo "pdfinfo is unavailable on this runner; compilation succeeded."
+            echo "::error::LaTeX did not produce ppe-page-count.txt."
+            exit 1
           fi
 
       - name: Upload the compiled PDF

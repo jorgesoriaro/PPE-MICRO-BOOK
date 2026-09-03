@@ -79,6 +79,7 @@ A \keyterm{shift in demand} occurs when another determinant changes. Important d
 
 Two goods are \keyterm{substitutes} when an increase in the price of one raises demand for the other, such as tea and coffee for some consumers. They are \keyterm{complements} when an increase in the price of one reduces demand for the other, such as printers and printer cartridges.
 
+\begin{samepage}
 \begin{keyidea}
 \textbf{Demand language: one distinction to remember.}
 \begin{center}
@@ -93,6 +94,7 @@ Income, tastes, related prices, population, or rules & The whole curve moves & C
 \end{tabular}
 \end{center}
 \end{keyidea}
+\end{samepage}
 
 \begin{figure}[!ht]
   \centering
@@ -117,16 +119,16 @@ Income, tastes, related prices, population, or rules & The whole curve moves & C
     \begin{scope}[xshift=6.15cm]
       \draw[->] (0,0) -- (3.75,0) node[below] {quantity $q$};
       \draw[->] (0,0) -- (0,3.15) node[left] {price $p$};
-      \draw[PPEBurgundy,very thick] (0.45,2.75) -- (3.05,0.65)
-        node[below right] {$D_0$};
-      \draw[PPENavarraRed,very thick] (0.80,2.75) -- (3.45,0.65)
-        node[below right] {$D_1$};
+      \draw[PPEBurgundy,very thick] (0.45,2.75) -- (3.05,0.65);
+      \draw[PPENavarraRed,very thick] (0.80,2.75) -- (3.45,0.65);
       \draw[densely dashed,PPEGold] (0,1.65) -- (2.22,1.65);
       \draw[densely dashed,PPEGold] (1.81,0) -- (1.81,1.65);
       \draw[densely dashed,PPEGold] (2.22,0) -- (2.22,1.65);
       \filldraw[PPEGold] (1.81,1.65) circle (1.6pt);
       \filldraw[PPEGold] (2.22,1.65) circle (1.6pt);
       \draw[ppearrow] (1.91,1.65) -- (2.11,1.65);
+      \node[font=\scriptsize,text=PPEBurgundy] at (2.00,1.30) {$D_0$};
+      \node[font=\scriptsize,text=PPENavarraRed] at (3.00,1.20) {$D_1$};
       \node[left,font=\scriptsize] at (0,1.65) {$p_0$};
       \node[font=\scriptsize,align=center] at (2.05,2.42)
         {income rises\\or tastes change};

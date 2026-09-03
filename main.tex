@@ -33,6 +33,15 @@
 \newcommand{\keyterm}[1]{\textbf{#1}}
 \newcommand{\term}[1]{\emph{#1}}
 
+\newcounter{ppephysicalpages}
+\newwrite\ppepagecountfile
+\AddToHook{shipout/after}{\stepcounter{ppephysicalpages}}
+\AddToHook{enddocument/afterlastpage}{%
+  \immediate\openout\ppepagecountfile=ppe-page-count.txt
+  \immediate\write\ppepagecountfile{\arabic{ppephysicalpages}}%
+  \immediate\closeout\ppepagecountfile
+}
+
 \begin{document}
 
 \frontmatter

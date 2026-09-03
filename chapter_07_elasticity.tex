@@ -15,11 +15,58 @@ After completing this chapter, you should be able to:
 
 The slope of a demand curve depends on the units used to measure price and quantity. Elasticity avoids this problem by measuring responsiveness in percentage terms. A \keyterm{price elasticity of demand} answers: by what percentage does quantity demanded change when price changes by one percent?
 
-For a small change, price elasticity of demand is
+For a small change, at a point where $p>0$ and $q>0$, price elasticity of
+demand is
 \[
 \varepsilon_{q,p}=\frac{\partial q}{\partial p}\frac{p}{q}.
 \]
-Because ordinary demand slopes downward, this elasticity is normally negative. In discussion, economists often use its absolute value.
+Other determinants of demand are held fixed. Because ordinary demand slopes
+downward, this elasticity is normally negative. In discussion, economists
+often use its absolute value.
+
+\begin{keyidea}
+\textbf{Read an elasticity in three steps.}
+\begin{enumerate}
+  \item The sign gives the direction of the response.
+  \item The absolute value gives its strength.
+  \item For ordinary price elasticity of demand,
+  \[
+  |\varepsilon|>1 \text{ means elastic},
+  \qquad
+  |\varepsilon|<1 \text{ means inelastic}.
+  \]
+\end{enumerate}
+Economists often omit the negative sign when classifying ordinary demand, but
+it should remain visible in the calculation.
+\end{keyidea}
+
+\section{Point and arc elasticity}
+
+The derivative formula gives \keyterm{point elasticity}: responsiveness at one
+particular price--quantity pair for a differentiable demand function and a
+small price change. When only two observations are available, use
+\keyterm{arc elasticity}. The midpoint formula is
+\[
+\varepsilon^{\mathrm{arc}}_{q,p}
+=
+\frac{(q_2-q_1)/\left[(q_1+q_2)/2\right]}
+     {(p_2-p_1)/\left[(p_1+p_2)/2\right]}.
+\]
+Using midpoint values avoids getting different percentage answers merely by
+reversing the direction of a price change.
+
+\begin{keyidea}
+\textbf{Worked example: arc elasticity.}
+For $q=100-2p$, suppose price rises from $20$ to $30$. Quantity falls from
+$60$ to $40$. Thus
+\[
+\varepsilon^{\mathrm{arc}}_{q,p}
+=
+\frac{-20/50}{10/25}
+=-1.
+\]
+Demand is unit elastic over this interval.
+\end{keyidea}
 
 \section{Elastic, inelastic, and unit-elastic demand}
 
@@ -27,13 +74,47 @@ Demand is \keyterm{elastic} when $|\varepsilon_{q,p}|>1$: quantity responds by a
 
 Elasticity depends on the availability of substitutes, the share of income spent on the good, the time available for adjustment, and whether the good is a necessity or luxury. Demand for a particular brand of bottled water may be elastic because many close substitutes exist; demand for water in general is likely to be far less elastic.
 
+A curve's steepness is not, by itself, a complete measure of elasticity:
+elasticity depends on the point considered and is unaffected by the units used
+to measure price and quantity. Curves can be compared visually only under
+carefully specified conditions, such as at the same point on common axes.
+
 \section{Elasticity along a linear demand curve}
 
 Consider $q=100-2p$. Its slope, $\partial q/\partial p=-2$, is constant, but elasticity is not:
 \[
 \varepsilon_{q,p}=-2\frac{p}{q}.
 \]
-At high prices and low quantities, demand is elastic. At low prices and high quantities, it is inelastic. A linear demand curve is unit elastic at its midpoint. It is therefore incorrect to describe an entire linear demand curve as simply ``elastic'' or ``inelastic.''
+At high prices and low quantities, demand is elastic. At low prices and high quantities, it is inelastic. A linear demand curve is unit elastic at its midpoint. More generally, for
+\[
+q=a-bp,
+\]
+the midpoint has $p=a/(2b)$ and $q=a/2$, so
+$\varepsilon_{q,p}=-1$ there.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[x=0.055cm,y=0.055cm]
+    \draw[->] (0,0) -- (106,0) node[below] {quantity $q$};
+    \draw[->] (0,0) -- (0,55) node[left] {price $p$};
+    \draw[PPENavarraRed,very thick] (0,50) -- (50,25);
+    \draw[PPEBurgundy,very thick] (50,25) -- (100,0);
+    \draw[densely dashed,PPEGold] (0,25) -- (50,25) -- (50,0);
+    \filldraw[PPEGold] (50,25) circle (2.3pt);
+    \node[left,font=\scriptsize] at (0,25) {$25$};
+    \node[below,font=\scriptsize] at (50,0) {$50$};
+    \node[font=\scriptsize,align=center,text=PPENavarraRed] at (20,43)
+      {elastic\\$\lvert\varepsilon_{q,p}\rvert>1$};
+    \node[font=\scriptsize,align=center,text=PPEBurgundy] at (80,18)
+      {inelastic\\$\lvert\varepsilon_{q,p}\rvert<1$};
+    \node[font=\scriptsize,align=center] at (59,31)
+      {unit elastic\\$\varepsilon_{q,p}=-1$};
+  \end{tikzpicture}
+  \caption{For a linear demand curve, slope is constant but point elasticity changes along the curve.}
+  \label{fig:linear-demand-elasticity}
+\end{figure}
+
+It is therefore incorrect to describe an entire linear demand curve as simply ``elastic'' or ``inelastic.''
 
 \section{Elasticity and total revenue}
 
@@ -41,9 +122,44 @@ Total revenue is
 \[
 TR=pq.
 \]
-If demand is elastic, a price reduction increases quantity by a sufficiently large percentage that total revenue rises. If demand is inelastic, a price increase raises total revenue because quantity falls by a smaller percentage. At unit elasticity, small price changes leave total revenue unchanged.
+If $q=q(p)$, then
+\[
+TR(p)=pq(p)
+\quad\Longrightarrow\quad
+\frac{dTR}{dp}
+=
+q+p\frac{dq}{dp}
+=
+q\left(1+\varepsilon_{q,p}\right).
+\]
+Since $q>0$, a small price increase lowers revenue when demand is elastic,
+raises revenue when demand is inelastic, and leaves revenue unchanged at unit
+elasticity.
 
-This relationship concerns revenue, not profit. A firm also needs to consider costs before deciding whether to change price.
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[x=0.11cm,y=0.0024cm]
+    \draw[->] (0,0) -- (53,0) node[below] {price $p$};
+    \draw[->] (0,0) -- (0,1350) node[left] {$TR$};
+    \draw[PPEBurgundy,very thick,domain=0:50,samples=100]
+      plot (\x,{100*\x-2*\x*\x});
+    \draw[densely dashed,PPEGold] (25,0) -- (25,1250) -- (0,1250);
+    \filldraw[PPENavarraRed] (25,1250) circle (2.4pt);
+    \node[below,font=\scriptsize] at (25,0) {$25$};
+    \node[left,font=\scriptsize] at (0,1250) {$1250$};
+    \node[font=\scriptsize,align=center] at (28,1170)
+      {maximum revenue\\unit elastic};
+    \node[font=\scriptsize,align=center,text=PPEMuted] at (11,400)
+      {inelastic demand:\\raising $p$ raises $TR$};
+    \node[font=\scriptsize,align=center,text=PPEMuted] at (39,400)
+      {elastic demand:\\lowering $p$ raises $TR$};
+  \end{tikzpicture}
+  \caption{For $q=100-2p$, total revenue is maximised at the unit-elastic price, $p=25$.}
+  \label{fig:elasticity-total-revenue}
+\end{figure}
+
+This relationship concerns revenue, not profit. A firm also needs to consider
+costs before deciding whether to change price.
 
 \section{Income elasticity}
 
@@ -63,7 +179,13 @@ It is positive for substitutes and negative for complements. If the price of tra
 
 \section{Elasticity and policy}
 
-Elasticity is central to tax policy. A tax on a good with inelastic demand may raise substantial revenue, but it can also place a relatively large burden on consumers if they have few alternatives. Elasticity therefore informs both efficiency and distributional questions. It also matters for environmental policy: the response to a carbon tax depends on the availability of lower-carbon substitutes and on how quickly households and firms can adapt.
+Elasticity is central to tax policy. A tax on a good with inelastic demand may
+raise substantial revenue. Its economic burden depends on the elasticities of
+both demand and supply: the less elastic side of the market generally bears
+the larger share. Elasticity therefore informs both efficiency and
+distributional questions. It also matters for environmental policy: the
+response to a carbon tax depends on the availability of lower-carbon
+substitutes and on how quickly households and firms can adapt.
 
 \section*{Chapter Review}
 
@@ -89,7 +211,7 @@ Elasticity is central to tax policy. A tax on a good with inelastic demand may r
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
   \item Draw a linear demand curve. Identify its elastic, unit-elastic, and inelastic portions.
-  \item Draw two demand curves through the same point, one relatively elastic and one relatively inelastic. Explain the difference.
+  \item With price on the vertical axis and quantity on the horizontal axis, draw two linear demand curves through the same price--quantity point, one relatively elastic and one relatively inelastic. Explain why elasticity must be compared at the same point and cannot be inferred from visual steepness alone when axes or locations differ.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
@@ -98,6 +220,8 @@ Elasticity is central to tax policy. A tax on a good with inelastic demand may r
   \item The price of a good increases by $5\%$ and quantity demanded falls by $15\%$. Calculate price elasticity and classify demand.
   \item Income rises by $10\%$ and demand for a good rises by $3\%$. Calculate income elasticity. Is the good normal or inferior?
   \item The price of coffee rises by $8\%$ and demand for tea rises by $4\%$. Calculate the cross-price elasticity and interpret it.
+  \item For $q=100-2p$, calculate total revenue at $p=10$, $p=25$, and $p=40$. Compare the results with the elasticity at each point. At which price is total revenue maximised?
+  \item For $q=100-2p$, price rises from $10$ to $20$. Use the midpoint formula to calculate arc price elasticity and classify demand over this interval.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
@@ -105,6 +229,7 @@ Elasticity is central to tax policy. A tax on a good with inelastic demand may r
   \item If price rises by $10\%$ and quantity demanded falls by $5\%$, demand is: (a) elastic; (b) inelastic; (c) unit elastic; or (d) perfectly elastic.
   \item A positive cross-price elasticity is evidence that two goods are likely: (a) complements; (b) substitutes; (c) inferior; or (d) public goods.
   \item When demand is elastic, a small price decrease will usually: (a) reduce total revenue; (b) increase total revenue; (c) leave total revenue unchanged; or (d) necessarily reduce profit.
+  \item An inferior good is defined by: (a) a negative own-price elasticity; (b) a negative income elasticity; (c) a positive cross-price elasticity; or (d) a high income share.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
