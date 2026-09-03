@@ -6,69 +6,255 @@
 After completing this chapter, you should be able to:
 \begin{itemize}
   \item distinguish fixed, variable, total, average, and marginal costs;
-  \item explain the shapes of standard short-run cost curves;
-  \item apply the shutdown rule; and
+  \item explain the shapes and relationships of standard short-run cost curves;
+  \item apply the shutdown rule and distinguish it from long-run exit; and
   \item derive the short-run supply curve of a competitive firm.
 \end{itemize}
 
+\section{From technology to costs}
+
+Chapter~\ref{chap:cost-choice} asked which inputs a firm uses to produce a
+given output at the lowest possible cost. This chapter begins with the result
+of that choice: a \keyterm{cost function}, which gives the minimum cost of
+producing each feasible output at given technology and input prices. A firm
+first faces a technological problem---how inputs produce output---and then a
+cost problem---which of the feasible input combinations is least expensive.
+
+The distinction between the \keyterm{short run} and the long run is a
+decision-period distinction, not a calendar definition. In the short run, at
+least one input cannot be changed. In the long run, all inputs can be varied.
+An oven that cannot be sold or resized before tonight's service is fixed for
+tonight, even if it can be replaced next year.
+
 \section{Short-run costs}
 
-In the short run, some inputs are fixed. \keyterm{Fixed cost} ($FC$) does not vary with output: rent on a lease is a common example. \keyterm{Variable cost} ($VC(q)$) changes with output, such as the cost of ingredients or hourly labour. Total cost is
+In the short run, some inputs are fixed. \keyterm{Fixed cost} ($FC$) does not
+vary with output: rent on a lease is a common example. \keyterm{Variable
+cost} ($VC(q)$) changes with output, such as the cost of ingredients or
+hourly labour. Total cost is
 \[
 TC(q)=FC+VC(q).
 \]
 
-Fixed cost is paid even when output is zero; variable cost is zero when no variable inputs are used. This distinction is about whether a cost can be avoided by producing nothing in the relevant period, not about whether a payment is large or small.
+\begin{keyidea}
+\textbf{The cost family.} For positive output,
+\[
+TC=FC+VC,\qquad
+ATC=\frac{TC}{q}=AFC+AVC,\qquad
+MC=\frac{dTC}{dq}=\frac{dVC}{dq}.
+\]
+Average costs are defined only when $q>0$. Fixed cost affects total and
+average cost, but not marginal cost: it does not change when one additional
+unit is produced.
+\end{keyidea}
+
+Fixed cost is paid even when output is zero; variable cost is zero when no
+variable inputs are used. The distinction is about whether a cost can be
+avoided by producing nothing in the relevant period, not about whether a
+payment is large or small.
+
+\begin{exercisebox}
+\textbf{An evening order at a bakery.}
+At 5 p.m., a bakery has already committed to a rented oven and a manager's
+shift. Those payments are fixed for the evening. Flour, packaging, and the
+hours of additional temporary staff needed for a late order are variable.
+The bakery should ask whether accepting the order covers its \emph{additional}
+costs. The unavoidable oven rent matters for its overall profit, but it does
+not by itself decide whether one more tray should be baked tonight.
+\end{exercisebox}
 
 \section{Average and marginal costs}
 
 Average fixed cost, average variable cost, and average total cost are
 \[
-AFC=\frac{FC}{q}, \qquad AVC=\frac{VC(q)}{q}, \qquad ATC=\frac{TC(q)}{q}=AFC+AVC.
+AFC=\frac{FC}{q}, \qquad
+AVC=\frac{VC(q)}{q}, \qquad
+ATC=\frac{TC(q)}{q}=AFC+AVC.
 \]
-Marginal cost is the additional cost of producing an additional unit:
+Marginal cost is the additional cost of producing one additional unit:
 \[
 MC=\frac{dTC}{dq}=\frac{dVC}{dq}.
 \]
-Fixed cost does not affect marginal cost because it does not change with output.
 
-Average fixed cost always falls as output rises, because a fixed amount is spread over more units. Average variable cost and average total cost are often U-shaped. At low output, specialisation can reduce average cost; at higher output, diminishing marginal product raises the variable input needed for extra output.
+Average fixed cost always falls as output rises, because a fixed amount is
+spread over more units. Average variable cost and average total cost are often
+U-shaped. At low output, specialisation can reduce average cost; at higher
+output, diminishing marginal product raises the variable input needed for
+extra output.
 
-\section{The marginal--average relationship}
+The relationship between marginal and average cost is not merely a diagram
+to memorise. Differentiating the two averages gives
+\[
+\frac{dAVC}{dq}=\frac{MC-AVC}{q},
+\qquad
+\frac{dATC}{dq}=\frac{MC-ATC}{q}.
+\]
+Because $q>0$, an average falls when marginal cost is below it and rises when
+marginal cost is above it. Thus MC crosses both AVC and ATC at their minimum
+points, as Figure~\ref{fig:standard-cost-curves} illustrates.
 
-Marginal cost crosses both AVC and ATC at their minimum points. The intuition is general: a marginal value below an average pulls the average down, while a marginal value above an average pushes it up. For example, if the cost of the next unit is below current average cost, producing it lowers the average.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.78cm,y=0.66cm]
+    \draw[->,PPEInk] (0,0) -- (7.0,0) node[below,font=\small] {Output $q$};
+    \draw[->,PPEInk] (0,0) -- (0,8.1) node[left,font=\small,align=center] {Cost\\ per unit};
+    \foreach \x in {1,2,3,4,5,6}
+      \draw[PPEMuted!45] (\x,0.08) -- (\x,-0.08) node[below,font=\scriptsize] {\x};
+    \foreach \y in {2,4,6}
+      \draw[PPEMuted!25] (0.08,\y) -- (-0.08,\y) node[left,font=\scriptsize] {\y};
+    \draw[PPEMuted,dashed,thick,domain=0.70:6.25,samples=80]
+      plot (\x,{4/\x}) node[pos=0.82,below right,fill=white,inner sep=1pt,font=\scriptsize] {$AFC$};
+    \draw[PPENavarraRed,thick,domain=0.70:6.25,samples=80]
+      plot (\x,{1.5+0.12*(\x-3)^2}) node[pos=0.82,above right,fill=white,inner sep=1pt,font=\scriptsize] {$AVC$};
+    \draw[PPEBurgundy,thick,domain=0.70:6.25,samples=80]
+      plot (\x,{1.5+0.12*(\x-3)^2+4/\x}) node[pos=0.86,above right,fill=white,inner sep=1pt,font=\scriptsize] {$ATC$};
+    \draw[PPEInk,thick,domain=0.70:6.25,samples=80]
+      plot (\x,{2.58-1.44*\x+0.36*\x*\x}) node[pos=0.88,above left,fill=white,inner sep=1pt,font=\scriptsize] {$MC$};
+    \fill[PPEGold] (3,1.5) circle (1.5pt);
+    \fill[PPEGold] (4.03,2.62) circle (1.5pt);
+    \draw[PPEGold,densely dashed] (3,0) -- (3,1.5);
+    \draw[PPEGold,densely dashed] (4.03,0) -- (4.03,2.62);
+  \end{tikzpicture}
+  \caption{Standard short-run cost curves. Marginal cost crosses AVC and ATC
+  where each average is at its minimum.}
+  \label{fig:standard-cost-curves}
+\end{figure}
+\FloatBarrier
 
 \section{The competitive firm's output choice}
 
-A competitive firm is a \keyterm{price taker}: it can sell as much as it wishes at the market price but cannot influence that price. Total revenue is $TR=pq$, so
+A competitive firm is a \keyterm{price taker}: it can sell as much as it
+wishes at the market price but cannot influence that price. This is an
+assumption about the firm, not a claim that every real firm is small or
+powerless. For a price-taking firm, total revenue is $TR=pq$, so
 \[
 MR=\frac{dTR}{dq}=p.
 \]
-The firm chooses output where $p=MC$, provided it is worthwhile to operate. The condition identifies the output level at which the additional revenue from another unit equals its additional cost.
+The firm chooses output where $p=MC$, provided it is worthwhile to operate.
+This condition identifies an interior candidate; the firm must also compare
+it with shutting down and respect $q\geq0$.
 
 \section{The shutdown decision}
 
-In the short run, fixed costs are unavoidable. A firm should produce if revenue can cover variable cost, or equivalently if price is at least minimum average variable cost:
+In the short run, fixed costs are unavoidable. A firm should produce if
+revenue can cover variable cost, or equivalently if price is at least minimum
+average variable cost:
 \[
-p\geq \min AVC.
+p\geq\min AVC.
 \]
-If $p<AVC$, each unit produced adds more variable cost than revenue, so shutting down minimises the loss. If $AVC\leq p<ATC$, the firm produces but makes a loss; it covers variable cost and contributes something toward fixed cost. In the long run, all costs are avoidable, so a firm remains in the market only if price covers average total cost.
+If $p<\min AVC$, each unit produced adds more variable cost than revenue, so
+shutting down minimises the loss. If $\min AVC<p<\min ATC$, the firm produces
+but makes an \keyterm{operating loss}; it covers variable cost and contributes
+something toward fixed cost. At exactly $p=\min AVC$, the firm is indifferent
+between shutting down and producing the output at the minimum of AVC.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.25\textwidth}p{0.27\textwidth}p{0.35\textwidth}}
+\toprule
+Price relative to cost & Short-run choice & Interpretation \\
+\midrule
+$p<\min AVC$ & Shut down: $q=0$ & Producing would make the loss larger. \\
+$p=\min AVC$ & Indifferent at the shutdown point & Revenue just covers variable cost. \\
+$\min AVC<p<\min ATC$ & Produce where $p=MC$ & The firm has a loss, but it is smaller than fixed cost. \\
+$p\geq\min ATC$ & Produce where $p=MC$ & Profit is non-negative at or above the break-even price. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The \keyterm{shutdown decision} is therefore different from the \keyterm{exit
+decision}. A shutdown asks whether to produce in the current short run, when
+fixed cost cannot be avoided. Exit asks whether to remain in the market in the
+long run, when all inputs are adjustable and price must cover minimum ATC.
 
 \section{Supply}
 
-The competitive firm's short-run supply curve is the portion of its marginal-cost curve above the minimum of AVC. At any price above this threshold, the firm chooses the quantity where $p=MC$. Market supply is the horizontal sum of individual firms' supply curves.
+The competitive firm's short-run supply curve is the portion of its
+marginal-cost curve above the minimum of AVC. At any price above this
+threshold, the firm chooses the quantity where $p=MC$
+(Figure~\ref{fig:firm-supply}). At the threshold itself, the firm is
+indifferent; the conventional supply curve records zero output at that
+endpoint.
 
-Supply is not simply a fixed quantity that firms ``have.'' It is a relationship between the price a firm can receive and the profit-maximising quantity it chooses to sell.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.82cm,y=0.70cm]
+    \draw[->,PPEInk] (0,0) -- (7.0,0) node[below,font=\small] {Output $q$};
+    \draw[->,PPEInk] (0,0) -- (0,7.2) node[left,font=\small] {Price and cost};
+    \draw[PPENavarraRed,thick,domain=0.70:6.25,samples=80]
+      plot (\x,{1.5+0.12*(\x-3)^2}) node[pos=0.88,above right,fill=white,inner sep=1pt,font=\scriptsize] {$AVC$};
+    \draw[PPEMuted,densely dashed,thick,domain=0.70:3.0,samples=50]
+      plot (\x,{2.58-1.44*\x+0.36*\x*\x});
+    \draw[PPEBurgundy,very thick,domain=3.0:6.25,samples=60]
+      plot (\x,{2.58-1.44*\x+0.36*\x*\x}) node[pos=0.84,above left,fill=white,inner sep=1pt,font=\scriptsize] {$MC$ = supply};
+    \draw[PPEGold,densely dashed] (0,1.5) -- (3,1.5) -- (3,0);
+    \node[left,font=\scriptsize,text=PPEGold] at (0,1.5) {$\min AVC$};
+    \draw[PPEGold,densely dashed] (0,5) -- (5.27,5) -- (5.27,0);
+    \node[left,font=\scriptsize,text=PPEGold] at (0,5) {$p_H$};
+    \fill[PPEGold] (5.27,5) circle (1.7pt);
+    \node[below,font=\scriptsize,text=PPEGold] at (5.27,0) {$q^s(p_H)$};
+    \node[font=\scriptsize,text=PPEMuted,align=center] at (1.45,5.9) {not supplied\\below $\min AVC$};
+  \end{tikzpicture}
+  \caption{Short-run supply of a price-taking firm: the MC curve above
+  minimum AVC. The dashed lower portion is not part of supply.}
+  \label{fig:firm-supply}
+\end{figure}
+\FloatBarrier
+
+This rule has a clear scope. It applies to a competitive, price-taking firm.
+A monopolist chooses output using marginal revenue rather than price, and does
+not have an analogous supply curve determined by price alone. Market supply is
+the horizontal sum of the individual supply curves of competitive firms.
+
+\section{Worked example: cost, shutdown, and supply}
+
+Suppose a competitive firm's short-run cost function is
+\[
+C(q)=100+4q+q^2.
+\]
+Then
+\[
+FC=100,\qquad VC(q)=4q+q^2,\qquad AVC(q)=4+q,
+\]
+and
+\[
+MC(q)=4+2q.
+\]
+The lowest possible AVC is \euro4 per unit (approached as output tends to
+zero), so the shutdown price is \euro4. For a market price above that point,
+the firm sets $p=MC$:
+\[
+p=4+2q
+\quad\Longrightarrow\quad
+q^s(p)=\frac{p-4}{2}.
+\]
+Thus its short-run supply is
+\[
+q^s(p)=
+\begin{cases}
+0 & \text{if } p\leq4,\\[2pt]
+\dfrac{p-4}{2} & \text{if } p>4.
+\end{cases}
+\]
+At $p=20$, the firm produces $q=8$. Revenue is \euro160 and total cost is
+\euro196, so profit is $-\euro36$. It nevertheless produces: shutting down
+would lose the whole \euro100 fixed cost, whereas producing covers all
+variable cost and part of it. The profit identity makes the comparison concise:
+\[
+\pi=q[p-ATC(q)].
+\]
 
 \section*{Chapter Review}
 
 \subsection*{Key concepts and equations}
 \begin{itemize}
-  \item $TC=FC+VC$.
-  \item $ATC=AFC+AVC$.
-  \item $MC=dTC/dq$.
-  \item A competitive firm chooses $p=MC$ when operating.
-  \item The short-run shutdown condition for producing is $p\geq \min AVC$.
+  \item $TC=FC+VC$ and $ATC=AFC+AVC$.
+  \item $MC=dTC/dq=dVC/dq$; average costs require $q>0$.
+  \item $MC$ crosses $AVC$ and $ATC$ at their minimum points.
+  \item A competitive firm chooses $p=MC$ when operating, subject to
+  feasibility and the shutdown comparison.
+  \item The short-run shutdown condition is $p\geq\min AVC$; long-run exit
+  requires considering $ATC$.
   \item The short-run supply curve is the MC curve above minimum AVC.
 \end{itemize}
 
@@ -77,31 +263,47 @@ Supply is not simply a fixed quantity that firms ``have.'' It is a relationship 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
   \item Distinguish fixed and variable cost. Give two examples of each for a restaurant.
+  \item A theatre has paid for tonight's building rental. Classify the extra
+  cleaning staff, programmes, and the rental payment as fixed or variable for
+  the decision to stage one additional performance.
   \item Why does marginal cost not depend on fixed cost?
-  \item Explain why MC crosses AVC and ATC at their minimum points.
+  \item Explain why MC crosses AVC and ATC at their minimum points. Use the
+  derivative relationship or the “marginal pulls the average” intuition.
   \item Distinguish the short-run shutdown decision from the long-run exit decision.
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Draw AFC, AVC, ATC, and MC curves with their standard shapes. Mark the minimum points of AVC and ATC.
-  \item On the same diagram, show a competitive firm facing three prices: one below minimum AVC, one between minimum AVC and ATC, and one above ATC.
+  \item Draw AFC, AVC, ATC, and MC curves with their standard shapes. Mark the
+  minimum points of AVC and ATC and explain the two MC intersections.
+  \item On the same diagram, show a competitive firm facing three prices: one
+  below minimum AVC, one between minimum AVC and ATC, and one above ATC. State
+  the firm's output and profit sign in each case.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item A firm's cost function is $C(q)=100+4q+q^2$. Find $FC$, $VC$, $AVC$, $ATC$, and $MC$.
-  \item For the firm in Exercise 7, find the output chosen when market price is $20$. Does the firm produce when price is $3$? Explain.
-  \item A competitive firm faces $p=15$ and has $TC(q)=50+3q+q^2$. Calculate output, revenue, total cost, and profit.
+  \item A firm's cost function is $C(q)=100+4q+q^2$. Find $FC$, $VC$, $AVC$,
+  $ATC$, and $MC$.
+  \item For the firm in Exercise 8, find the output chosen when market price is
+  $20$. Does the firm produce when price is $3$? Explain using the shutdown rule.
+  \item A competitive firm faces $p=15$ and has $TC(q)=50+3q+q^2$. Calculate
+  output, revenue, total cost, and profit. Does it operate in the short run?
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item A competitive firm's short-run supply curve is: (a) its demand curve; (b) its MC curve above minimum AVC; (c) its ATC curve; or (d) its fixed-cost curve.
-  \item A firm should shut down in the short run if: (a) $p<ATC$; (b) $p<AVC$; (c) $p<MC$ at every output; or (d) fixed cost is positive.
-  \item If marginal cost is below average total cost, producing an additional unit will: (a) raise ATC; (b) lower ATC; (c) leave ATC unchanged; or (d) make fixed cost zero.
+  \item A competitive firm's short-run supply curve is: (a) its demand curve;
+  (b) its MC curve above minimum AVC; (c) its ATC curve; or (d) its fixed-cost curve.
+  \item A firm should shut down in the short run if: (a) $p<ATC$;
+  (b) $p<\min AVC$; (c) $p<MC$ at every output; or (d) fixed cost is positive.
+  \item If marginal cost is below average total cost, producing an additional
+  unit will: (a) raise ATC; (b) lower ATC; (c) leave ATC unchanged; or
+  (d) make fixed cost zero.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
 
-\noindent A firm may continue operating while making an accounting loss. Discuss why this can be economically rational and how this distinction should affect public debates about subsidies to firms or industries.
+\noindent A firm may continue operating while making an accounting loss.
+Discuss why this can be economically rational and how this distinction should
+affect public debates about subsidies to firms or industries.
