@@ -24,6 +24,24 @@ q=f(L,K).
 \]
 The production function is a technological relationship, not a statement about demand or prices. It identifies what is feasible; firms later choose among feasible methods by considering costs and revenue.
 
+\begin{keyidea}
+\textbf{The consumer--firm parallel.}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+& Consumer & Firm \\
+\midrule
+What is given? & Preferences & Technology \\
+Graphical tool & Indifference curves & Isoquants \\
+Constraint & Budget line & Isocost line \\
+Choice problem & Maximise utility & Minimise cost \\
+\bottomrule
+\end{tabular}
+\end{center}
+Technology tells the firm what is feasible. Input prices, introduced in the
+next chapter, tell the firm which feasible method is least costly.
+\end{keyidea}
+
 \section{Marginal and average product}
 
 In the short run, at least one input is fixed. Suppose capital is fixed and labour varies. The \keyterm{marginal product of labour} is the additional output from one more unit of labour:
@@ -37,20 +55,114 @@ AP_L=\frac{q}{L}.
 
 Initially, adding workers may raise marginal product through specialisation. Eventually, if capital remains fixed, workers may crowd one another and marginal product falls. This is the \keyterm{law of diminishing marginal product}: holding other inputs fixed, the marginal product of a variable input eventually decreases as more of it is used. It is not a claim that total output must fall; total output can continue to rise while doing so more slowly.
 
+The marginal product of labour is the slope of the total-product curve.
+Average product is the slope of the line from the origin to a point on that
+curve. For $L>0$,
+\[
+\frac{dAP_L}{dL}=\frac{MP_L-AP_L}{L}.
+\]
+Thus average product rises when $MP_L>AP_L$, falls when $MP_L<AP_L$, and is
+at its maximum where the two are equal.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{scope}[x=0.60cm,y=0.37cm]
+      \draw[->] (0,0) -- (6.3,0) node[below] {labour $L$};
+      \draw[->] (0,0) -- (0,12.2) node[left] {total product $q$};
+      \draw[PPEBurgundy,very thick,domain=0:5.8,samples=80]
+        plot (\x,{0.6*\x+0.45*\x*\x-0.04*\x*\x*\x});
+      \node[font=\scriptsize,text=PPEBurgundy] at (4.25,10.8)
+        {total product};
+    \end{scope}
+    \begin{scope}[xshift=5.2cm,x=0.60cm,y=0.37cm]
+      \draw[->] (0,0) -- (6.3,0) node[below] {labour $L$};
+      \draw[->] (0,0) -- (0,10.3) node[left] {product};
+      \draw[PPENavarraRed,very thick,domain=0.2:6,samples=80]
+        plot (\x,{4*(0.6+0.9*\x-0.12*\x*\x)});
+      \draw[PPEGold,very thick,domain=0.2:6,samples=80]
+        plot (\x,{4*(0.6+0.45*\x-0.04*\x*\x)});
+      \draw[densely dashed,PPEMuted] (5.625,0) -- (5.625,7.46);
+      \filldraw[PPEGold] (5.625,7.46) circle (2.2pt);
+      \node[font=\scriptsize,text=PPENavarraRed] at (3.2,9.3) {$MP_L$};
+      \node[font=\scriptsize,text=PPEGold] at (2.15,5.4) {$AP_L$};
+      \node[font=\scriptsize,align=center] at (4.15,3.0)
+        {$MP_L=AP_L$\\at max. $AP_L$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{In the short run, total product can keep rising after marginal product begins to fall. Marginal product crosses average product at average product's maximum.}
+  \label{fig:short-run-productivity}
+\end{figure}
+
 \section{Isoquants}
 
 An \keyterm{isoquant} shows all combinations of inputs that produce the same output. It is the production-side analogue of an indifference curve. A firm on an isoquant can substitute labour for capital while maintaining output.
 
-With monotonic technology, isoquants slope downward: if the firm uses less capital, it needs more labour to produce the same output. Higher isoquants represent higher output. Isoquants do not cross, because the same input combination cannot produce two different maximum output levels with a fixed technology.
+With strictly monotonic, smoothly substitutable technology, isoquants slope
+downward: if the firm uses less capital, it needs more labour to produce the
+same output. Monotonic technology alone can also produce kinks or horizontal
+and vertical segments, as with fixed-proportions production. Higher isoquants
+represent higher output. Isoquants do not cross, because the same input
+combination cannot produce two different maximum output levels with a fixed
+technology.
+
+Unlike utility levels, the output labels on isoquants have a cardinal
+production meaning. An isoquant for $q=20$ represents twice as much output as
+one for $q=10$. Isoquants describe technical feasibility, not a firm's
+subjective satisfaction.
 
 \section{The marginal rate of technical substitution}
 
-The \keyterm{marginal rate of technical substitution} of labour for capital is the amount of capital that can be reduced when one more unit of labour is employed without changing output. Its absolute value is the slope of an isoquant:
+The \keyterm{marginal rate of technical substitution} of labour for capital is
+the amount of capital that can be reduced when one more unit of labour is
+employed without changing output. For a smooth isoquant
+$f(L,K)=\bar q$, with $MP_K>0$,
 \[
-MRTS_{L,K}=\frac{MP_L}{MP_K}.
+0=MP_L\,dL+MP_K\,dK.
+\]
+Hence its slope is negative:
+\[
+\left.\frac{dK}{dL}\right|_{\bar q}
+=-\frac{MP_L}{MP_K}.
+\]
+By convention, the MRTS is reported as the positive amount of capital
+replaced by one more unit of labour:
+\[
+MRTS_{L,K}
+=-\left.\frac{dK}{dL}\right|_{\bar q}
+=\frac{MP_L}{MP_K}.
 \]
 
-For many technologies, the MRTS diminishes as labour replaces capital. When a production process already uses much labour and little capital, an extra worker cannot easily replace a machine. This produces convex isoquants.
+For many technologies, the MRTS diminishes as labour replaces capital. When a
+production process already uses much labour and little capital, an extra
+worker cannot easily replace a machine. This produces convex isoquants. At a
+kink, such as a Leontief isoquant, there is no unique MRTS.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[x=0.76cm,y=0.62cm]
+    \draw[->] (0,0) -- (8.3,0) node[below] {labour $L$};
+    \draw[->] (0,0) -- (0,8.1) node[left] {capital $K$};
+    \draw[PPEBurgundy,thick,domain=0.65:7.4,samples=100]
+      plot (\x,{3.6/\x});
+    \draw[PPENavarraRed,very thick,domain=1.0:7.4,samples=100]
+      plot (\x,{6.8/\x});
+    \draw[PPEBurgundy,thick,domain=1.55:7.4,samples=100]
+      plot (\x,{10.4/\x});
+    \node[font=\scriptsize,text=PPEBurgundy] at (1.15,3.55) {$q_1$};
+    \node[font=\scriptsize,text=PPENavarraRed] at (1.55,4.85) {$q_2$};
+    \node[font=\scriptsize,text=PPEBurgundy] at (2.15,5.65) {$q_3$};
+    \draw[densely dashed,PPEMuted] (3.4,0) -- (3.4,2) -- (0,2);
+    \filldraw[PPENavarraRed] (3.4,2) circle (2.4pt) node[above right,font=\scriptsize] {$A$};
+    \draw[PPEGold,very thick] (2.25,2.68) -- (4.55,1.32);
+    \node[font=\scriptsize,align=center,text=PPEGold] at (5.65,2.7)
+      {$MRTS_{L,K}=$\\$MP_L/MP_K$};
+    \draw[ppearrow] (6.15,4.85) -- (7.1,5.85)
+      node[above,font=\scriptsize,text=PPENavarraRed] {higher output};
+  \end{tikzpicture}
+  \caption{Isoquants show the technical trade-off between labour and capital. At a smooth point $A$, the tangent's absolute slope is the MRTS.}
+  \label{fig:isoquants-mrts}
+\end{figure}
 
 \section{Short run and long run}
 
@@ -58,17 +170,72 @@ The \keyterm{short run} is a period in which at least one input is fixed. The \k
 
 The distinction matters because firms have more flexibility in the long run. It also explains why a decision that appears inefficient in the short run may be sensible when some costly commitments cannot yet be changed.
 
+\begin{exercisebox}
+\textbf{A bakery with one oven.}
+A bakery can hire another worker quickly, but its oven is fixed until the
+lease or premises can be changed. The first extra worker may make preparation,
+baking, and sales more efficient. Once the oven is fully used, further workers
+have less to do and marginal product falls. In the long run, the bakery can
+rent another oven or larger premises as well as hire more workers.
+\end{exercisebox}
+
 \section{Returns to scale}
 
 Returns to scale describe what happens when all inputs change proportionally. A production function has \keyterm{constant returns to scale} if doubling every input doubles output, \keyterm{increasing returns to scale} if output more than doubles, and \keyterm{decreasing returns to scale} if output less than doubles.
 
-For the Cobb--Douglas function $q=AL^\alpha K^\beta$, returns to scale depend on $\alpha+\beta$. They are increasing if this sum is greater than one, constant if it equals one, and decreasing if it is less than one.
+More generally, for every scale factor $t>1$,
+\[
+f(tL,tK)
+\begin{cases}
+>t f(L,K), & \text{increasing returns to scale},\\
+=t f(L,K), & \text{constant returns to scale},\\
+<t f(L,K), & \text{decreasing returns to scale}.
+\end{cases}
+\]
 
-Increasing returns may arise from specialisation, indivisible fixed costs, or learning. They are important for understanding large firms and concentrated industries. They do not contradict diminishing marginal product: the first compares proportional changes in all inputs, while the second holds at least one input fixed.
+For the Cobb--Douglas function $q=AL^\alpha K^\beta$,
+\[
+q(tL,tK)=t^{\alpha+\beta}q(L,K).
+\]
+Returns to scale therefore depend on $\alpha+\beta$. They are increasing if
+this sum is greater than one, constant if it equals one, and decreasing if it
+is less than one.
+
+Increasing returns may arise from specialisation and indivisible inputs. They
+are important for understanding large firms and concentrated industries.
+Learning-by-doing can instead improve technology over time, shifting the
+production function itself. Returns to scale do not contradict diminishing
+marginal product: the first compares proportional changes in all inputs,
+while the second holds at least one input fixed.
+
+Returns to scale are a property of technology. \keyterm{Economies of scale}
+are a cost concept: they describe how cost per unit changes with output and
+also depend on input prices. The two ideas are related but not identical.
 
 \section{Common technologies}
 
 The Cobb--Douglas production function $q=AL^\alpha K^\beta$ allows smooth substitution between inputs. The Leontief production function $q=\min\{aL,bK\}$ describes fixed-proportion production: additional workers without the necessary machines do not increase output. These forms are simplifications, but they make the relevant technological trade-offs clear.
+
+\begin{keyidea}
+\textbf{Worked example: efficient Leontief production.}
+Suppose
+\[
+q=\min\{2L,K\}.
+\]
+To produce $q=20$ without wasting either input, both arguments of the minimum
+must equal $20$:
+\[
+2L=20,
+\qquad
+K=20.
+\]
+Thus the technically efficient input bundle is
+\[
+(L,K)=(10,20).
+\]
+Any bundle with $L\geq10$ and $K\geq20$ can produce at least $20$, but it
+uses unnecessary input unless it is exactly $(10,20)$.
+\end{keyidea}
 
 \section*{Chapter Review}
 
@@ -79,6 +246,7 @@ The Cobb--Douglas production function $q=AL^\alpha K^\beta$ allows smooth substi
   \item \textbf{Average product}: output per unit of input.
   \item \textbf{Isoquant}: input combinations producing the same output.
   \item \textbf{MRTS}: technological trade-off between inputs along an isoquant.
+  \item \textbf{Short run}: period in which at least one input is fixed.
   \item \textbf{Returns to scale}: output response to proportional changes in all inputs.
 \end{itemize}
 
@@ -89,7 +257,7 @@ The Cobb--Douglas production function $q=AL^\alpha K^\beta$ allows smooth substi
   \item Define a production function. Why is it not a demand curve?
   \item Distinguish marginal product from average product.
   \item Explain the law of diminishing marginal product.
-  \item Distinguish diminishing marginal product from decreasing returns to scale.
+  \item Distinguish diminishing marginal product from decreasing returns to scale. Why can diminishing marginal product coexist with increasing returns to scale?
   \item Explain why isoquants normally do not cross.
 \end{enumerate}
 
@@ -97,14 +265,14 @@ The Cobb--Douglas production function $q=AL^\alpha K^\beta$ allows smooth substi
 \begin{enumerate}[resume,label=\arabic*.]
   \item Draw three convex isoquants for increasing output and label labour and capital axes.
   \item Draw L-shaped isoquants for a Leontief technology. Explain why substitution is impossible away from the kink.
-  \item Sketch total product, marginal product, and average product curves consistent with diminishing marginal product.
+  \item Sketch total product, marginal product, and average product curves consistent with diminishing marginal product. Mark where marginal product equals average product.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
   \item Let $q=2L^{1/2}K^{1/2}$. Find $MP_L$, $MP_K$, and $MRTS_{L,K}$.
   \item For $q=3L^{0.6}K^{0.7}$, determine returns to scale.
-  \item A firm has $q=\min\{2L,K\}$. What combinations of $L$ and $K$ produce $q=20$ efficiently?
+  \item A firm has $q=\min\{2L,K\}$. What input bundle produces $q=20$ efficiently? Explain why nearby bundles can use more inputs without producing more output.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
