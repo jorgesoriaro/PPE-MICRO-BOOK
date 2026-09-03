@@ -15,57 +15,233 @@ After completing this chapter, you should be able to:
 
 \section{Competitive markets}
 
-A \keyterm{competitive market} has many buyers and sellers, a homogeneous product, and no individual participant large enough to affect market price. Buyers and sellers are price takers. Competition is an ideal type: real markets may approximate it to different degrees.
+A \keyterm{competitive market} has many buyers and sellers, a homogeneous
+product, and no individual participant large enough to affect market price.
+Buyers and sellers are price takers. Competition is an ideal type: real markets
+may approximate it to different degrees.
 
-Market demand gives the quantity consumers wish to buy at each price; market supply gives the quantity firms wish to sell at each price. A \keyterm{market equilibrium} is a price and quantity at which quantity demanded equals quantity supplied:
+Market demand gives the quantity consumers wish to buy at each price; market
+supply gives the quantity firms wish to sell at each price. A
+\keyterm{competitive equilibrium}, or \keyterm{market-clearing} outcome, is a
+price and quantity at which quantity demanded equals quantity supplied:
 \[
 Q_D(p^*)=Q_S(p^*).
 \]
-At prices above equilibrium, there is excess supply, placing downward pressure on price. At prices below equilibrium, there is excess demand, placing upward pressure on price. This adjustment story describes a tendency, not necessarily an instantaneous process.
+
+\begin{keyidea}
+\textbf{A three-step equilibrium method.}
+\begin{enumerate}
+  \item Write demand and supply using the same price variable.
+  \item Set $Q_D(p)=Q_S(p)$ and solve for the equilibrium price $p^*$.
+  \item Substitute $p^*$ into either curve to find $Q^*$, then check that the
+  two quantities agree.
+\end{enumerate}
+The calculation identifies a market-clearing point. The economic model then
+explains why excess demand tends to raise price and excess supply tends to
+lower it.
+\end{keyidea}
+
+At prices above equilibrium, there is \keyterm{excess supply}, placing
+downward pressure on price. At prices below equilibrium, there is
+\keyterm{excess demand}, placing upward pressure on price. This adjustment
+story describes a tendency, not necessarily an instantaneous process.
 
 \section{Comparative statics}
 
-\keyterm{Comparative statics} compares equilibria before and after a change in an underlying condition. An increase in demand shifts the demand curve rightward, raising equilibrium price and quantity when supply slopes upward. An increase in production cost shifts supply leftward, raising price and reducing quantity.
+\keyterm{Comparative statics} compares equilibria before and after a change in
+an underlying condition. An increase in demand shifts the demand curve
+rightward, raising equilibrium price and quantity when supply slopes upward.
+An increase in production cost shifts supply leftward, raising price and
+reducing quantity.
 
-Comparative statics is often more valuable than a single equilibrium calculation. It identifies which changes are expected to affect prices, quantities, and distribution, while leaving open the empirical question of their magnitude.
+Comparative statics is often more valuable than a single equilibrium
+calculation. It identifies which changes are expected to affect prices,
+quantities, and distribution, while leaving open the empirical question of
+their magnitude.
 
-\section{Consumer surplus and producer surplus}
+\section{Consumer surplus, producer surplus, and total surplus}
 
-\keyterm{Consumer surplus} is the difference between consumers' willingness to pay and the amount they actually pay. In a demand diagram, it is the area below demand and above market price for units traded. \keyterm{Producer surplus} is the difference between the price received and the minimum amount required for firms to supply each unit; it is the area above supply and below market price.
+\keyterm{Consumer surplus} is the difference between consumers' willingness to
+pay and the amount they actually pay. In a demand diagram, it is the area below
+demand and above market price for units traded. \keyterm{Producer surplus} is
+the difference between the price received and the minimum amount required for
+firms to supply each unit; it is the area above supply and below market price.
 
-For linear curves, these areas are often triangles. If demand intercepts the price axis at $P_{max}$, equilibrium price is $p^*$, and equilibrium quantity is $Q^*$, consumer surplus is
+For a price-taking firm in the short run, producer surplus equals revenue minus
+variable cost. It is not the same as economic profit: fixed cost still has to
+be paid, so
 \[
-CS=\frac{1}{2}(P_{max}-p^*)Q^*.
+\pi=PS-FC
 \]
+when the firm's supply curve reflects marginal cost. This distinction links
+the welfare diagram to the shutdown analysis in Chapter~\ref{chap:cost-curves}.
+
+For linear curves, these areas are often triangles. If demand intercepts the
+price axis at $P_{\max}$, equilibrium price is $p^*$, and equilibrium quantity
+is $Q^*$, consumer surplus is
+\[
+CS=\frac{1}{2}(P_{\max}-p^*)Q^*.
+\]
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.82cm,y=0.68cm]
+    \fill[PPEAccentLight] (0,2.625) -- (0,6) -- (4.5,2.625) -- cycle;
+    \fill[PPEGold!27] (0,0.6) -- (0,2.625) -- (4.5,2.625) -- cycle;
+    \draw[->,PPEInk] (0,0) -- (7.45,0) node[below,font=\small] {Quantity};
+    \draw[->,PPEInk] (0,0) -- (0,6.35) node[left,font=\small] {Price};
+    \draw[PPENavarraRed,very thick,domain=0:7.25,samples=70]
+      plot (\x,{6-0.75*\x});
+    \draw[PPEBurgundy,very thick,domain=0:7.25,samples=70]
+      plot (\x,{0.6+0.45*\x});
+    \draw[PPEGold,densely dashed] (0,2.625) -- (4.5,2.625) -- (4.5,0);
+    \fill[PPEGold] (4.5,2.625) circle (1.8pt);
+    \node[left,font=\scriptsize,text=PPEGold] at (0,2.625) {$p^*$};
+    \node[below,font=\scriptsize,text=PPEGold] at (4.5,0) {$Q^*$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (5.95,1.72) {Demand};
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt] at (5.95,3.52) {Supply};
+    \node[font=\small,text=PPEBurgundy] at (1.30,4.25) {Consumer surplus};
+    \node[font=\small,text=PPEBurgundy] at (1.32,1.40) {Producer surplus};
+  \end{tikzpicture}
+  \caption{Competitive equilibrium and total surplus. The shaded areas are
+  willingness to pay minus expenditure and revenue minus minimum supply cost.}
+  \label{fig:competitive-surplus}
+\end{figure}
+\FloatBarrier
 
 \section{Efficiency and total surplus}
 
-\keyterm{Total surplus} is consumer surplus plus producer surplus. In a competitive market without external effects, equilibrium maximises total surplus: units for which willingness to pay exceeds marginal cost are traded, while units for which marginal cost exceeds willingness to pay are not.
+\keyterm{Total surplus} is consumer surplus plus producer surplus. In a
+competitive market without external effects, equilibrium maximises total
+surplus: units for which willingness to pay exceeds marginal cost are traded,
+while units for which marginal cost exceeds willingness to pay are not.
 
-This conclusion is conditional. It requires that prices reflect relevant costs and benefits, that market participants have suitable information, and that the distribution of purchasing power is not itself the criterion for justice. Later chapters study cases in which these conditions fail.
+This conclusion is conditional. It requires that prices reflect relevant costs
+and benefits, that market participants have suitable information, and that the
+distribution of purchasing power is not itself the criterion for justice.
+Efficiency asks whether potential gains from trade are exhausted; equity asks
+how resources and opportunities are distributed. Later chapters study cases in
+which the conditions for this welfare result fail.
 
 \section{Taxes}
 
-A per-unit tax creates a wedge between the price paid by buyers and the price received by sellers. The quantity traded falls, tax revenue is collected by government, and part of the potential surplus from mutually beneficial trade disappears. This loss is \keyterm{deadweight loss}.
+A per-unit tax creates a \keyterm{tax wedge} between the price paid by buyers
+and the price received by sellers:
+\[
+p_B=p_S+t.
+\]
+The quantity traded falls, tax revenue is collected by government, and part of
+the potential surplus from mutually beneficial trade disappears. This loss is
+\keyterm{deadweight loss}. Tax revenue is a transfer from private parties to
+government; it is the forgone trades, rather than the transfer itself, that
+create the deadweight loss.
 
-The legal incidence of a tax does not determine its economic incidence. Whether the tax is formally paid by buyers or sellers, its burden is shared according to relative elasticities. The less elastic side of the market bears more of the burden because it has fewer alternatives.
+The legal incidence of a tax does not determine its economic incidence.
+Whether the tax is formally paid by buyers or sellers, its burden is shared
+according to relative elasticities. The less elastic side of the market bears
+more of the burden because it has fewer alternatives.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.82cm,y=0.68cm]
+    \fill[PPEGold!27] (0,2.175) rectangle (3.5,3.375);
+    \fill[PPEAccentLight] (3.5,3.375) -- (3.5,2.175) -- (4.5,2.625) -- cycle;
+    \draw[->,PPEInk] (0,0) -- (7.45,0) node[below,font=\small] {Quantity};
+    \draw[->,PPEInk] (0,0) -- (0,6.35) node[left,font=\small] {Price};
+    \draw[PPENavarraRed,very thick,domain=0:7.25,samples=70]
+      plot (\x,{6-0.75*\x});
+    \draw[PPEBurgundy,very thick,domain=0:7.25,samples=70]
+      plot (\x,{0.6+0.45*\x});
+    \draw[PPEMuted,densely dashed,thick,domain=0:7.25,samples=70]
+      plot (\x,{1.8+0.45*\x});
+    \draw[PPEGold,densely dashed] (0,3.375) -- (3.5,3.375) -- (3.5,0);
+    \draw[PPEGold,densely dashed] (0,2.175) -- (3.5,2.175);
+    \draw[PPEGold,<->] (0.62,2.175) -- (0.62,3.375)
+      node[midway,right,font=\scriptsize,text=PPEGold] {$t$};
+    \fill[PPEGold] (3.5,3.375) circle (1.7pt);
+    \fill[PPEGold] (3.5,2.175) circle (1.7pt);
+    \node[left,font=\scriptsize,text=PPEGold] at (0,3.375) {$p_B$};
+    \node[left,font=\scriptsize,text=PPEGold] at (0,2.175) {$p_S$};
+    \node[below,font=\scriptsize,text=PPEGold] at (3.5,0) {$Q_t$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (5.92,1.75) {Demand};
+    \node[font=\scriptsize,text=PPEBurgundy,fill=white,inner sep=1pt] at (5.92,3.52) {Supply};
+    \node[font=\scriptsize,text=PPEMuted,fill=white,inner sep=1pt] at (5.50,4.45) {$S+t$};
+    \node[font=\scriptsize,text=PPEBurgundy] at (1.90,2.78) {Tax revenue};
+    \node[font=\scriptsize,text=PPEBurgundy] at (4.03,2.64) {DWL};
+  \end{tikzpicture}
+  \caption{A per-unit tax creates a wedge between buyer and seller prices.
+  Tax revenue is a transfer; the small triangle represents the lost gains
+  from trade.}
+  \label{fig:tax-wedge}
+\end{figure}
+\FloatBarrier
+
+\begin{exercisebox}
+\textbf{A worked tax calculation.}
+Suppose
+\[
+Q_D=120-2p_B,\qquad Q_S=2p_S,
+\]
+and a tax of \euro6 per unit is introduced. Substitution of
+$p_B=p_S+6$ gives
+\[
+120-2(p_S+6)=2p_S
+\quad\Longrightarrow\quad
+p_S=27,\qquad p_B=33,\qquad Q_t=54.
+\]
+Tax revenue is $6(54)=\euro324$. Before the tax, price is \euro30 and quantity
+is $60$, so the tax reduces mutually beneficial trade by six units.
+\end{exercisebox}
 
 \section{Price controls}
 
-A \keyterm{price ceiling} is a legal maximum price. If it is set below equilibrium, quantity demanded exceeds quantity supplied, creating a shortage. Allocation may then occur through waiting, queues, informal payments, rationing, or discrimination rather than price.
+A \keyterm{price ceiling} is a legal maximum price. If it is set below
+equilibrium, quantity demanded exceeds quantity supplied, creating a shortage.
+Allocation may then occur through waiting, queues, informal payments,
+rationing, or discrimination rather than price.
 
-A \keyterm{price floor} is a legal minimum price. If it is set above equilibrium, quantity supplied exceeds quantity demanded, creating a surplus. Policy design must then address what happens to unsold output or unemployed resources.
+A \keyterm{price floor} is a legal minimum price. If it is set above
+equilibrium, quantity supplied exceeds quantity demanded, creating a surplus.
+Policy design must then address what happens to unsold output or unemployed
+resources.
 
-Price controls can pursue equity or stability objectives, but their effects cannot be assessed only by observing the controlled price. The quantity available, method of allocation, quality, and incentives to enter or exit the market also matter.
+\begin{center}
+\small
+\begin{tabular}{p{0.21\textwidth}p{0.24\textwidth}p{0.42\textwidth}}
+\toprule
+Policy & Binding when & Main consequence \\
+\midrule
+Price ceiling & Set below $p^*$ & Shortage: $Q_D>Q_S$; allocation can shift to queues, quality changes, or rationing. \\
+Price floor & Set above $p^*$ & Surplus: $Q_S>Q_D$; policy must address unsold output or excess supply of labour. \\
+Non-binding control & Ceiling at or above $p^*$, or floor at or below $p^*$ & No immediate effect on the competitive equilibrium. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{exercisebox}
+\textbf{A capped rental market.}
+A rent ceiling may aim to protect tenants, yet a binding ceiling also changes
+who receives the available homes and how landlords maintain or allocate them.
+The relevant evaluation is therefore wider than the posted rent: it includes
+shortages, waiting time, housing quality, and distributional goals. Economics
+clarifies these trade-offs; it does not decide the policy objective by itself.
+\end{exercisebox}
+
+Price controls can pursue equity or stability objectives, but their effects
+cannot be assessed only by observing the controlled price. The quantity
+available, method of allocation, quality, and incentives to enter or exit the
+market also matter.
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
   \item \textbf{Market equilibrium}: $Q_D=Q_S$.
   \item \textbf{Consumer surplus}: willingness to pay minus expenditure.
-  \item \textbf{Producer surplus}: revenue minus variable cost, represented by the area above supply.
+  \item \textbf{Producer surplus}: price received minus minimum supply cost;
+  in the short run, $\pi=PS-FC$ for a price-taking firm.
   \item \textbf{Total surplus}: consumer plus producer surplus.
+  \item \textbf{Tax wedge}: $p_B-p_S=t$.
   \item \textbf{Deadweight loss}: surplus lost because beneficial trades do not occur.
   \item \textbf{Tax incidence}: the actual division of a tax burden.
 \end{itemize}
@@ -75,7 +251,7 @@ Price controls can pursue equity or stability objectives, but their effects cann
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
   \item Define competitive market equilibrium. What creates pressure for price adjustment away from equilibrium?
-  \item Distinguish consumer surplus from producer surplus.
+  \item Distinguish consumer surplus, producer surplus, and economic profit.
   \item Why does a competitive equilibrium maximise total surplus only under particular assumptions?
   \item Explain why legal tax incidence need not equal economic tax incidence.
 \end{enumerate}
@@ -83,15 +259,15 @@ Price controls can pursue equity or stability objectives, but their effects cann
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
   \item Draw supply and demand. Mark equilibrium, consumer surplus, producer surplus, and total surplus.
-  \item Show the effect of a per-unit tax. Mark prices paid and received, tax revenue, and deadweight loss.
-  \item Draw a binding price ceiling and identify the shortage.
+  \item Show the effect of a per-unit tax. Mark buyer and seller prices, tax revenue, and deadweight loss.
+  \item Draw a binding price ceiling and identify the shortage. Explain why a ceiling at or above equilibrium is non-binding.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Let $Q_D=100-2P$ and $Q_S=10+P$. Find the competitive equilibrium.
-  \item Using Exercise 7, calculate consumer and producer surplus.
-  \item A tax of \euro6 per unit is imposed in the market of Exercise 7. Find the new quantity, buyer price, seller price, and tax revenue.
+  \item Let $Q_D=120-2P$ and $Q_S=2P$. Find the competitive equilibrium.
+  \item Using Exercise 8, calculate consumer surplus, producer surplus, and total surplus.
+  \item A tax of \euro6 per unit is imposed in the market of Exercise 8. Find the new quantity, buyer price, seller price, tax revenue, and deadweight loss.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
@@ -103,4 +279,6 @@ Price controls can pursue equity or stability objectives, but their effects cann
 
 \subsection*{PPE discussion question}
 
-\noindent Competitive equilibrium can be efficient while leaving some people with very little purchasing power. Discuss why efficiency and justice are distinct criteria for evaluating market outcomes.
+\noindent Competitive equilibrium can be efficient while leaving some people
+with very little purchasing power. Discuss why efficiency and justice are
+distinct criteria for evaluating market outcomes.
