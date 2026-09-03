@@ -13,16 +13,31 @@ After completing this chapter, you should be able to:
 
 \section{Preferences meet constraints}
 
-Preferences describe what a consumer would like; a budget constraint describes what the consumer can afford. Consumer choice combines the two. The consumer selects the most preferred bundle among all bundles in the feasible set.
+Preferences describe what a consumer would like; a budget constraint describes
+what the consumer can afford. Consumer choice combines the two. The consumer
+selects a most-preferred bundle among all bundles in the feasible set.
 
-Let income be $I$, prices be $p_x$ and $p_y$, and quantities be $x$ and $y$. The \keyterm{budget constraint} is
+\begin{keyidea}
+\textbf{Preferences, prices, and choice.} Indifference curves describe the
+trade-offs a consumer \emph{is willing} to make. The budget line describes the
+trade-offs the market \emph{requires}. The consumer chooses the most preferred
+bundle that is affordable.
+\end{keyidea}
+
+Let income be $I$, prices be $p_x$ and $p_y$, and quantities be $x$ and $y$.
+Assume throughout that $x,y\geq0$, $p_x,p_y>0$, and $I>0$. The
+\keyterm{budget set} is
 \[
-p_xx+p_yy\leq I.
+B=\{(x,y)\in\mathbb{R}_+^2:p_xx+p_yy\leq I\}.
 \]
 The left-hand side is total expenditure. The inequality allows the consumer to spend less than income. With monotonic preferences, the consumer normally chooses a bundle on the \keyterm{budget line}, where all income is spent:
 \[
 p_xx+p_yy=I.
 \]
+More precisely, locally non-satiated preferences are enough for budget
+exhaustion: if expenditure were below $I$, the consumer could afford a small
+increase in a desirable good. If preferences include satiation or a bad, an
+optimum need not lie on the budget line.
 
 \section{The budget line}
 
@@ -48,13 +63,129 @@ When the price of one good changes, the budget line pivots around the intercept 
 
 These changes are fundamental for demand analysis. They show both a change in purchasing power and a change in the relative attractiveness of goods.
 
+\begin{exercisebox}
+\textbf{A student's monthly choices.} Suppose Marta divides a monthly budget
+between weekend train journeys and meals out. A rise in her unrestricted
+scholarship income shifts her budget line outward in parallel. A youth
+railcard lowers the price of train journeys and pivots the budget line instead.
+Her preferences may remain unchanged in both cases, yet her chosen bundle can
+change.
+\end{exercisebox}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{lll}
+\toprule
+Change & What happens to intercepts? & Graphical effect \\
+\midrule
+Income rises & Both intercepts rise & Parallel outward shift \\
+Income falls & Both intercepts fall & Parallel inward shift \\
+$p_x$ falls & Only the $x$-intercept rises & Pivot about the $y$-intercept \\
+$p_y$ falls & Only the $y$-intercept rises & Pivot about the $x$-intercept \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[x=.72cm,y=.72cm]
+  \begin{scope}[shift={(0,0)}]
+    \node[font=\sffamily\small] at (2.1,4.25) {Income rises};
+    \draw[->,PPEInk] (0,0) -- (4.35,0) node[right] {$x$};
+    \draw[->,PPEInk] (0,0) -- (0,3.85) node[above] {$y$};
+    \fill[PPEAccentLight] (0,0) -- (0,2.4) -- (3,0) -- cycle;
+    \draw[PPEBurgundy,line width=.9pt] (0,2.4) -- (3,0);
+    \draw[PPENavarraRed,line width=.9pt] (0,3.35) -- (4.1,0);
+    \node[PPEBurgundy,below left,font=\sffamily\scriptsize] at (2.15,.68)
+      {$BL_0$};
+    \node[PPENavarraRed,above right,font=\sffamily\scriptsize] at (2.7,1.15)
+      {$BL_1$};
+    \draw[PPEGold,-{Latex[length=1.8mm]}] (3,0) -- (4.05,0);
+    \draw[PPEGold,-{Latex[length=1.8mm]}] (0,2.4) -- (0,3.3);
+  \end{scope}
+  \begin{scope}[shift={(5.45,0)}]
+    \node[font=\sffamily\small] at (2.1,4.25) {$p_x$ falls};
+    \draw[->,PPEInk] (0,0) -- (4.35,0) node[right] {$x$};
+    \draw[->,PPEInk] (0,0) -- (0,3.85) node[above] {$y$};
+    \fill[PPEAccentLight] (0,0) -- (0,2.4) -- (3,0) -- cycle;
+    \draw[PPEBurgundy,line width=.9pt] (0,2.4) -- (3,0);
+    \draw[PPENavarraRed,line width=.9pt] (0,2.4) -- (4.1,0);
+    \node[PPEBurgundy,below left,font=\sffamily\scriptsize] at (2.05,.7)
+      {$BL_0$};
+    \node[PPENavarraRed,above right,font=\sffamily\scriptsize] at (2.65,.95)
+      {$BL_x$};
+    \draw[PPEGold,-{Latex[length=1.8mm]}] (3,0) -- (4.05,0);
+  \end{scope}
+\end{tikzpicture}
+\caption{How the budget line changes. Higher income expands purchasing power
+in parallel; a fall in $p_x$ pivots the line around the unchanged
+$y$-intercept.}
+\label{fig:budget-line-changes}
+\end{figure}
+
 \section{Utility maximisation graphically}
 
-With smooth, monotonic, convex preferences, the optimal bundle is normally the point where the highest attainable indifference curve is tangent to the budget line. At this interior optimum,
+With smooth, locally non-satiated, convex preferences, the optimal bundle is
+normally the point where the highest attainable indifference curve is tangent
+to the budget line. At a smooth interior optimum with positive marginal
+utilities,
 \[
 MRS_{x,y}=\frac{p_x}{p_y}.
 \]
-The consumer's willingness to trade $y$ for $x$ equals the trade-off required by the market. If the MRS were greater than the price ratio, the consumer would be willing to give up more $y$ for $x$ than the market requires, so moving toward more $x$ would raise utility. If the MRS were lower, moving toward more $y$ would raise utility.
+The consumer's willingness to trade $y$ for $x$ equals the trade-off required
+by the market. If the MRS were greater than the price ratio, the consumer
+would be willing to give up more $y$ for $x$ than the market requires, so
+moving toward more $x$ would raise utility. If the MRS were lower, moving
+toward more $y$ would raise utility.
+
+\begin{keyidea}
+\textbf{Two trade-offs, one interior choice.}
+\[
+\underbrace{MRS_{x,y}}_{\text{consumer's willingness to trade}}
+=
+\underbrace{\frac{p_x}{p_y}}_{\text{market's required trade-off}}.
+\]
+At a smooth interior optimum, the consumer's personal trade-off equals the
+opportunity cost imposed by prices. The equality identifies a candidate
+interior solution; corner solutions must still be checked.
+\end{keyidea}
+
+When marginal utilities are positive, the same condition can be written as
+\[
+\frac{MU_x}{p_x}=\frac{MU_y}{p_y}.
+\]
+At the optimum, the final euro spent on either good produces the same marginal
+utility. With strictly convex preferences, a feasible tangency normally
+identifies a unique optimum.
+
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[x=.5cm,y=.25cm]
+  \draw[->,PPEInk] (0,0) -- (11,0) node[right] {$x$};
+  \draw[->,PPEInk] (0,0) -- (0,22) node[above] {$y$};
+  \draw[PPEMuted,line width=.85pt]
+    plot[smooth,domain=1.5:10,samples=70] (\x,{30/\x});
+  \draw[PPEBurgundy,line width=1.05pt]
+    plot[smooth,domain=2.5:10,samples=70] (\x,{50/\x});
+  \draw[PPENavarraRed,dashed,line width=.9pt]
+    plot[smooth,domain=3.75:10,samples=70] (\x,{75/\x});
+  \draw[PPENavarraRed,line width=1.1pt] (0,20) -- (10,0);
+  \draw[PPEMuted,dashed] (5,0) -- (5,10) -- (0,10);
+  \fill[PPEGold] (5,10) circle (2.1pt);
+  \node[above left,PPEGold] at (5,10) {$(x^*,y^*)=(5,10)$};
+  \node[PPEMuted,font=\sffamily\scriptsize] at (6,5) {$u=30$};
+  \node[PPEBurgundy,font=\sffamily\scriptsize] at (7.7,6.5) {$u=50$};
+  \node[PPENavarraRed,font=\sffamily\scriptsize] at (6.2,12.1) {$u=75$};
+  \node[PPENavarraRed,below left,font=\sffamily\scriptsize] at (7,6)
+    {budget line};
+  \node[PPEGold,above right,font=\sffamily\scriptsize] at (5.2,10.3)
+    {$MRS_{x,y}=p_x/p_y=2$};
+\end{tikzpicture}
+\caption{The highest attainable indifference curve for
+$u(x,y)=xy$ and $y=20-2x$. The $u=50$ curve is tangent to the budget line;
+$u=75$ is unattainable.}
+\label{fig:consumer-optimum}
+\end{figure}
 
 \section{Utility maximisation algebraically}
 
@@ -68,15 +199,77 @@ u(x)=x(20-2x)=20x-2x^2.
 \]
 The first derivative is $20-4x$. Setting it equal to zero gives $x^*=5$. Substitution into the budget line gives $y^*=10$. The bundle $(5,10)$ exhausts income and maximises utility.
 
+Because $y=20-2x$ and both quantities must be non-negative, the feasible
+domain is $0\leq x\leq10$. Moreover,
+\[
+\frac{d^2u}{dx^2}=-4<0,
+\]
+so utility is strictly concave on this interval. The stationary point $x^*=5$
+is therefore the unique maximum; the endpoints give utility zero.
+
 The same answer follows from the tangency condition. Here $MRS_{x,y}=y/x$, while $p_x/p_y=2$. Setting $y/x=2$ gives $y=2x$. Combined with $10x+5y=100$, this yields $x=5$ and $y=10$.
+
+\begin{keyidea}
+\textbf{Consumer-choice checklist.}
+\begin{enumerate}
+  \item Write the budget set and identify the budget line.
+  \item If preferences are locally non-satiated, work on the budget line.
+  \item For a smooth interior candidate, set $MRS_{x,y}=p_x/p_y$.
+  \item Check feasibility and compare relevant corner bundles.
+  \item Interpret the result: what does the price ratio make expensive in terms of the other good?
+\end{enumerate}
+\end{keyidea}
+
+\medskip
+\noindent\textbf{A reusable Cobb--Douglas result.} For
+\[
+u(x,y)=x^\alpha y^\beta,
+\qquad \alpha,\beta>0,
+\]
+the interior demand bundle is
+\[
+x^*=\frac{\alpha}{\alpha+\beta}\frac{I}{p_x},
+\qquad
+y^*=\frac{\beta}{\alpha+\beta}\frac{I}{p_y}.
+\]
+The consumer spends the fraction $\alpha/(\alpha+\beta)$ of income on $x$ and
+the fraction $\beta/(\alpha+\beta)$ on $y$.
 
 \section{Interior and corner solutions}
 
 The tangency condition applies only to an \keyterm{interior solution}, where positive quantities of both goods are consumed. With perfect substitutes, the best bundle may be a \keyterm{corner solution}: all income is spent on one good.
 
-Suppose $u(x,y)=x+2y$, $p_x=4$, and $p_y=1$. One euro spent on $x$ produces $1/4$ utility units, while one euro spent on $y$ produces $2$ utility units. The consumer spends all income on $y$. There is no interior tangency because the MRS is constant and does not equal the price ratio.
+Suppose $u(x,y)=x+2y$, $p_x=4$, and $p_y=1$. Comparing marginal utility
+per euro gives
+\[
+\frac{MU_x}{p_x}=\frac{1}{4},
+\qquad
+\frac{MU_y}{p_y}=2.
+\]
+Every euro spent on $y$ produces more utility than every euro spent on $x$,
+so the consumer spends the entire budget on $y$. There is no interior tangency
+because the MRS is constant and does not equal the price ratio.
 
 For perfect complements, the consumer chooses the kink on the highest attainable indifference curve. The budget line need not be tangent to the indifference curve.
+
+\begin{exercisebox}
+\textbf{Worked example: perfect complements.} Let
+\[
+u(x,y)=\min\{x,y\},
+\qquad I=60,
+\qquad p_x=2,
+\qquad p_y=1.
+\]
+The consumer wants the goods in a one-to-one proportion, so the optimum must
+lie at the kink, where $x=y$. Substitution into the budget line gives
+\[
+2x+y=60
+\quad\Longrightarrow\quad
+3x=60.
+\]
+Hence $(x^*,y^*)=(20,20)$. The budget line is not tangent to the L-shaped
+indifference curve.
+\end{exercisebox}
 
 \section{From consumer choice to demand}
 
@@ -91,6 +284,7 @@ Solving the consumer's problem for different prices produces an individual deman
   \item \textbf{Relative price}: $p_x/p_y$, the opportunity cost of $x$ in units of $y$.
   \item \textbf{Interior solution}: an optimum involving positive amounts of both goods.
   \item \textbf{Corner solution}: an optimum where at least one good is consumed in zero quantity.
+  \item \textbf{Tangency condition}: equality between MRS and the relative price at a smooth interior candidate.
 \end{itemize}
 
 \subsection*{Key equations}
@@ -99,7 +293,9 @@ p_xx+p_yy=I,
 \qquad
 y=\frac{I}{p_y}-\frac{p_x}{p_y}x,
 \qquad
-MRS_{x,y}=\frac{p_x}{p_y}.
+MRS_{x,y}=\frac{p_x}{p_y},
+\qquad
+\frac{MU_x}{p_x}=\frac{MU_y}{p_y}.
 \]
 
 \section*{Exercises}
@@ -115,7 +311,7 @@ MRS_{x,y}=\frac{p_x}{p_y}.
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Let $I=120$, $p_x=12$, and $p_y=6$. Draw the budget line and label its intercepts and slope.
+  \item Let $I=120$, $p_x=12$, and $p_y=6$. Draw the budget line, shade the full budget set, and label the intercepts and slope. Explain the difference between the shaded set and the line.
   \item Starting from Exercise 6, show graphically what happens when income rises to $180$.
   \item Starting from Exercise 6, show graphically what happens when $p_x$ falls from $12$ to $6$.
 \end{enumerate}
@@ -124,7 +320,9 @@ MRS_{x,y}=\frac{p_x}{p_y}.
 \begin{enumerate}[resume,label=\arabic*.]
   \item A consumer has $I=200$, $p_x=20$, $p_y=10$, and $u(x,y)=xy$. Solve for the optimal bundle by substitution and verify it using $MRS_{x,y}=p_x/p_y$.
   \item Solve the consumer problem when $I=100$, $p_x=10$, $p_y=5$, and $u(x,y)=x^{2/3}y^{1/3}$.
-  \item Let $u(x,y)=x+3y$, $p_x=2$, $p_y=1$, and $I=40$. Find the optimal bundle and explain why it is a corner solution.
+  \item Let $u(x,y)=x+3y$, $p_x=2$, $p_y=1$, and $I=40$. Compare marginal utility per euro, find the optimal bundle, and explain why it is a corner solution.
+  \item Let $u(x,y)=x+y+xy$, $I=10$, $p_x=2$, and $p_y=1$. Solve the consumer problem and verify the result using the MRS condition.
+  \item Let $u(x,y)=x+2y$, $I=40$, $p_x=1$, and $p_y=2$. Show that every bundle on the budget line is optimal. Why does the tangency condition fail to select a unique bundle?
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
