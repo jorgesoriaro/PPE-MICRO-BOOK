@@ -5,43 +5,266 @@
 
 After completing this chapter, you should be able to:
 \begin{itemize}
-  \item explain the difference between game theory and mechanism design;
-  \item identify a mechanism's rules, information, and incentives;
-  \item define incentive compatibility and participation constraints; and
-  \item apply the framework to a simple allocation problem.
+  \item distinguish game theory from mechanism design;
+  \item identify a mechanism's objective, messages, allocation rule, transfers, and information;
+  \item define private types, incentive compatibility, and participation constraints;
+  \item explain why a second-price auction encourages truthful bidding under private values; and
+  \item compare efficiency, equity, simplicity, and feasibility in the design of a real allocation rule.
 \end{itemize}
 
 \section{From predicting games to designing rules}
 
-Game theory starts with rules and asks what strategies people will choose. \keyterm{Mechanism design} reverses the direction: it begins with a social objective and asks which rules will induce self-interested participants to reveal information or take actions that lead to a desirable outcome.
+Game theory starts with a set of rules and asks what strategic participants
+will do. \keyterm{Mechanism design} reverses the direction. It begins with an
+objective---such as allocating a scarce resource well---and asks which rules
+will lead self-interested participants to reveal information or take actions
+that produce a desirable outcome.
 
-The designer may be a government allocating school places, a platform matching drivers and passengers, a firm procuring a service, or a group choosing a collective project. The challenge is that participants often have private information about their values, costs, needs, or abilities.
+The designer may be a government allocating school places, a hospital assigning
+appointments, a platform matching drivers and passengers, a firm procuring a
+service, or a group choosing a collective project. In each case the challenge
+is that people often know more than the designer about their own values, costs,
+needs, or abilities.
 
-\section{Mechanisms and private information}
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    \node[font=\sffamily\bfseries,text=PPEBurgundy,anchor=east] at (-0.25,1.25)
+      {Game theory};
+    \node[ppebox,minimum width=2.25cm,text width=1.95cm] (rules) at (1.3,1.25)
+      {Given\\rules};
+    \node[ppebox,minimum width=2.25cm,text width=1.95cm] (behaviour) at (4.35,1.25)
+      {Strategic\\behaviour};
+    \node[ppebox,minimum width=2.25cm,text width=1.95cm] (outcome) at (7.40,1.25)
+      {Predicted\\outcomes};
+    \draw[ppearrow] (rules) -- (behaviour);
+    \draw[ppearrow] (behaviour) -- (outcome);
 
-A \keyterm{mechanism} specifies what messages participants can send, how outcomes are selected from those messages, and how transfers or other consequences are determined. A direct mechanism asks each participant to report their private type directly, such as a valuation or cost.
+    \node[font=\sffamily\bfseries,text=PPENavarraRed,anchor=east] at (-0.25,-1.35)
+      {Mechanism design};
+    \node[ppebox,minimum width=2.25cm,text width=1.95cm] (objective) at (1.3,-1.35)
+      {Social\\objective};
+    \node[ppebox,minimum width=2.25cm,text width=1.95cm] (mechanism) at (4.35,-1.35)
+      {Rules and\\incentives};
+    \node[ppebox,minimum width=2.25cm,text width=1.95cm] (reports) at (7.40,-1.35)
+      {Strategic reports\\or actions};
+    \node[ppebox,minimum width=2.25cm,text width=1.95cm] (result) at (10.45,-1.35)
+      {Allocation and\\welfare};
+    \draw[ppearrow] (objective) -- (mechanism);
+    \draw[ppearrow] (mechanism) -- (reports);
+    \draw[ppearrow] (reports) -- (result);
+  \end{tikzpicture}
+  \caption{Game theory explains behaviour under given rules; mechanism design
+  uses that strategic reasoning to choose the rules.}
+  \label{fig:game-to-design}
+\end{figure}
+\FloatBarrier
 
-The central question is whether truthful reporting is in each participant's interest. A mechanism is \keyterm{incentive compatible} when following the intended strategy, often reporting truthfully, is optimal for every relevant participant. It is \keyterm{individually rational} when participation gives each participant at least as much payoff as their outside option.
+\begin{keyidea}
+\textbf{A mechanism is not only an algorithm.}
+It is a complete rule for interaction: it tells participants what they may
+report or do, how those reports affect allocation and payment, and what happens
+if they decline to participate. A technically elegant rule that people cannot
+understand, verify, or regard as legitimate may fail in practice.
+\end{keyidea}
 
-\section{A simple allocation example}
+\section{The ingredients of a mechanism}
 
-Imagine allocating one public parking permit to one of two drivers. Each driver knows their own value for the permit. If the rule simply asks each driver to announce a value and gives the permit to the highest announcement, each driver may exaggerate. The payment rule affects incentives.
+A \keyterm{mechanism} specifies the messages participants can send, the
+\keyterm{allocation rule} that maps messages into an outcome, and any
+\keyterm{transfers} such as prices, taxes, rewards, or penalties. A
+\keyterm{type} is the private information relevant to a participant's choice:
+for example, a valuation for a permit, the cost of supplying a service, or the
+severity of a medical need.
 
-In a second-price auction, the highest bidder receives the object but pays the second-highest bid. Under private values, truthful bidding is a dominant strategy because a bidder cannot change the price paid by changing their bid unless the change also changes whether they win. This is an example of a mechanism designed to elicit private information.
+For \(n\) participants, let \(m=(m_1,\ldots,m_n)\) denote the reported
+messages. A mechanism can be represented compactly by an allocation
+\(x(m)\) and transfers \(t_i(m)\) for each participant \(i\). The notation is
+simple, but it forces useful questions: what can people report, what allocation
+results, and who pays or receives what?
 
-\section{Trade-offs and limits}
+\begin{table}[htbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{p{3.25cm}p{8.25cm}}
+    \toprule
+    Element & Question the designer must answer\\
+    \midrule
+    Objective & What counts as success: total value, need, equality of opportunity, revenue, speed, or another criterion?\\
+    Information & What do participants know privately, and what can be observed or verified?\\
+    Messages & What may participants report, bid, rank, or choose?\\
+    Allocation rule & Who receives the good, service, or task for each profile of messages?\\
+    Transfers and enforcement & What prices, rewards, penalties, audits, or appeals support the rule?\\
+    \bottomrule
+  \end{tabular}
+  \caption{Questions that turn a broad objective into a mechanism.}
+  \label{tab:mechanism-elements}
+\end{table}
+\FloatBarrier
 
-Mechanism design does not provide a magic solution. Desirable properties can conflict: efficiency, budget balance, fairness, simplicity, privacy, and resistance to manipulation may not all be achievable simultaneously. The mechanism designer must also consider administrative costs, strategic sophistication, and whether participants regard the rules as legitimate.
+\section{Direct mechanisms and truthful reporting}
+
+A \keyterm{direct mechanism} asks participants to report their types directly.
+If student \(i\)'s value for a place is \(\theta_i\), the student reports
+\(\hat{\theta}_i\). The report can be truthful,
+\(\hat{\theta}_i=\theta_i\), or strategic. The mechanism then uses all reports
+to choose the allocation and transfers.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[node distance=0.34cm]
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (type)
+      {Private type\\\(\theta_i\)};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm,right=of type] (report)
+      {Report\\\(\hat{\theta}_i\)};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm,right=of report] (allocation)
+      {Allocation rule\\\(x(\hat{\theta})\)};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm,right=of allocation] (payment)
+      {Transfer and payoff\\\(t_i(\hat{\theta})\)};
+    \draw[ppearrow] (type) -- (report);
+    \draw[ppearrow] (report) -- (allocation);
+    \draw[ppearrow] (allocation) -- (payment);
+  \end{tikzpicture}
+  \caption{A direct mechanism converts private information into reports, then
+  into an allocation and consequences. The critical question is whether the
+  reporting rule gives participants a reason to be truthful.}
+  \label{fig:direct-mechanism-flow}
+\end{figure}
+\FloatBarrier
+
+Suppose utility is quasi-linear: a participant values the allocated outcome and
+then pays a transfer. With positive \(t_i\) denoting a payment by participant
+\(i\),
+\[
+u_i=v_i\!\left(x_i(\hat{\theta}_i,\theta_{-i}),\theta_i\right)
+    -t_i(\hat{\theta}_i,\theta_{-i}).
+\]
+Here \(\theta_{-i}\) denotes the other participants' types. A mechanism is
+\keyterm{incentive compatible} if a truthful report is at least as good as a
+misreport:
+\[
+u_i(\theta_i,\theta_i,\theta_{-i})
+\geq
+u_i(\theta_i,\hat{\theta}_i,\theta_{-i})
+\qquad\text{for every feasible }\hat{\theta}_i.
+\]
+
+Incentive compatibility concerns the choice \emph{within} the mechanism. A
+mechanism is \keyterm{individually rational} when joining is worthwhile
+relative to a person's outside option \(\bar u_i\):
+\[
+u_i(\theta_i,\theta_i,\theta_{-i})\geq\bar u_i.
+\]
+This is also called a \keyterm{participation constraint}. A student may report
+truthfully yet still decline a mechanism that makes participation too costly or
+offers too little benefit.
+
+\begin{keyidea}
+\textbf{Two different tests.}
+\begin{itemize}
+  \item \textbf{Incentive compatibility:} Does it make sense to follow the intended rule, such as reporting truthfully?
+  \item \textbf{Individual rationality:} Is it better to participate than to use the outside option?
+\end{itemize}
+\end{keyidea}
+
+\section{A simple allocation example: a second-price auction}
+
+Consider one scarce seminar place and two students. Student \(A\) values the
+place at \euro30 and student \(B\) at \euro20. In a
+\keyterm{second-price auction}, the highest bidder receives the object but
+pays the second-highest bid. If both bid truthfully, \(A\) receives the place,
+pays \euro20, and obtains a surplus of \euro10. Student \(B\) neither receives
+the place nor pays.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lcc}
+  \toprule
+  & Student \(A\) & Student \(B\)\\
+  \midrule
+  Private value & \euro30 & \euro20\\
+  Truthful bid & \euro30 & \euro20\\
+  Allocation & Receives place & Does not receive place\\
+  Payment & \euro20 & \euro0\\
+  Net payoff & \euro10 & \euro0\\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+Why is truthful bidding a \emph{weakly dominant} strategy in this setting?
+Let \(b_{-i}\) be the other bid and \(v_i\) be student \(i\)'s value. If
+\(b_{-i}<v_i\), bidding above \(b_{-i}\) wins at price \(b_{-i}\), so bidding
+too low can lose a profitable allocation. If \(b_{-i}>v_i\), truthful bidding
+loses and gives payoff zero, while bidding above \(b_{-i}\) wins but pays more
+than the item is worth. A bid of \(v_i\) avoids both mistakes. It need not be
+the only best bid in every case, which is why the dominance is weak.
+
+The result depends on assumptions: private values, a genuine second-price rule,
+and no important collusion or bidding costs. Chapter~19 develops auction
+formats and their limits in more detail.
+
+\section{Mechanisms are more than markets}
+
+Prices are only one way to allocate scarce resources. For school places,
+medical appointments, social housing, or immigration slots, the objective may
+give substantial weight to need, equal treatment, or rights rather than only
+to willingness to pay. Table~\ref{tab:allocation-mechanisms} compares four
+familiar mechanisms.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{p{2.55cm}p{3.55cm}p{5.35cm}}
+    \toprule
+    Mechanism & Main allocation logic & Incentive or ethical question\\
+    \midrule
+    Price or auction & Highest willingness to pay & Efficient for a narrow value criterion, but ability to pay may be ethically irrelevant.\\
+    Lottery & Equal chance among eligible applicants & Simple and transparent, but may ignore urgency or differences in benefit.\\
+    Priority by need & Applicants with higher assessed need receive priority & Requires information and verification; applicants may exaggerate need.\\
+    Queue & Earlier arrival receives priority & Easy to administer, but may waste time and favour those with flexible schedules.\\
+    \bottomrule
+  \end{tabular}
+  \caption{Allocation mechanisms embody different objectives and create
+  different strategic incentives.}
+  \label{tab:allocation-mechanisms}
+\end{table}
+\FloatBarrier
+
+No mechanism is neutral. A designer must state which criterion matters and
+then evaluate whether the rule actually advances it. A lottery may be more
+legitimate than a price in one setting; a price may communicate useful
+information in another. The relevant comparison is between feasible
+alternatives, not between a real mechanism and an idealised one.
+
+\section{Trade-offs, limits, and legitimacy}
+
+Mechanism design does not produce a magic rule. Desirable properties can
+conflict. \keyterm{Budget balance} requires that a mechanism not need an
+outside subsidy; efficiency can require payments or information that are hard
+to obtain; fairness can call for priority rules that are difficult to verify.
+Complex rules may be manipulable, invasive of privacy, expensive to administer,
+or too difficult for participants to understand.
+
+The final assessment is therefore institutional as well as mathematical. Does
+the mechanism work with realistic information, enforcement capacity, and
+strategic sophistication? Who gains, who loses, and who has the power to
+challenge its decisions? These questions connect the formal analysis back to
+the PPE framework developed in Chapter~15.
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
-  \item \textbf{Mechanism design}: designing rules to achieve objectives with strategic participants.
-  \item \textbf{Type}: participant's private information, such as value or cost.
-  \item \textbf{Direct mechanism}: participants report their types directly.
-  \item \textbf{Incentive compatibility}: intended behaviour is optimal for participants.
+  \item \textbf{Mechanism design}: design of rules that produce desired outcomes with strategic participants.
+  \item \textbf{Type}: private information relevant to a participant's choices, such as value, cost, or need.
+  \item \textbf{Direct mechanism}: rule in which participants report their types directly.
+  \item \textbf{Allocation rule}: mapping from messages to an allocation.
+  \item \textbf{Transfer}: payment, reward, tax, or penalty determined by the mechanism.
+  \item \textbf{Incentive compatibility}: intended behaviour is optimal for each participant.
   \item \textbf{Individual rationality}: participation is at least as good as the outside option.
+  \item \textbf{Budget balance}: the mechanism does not require a net outside subsidy.
 \end{itemize}
 
 \section*{Exercises}
@@ -49,31 +272,36 @@ Mechanism design does not provide a magic solution. Desirable properties can con
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
   \item Distinguish game theory from mechanism design.
-  \item What is private information? Give two examples from public policy or markets.
-  \item Define incentive compatibility and individual rationality.
-  \item Why may efficiency, fairness, and budget balance conflict in a mechanism?
+  \item Identify the objective, private information, messages, allocation rule, and transfers in a mechanism for allocating student housing.
+  \item What is a private type? Give two examples from public policy or markets.
+  \item Distinguish incentive compatibility from individual rationality.
+  \item Why must equity or legitimacy be stated as an objective rather than assumed to follow from efficiency?
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Draw a simple sequence diagram showing participants reporting types, the mechanism selecting an outcome, and transfers being made.
-  \item Draw a payoff comparison for a participant deciding whether to report truthfully or misreport a valuation.
+  \item Draw a direct-mechanism flow for allocating medical appointments. Identify the private type, report, allocation rule, and consequence of a false report.
+  \item Create a two-column comparison of a lottery and a need-based priority rule for a scarce public service. State one advantage and one incentive problem for each.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Two students value a scarce seminar place at \euro30 and \euro20. Explain the outcome and payments under a second-price sealed-bid auction if both bid truthfully.
-  \item Explain why a rule that allocates a good to the highest reported valuation but charges nothing may encourage exaggeration.
-  \item Propose a simple mechanism for allocating a scarce public service. State the objective, the private information involved, and one possible incentive problem.
+  \item Two students value a scarce seminar place at \euro30 and \euro20. Explain the allocation, payments, and net payoffs under a truthful second-price sealed-bid auction.
+  \item A student's value is \euro30. If the other bid is \euro20, compare bids of \euro15, \euro30, and \euro45. Then repeat when the other bid is \euro40. Explain why truthful bidding is weakly dominant.
+  \item A low-need applicant gains \(B=\text{\euro6}\) from falsely claiming high need. The claim is audited with probability \(p=0.25\), and a false claim carries penalty \(F\). Derive the minimum \(F\) that makes truthful reporting incentive compatible.
+  \item Propose a mechanism for allocating a scarce public service when monetary payments are prohibited. State its objective, the private information involved, one participation issue, and one possible strategic response.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
 \begin{enumerate}[resume,label=\arabic*.]
   \item Mechanism design primarily asks: (a) how players behave under fixed rules; (b) what rules induce desirable behaviour; (c) how to eliminate all private information; or (d) how to avoid incentives.
   \item A mechanism is incentive compatible when: (a) all participants receive the same payoff; (b) the intended strategy is optimal for participants; (c) participation is mandatory; or (d) no transfers occur.
-  \item Individual rationality requires that: (a) every participant tells the truth; (b) participation is at least as good as the outside option; (c) the mechanism is efficient; or (d) the designer earns a profit.
+  \item Individual rationality requires that: (a) every participant tells the truth; (b) the allocation maximises total value; (c) participation is at least as good as the outside option; or (d) the designer earns a profit.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
 
-\noindent Should access to scarce public goods---such as school places, medical appointments, or social housing---be allocated through prices, queues, lotteries, or need-based rules? Compare the incentives and ethical implications of at least two mechanisms.
+\noindent Should access to scarce public goods---such as school places, medical
+appointments, or social housing---be allocated through prices, queues,
+lotteries, or need-based rules? Compare the incentives and ethical implications
+of at least two mechanisms, then defend one feasible design.
