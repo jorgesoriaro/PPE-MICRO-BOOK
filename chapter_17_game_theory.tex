@@ -151,6 +151,141 @@ The possibility of multiple equilibria matters for public policy. A rule can
 matter not only by changing payoffs, but also by making one expectation more
 salient or by supplying a reliable way to coordinate.
 
+\subsection{More games}
+\label{sec:more-games}
+
+The exercise set for this course contains several useful variants of the
+games introduced so far. Their names are less important than their incentive
+structures. The following examples add five distinct structures: risky
+coordination, anti-coordination, zero-sum competition, strategic pricing with
+more than two actions, and a larger political game.
+
+\subsubsection{Stag Hunt: coordination with an assurance problem}
+
+In a \keyterm{Stag Hunt}, both players prefer the high-payoff outcome when
+they coordinate on it, but each has a safer action if they doubt the other
+player's commitment:
+\[
+\begin{array}{c|cc}
+ & \text{Player 2: Stag} & \text{Player 2: Hare}\\
+\hline
+\text{Player 1: Stag} & (10,10) & (0,8)\\
+\text{Player 1: Hare} & (8,0) & (5,5)
+\end{array}
+\]
+There are two pure-strategy Nash equilibria: \((\text{Stag},\text{Stag})\)
+and \((\text{Hare},\text{Hare})\). Stag is collectively more productive, but
+Hare protects a player against being the only one to choose Stag. If Player~1
+believes that Player~2 chooses Stag with probability \(p\), Stag gives
+\(10p\), whereas Hare gives \(8p+5(1-p)\). Thus Player~1 chooses Stag only
+when \(p>5/7\). The central obstacle is therefore assurance: each player needs
+reason to expect the other to make the ambitious choice. Investment,
+technology adoption, and collective action often have this form.
+
+\subsubsection{Chicken: anti-coordination and brinkmanship}
+
+\keyterm{Chicken}, also called a Hawk--Dove game in many applications, has
+the opposite logic. Each player prefers to take the tough action when the
+other gives way, but both are harmed if neither gives way:
+\[
+\begin{array}{c|cc}
+ & \text{Player 2: Stop} & \text{Player 2: Continue}\\
+\hline
+\text{Player 1: Stop} & (0,0) & (-5,10)\\
+\text{Player 1: Continue} & (10,-5) & (-15,-15)
+\end{array}
+\]
+The two pure-strategy Nash equilibria are
+\((\text{Stop},\text{Continue})\) and
+\((\text{Continue},\text{Stop})\). Unlike a coordination game, the players
+want to choose opposite actions. The mutual-Continue outcome is especially
+bad, so a credible commitment, a turn-taking rule, or communication can avoid
+a costly collision. The game is a stylised way to analyse bargaining,
+brinkmanship, or rival firms' aggressive campaigns; it is not a prediction
+that real conflict must be dangerous.
+
+\subsubsection{Rock--Paper--Scissors: zero-sum competition and mixing}
+
+In a \keyterm{zero-sum game}, one player's gain is the other's loss. The
+course exercise on Rock--Paper--Scissors has the following payoffs, where
+\(\mathrm{R}\), \(\mathrm{S}\), and \(\mathrm{P}\) stand for Rock, Scissors,
+and Paper:
+\[
+\begin{array}{c|ccc}
+ & \text{P2: }\mathrm{R} & \text{P2: }\mathrm{S}
+ & \text{P2: }\mathrm{P}\\
+\hline
+\text{P1: }\mathrm{R} & (0,0) & (10,-10) & (-10,10)\\
+\text{P1: }\mathrm{S} & (-10,10) & (0,0) & (10,-10)\\
+\text{P1: }\mathrm{P} & (10,-10) & (-10,10) & (0,0)
+\end{array}
+\]
+There is no pure-strategy Nash equilibrium: after every predictable choice,
+the other player can switch to the winning response. The equilibrium is a
+\keyterm{mixed strategy}: each player deliberately chooses Rock, Scissors,
+and Paper with probability \(1/3\). Randomisation here is not indecision. It
+prevents an opponent from exploiting a predictable pattern. A penalty
+shoot-out is a two-action version of the same idea: in the symmetric exercise,
+the kicker and goalkeeper each choose Left and Right with probability \(1/2\).
+
+\subsubsection{Bar prices: iterated elimination in a \(3\times3\) game}
+
+Strategic-form games need not have only two actions. In the bar-price exercise,
+La Piedra chooses a row and Shamrock chooses a column. The prices are in euros
+and the ordered pairs are illustrative profit indices:
+\[
+\begin{array}{c|ccc}
+ & \multicolumn{3}{c}{\text{Shamrock's price}}\\
+\text{La Piedra's price} & 2\,\euro & 4\,\euro & 5\,\euro\\
+\hline
+2\,\euro & (10,10) & (14,12) & (14,15)\\
+4\,\euro & (12,14) & (20,20) & (28,15)\\
+5\,\euro & (15,14) & (15,28) & (25,25)
+\end{array}
+\]
+For each bar, \(2\,\euro\) is strictly dominated by \(4\,\euro\), so both
+players can remove that option. In the reduced game, \(4\,\euro\) strictly
+dominates \(5\,\euro\) for both players. This
+\keyterm{iterated elimination of strictly dominated strategies} therefore
+leads to the unique Nash equilibrium \((4\,\euro,4\,\euro)\). The example
+shows why a price that looks attractive in isolation need not be a best
+response to a competitor's price.
+
+\subsubsection{Arms race: dominance in a political game}
+
+The exercise set also uses a deliberately simplified USA--USSR arms-race
+matrix. Each player can Demilitarise (\(\mathrm{D}\)), Escalate
+(\(\mathrm{E}\)), or Go Nuclear (\(\mathrm{GN}\)):
+\[
+\begin{array}{c|ccc}
+ & \text{USSR: \(\mathrm{D}\)} & \text{USSR: \(\mathrm{E}\)}
+ & \text{USSR: \(\mathrm{GN}\)}\\
+\hline
+\text{USA: \(\mathrm{D}\)} & (20,30) & (10,40) & (-10,50)\\
+\text{USA: \(\mathrm{E}\)} & (40,-10) & (10,20) & (-5,15)\\
+\text{USA: \(\mathrm{GN}\)} & (50,-100) & (30,-10) & (5,0)
+\end{array}
+\]
+For the USSR, \(\mathrm{D}\) is strictly dominated by
+\(\mathrm{E}\). Once \(\mathrm{D}\) is removed, \(\mathrm{GN}\) strictly
+dominates the USA's remaining alternatives. The USSR's best response to USA
+\(\mathrm{GN}\) is then \(\mathrm{GN}\), giving the unique equilibrium
+\((\mathrm{GN},\mathrm{GN})\). The conclusion follows from the stated
+payoffs, not from a historical claim about the Cold War. A PPE analysis should
+ask who chose these preference rankings, which risks or ethical costs they
+omit, and how treaties or verification could change the game.
+
+\begin{keyidea}
+\textbf{Names do not solve games; incentives do.}
+The marketing-campaign exercise has the same dominant-strategy structure as
+the Prisoner's Dilemma already analysed in this chapter. The plain
+coordination matrix and Battle of the Sexes are also already represented
+above, while the entry game and the Centipede game introduce the sequential
+cases. For any new matrix, use the same method: identify dominated strategies,
+find best responses, locate equilibria, and then interpret the assumptions
+behind the payoffs.
+\end{keyidea}
+
 \section{Sequential games, credibility, and backward induction}
 
 In a \keyterm{dynamic game}, players move in sequence. An
