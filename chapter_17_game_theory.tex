@@ -7,74 +7,285 @@
 
 After completing this chapter, you should be able to:
 \begin{itemize}
-  \item identify players, strategies, payoffs, and rules in a game;
+  \item identify the players, strategies, payoffs, information, and rules in a game;
+  \item distinguish an action from a complete strategy;
   \item find dominant strategies, best responses, and Nash equilibria;
-  \item analyse sequential games by backward induction; and
-  \item explain credibility, subgame perfection, and repeated interaction.
+  \item analyse sequential games by backward induction and assess whether threats are credible; and
+  \item explain how repetition and institutions can change strategic incentives.
 \end{itemize}
 
-\section{Strategic interaction}
+\section{When choices are interdependent}
 
-\keyterm{Game theory} studies situations in which each person's outcome depends on their own action and the actions of others. A game specifies players, strategies, payoffs, and rules. Strategic interaction arises in oligopoly, bargaining, political campaigns, international relations, and everyday coordination problems.
+\keyterm{Game theory} studies situations in which one person's outcome depends
+on their own action \emph{and} on the actions of others. It is useful whenever
+people must anticipate one another: firms choosing prices, parties choosing
+campaign messages, states deciding whether to negotiate, or students deciding
+how much effort to put into a group project.
+
+A game has four basic ingredients:
+\begin{itemize}
+  \item \keyterm{players}, the decision-makers;
+  \item \keyterm{strategies}, the complete plans available to each player;
+  \item \keyterm{payoffs}, which rank the consequences for each player; and
+  \item rules and information, including who moves when and what each player observes.
+\end{itemize}
+
+Payoffs need not be money, and the numbers need not be comparable across
+players. They simply represent how each player ranks outcomes in the model.
+In a simultaneous game an \keyterm{action} is usually also a complete strategy.
+In a sequential game, a strategy must say what a player would do at every
+decision point that they might face, including one that is never reached.
+
+\begin{exercisebox}
+\textbf{The group-project dilemma.}
+Four students value a high-quality group presentation, but preparing it is
+costly. Each is tempted to free ride on the others' work. The outcome for one
+student therefore depends on several choices, not only on their own effort.
+Game theory makes that interdependence explicit before proposing a rule, a
+grade scheme, or a norm to improve the result.
+\end{exercisebox}
+
+\begin{keyidea}
+\textbf{A model of strategic interaction is not a moral judgement.}
+Calling an action a best response says that it is privately advantageous under
+the stated rules and beliefs. It does not say that the action is fair, socially
+desirable, or inevitable once the rules can be changed.
+\end{keyidea}
 
 \section{Strategic-form games}
 
-A \keyterm{strategic-form game} represents choices in a payoff matrix. A strategy is \keyterm{dominant} if it gives a player a higher payoff than any alternative regardless of opponents' actions. A \keyterm{best response} is the strategy that maximises a player's payoff for a given opponent action.
+A \keyterm{strategic-form game} represents simultaneous choices in a payoff
+matrix. Rows record one player's strategies, columns record the other's, and
+each ordered pair gives the payoffs in the order \((\text{row player},
+\text{column player})\).
 
-A \keyterm{Nash equilibrium} is a profile of strategies in which every player's choice is a best response to the choices of others. No player can gain by changing their action unilaterally. Nash equilibrium predicts stability, not necessarily cooperation, fairness, or efficiency.
+\subsection{Best responses, dominance, and Nash equilibrium}
 
-The Prisoner's Dilemma illustrates this distinction: individually rational self-protective choices can produce an outcome that both players regard as worse than cooperation. Institutions, contracts, social norms, and repeated interaction can matter precisely because they change incentives.
+A \keyterm{best response} is a strategy that gives a player the highest payoff
+given the other players' strategies. A \keyterm{strictly dominant strategy}
+gives a higher payoff than every alternative for every possible strategy of the
+opponent. A \keyterm{strictly dominated strategy} is always worse than another
+available strategy, so a rational player would never need to use it.
 
-\section{Sequential games and backward induction}
+A \keyterm{Nash equilibrium} is a profile of strategies in which every player
+is choosing a best response to the others. Formally, a profile
+\(s^*=(s_i^*,s_{-i}^*)\) is a Nash equilibrium when
+\[
+u_i(s_i^*,s_{-i}^*)\geq u_i(s_i,s_{-i}^*)
+\qquad\text{for every feasible }s_i.
+\]
+Here \(s_{-i}^*\) means the strategies chosen by everyone other than player
+\(i\). At a Nash equilibrium, no individual can improve their own payoff by
+changing strategy alone. The concept predicts stability; it does \emph{not}
+guarantee cooperation, fairness, or efficiency.
 
-In \keyterm{dynamic games}, players move in sequence and may observe earlier actions. A game tree records the order of moves, choices, and payoffs. \keyterm{Backward induction} solves a finite game by first determining what a player will do at the final decision node, then working back to earlier choices.
+\begin{keyidea}
+\textbf{How to read a payoff matrix.}
+\begin{enumerate}
+  \item Hold the column fixed and compare the first number: this finds Player~1's best responses.
+  \item Hold the row fixed and compare the second number: this finds Player~2's best responses.
+  \item A cell in which both choices are best responses is a Nash equilibrium.
+\end{enumerate}
+\end{keyidea}
 
-A threat is \keyterm{credible} only if it is in the threatening player's interest to carry it out when the relevant moment arrives. A \keyterm{subgame-perfect equilibrium} specifies a Nash equilibrium in every subgame and therefore rules out non-credible threats.
+\subsection{The Prisoner's Dilemma}
 
-Repeated interaction can support cooperation when future consequences are important, actions are observable, and deviations can be punished. It does not guarantee cooperation: trust, enforcement, patience, and the possibility of misunderstanding remain important.
+The \keyterm{Prisoner's Dilemma} is the classic case in which individually
+rational choices lead to a jointly inferior outcome. In Figure~\ref{fig:prisoners-dilemma},
+Defect is strictly dominant for both players. The gold-bordered cell is
+therefore the unique Nash equilibrium. Yet both players prefer mutual
+cooperation to mutual defection.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    \node[font=\sffamily\bfseries] at (4.0,3.05) {Player 2};
+    \node[font=\sffamily] at (2.9,2.55) {Cooperate};
+    \node[font=\sffamily] at (5.1,2.55) {Defect};
+    \node[font=\sffamily\bfseries,rotate=90] at (0.45,1.2) {Player 1};
+    \node[font=\sffamily,anchor=east] at (1.65,1.8) {Cooperate};
+    \node[font=\sffamily,anchor=east] at (1.65,0.6) {Defect};
+    \draw[PPEInk] (1.8,0) rectangle (6.2,2.4);
+    \draw[PPEInk] (4.0,0) -- (4.0,2.4);
+    \draw[PPEInk] (1.8,1.2) -- (6.2,1.2);
+    \node at (2.9,1.8) {\colorbox{PPEAccentLight}{\strut $(3,3)$}};
+    \node at (5.1,1.8) {$(0,5)$};
+    \node at (2.9,0.6) {$(5,0)$};
+    \node at (5.1,0.6) {\fcolorbox{PPEGold}{PPEGold!18}{\strut $(1,1)$}};
+    \node[font=\scriptsize,text=PPEGold] at (5.1,-0.43) {Nash equilibrium};
+    \node[font=\scriptsize,text=PPEBurgundy,align=center] at (2.9,-0.56)
+      {mutually preferred\\cooperation};
+  \end{tikzpicture}
+  \caption{A Prisoner's Dilemma. Payoffs are ordered
+  \((\text{Player 1},\text{Player 2})\). Mutual defection is a Nash
+  equilibrium even though mutual cooperation Pareto dominates it.}
+  \label{fig:prisoners-dilemma}
+\end{figure}
+\FloatBarrier
+
+This logic appears in cartel formation, climate policy, arms races, tax
+compliance, and team production. It is not enough to tell players that
+cooperation would be better for both. Cooperation must be supported by
+contracts, monitoring, repeated interaction, changed payoffs, or a shared norm.
+
+\section{Coordination and multiple equilibria}
+
+Not every strategic problem is a conflict. In a \keyterm{coordination game},
+players benefit from selecting compatible actions but may disagree about which
+compatible outcome is best. The \keyterm{Battle of the Sexes} is a compact
+example:
+\[
+\begin{array}{c|cc}
+ & \text{Player 2: Opera} & \text{Player 2: Football}\\
+\hline
+\text{Player 1: Opera} & (2,1) & (0,0)\\
+\text{Player 1: Football} & (0,0) & (1,2)
+\end{array}
+\]
+There are two pure-strategy Nash equilibria: both choose Opera and both choose
+Football. Neither player has a dominant strategy. A prior agreement, a social
+convention, a visible focal point, or a rule that allocates turns can therefore
+create value by helping players coordinate.
+
+The possibility of multiple equilibria matters for public policy. A rule can
+matter not only by changing payoffs, but also by making one expectation more
+salient or by supplying a reliable way to coordinate.
+
+\section{Sequential games, credibility, and backward induction}
+
+In a \keyterm{dynamic game}, players move in sequence. An
+\keyterm{extensive-form game} uses a tree to show the order of moves,
+information, available actions, and terminal payoffs. \keyterm{Backward
+induction} solves a finite sequential game from the final decision nodes back
+to the first move.
+
+Consider entry into a market. If the entrant stays out, payoffs are
+\((0,3)\): the entrant earns zero and the incumbent retains monopoly profit.
+If the entrant enters, the incumbent can Fight, yielding \((-1,-2)\), or
+Accommodate, yielding \((1,1)\). Figure~\ref{fig:entry-deterrence} shows why a
+threat to fight is not credible: once entry has occurred, accommodation gives
+the incumbent \(1\), rather than \(-2\).
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=1cm,y=1cm,font=\small]
+    \fill[PPEInk] (0,0) circle (1.6pt);
+    \node[font=\sffamily\bfseries,above] at (0,0) {Entrant};
+    \draw[->,PPEInk] (0.11,0.04) -- (2.75,1.02)
+      node[midway,above,font=\scriptsize] {Out};
+    \node[anchor=west] at (2.9,1.02) {$(0,3)$};
+    \draw[->,PPENavarraRed,very thick] (0.11,-0.04) -- (2.75,-1.02)
+      node[midway,below,font=\scriptsize] {Enter};
+    \fill[PPEInk] (2.85,-1.06) circle (1.6pt);
+    \node[font=\sffamily\bfseries,below] at (2.85,-1.06) {Incumbent};
+    \draw[->,PPEInk] (2.98,-1.11) -- (5.65,-2.06)
+      node[midway,below,font=\scriptsize] {Fight};
+    \node[anchor=west] at (5.8,-2.06) {$(-1,-2)$};
+    \draw[->,PPENavarraRed,very thick] (2.98,-1.01) -- (5.65,-0.16)
+      node[midway,above,font=\scriptsize] {Accommodate};
+    \node[anchor=west] at (5.8,-0.16) {$(1,1)$};
+    \node[font=\scriptsize,text=PPEBurgundy,align=center] at (4.9,-2.9)
+      {subgame-perfect equilibrium:\\Enter, Accommodate};
+  \end{tikzpicture}
+  \caption{Entry deterrence. The highlighted path follows backward induction:
+  after entry, the incumbent prefers accommodation, so the entrant enters.}
+  \label{fig:entry-deterrence}
+\end{figure}
+\FloatBarrier
+
+A \keyterm{credible threat} is an action that is optimal when the relevant
+contingency arrives. A \keyterm{subgame-perfect equilibrium} is a strategy
+profile that forms a Nash equilibrium in every subgame. It rules out an empty
+threat of fighting after entry when fighting would actually harm the incumbent.
+
+\section{Repeated interaction}
+
+Repeated play can change the incentives in a one-shot Prisoner's Dilemma. If
+players expect to meet again, a short-run gain from defection can be outweighed
+by the loss of future cooperation. This is one reason why reputation,
+long-lived relationships, and transparent records can matter in markets.
+
+For a simple illustration, suppose each player receives \(3\) every period if
+both cooperate. A player who defects while the other cooperates receives \(5\)
+once, but then receives \(1\) forever after. Let \(\delta\) be the
+\keyterm{shadow of the future}: the value placed on a payoff one period ahead
+relative to a payoff today. Cooperation is sustainable under this simple
+trigger strategy if
+\[
+\frac{3}{1-\delta}\geq 5+\frac{\delta}{1-\delta},
+\qquad\text{which implies}\qquad
+\delta\geq \frac{1}{2}.
+\]
+The calculation is not a universal law. It assumes reliable observation,
+credible punishment, an indefinite or uncertain ending date, and patient
+players. In a known final period, backward induction can instead unravel
+cooperation.
+
+The analysis connects directly to Chapter~13. Competing firms may all gain
+from keeping prices high, but each has an incentive to cut price or expand
+output. Competition law, changing market conditions, entry, and imperfect
+monitoring can all make collusion difficult to sustain.
+
+\section{Institutions change games}
+
+Game theory helps compare institutions because a rule can change a game in
+several ways: it can alter payoffs through taxes or penalties, reveal
+information through disclosure, change which actions are feasible through
+contracts, or coordinate expectations through a clear procedure. The central
+PPE question is therefore not whether strategic behaviour is good or bad, but
+which institutional design produces the most defensible outcomes.
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
-  \item \textbf{Strategy}: complete action available to a player.
-  \item \textbf{Dominant strategy}: best regardless of opponents' actions.
-  \item \textbf{Nash equilibrium}: mutual best responses.
-  \item \textbf{Backward induction}: reasoning from final choices backward.
-  \item \textbf{Credible threat}: action optimal when the contingency occurs.
-  \item \textbf{Subgame-perfect equilibrium}: equilibrium in every subgame.
+  \item \textbf{Strategy}: a complete contingent plan available to a player.
+  \item \textbf{Best response}: a payoff-maximising choice given the other players' choices.
+  \item \textbf{Nash equilibrium}: a profile of mutual best responses.
+  \item \textbf{Prisoner's Dilemma}: individually rational defection can produce an inefficient outcome.
+  \item \textbf{Coordination game}: players benefit from compatible choices and may face multiple equilibria.
+  \item \textbf{Backward induction}: reasoning from final decision nodes back to earlier choices.
+  \item \textbf{Credible threat}: an action that remains optimal when the contingency occurs.
+  \item \textbf{Subgame-perfect equilibrium}: a Nash equilibrium in every subgame.
+  \item \textbf{Repeated game}: strategic interaction that occurs more than once.
 \end{itemize}
 
 \section*{Exercises}
 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
-  \item Define a Nash equilibrium. Why need it not be Pareto efficient?
+  \item Identify the players, strategies, payoffs, and rules in one economic or political interaction.
+  \item Distinguish an action from a strategy in a sequential game.
   \item Distinguish a dominant strategy from a best response.
-  \item Explain backward induction and credibility.
-  \item How can repeated interaction support cooperation?
+  \item Define a Nash equilibrium. Why need it not be Pareto efficient?
+  \item Explain why a threat can fail to be credible.
+  \item How can repeated interaction support cooperation, and what conditions can prevent it?
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Construct a $2\times2$ Prisoner's Dilemma payoff matrix and mark its Nash equilibrium.
-  \item Draw a two-stage entry-deterrence game tree and mark the solution obtained by backward induction.
+  \item Construct a \(2\times2\) Prisoner's Dilemma payoff matrix. Mark each player's best responses, its Nash equilibrium, and an outcome that Pareto dominates it.
+  \item Draw the entry-deterrence game in Figure~\ref{fig:entry-deterrence}. Change the payoffs so that Fight becomes credible, then solve the revised game by backward induction.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item In the matrix with $(A1,B1)=(4,4)$, $(A1,B2)=(1,5)$, $(A2,B1)=(5,1)$, and $(A2,B2)=(2,2)$, identify dominant strategies, Nash equilibrium, and Pareto-efficient outcomes.
-  \item An entrant chooses Enter or Stay Out. If Enter, an incumbent chooses Fight or Accommodate. Construct payoffs where Fight is not credible and find the subgame-perfect equilibrium.
-  \item Give a political or economic example in which individually rational choices create an inefficient collective result.
+  \item In the Battle of the Sexes matrix above, identify all pure-strategy Nash equilibria. Does either player have a dominant strategy?
+  \item An entrant chooses Enter or Stay Out. If Enter, an incumbent chooses Fight or Accommodate. The payoffs are Out \((0,3)\), Enter--Fight \((-1,-2)\), and Enter--Accommodate \((1,1)\). Find the subgame-perfect equilibrium.
+  \item In the repeated Prisoner's Dilemma in this chapter, derive the minimum value of \(\delta\) that makes cooperation sustainable under the trigger strategy.
+  \item Explain how the temptation to deviate from a cartel agreement resembles a Prisoner's Dilemma. Give one reason why a real cartel may be harder to sustain than the simple repeated-game model suggests.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
 \begin{enumerate}[resume,label=\arabic*.]
   \item A Nash equilibrium is an outcome where: (a) every player cooperates; (b) no player benefits by unilaterally changing action; (c) all payoffs are equal; or (d) one player wins.
-  \item In a dynamic game, backward induction begins by analysing: (a) the first move; (b) the final decision nodes; (c) average payoffs; or (d) market demand.
+  \item In a finite dynamic game, backward induction begins by analysing: (a) the first move; (b) the final decision nodes; (c) average payoffs; or (d) market demand.
   \item A subgame-perfect equilibrium excludes: (a) all cooperation; (b) credible actions; (c) non-credible threats; or (d) sequential decisions.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
 
-\noindent When strategic interaction produces a socially undesirable equilibrium, should policy change payoffs, restrict strategies, or encourage cooperation? Discuss with one economic or political example.
+\noindent Choose a strategic problem in policy, business, or politics. Which
+aspect of the game should an institution change: payoffs, information, feasible
+strategies, or expectations? Defend one realistic proposal and discuss a
+possible unintended consequence.
