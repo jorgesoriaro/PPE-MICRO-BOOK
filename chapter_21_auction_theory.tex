@@ -88,14 +88,14 @@ Table~\ref{tab:auction-formats} is a useful first comparison.
   \centering
   \small
   \renewcommand{\arraystretch}{1.18}
-  \begin{tabular}{@{}p{1.85cm}p{2.05cm}p{1.85cm}p{4.50cm}@{}}
+  \begin{tabular}{@{}p{1.85cm}p{1.75cm}p{1.75cm}p{5.00cm}@{}}
     \toprule
-    Format & Bidding process & Winner pays & Basic strategic point\\
+    Format & Bids & Pays & Basic strategic point\\
     \midrule
-    English & Public bids rise; bidders drop out & Final active bid & Remaining active reveals information; the last bidder wins.\\
-    Dutch & Public price falls until acceptance & Price at acceptance & Waiting may secure a lower price but risks losing the object first.\\
-    First-price sealed bid & One private bid from each bidder & Own bid & Raising the bid makes winning more likely but reduces surplus if one wins.\\
-    Second-price sealed bid & One private bid from each bidder & Second-highest bid & Under independent private values, bid the true value.\\
+    English & Open, ascending & Final active bid & Remaining active reveals information; the last bidder wins.\\
+    Dutch & Open, descending & Price at acceptance & Waiting may secure a lower price but risks losing the object first.\\
+    First-price sealed bid & One private bid & Own bid & Raising the bid makes winning more likely but reduces surplus if one wins.\\
+    Second-price sealed bid & One private bid & Second-highest bid & Under independent private values, bid the true value.\\
     \bottomrule
   \end{tabular}
   \caption{The four canonical auction formats.}
@@ -337,3 +337,16 @@ provide the best service may advance a different public objective.
 raising public revenue, choosing the bidder with the highest expected social
 value, or widening access to smaller bidders? Compare at least two rules and
 discuss the information, incentive, and legitimacy trade-offs.
+
+\subsection*{An auction-analysis checklist}
+
+\begin{keyidea}
+\textbf{Before judging an auction, ask five questions.}
+\begin{enumerate}
+  \item Is the object mainly a private value, common value, or a mixture?
+  \item What information do bids, exit decisions, or disclosures reveal?
+  \item Who wins and what does the winner pay under this format?
+  \item Which objective takes priority: allocation, revenue, quality, access, or cost?
+  \item Could the rules create overbidding, weak entry, collusion, or poor quality?
+\end{enumerate}
+\end{keyidea}
