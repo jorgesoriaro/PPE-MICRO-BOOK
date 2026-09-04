@@ -46,10 +46,13 @@ of those rules changes the incentives of strategic participants.
 \section{Values and information}
 
 The right bidding strategy depends on what a bidder knows about value. In a
-\keyterm{private-value auction}, each participant's value is known to that
-participant and is independent of others' information. A concert ticket for
-personal use is often close to this case: another person's enthusiasm need not
-change how much the ticket is worth to you.
+\keyterm{private-value auction}, each participant knows their own value, and
+that value does not depend on other bidders' signals or values. This does not
+by itself mean that values are statistically independent: the
+\emph{independent-private-values} benchmark later adds that assumption. A
+concert ticket for personal use is often close to the private-value case:
+another person's enthusiasm need not change how much the ticket is worth to
+you.
 
 In a \keyterm{common-value auction}, the object has roughly the same
 underlying value for everyone, but that value is uncertain. Bidders observe
@@ -95,7 +98,7 @@ Table~\ref{tab:auction-formats} is a useful first comparison.
     English & Open, rising & Final active bid & Remaining active reveals information; the last bidder wins.\\
     Dutch & Open, falling & Price at acceptance & Waiting may secure a lower price but risks losing the object first.\\
     First-price sealed bid & One private bid & Own bid & Raising the bid makes winning more likely but reduces surplus if one wins.\\
-    Second-price sealed bid & One private bid & Second-highest bid & Under independent private values, bid the true value.\\
+    Second-price sealed bid & One private bid & Second-highest bid & With private values and quasi-linear payoffs, bid the true value.\\
     \bottomrule
   \end{tabular}
   \caption{The four canonical auction formats.}
@@ -153,13 +156,14 @@ the price paths remain a helpful starting point.
 \section{Bidding incentives: first price and second price}
 
 In a first-price sealed-bid auction, the winner pays their own bid. A high bid
-makes winning more likely, but leaves less surplus conditional on winning. If
-\(b_i\) is bidder \(i\)'s bid, the expected payoff can be written as
+makes winning more likely, but leaves less surplus conditional on winning. For
+a risk-neutral bidder with private values, and ignoring ties, if \(b_i\) is
+bidder \(i\)'s bid, expected monetary surplus can be written as
 \[
-\pi_i(b_i)
+\pi_i(b_i\mid v_i)
  =
 \bigl(v_i-b_i\bigr)
-\Pr\!\left(b_i>\max_{j\ne i}b_j\right).
+\Pr\!\left(b_i>\max_{j\ne i}b_j\mid v_i\right).
 \]
 This is the logic of \keyterm{bid shading}: a bidder normally bids below
 their private value to retain some surplus if they win.
@@ -198,9 +202,10 @@ win but not the price paid if they win. Let \(h\) be the highest rival bid. If
 \(h<v_i\), winning gives positive surplus and any bid above \(h\) is desirable.
 If \(h>v_i\), winning gives negative surplus and any bid below \(h\) is
 desirable. Bidding exactly \(v_i\) makes the correct choice in both cases.
-Thus truthful bidding is weakly dominant under the private-value assumptions
-of this model. Chapter~18 showed the same logic as an incentive-compatible
-mechanism.
+Thus truthful bidding is weakly dominant in the standard private-value,
+quasi-linear-payoff model. Collusion, bidding costs, or payoff-relevant
+externalities can change the conclusion. Chapter~18 showed the same logic as
+an incentive-compatible mechanism.
 
 \begin{keyidea}
 \textbf{Do not confuse format with outcome.}
@@ -290,11 +295,15 @@ provide the best service may advance a different public objective.
 
 \subsection*{Key concepts and equations}
 \begin{itemize}
-  \item \textbf{Private-value auction}: each bidder knows their own value, which is independent of others' information.
+  \item \textbf{Private-value auction}: each bidder knows their own value,
+  which does not depend on other bidders' signals or values; this does not by
+  itself imply statistically independent values.
   \item \textbf{Common-value auction}: bidders have different signals about an uncertain underlying value shared by all.
   \item \textbf{English and Dutch auctions}: public formats with ascending and descending prices, respectively.
   \item \textbf{First-price auction}: highest bidder wins and pays their own bid; bid shading balances margin against the chance of winning.
-  \item \textbf{Second-price auction}: highest bidder wins and pays the second-highest bid; truthful bidding is weakly dominant under private values.
+  \item \textbf{Second-price auction}: highest bidder wins and pays the
+  second-highest bid; truthful bidding is weakly dominant in the standard
+  private-value, quasi-linear-payoff model.
   \item \textbf{Winner's curse}: winning conveys adverse information in a common-value setting and can make a naive bid too high.
   \item \textbf{Benchmark first-price bid}: with \(n\) symmetric risk-neutral bidders and uniform private values, \(b(v)=\frac{n-1}{n}v\).
 \end{itemize}

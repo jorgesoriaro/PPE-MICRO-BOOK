@@ -140,9 +140,10 @@ then pays a transfer. With positive \(t_i\) denoting a payment by participant
 u_i=v_i\!\left(x_i(\hat{\theta}_i,\theta_{-i}),\theta_i\right)
     -t_i(\hat{\theta}_i,\theta_{-i}).
 \]
-Here \(\theta_{-i}\) denotes the other participants' types. A mechanism is
-\keyterm{incentive compatible} if a truthful report is at least as good as a
-misreport:
+Here \(\theta_{-i}\) denotes the other participants' types, assumed to be
+reported truthfully in the displayed condition. This is an \keyterm{ex-post
+incentive-compatibility} condition: for every realised type profile and every
+feasible misreport, a truthful report is at least as good as a misreport:
 \[
 u_i(\theta_i,\theta_i,\theta_{-i})
 \geq
@@ -150,15 +151,22 @@ u_i(\theta_i,\hat{\theta}_i,\theta_{-i})
 \qquad\text{for every feasible }\hat{\theta}_i.
 \]
 
+Dominant-strategy incentive compatibility is stronger: truthfulness must be
+optimal for every possible profile of other participants' reports, not only
+when they report truthfully. Bayesian incentive compatibility instead compares
+expected utility given beliefs about other participants' types.
+
 Incentive compatibility concerns the choice \emph{within} the mechanism. A
 mechanism is \keyterm{individually rational} when joining is worthwhile
 relative to a person's outside option \(\bar u_i\):
 \[
 u_i(\theta_i,\theta_i,\theta_{-i})\geq\bar u_i.
 \]
-This is also called a \keyterm{participation constraint}. A student may report
-truthfully yet still decline a mechanism that makes participation too costly or
-offers too little benefit.
+This is an ex-post \keyterm{participation constraint} when it holds for every
+realised type profile. In applications, the timing of information determines
+whether individual rationality is stated ex post, interim, or ex ante. A
+student may report truthfully yet still decline a mechanism that makes
+participation too costly or offers too little benefit.
 
 \begin{keyidea}
 \textbf{Two different tests.}
@@ -241,11 +249,13 @@ alternatives, not between a real mechanism and an idealised one.
 \section{Trade-offs, limits, and legitimacy}
 
 Mechanism design does not produce a magic rule. Desirable properties can
-conflict. \keyterm{Budget balance} requires that a mechanism not need an
-outside subsidy; efficiency can require payments or information that are hard
-to obtain; fairness can call for priority rules that are difficult to verify.
-Complex rules may be manipulable, invasive of privacy, expensive to administer,
-or too difficult for participants to understand.
+conflict. \keyterm{Budget balance} requires a stated convention. \emph{Weak
+budget balance} requires that a mechanism not need an outside subsidy; \emph{
+exact budget balance} requires total funds received to equal total funds paid
+out plus stated costs. Efficiency can require payments or information that are
+hard to obtain; fairness can call for priority rules that are difficult to
+verify. Complex rules may be manipulable, invasive of privacy, expensive to
+administer, or too difficult for participants to understand.
 
 The final assessment is therefore institutional as well as mathematical. Does
 the mechanism work with realistic information, enforcement capacity, and
@@ -262,9 +272,13 @@ the PPE framework developed in Chapter~15.
   \item \textbf{Direct mechanism}: rule in which participants report their types directly.
   \item \textbf{Allocation rule}: mapping from messages to an allocation.
   \item \textbf{Transfer}: payment, reward, tax, or penalty determined by the mechanism.
-  \item \textbf{Incentive compatibility}: intended behaviour is optimal for each participant.
-  \item \textbf{Individual rationality}: participation is at least as good as the outside option.
-  \item \textbf{Budget balance}: the mechanism does not require a net outside subsidy.
+  \item \textbf{Incentive compatibility}: intended behaviour is optimal under
+  the stated information and beliefs.
+  \item \textbf{Individual rationality}: participation is at least as good as
+  the outside option at the stated information stage.
+  \item \textbf{Budget balance}: weak balance means no net outside subsidy;
+  exact balance requires funds received to equal funds paid out plus stated
+  costs.
 \end{itemize}
 
 \section*{Exercises}
