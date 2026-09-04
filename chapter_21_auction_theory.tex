@@ -3,62 +3,337 @@
 
 \section{Learning objectives}
 
-After completing this chapter, you should be able to distinguish common auction formats, explain private and common values, identify the winner's curse, and assess basic auction-design objectives.
+After completing this chapter, you should be able to:
+\begin{itemize}
+  \item explain why an auction can reveal information that a posted price cannot;
+  \item distinguish private, common, and interdependent values;
+  \item compare English, Dutch, first-price, and second-price auction formats;
+  \item derive and interpret a simple first-price bidding benchmark;
+  \item explain truthful bidding in a private-value second-price auction; and
+  \item diagnose the winner's curse and evaluate basic auction-design choices.
+\end{itemize}
 
-\section{Why auctions?}
+\section{Why use an auction?}
 
-Auctions allocate goods when prices are not known in advance or when buyers have different valuations. Governments use them for spectrum licences and procurement; firms use them for advertising and online sales; individuals use them for art, housing, and collectibles.
+An \keyterm{auction} is a rule for allocating an object through competing
+offers. It is useful when a seller does not know in advance how much different
+buyers value an item, or when the item has no obvious market price. A
+government deciding who may operate a scarce radio frequency, a university
+selling a charity item, and a firm choosing a supplier all face versions of
+this problem.
 
-In a \keyterm{private-value} auction, each bidder knows their own valuation and it does not depend on others' valuations. In a \keyterm{common-value} auction, the item has approximately the same underlying value for all bidders, but bidders have different information about it. Oil leases and some artworks have important common-value elements.
+At a posted price, the seller selects the price before learning much about
+buyers' willingness to pay. An auction instead asks participants to reveal
+some information through bids or decisions to remain active. This does not
+make auctions automatically fair or efficient. It simply changes the
+information and incentives that shape allocation.
 
-\section{Auction formats}
+For bidder \(i\), let \(v_i\) denote the value of receiving the object and
+let \(p_i\) denote the payment. If the bidder wins, the monetary surplus is
+\[
+v_i-p_i.
+\]
+The central strategic question is therefore not only whether to win, but at
+what price and under which rule.
 
-An English auction has ascending public bids; the last bidder remaining wins and pays the final price. A Dutch auction descends from a high price until someone accepts. In a first-price sealed-bid auction, the highest bidder wins and pays their bid. In a second-price sealed-bid auction, the highest bidder wins but pays the second-highest bid.
+\begin{keyidea}
+\textbf{An auction is a mechanism.}
+It specifies who may participate, what they can bid, who receives the object,
+what the winner pays, and how rules are enforced. As in Chapter~18, the design
+of those rules changes the incentives of strategic participants.
+\end{keyidea}
 
-In a private-value second-price auction, bidding one's true valuation is a dominant strategy: bidding higher risks paying more than the object is worth, while bidding lower risks losing an object that would have generated a surplus. The result depends on the format's assumptions and can fail with common values or additional strategic considerations.
+\section{Values and information}
 
-\section{The winner's curse and design}
+The right bidding strategy depends on what a bidder knows about value. In a
+\keyterm{private-value auction}, each participant's value is known to that
+participant and is independent of others' information. A concert ticket for
+personal use is often close to this case: another person's enthusiasm need not
+change how much the ticket is worth to you.
 
-In common-value settings, winning may be bad news: the winner may have been the most optimistic bidder. This \keyterm{winner's curse} encourages rational bidders to shade bids below their estimates. Auction designers can reduce uncertainty through disclosure, inspection, reserve prices, and rules that discourage collusion.
+In a \keyterm{common-value auction}, the object has roughly the same
+underlying value for everyone, but that value is uncertain. Bidders observe
+different clues. Rights to exploit a natural resource, an antique with an
+uncertain resale value, or a contract with uncertain future costs can have
+important common-value elements. In an \keyterm{interdependent-values}
+setting, a bidder's value is private but other bidders' information can still
+change it. A home buyer, for example, may value a property partly for personal
+reasons and partly for an uncertain resale price.
 
-Good auction design balances efficiency, revenue, simplicity, participation, and resistance to manipulation. These goals may conflict. A format that raises revenue in one setting need not allocate efficiently or attract enough credible bidders in another.
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{2.55cm}p{3.65cm}p{4.65cm}@{}}
+  \toprule
+  Setting & What bidder \(i\) knows & Why other bids matter\\
+  \midrule
+  Private value & Own value \(v_i\) & Mainly because they determine whether \(i\) wins and what \(i\) pays.\\
+  Common value & A signal about a shared value \(V\) & They reveal whether \(i\)'s signal was unusually optimistic.\\
+  Interdependent values & Own value and a signal about others' values & They can contain useful information about the object's value or quality.\\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+These are models, not rigid labels. A car may be a private-value purchase for
+one buyer but have a common-value component when its reliability is uncertain.
+The practical question is whether winning itself tells the winner something
+unfavourable about the object.
+
+\section{Four canonical auction formats}
+
+The four standard formats differ along two simple dimensions: whether bids are
+public or sealed, and whether the winner pays their own bid or another price.
+Table~\ref{tab:auction-formats} is a useful first comparison.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{@{}p{1.85cm}p{2.05cm}p{1.85cm}p{4.50cm}@{}}
+    \toprule
+    Format & Bidding process & Winner pays & Basic strategic point\\
+    \midrule
+    English & Public bids rise; bidders drop out & Final active bid & Remaining active reveals information; the last bidder wins.\\
+    Dutch & Public price falls until acceptance & Price at acceptance & Waiting may secure a lower price but risks losing the object first.\\
+    First-price sealed bid & One private bid from each bidder & Own bid & Raising the bid makes winning more likely but reduces surplus if one wins.\\
+    Second-price sealed bid & One private bid from each bidder & Second-highest bid & Under independent private values, bid the true value.\\
+    \bottomrule
+  \end{tabular}
+  \caption{The four canonical auction formats.}
+  \label{tab:auction-formats}
+\end{table}
+\FloatBarrier
+
+Figure~\ref{fig:auction-price-paths} visualises the public formats. An English
+auction ends when all but one bidder have dropped out. A Dutch auction ends at
+the first acceptance. The seller can make both formats more complicated with
+reserve prices, bid increments, eligibility rules, or disclosure rules, but
+the price paths remain a helpful starting point.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=1cm,y=0.80cm,font=\small]
+    \node[font=\sffamily\bfseries,text=PPEBurgundy] at (2.35,4.10)
+      {English auction: price ascends};
+    \draw[-{Latex[length=2.0mm]},PPEInk] (0,0) -- (5.0,0)
+      node[below right] {time};
+    \draw[-{Latex[length=2.0mm]},PPEInk] (0,0) -- (0,3.55)
+      node[above left] {price};
+    \draw[PPENavarraRed,line width=1.15pt]
+      (0.25,0.60) -- (0.95,0.95) -- (1.60,1.35) -- (2.35,1.75)
+      -- (3.15,2.20) -- (3.95,2.70);
+    \draw[dashed,PPEMuted] (3.95,0) -- (3.95,2.70);
+    \node[align=center,text=PPEMuted] at (3.95,-0.55)
+      {last rival\\drops out};
+    \node[align=center,text=PPENavarraRed] at (3.95,3.15)
+      {winner pays\\final bid};
+
+    \begin{scope}[xshift=6.45cm]
+      \node[font=\sffamily\bfseries,text=PPEBurgundy] at (2.35,4.10)
+        {Dutch auction: price descends};
+      \draw[-{Latex[length=2.0mm]},PPEInk] (0,0) -- (5.0,0)
+        node[below right] {time};
+      \draw[-{Latex[length=2.0mm]},PPEInk] (0,0) -- (0,3.55)
+        node[above left] {price};
+      \draw[PPENavarraRed,line width=1.15pt]
+        (0.25,3.00) -- (0.95,2.65) -- (1.65,2.30) -- (2.35,1.95)
+        -- (3.10,1.55);
+      \draw[dashed,PPEMuted] (3.10,0) -- (3.10,1.55);
+      \node[align=center,text=PPEMuted] at (3.10,-0.55)
+        {first bidder\\accepts};
+      \node[align=center,text=PPENavarraRed] at (3.10,2.20)
+        {winner pays\\current price};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Public price paths in English and Dutch auctions. In each case the
+  stopping rule determines both allocation and payment.}
+  \label{fig:auction-price-paths}
+\end{figure}
+\FloatBarrier
+
+\section{Bidding incentives: first price and second price}
+
+In a first-price sealed-bid auction, the winner pays their own bid. A high bid
+makes winning more likely, but leaves less surplus conditional on winning. If
+\(b_i\) is bidder \(i\)'s bid, the expected payoff can be written as
+\[
+\pi_i(b_i)
+ =
+\bigl(v_i-b_i\bigr)
+\Pr\!\left(b_i>\max_{j\ne i}b_j\right).
+\]
+This is the logic of \keyterm{bid shading}: a bidder normally bids below
+their private value to retain some surplus if they win.
+
+Here is a useful benchmark. Suppose there are \(n\) risk-neutral bidders with
+independent private values uniformly distributed on \([0,\bar v]\). In the
+symmetric equilibrium of this simple model,
+\[
+b(v)=\frac{n-1}{n}v.
+\]
+With two bidders, a value of \euro60 leads to a bid of \euro30; with three
+bidders, the benchmark bid is \euro40. More competitors make bidding more
+aggressive because winning becomes harder.
+
+\paragraph{A compact derivation.}
+Suppose rivals use \(b=\alpha v\), and a bidder with true value \(v\) bids as
+if their value were \(z\). The probability of beating all rivals is
+\((z/\bar v)^{n-1}\), so expected payoff is
+\[
+\pi(v,z)
+=
+\bigl(v-\alpha z\bigr)
+\left(\frac{z}{\bar v}\right)^{n-1}.
+\]
+The first-order condition is
+\[
+(n-1)(v-\alpha z)-\alpha z=0.
+\]
+In a symmetric equilibrium \(z=v\), giving
+\(\alpha=(n-1)/n\). This calculation is deliberately narrow: risk aversion,
+asymmetric bidders, correlated values, or a different format can change the
+answer.
+
+In a second-price sealed-bid auction, a bidder's own bid changes whether they
+win but not the price paid if they win. Let \(h\) be the highest rival bid. If
+\(h<v_i\), winning gives positive surplus and any bid above \(h\) is desirable.
+If \(h>v_i\), winning gives negative surplus and any bid below \(h\) is
+desirable. Bidding exactly \(v_i\) makes the correct choice in both cases.
+Thus truthful bidding is weakly dominant under the private-value assumptions
+of this model. Chapter~18 showed the same logic as an incentive-compatible
+mechanism.
+
+\begin{keyidea}
+\textbf{Do not confuse format with outcome.}
+The standard models predict that some formats can be strategically equivalent
+under strong assumptions. For example, a Dutch auction and a first-price
+sealed-bid auction have the same trade-off in the independent private-value
+benchmark. That does not mean they are interchangeable in practice: public
+information, time pressure, participation, and rules against collusion can
+matter greatly.
+\end{keyidea}
+
+\section{Common values and the winner's curse}
+
+The \keyterm{winner's curse} is not irrationality. It is a selection problem.
+When several bidders estimate the same uncertain value, the highest estimate
+is likely to contain the most optimistic error. Winning is therefore new
+information: it can lower a rational bidder's estimate of what the object is
+really worth.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[node distance=0.35cm]
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (signal)
+      {Own signal\\\(s_i\)};
+    \node[ppebox,minimum width=2.55cm,text width=2.25cm,right=of signal] (win)
+      {If I win, my signal was\\relatively high};
+    \node[ppebox,minimum width=2.65cm,text width=2.35cm,right=of win] (update)
+      {Update\\\(\mathbb{E}[V\mid\text{win},s_i]\)};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm,right=of update] (bid)
+      {Shade bid below\\naive estimate};
+    \draw[ppearrow] (signal) -- (win);
+    \draw[ppearrow] (win) -- (update);
+    \draw[ppearrow] (update) -- (bid);
+  \end{tikzpicture}
+  \caption{In a common-value setting, winning can be adverse news. A rational
+  bid reflects the expected value conditional on winning, not only the
+  bidder's initial estimate.}
+  \label{fig:winners-curse}
+\end{figure}
+\FloatBarrier
+
+The relevant comparison is often
+\[
+\text{maximum sensible bid}
+\leq
+\mathbb{E}[V\mid \text{win},s_i].
+\]
+Risk aversion, costs of participation, or a desired profit margin may push the
+bid still lower. Sellers can reduce the winner's curse by allowing inspection,
+disclosing credible information, or choosing a format in which rivals'
+decisions reveal useful information. These choices may also increase entry,
+because bidders are less afraid that winning means overpaying.
+
+\section{Designing auctions and procurement rules}
+
+Auction design is an applied exercise in mechanism design. A designer must
+decide not only who wins, but what objective the auction serves. Revenue is
+one objective; allocating the object to the person who values it most,
+attracting qualified participants, limiting collusion, and maintaining public
+legitimacy are others.
+
+Procurement makes the contrast especially clear. A \keyterm{reverse auction}
+asks suppliers to compete to provide a good or service, so the lowest
+acceptable bid tends to win. But awarding a complex contract solely to the
+lowest price can encourage unrealistic bids, poor quality, or later
+renegotiation. A serious procurement rule may therefore specify quality
+standards, verification, penalties, and transparent evaluation criteria as
+well as price.
+
+\begin{keyidea}
+\textbf{Five design questions for an auction.}
+\begin{enumerate}
+  \item What is the objective: efficient allocation, revenue, low procurement cost, access, or something else?
+  \item What is privately known, and what information can be credibly disclosed or verified?
+  \item Which bids are eligible, and is there a \keyterm{reserve price} or quality threshold?
+  \item Does the payment rule encourage truthful information, entry, and serious bids?
+  \item How will the rule deter collusion, enforce promises, and remain understandable to participants?
+\end{enumerate}
+\end{keyidea}
+
+The answer depends on institutional context. A well-designed auction does not
+remove ethical choices; it makes them explicit. Selling a public asset to the
+highest bidder may raise revenue, while allocating it to the bidder who will
+provide the best service may advance a different public objective.
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
-  \item \textbf{Private value}: bidder valuation known to that bidder and independent of others'.
-  \item \textbf{Common value}: underlying value shared but uncertain.
-  \item \textbf{Winner's curse}: tendency for a winner to overpay in common-value settings.
-  \item \textbf{Second-price auction}: winner pays the second-highest bid.
+  \item \textbf{Private-value auction}: each bidder knows their own value, which is independent of others' information.
+  \item \textbf{Common-value auction}: bidders have different signals about an uncertain underlying value shared by all.
+  \item \textbf{English and Dutch auctions}: public formats with ascending and descending prices, respectively.
+  \item \textbf{First-price auction}: highest bidder wins and pays their own bid; bid shading balances margin against the chance of winning.
+  \item \textbf{Second-price auction}: highest bidder wins and pays the second-highest bid; truthful bidding is weakly dominant under private values.
+  \item \textbf{Winner's curse}: winning conveys adverse information in a common-value setting and can make a naive bid too high.
+  \item \textbf{Benchmark first-price bid}: with \(n\) symmetric risk-neutral bidders and uniform private values, \(b(v)=\frac{n-1}{n}v\).
 \end{itemize}
 
 \section*{Exercises}
 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
-  \item Distinguish private-value from common-value auctions.
-  \item Compare English, Dutch, first-price, and second-price auctions.
-  \item Explain the winner's curse.
+  \item Why might a seller prefer an auction to a posted price when buyers have different private valuations?
+  \item Classify each case as mainly private value, common value, or interdependent values: a ticket for your favourite band; drilling rights with uncertain reserves; and a house with an uncertain resale value.
+  \item Compare English, Dutch, first-price sealed-bid, and second-price sealed-bid auctions in terms of information revealed and payment rule.
+  \item Why does a first-price bidder normally shade their bid below their valuation?
+  \item Explain the winner's curse. Why can better disclosure encourage rather than discourage participation?
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Sketch the price path in an English auction and a Dutch auction.
+  \item Draw an English-auction price path and a Dutch-auction price path. Mark the event at which each auction stops and the price the winner pays.
+  \item Recreate the information flow in Figure~\ref{fig:winners-curse} for a bidder choosing whether to bid on a contract with uncertain costs. Explain the direction of the bid adjustment.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Explain why truthful bidding is optimal in a private-value second-price auction.
-  \item A bidder estimates a common value at \euro100 but expects to be the most optimistic bidder if she wins. Explain why bidding \euro100 may be unwise.
+  \item Three students value a signed football shirt at \euro30, \euro22, and \euro15. Under truthful bids in a second-price sealed-bid auction, identify the winner, payment, and each student's net payoff.
+  \item Under the symmetric benchmark \(b(v)=\frac{n-1}{n}v\), calculate the first-price bid for a bidder with value \euro60 when \(n=2\), and when \(n=3\). State two assumptions needed for this formula.
+  \item A bidder's initial signal suggests a common value of \euro100. Conditional on winning, the bidder estimates that the expected actual value is only \euro85. In a first-price auction with no other costs, what is the highest bid that avoids an expected loss? Explain why the conditional estimate is the relevant one.
+  \item In a reverse auction, suppliers \(A\), \(B\), and \(C\) have verified costs of \euro40, \euro55, and \euro70. Explain why \(A\) should not automatically bid \euro40. If \(A\) wins a fixed-price contract at \euro52, calculate its margin and name one non-price rule the buyer could use to protect quality.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
 \begin{enumerate}[resume,label=\arabic*.]
   \item In a second-price sealed-bid auction, the winner pays: (a) their own bid; (b) the reserve price only; (c) the second-highest bid; or (d) nothing.
-  \item The winner's curse is especially relevant in: (a) common-value auctions; (b) private-value auctions with no uncertainty; (c) perfectly competitive markets only; or (d) public goods.
+  \item In the standard independent private-value model, a first-price bidder shades a bid below value because: (a) the bidder never wants to win; (b) a higher bid raises the chance of winning but lowers surplus if the bidder wins; (c) bids are always public; or (d) the winner pays the second-highest bid.
+  \item The winner's curse is especially relevant when: (a) several bidders have noisy signals about a common underlying value; (b) each bidder knows a private value with no uncertainty; (c) a market is perfectly competitive; or (d) a public good is non-rival.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
 
-\noindent Should governments design auctions primarily to maximise public revenue or to allocate resources efficiently? Discuss using a public-spectrum or procurement example.
+\noindent Should a public authority selling a scarce licence focus primarily on
+raising public revenue, choosing the bidder with the highest expected social
+value, or widening access to smaller bidders? Compare at least two rules and
+discuss the information, incentive, and legitimacy trade-offs.
