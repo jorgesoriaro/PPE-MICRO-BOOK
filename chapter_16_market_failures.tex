@@ -7,56 +7,249 @@
 
 After completing this chapter, you should be able to:
 \begin{itemize}
-  \item explain why a market outcome can fail to maximise social welfare;
-  \item analyse externalities using private and social costs and benefits;
-  \item classify public goods and common resources; and
-  \item identify adverse selection, moral hazard, signalling, and screening.
+  \item diagnose why a private market outcome can diverge from a social objective;
+  \item analyse negative and positive externalities using social marginal costs and benefits;
+  \item distinguish public goods, common resources, club goods, and private goods;
+  \item explain adverse selection, moral hazard, signalling, and screening; and
+  \item compare realistic responses to a market failure.
 \end{itemize}
 
 \section{When markets do not deliver efficient outcomes}
 
-Competitive markets can coordinate decentralised decisions effectively, but their efficiency result depends on demanding assumptions. A \keyterm{market failure} arises when private choices do not account properly for all relevant costs, benefits, information, or collective-action problems. This chapter studies three important sources: externalities, public goods and common resources, and information asymmetry.
+Competitive markets can coordinate decentralised decisions effectively, but
+their efficiency result depends on demanding assumptions. A \keyterm{market
+failure} arises when private choices do not account properly for all relevant
+costs, benefits, information, or collective-action problems.
+
+\begin{keyidea}
+\textbf{Three routes from private choice to a social problem.}
+\begin{center}
+\small
+\begin{tabular}{@{}p{3.1cm}p{4.6cm}p{4.2cm}@{}}
+\toprule
+Problem & What is missing from the private decision? & Typical result \\
+\midrule
+Externality & Effects on third parties & Too much or too little activity \\
+Public good or common resource & Exclusion, ownership, or coordination & Under-provision or overuse \\
+Information asymmetry & Relevant information about type or action & Bad trades, missing trade, or excess risk \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{keyidea}
+
+This chapter develops these three topics in turn. The diagnosis alone is not a
+policy conclusion: a proposed remedy must also be compared with feasible
+alternatives, as Chapter~15 emphasised.
 
 \section{Externalities}
 
-An \keyterm{externality} occurs when an action affects people not directly involved in a market transaction and the effect is not reflected in the market price. A factory's emissions may harm neighbours; vaccination may reduce infection risk for others. These are respectively negative and positive externalities.
+An \keyterm{externality} occurs when an action affects people not directly
+involved in a market transaction and the effect is not reflected in the market
+price. A factory's emissions may harm neighbours; vaccination may reduce
+infection risk for others. These are, respectively, negative and positive
+externalities.
 
-With a negative production externality, marginal social cost exceeds marginal private cost:
+With a negative externality,
 \[
 MSC=MPC+MEC,
 \]
-where $MEC$ is marginal external cost. Firms decide using $MPC$, so market output exceeds the efficient level, where marginal social benefit equals marginal social cost. With a positive externality, marginal social benefit exceeds private benefit and market output is too low.
+where $MPC$ is marginal private cost and $MEC$ is \keyterm{marginal external
+cost}. With a positive externality,
+\[
+MSB=MPB+MEB,
+\]
+where $MPB$ is marginal private benefit and $MEB$ is marginal external benefit.
+Efficiency requires
+\[
+MSB(Q^*)=MSC(Q^*).
+\]
+For a negative externality, firms and consumers use private incentives, so the
+market quantity is typically too high: $Q_M>Q^*$. For a positive externality,
+private demand can understate social benefit, so $Q_M<Q^*$.
 
-Policy responses include a \keyterm{Pigouvian tax} that internalises external cost, a subsidy for external benefits, direct regulation, and tradable permits. The \keyterm{Coase theorem} shows that clear property rights and costless bargaining can produce efficiency, but transaction costs, many affected parties, power differences, and information problems commonly limit this result.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.085cm,y=0.050cm]
+    \fill[PPEAccentLight] (60,40) -- (80,40) -- (80,20) -- cycle;
+    \draw[->,PPEInk] (0,0) -- (88,0) node[below,font=\small] {Quantity $Q$};
+    \draw[->,PPEInk] (0,0) -- (0,105) node[left,font=\small] {Price and marginal value};
+    \draw[PPENavarraRed,very thick,domain=0:85,samples=80]
+      plot (\x,{100-\x});
+    \draw[PPEBurgundy,very thick] (0,20) -- (85,20);
+    \draw[PPEInk,very thick] (0,40) -- (85,40);
+    \draw[PPEGold,densely dashed] (60,0) -- (60,40);
+    \draw[PPEGold,densely dashed] (80,0) -- (80,20);
+    \draw[PPEGold,<->,very thick] (60,20) -- (60,40)
+      node[right,font=\scriptsize,align=left] {$t^*=MEC$};
+    \fill[PPEGold] (60,40) circle (2pt);
+    \fill[PPEGold] (80,20) circle (2pt);
+    \node[below,font=\scriptsize,text=PPEGold] at (60,0) {$Q^*$};
+    \node[below,font=\scriptsize,text=PPEGold] at (80,0) {$Q_M$};
+    \node[left,font=\scriptsize,text=PPEGold] at (0,20) {$MPC$};
+    \node[left,font=\scriptsize,text=PPEGold] at (0,40) {$MSC$};
+    \node[font=\scriptsize,text=PPENavarraRed,fill=white,inner sep=1pt] at (42,63) {$MSB$};
+    \node[font=\scriptsize,text=PPEMuted,align=center] at (71,35) {DWL};
+  \end{tikzpicture}
+  \caption{A negative externality. Market output $Q_M$ is above the efficient
+  level $Q^*$. The triangle is the deadweight loss; a corrective tax equal to
+  marginal external cost at $Q^*$ aligns the private and social cost signals.}
+  \label{fig:negative-externality}
+\end{figure}
+\FloatBarrier
+
+A \keyterm{Pigouvian tax} sets
+\[
+t^*=MEC(Q^*).
+\]
+It makes the private marginal decision reflect the social marginal cost. In
+Figure~\ref{fig:negative-externality}, the tax is a wedge between what buyers
+pay and sellers receive. Tax revenue is a transfer, not the deadweight loss;
+the loss is the surplus from harmful extra units between $Q^*$ and $Q_M$.
+
+Other responses include subsidies for external benefits, direct regulation,
+and \keyterm{tradable permits}. The \keyterm{Coase theorem} provides a useful
+benchmark: with clearly defined transferable rights and negligible transaction
+costs, bargaining can reach an efficient quantity. The initial assignment of
+rights affects who is compensated, even if it does not affect the efficient
+quantity under these strong assumptions. In practice, many affected parties,
+information problems, credit constraints, and enforcement costs often prevent
+such bargaining.
 
 \section{Public goods and common resources}
 
-A good is \keyterm{rival} if one person's consumption reduces what remains for others, and \keyterm{excludable} if non-payers can be prevented from consuming it. Private goods are rival and excludable. \keyterm{Public goods} are non-rival and non-excludable, such as national defence. \keyterm{Common resources} are rival but non-excludable, such as an open fishery. Club goods are excludable and non-rival up to congestion.
+A good exhibits \keyterm{rivalry} if one person's consumption reduces what is
+available to others. It is \keyterm{excludable} if non-payers can be prevented
+from consuming it. These two properties create a useful classification.
 
-Non-excludability encourages \keyterm{free riding}: people may benefit without contributing, resulting in too little private provision of public goods. Common resources face the opposite problem: individuals have an incentive to use the resource before others do, leading to overuse, the \keyterm{tragedy of the commons}.
+\begin{table}[htbp]
+  \centering
+  \caption{Rivalry and excludability}
+  \label{tab:goods-classification}
+  \begingroup
+  \small
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{@{}p{2.1cm}p{4.7cm}p{4.7cm}@{}}
+    \toprule
+     & Excludable & Non-excludable \\
+    \midrule
+    Rival &
+    Private good: bread, clothing &
+    Common resource: an open fishery \\
+    Non-rival &
+    Club good: a subscription platform before congestion &
+    Public good: street lighting or national defence \\
+    \bottomrule
+  \end{tabular}
+  \endgroup
+\end{table}
+\FloatBarrier
 
-Possible responses include public provision, taxation, user fees, property rights, quotas, and community governance. The best institution depends on local knowledge, enforcement capacity, distributional concerns, and the values at stake.
+A \keyterm{public good} is non-rival and non-excludable. Non-excludability
+encourages \keyterm{free riding}: people may enjoy a benefit without
+contributing, so private provision can be too low. For a public good, individual
+marginal benefits are added \emph{vertically}:
+\[
+MSB(Q)=MB_A(Q)+MB_B(Q)+\cdots.
+\]
+Public provision does not itself make a good public; the classification depends
+on rivalry and excludability.
 
-\section{Information asymmetries}
+\begin{exercisebox}
+\textbf{A flood barrier and free riding.}
+Two neighbouring households each value a flood barrier at \euro8, while the
+barrier costs \euro12 in total. Provision is socially worthwhile because total
+benefit is \euro16. Yet neither household may wish to pay the full cost alone,
+hoping that the other will provide it. This is the free-rider problem.
+\end{exercisebox}
 
-\keyterm{Information asymmetry} exists when one party to a transaction knows something relevant that the other does not. Before a contract, hidden information can create \keyterm{adverse selection}: low-quality sellers or high-risk buyers are disproportionately likely to participate. After a contract, hidden actions can create \keyterm{moral hazard}: insurance may reduce incentives to avoid risk.
+A \keyterm{common resource} is rival but non-excludable. An open fishery can
+therefore be overused: each fisher considers their private catch but not the
+effect of depletion on others. This is the \keyterm{tragedy of the commons}.
+Possible responses include quotas, property or use rights, user fees, and
+community governance. The tragedy is not inevitable: local rules, monitoring,
+social norms, and collective ownership can sometimes sustain shared resources.
 
-A \keyterm{signal} is an action by the informed party that credibly conveys information, such as a warranty. \keyterm{Screening} is an action by the less-informed party to induce self-selection, such as an insurer offering contracts with different deductibles. Reputation, disclosure rules, certification, consumer protection, and contract design can improve outcomes, though they can also impose costs or limit access.
+\section{Information asymmetry}
+
+\keyterm{Information asymmetry} exists when one party to a transaction knows
+something relevant that the other does not. Timing matters. Before a contract,
+hidden information about a person's type or quality can create
+\keyterm{adverse selection}. After a contract, hidden action can create
+\keyterm{moral hazard}.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[node distance=0.34cm]
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm] (before)
+      {Before contract};
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm,right=of before] (type)
+      {Hidden type or\\quality};
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm,right=of type] (adverse)
+      {Adverse\\selection};
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm,right=of adverse] (signals)
+      {Signals, screening,\\certification};
+    \draw[ppearrow] (before) -- (type);
+    \draw[ppearrow] (type) -- (adverse);
+    \draw[ppearrow] (adverse) -- (signals);
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm,below=0.72cm of before] (after)
+      {After contract};
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm,right=of after] (action)
+      {Hidden\\action};
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm,right=of action] (moral)
+      {Moral\\hazard};
+    \node[ppebox,minimum width=2.20cm,text width=1.90cm,right=of moral] (responses)
+      {Monitoring, deductibles,\\incentive design};
+    \draw[ppearrow] (after) -- (action);
+    \draw[ppearrow] (action) -- (moral);
+    \draw[ppearrow] (moral) -- (responses);
+  \end{tikzpicture}
+  \caption{Information asymmetry before and after a contract. The timing
+  distinction guides the choice of remedy.}
+  \label{fig:information-asymmetry-timing}
+\end{figure}
+\FloatBarrier
+
+A \keyterm{signal} is an action by the informed party that can credibly convey
+information. A warranty can signal quality only when it is sufficiently more
+costly for low-quality sellers to imitate than for high-quality sellers.
+\keyterm{Screening} is an action by the less-informed party that induces
+self-selection, such as an insurer offering contracts with different
+deductibles.
+
+\begin{exercisebox}
+\textbf{Why good products can disappear.}
+Suppose half of used cars are high quality, worth \euro10 to buyers and
+requiring at least \euro8 for sellers to offer them. The other half are low
+quality, worth \euro4 to buyers and requiring at least \euro2 for sellers. If
+buyers expect an equal mixture, they pay at most \euro7. High-quality sellers
+then leave because \euro7 is below \euro8. Buyers consequently expect only
+low-quality cars and pay at most \euro4. Profitable trade in high-quality cars
+disappears because quality was private information before the contract.
+\end{exercisebox}
+
+Reputation, disclosure rules, certification, consumer protection, and contract
+design can improve information and trade. They can also impose costs, exclude
+some participants, or be manipulated, so their design matters.
 
 \section{A common lesson}
 
-Market failure does not automatically establish that any government intervention will improve matters. It identifies a divergence between private incentives and a social objective. The next question is comparative institutional analysis: which realistic rule, tax, service, regulation, or private arrangement is most likely to improve the outcome, given information limits and political incentives?
+A market failure does not automatically establish that any government
+intervention will improve matters. It identifies a divergence between private
+incentives and a social objective. The next question is comparative
+institutional analysis: which realistic rule, tax, service, regulation, or
+private arrangement is most likely to improve the outcome, given information
+limits, enforcement capacity, and political incentives?
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
-  \item \textbf{Externality}: an unpriced effect on a third party.
-  \item \textbf{Public good}: non-rival and non-excludable good.
-  \item \textbf{Common resource}: rival but non-excludable resource.
-  \item \textbf{Free riding}: benefiting without contributing.
-  \item \textbf{Adverse selection}: hidden information before contracting.
-  \item \textbf{Moral hazard}: hidden action after contracting.
+  \item \textbf{Negative externality}: $MSC=MPC+MEC$ and typically $Q_M>Q^*$.
+  \item \textbf{Positive externality}: $MSB=MPB+MEB$ and typically $Q_M<Q^*$.
+  \item \textbf{Corrective tax}: $t^*=MEC(Q^*)$.
+  \item \textbf{Public good}: non-rival and non-excludable; benefits add vertically.
+  \item \textbf{Common resource}: rival and non-excludable; vulnerable to overuse.
+  \item \textbf{Information asymmetry}: hidden type before, or hidden action after, a contract.
 \end{itemize}
 
 \section*{Exercises}
@@ -64,24 +257,31 @@ Market failure does not automatically establish that any government intervention
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
   \item Define a market failure. Why does its existence not automatically imply that intervention will improve outcomes?
-  \item Distinguish a negative externality from a public good.
-  \item Explain the difference between a common resource and a public good.
+  \item Distinguish a negative externality from a positive externality using social marginal cost and benefit.
+  \item Explain why a public good and a common resource both create collective-action problems but tend to fail in opposite directions.
   \item Distinguish adverse selection from moral hazard using insurance examples.
+  \item When is a warranty a credible signal of quality?
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Draw demand, marginal private cost, and marginal social cost for a negative production externality. Mark market output, efficient output, and deadweight loss.
-  \item Draw a simple diagram showing why private willingness to pay can understate the social benefit of a public good.
-  \item Draw a used-car market and explain how uncertainty about quality may reduce trade.
+  \item Draw demand, marginal private cost, and marginal social cost for a negative production externality. Mark market output, efficient output, the corrective tax, and deadweight loss.
+  \item Two residents have different marginal benefits from a flood barrier. Draw their marginal-benefit curves and show why they must be added vertically for a public good.
+  \item Draw a used-car market and explain how uncertainty about quality can reduce trade.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Demand is $P=100-Q$, private marginal cost is $20$, and external marginal cost is $20$. Find market and efficient quantities and the corrective tax.
+  \item Demand is $P=100-Q$, private marginal cost is $20$, and marginal external cost is $20$. Find market output, efficient output, the corrective tax, tax revenue after correction, and the deadweight loss before correction.
   \item Explain how transferable fishing quotas can reduce overfishing. What distributional issue can arise when quotas are initially allocated?
-  \item Explain how a warranty can reduce adverse selection in a used-goods market.
-  \item Compare a carbon tax, direct regulation, and no policy in terms of information requirements and incentives.
+  \item Two residents have marginal benefits
+  \[
+  MB_A=20-Q,
+  \qquad
+  MB_B=16-Q,
+  \]
+  from a non-rival public good. Marginal cost is $MC=12$. Find the efficient quantity. Should individual marginal-benefit curves be added vertically or horizontally?
+  \item Explain how a warranty can reduce adverse selection in a used-goods market. State the condition needed for it to be informative.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
@@ -93,4 +293,7 @@ Market failure does not automatically establish that any government intervention
 
 \subsection*{PPE discussion question}
 
-\noindent Choose one current policy problem---climate change, health insurance, housing, or fisheries. Identify the market failure and compare two realistic institutional responses in terms of efficiency, equity, and political feasibility.
+\noindent Choose one policy problem such as climate change, health insurance,
+housing, or fisheries. Identify the market failure and compare two realistic
+institutional responses in terms of efficiency, equity, and political
+feasibility.
