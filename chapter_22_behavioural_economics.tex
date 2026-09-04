@@ -3,65 +3,299 @@
 
 \section{Learning objectives}
 
-After completing this chapter, you should be able to explain bounded rationality, heuristics, biases, loss aversion, framing, and the role of behavioural policy.
+After completing this chapter, you should be able to:
+\begin{itemize}
+  \item explain how behavioural economics extends, rather than simply rejects, rational-choice analysis;
+  \item define bounded rationality, heuristics, anchoring, availability, and representativeness;
+  \item explain reference dependence, framing, loss aversion, and present bias;
+  \item read and interpret a simple reference-dependent value function;
+  \item distinguish a nudge from a tax, a ban, and a standard information policy; and
+  \item evaluate behavioural policy using effectiveness, autonomy, distribution, and legitimacy.
+\end{itemize}
 
-\section{Beyond the standard model}
+\section{A disciplined extension of the standard model}
 
-\keyterm{Behavioural economics} uses evidence from psychology to refine economic models of decision-making. It does not reject rational-choice analysis entirely. Instead, it investigates systematic departures from its assumptions and asks when they matter for prediction and policy.
+The standard consumer model begins with coherent preferences, a budget
+constraint, and purposeful choice. It is an exceptionally useful benchmark:
+it tells us what a person would choose if they knew the relevant options and
+could compare them without important limits on time, attention, memory, or
+self-control.
 
-People often use \keyterm{heuristics}: mental shortcuts that save time and effort. Heuristics can be useful, but they can also lead to predictable errors. The availability heuristic gives excessive weight to information easily retrieved from memory; anchoring gives excessive influence to an initial number; the representativeness heuristic can lead people to neglect base rates.
+\keyterm{Behavioural economics} asks what changes when those conditions are
+only approximately true. It combines economic reasoning with evidence about
+judgement and decision-making. The point is not to announce that people are
+irrational. The point is to identify systematic patterns that matter for
+prediction, welfare, or policy.
 
-\section{Two systems and bias}
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    \node[font=\sffamily\bfseries,text=PPEBurgundy,anchor=east] at (-0.25,1.25)
+      {Useful benchmark};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (information) at (1.45,1.25)
+      {Relevant\\information};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (calculation) at (4.65,1.25)
+      {Deliberation and\\comparison};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (choice) at (7.85,1.25)
+      {Chosen\\action};
+    \draw[ppearrow] (information) -- (calculation);
+    \draw[ppearrow] (calculation) -- (choice);
 
-Kahneman's distinction between System 1 and System 2 is a useful framework. System 1 is fast, automatic, and intuitive. System 2 is slower, deliberate, and effortful. Neither is always superior: quick judgement is essential in many situations, while careful reasoning can correct some predictable mistakes.
+    \node[font=\sffamily\bfseries,text=PPENavarraRed,anchor=east] at (-0.25,-1.35)
+      {Behavioural question};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (limits) at (1.45,-1.35)
+      {Limited time,\\attention, and memory};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (shortcut) at (4.65,-1.35)
+      {Heuristic, default,\\or self-control problem};
+    \node[ppebox,minimum width=2.45cm,text width=2.15cm] (outcome) at (7.85,-1.35)
+      {Predictable\\choice pattern};
+    \draw[ppearrow] (limits) -- (shortcut);
+    \draw[ppearrow] (shortcut) -- (outcome);
+  \end{tikzpicture}
+  \caption{Behavioural economics retains purposeful choice but investigates
+  how limits on attention, information, and self-control shape it.}
+  \label{fig:behavioural-benchmark}
+\end{figure}
+\FloatBarrier
 
-\keyterm{Framing} means that choices can change when the same information is presented differently. \keyterm{Loss aversion} means that losses are often felt more strongly than equivalent gains. These ideas help explain reference dependence, reluctance to sell losing investments, and different responses to gains and losses.
+\keyterm{Bounded rationality} means that people pursue objectives using limited
+information and limited cognitive resources. A rule of thumb can be sensible
+when a fully optimising calculation is costly. Behavioural analysis becomes
+valuable when the same shortcut produces a predictable error across many
+people or situations.
 
-\section{Behavioural public policy}
+\begin{keyidea}
+\textbf{A deviation is not automatically a mistake.}
+Before calling a choice biased, ask what information, time, risk, social
+meaning, or transaction cost the simplified model has omitted. The strongest
+behavioural explanations identify a repeatable pattern and a plausible
+decision process, rather than merely describing a surprising outcome.
+\end{keyidea}
 
-A \keyterm{nudge} changes the choice environment without removing options or significantly changing monetary incentives. Defaults in pension saving, reminders for medical appointments, and clearer information can influence behaviour. Nudges raise normative questions: who chooses the default, what counts as people's own interests, and when does influence become manipulation?
+\section{Heuristics and judgement}
 
-Behavioural insights complement rather than replace traditional policies. If a harmful activity creates an external cost, a tax may still be appropriate even when information campaigns or defaults are also useful.
+\keyterm{Heuristics} are mental shortcuts. They allow people to make fast
+judgements without processing every available fact. Three are particularly
+important in introductory behavioural economics.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}p{2.75cm}p{3.35cm}p{4.50cm}@{}}
+  \toprule
+  Heuristic or bias & Basic idea & Illustrative risk\\
+  \midrule
+  Availability & Easily recalled examples receive excessive weight. & A vivid recent event may make a rare risk feel common.\\
+  Anchoring & An initial number influences later judgement, even when it is not very informative. & The first advertised price can shape a buyer's estimate of a reasonable price.\\
+  Representativeness & People judge likelihood by resemblance to a stereotype and may neglect base rates. & A persuasive story can dominate information about how frequent an event really is.\\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+These shortcuts can be adaptive. If information is expensive and a quick
+decision is needed, an available example or a familiar pattern may be useful.
+The issue is whether the shortcut remains reliable in the environment at hand.
+For a policy maker, a financial adviser, or a platform designer, predictable
+errors raise the question of whether the choice environment should make
+relevant information easier to notice.
+
+The labels \emph{System 1} and \emph{System 2} are a useful teaching
+shorthand. System 1 describes fast, automatic, intuitive judgement; System 2
+describes slower, effortful reflection. They should not be treated as a
+literal map of two separate parts of the brain. The economic point is that
+some decisions are made with little deliberation, while others invite careful
+calculation, and the design of a situation can influence which process is
+used.
+
+\section{Reference points, framing, and loss aversion}
+
+Standard consumer theory ranks final bundles. Behavioural evidence often
+suggests that people also evaluate changes relative to a
+\keyterm{reference point}: the status quo, an expectation, a previous price,
+or a socially salient entitlement. \keyterm{Framing} occurs when equivalent
+descriptions make different reference points or features of a choice salient.
+
+\keyterm{Loss aversion} is the tendency for a loss relative to a reference
+point to have greater psychological weight than an equivalent gain. This
+helps explain reluctance to sell an item one already owns, strong reactions to
+a price increase, and the political difficulty of removing an established
+benefit. It does not imply that every person always dislikes losses by the
+same amount.
+
+A common illustrative \keyterm{prospect-theory value function} is
+\[
+v(x)=
+\begin{cases}
+x^\alpha, & x\geq 0,\\
+-\lambda(-x)^\alpha, & x<0,
+\end{cases}
+\qquad
+0<\alpha<1,\quad \lambda>1,
+\]
+where \(x\) is a gain or loss relative to the reference point. The exponent
+\(\alpha\) captures diminishing sensitivity, while \(\lambda\) captures the
+extra weight on losses. Figure~\ref{fig:reference-dependent-value} shows the
+shape, not a universal numerical estimate.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=0.95cm,y=0.78cm,font=\small]
+    \draw[-{Latex[length=2.0mm]},PPEInk] (-5.0,0) -- (5.15,0)
+      node[below right] {change relative to reference point};
+    \draw[-{Latex[length=2.0mm]},PPEInk] (0,-4.35) -- (0,3.65)
+      node[above left] {subjective value};
+    \draw[dashed,PPEMuted] (0,-4.0) -- (0,3.3);
+    \node[below,text=PPEMuted] at (0,-0.25) {reference point};
+    \draw[PPENavarraRed,line width=1.15pt,smooth]
+      plot coordinates {(-4.55,-4.00) (-3.50,-3.55) (-2.40,-2.95)
+      (-1.35,-2.15) (-0.55,-1.22) (0,0) (0.65,0.70) (1.45,1.25)
+      (2.65,1.78) (4.55,2.28)};
+    \node[text=PPEBurgundy,align=center] at (-2.65,-1.15)
+      {losses:\\steeper};
+    \node[text=PPEBurgundy,align=center] at (2.85,2.75)
+      {gains:\\diminishing sensitivity};
+  \end{tikzpicture}
+  \caption{An illustrative reference-dependent value function. The curve is
+  steeper for losses than for gains and becomes flatter away from the
+  reference point.}
+  \label{fig:reference-dependent-value}
+\end{figure}
+\FloatBarrier
+
+Framing changes neither the physical object nor the budget constraint by
+itself. It changes attention and interpretation. For example, a policy
+described as removing a benefit can trigger a different response from the
+same policy described as ending a temporary discount. A careful analyst should
+ask whether the descriptions are truly equivalent, what reference point each
+one creates, and whose welfare criterion is being used.
+
+\section{Present bias and self-control}
+
+Many choices involve a conflict between an immediate cost and a delayed
+benefit: studying, saving, exercising, or reducing carbon-intensive
+consumption. \keyterm{Present bias} describes a tendency to give unusually
+high weight to immediate consequences relative to future ones. A person may
+sincerely plan in January to save more next month, yet repeatedly postpone the
+same action when the moment arrives.
+
+One simple representation is quasi-hyperbolic discounting:
+\[
+U_t=u(c_t)+\beta\sum_{k=1}^{\infty}\delta^k u(c_{t+k}),
+\qquad
+0<\beta\leq1,\quad 0<\delta<1.
+\]
+The usual discount factor \(\delta\) values future consequences less than
+current ones. When \(\beta<1\), outcomes after the present receive an
+additional discount. This is a model of present bias, not a claim that all
+impatience is an error: people may have genuine reasons to prefer resources
+now.
+
+Present bias helps explain the appeal of commitment devices. Automatic saving,
+calendar reminders, or a voluntary rule that makes an undesirable option
+harder to choose can help a person carry out a plan they already endorse.
+But an intervention should not assume that every delay is a self-control
+failure. Flexibility can matter when incomes, health, or family obligations
+change.
+
+\section{Choice architecture and public policy}
+
+\keyterm{Choice architecture} is the way options are presented and organised.
+A \keyterm{default} is the option that applies if a person does nothing. A
+\keyterm{nudge} changes choice architecture while preserving options and
+without substantially changing monetary incentives. An opt-out pension plan,
+a clear reminder, and a simple form can be nudges when people remain free to
+choose otherwise.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{@{}p{2.40cm}p{3.60cm}p{4.60cm}@{}}
+    \toprule
+    Policy tool & Main mechanism & A central limitation or ethical question\\
+    \midrule
+    Information or reminder & Makes relevant facts or a planned action more noticeable & May be ignored and may not address an externality or affordability problem.\\
+    Default or simplification & Reduces effort required for a chosen option & Who selected the default, and is opting out genuinely easy?\\
+    Tax, subsidy, or price & Changes monetary incentives and can address external costs or benefits & Financial burdens and distributional effects require evaluation.\\
+    Regulation or ban & Removes or constrains harmful options & Restricts choice and needs a strong justification and credible enforcement.\\
+    \bottomrule
+  \end{tabular}
+  \caption{Behavioural tools complement, rather than replace, standard policy
+  instruments.}
+  \label{tab:behavioural-policy-tools}
+\end{table}
+\FloatBarrier
+
+The distinction matters. A tax on pollution changes the price faced by a
+decision-maker and can internalise an external cost. A reminder about a
+polluting activity may improve attention but does not create the same
+incentive. Likewise, a ban removes an option, while a default changes what
+happens when people do not actively choose. Good policy identifies the actual
+problem before selecting an instrument.
+
+\begin{keyidea}
+\textbf{A behavioural policy needs an ethical as well as an empirical case.}
+\begin{enumerate}
+  \item Is there credible evidence of a persistent decision problem?
+  \item Does the intervention address its cause rather than merely its symptom?
+  \item Is the choice architecture transparent and is opting out practical?
+  \item Who bears the costs, who benefits, and could the design worsen inequality?
+  \item Does the intervention have democratic authority and a realistic way to be evaluated?
+\end{enumerate}
+\end{keyidea}
+
+Behavioural economics therefore enriches PPE rather than settling its political
+or philosophical questions. It offers better descriptions of choice in some
+settings, but it also forces us to ask who should design environments, what
+counts as a person's own interest, and when influence becomes manipulation.
 
 \section*{Chapter Review}
 
-\subsection*{Key concepts}
+\subsection*{Key concepts and equations}
 \begin{itemize}
-  \item \textbf{Bounded rationality}: limits on attention, information, and computation.
-  \item \textbf{Heuristic}: mental shortcut used in judgement.
-  \item \textbf{Anchoring}: undue influence of an initial value.
-  \item \textbf{Framing}: choice changes with presentation.
-  \item \textbf{Loss aversion}: losses matter more than comparable gains.
-  \item \textbf{Nudge}: choice-architecture intervention preserving options.
+  \item \textbf{Bounded rationality}: purposeful choice under limits on information, attention, time, or computation.
+  \item \textbf{Heuristic}: a mental shortcut that can save effort but can also create systematic error.
+  \item \textbf{Anchoring, availability, and representativeness}: judgement patterns that can overweight an initial number, vivid examples, or resemblance to a stereotype.
+  \item \textbf{Reference dependence}: evaluation of outcomes as gains or losses relative to a reference point.
+  \item \textbf{Loss aversion}: losses receive greater weight than equal-sized gains relative to a reference point.
+  \item \textbf{Present bias}: extra weight placed on immediate consequences relative to later consequences.
+  \item \textbf{Nudge}: a choice-architecture intervention that preserves options and does not substantially alter monetary incentives.
 \end{itemize}
 
 \section*{Exercises}
 
 \subsection*{Conceptual questions}
 \begin{enumerate}[label=\arabic*.]
-  \item What is bounded rationality?
-  \item Define availability, anchoring, and framing.
-  \item Explain loss aversion and give an example.
-  \item Distinguish a nudge from a ban or a tax.
+  \item Why is rational-choice analysis still a useful benchmark for behavioural economics?
+  \item Identify the likely heuristic or bias in each case: a traveller overestimates a rare risk after vivid news coverage; a buyer's valuation is influenced by an initial list price; and a recruiter ignores the base rate when a candidate resembles a stereotype.
+  \item Explain the relationship between framing, reference points, and loss aversion.
+  \item Does evidence of a bias show that people are unintelligent? Explain using bounded rationality.
+  \item Distinguish a nudge from a tax and a ban. Give one example of each.
 \end{enumerate}
 
 \subsection*{Graphical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Draw a reference-dependent value function that is steeper for losses than for gains. Explain each feature.
+  \item Draw a reference-dependent value function that is steeper for losses than for gains. Mark the reference point, loss aversion, and diminishing sensitivity.
+  \item Draw the behavioural decision pathway from limited attention or self-control to a heuristic, default, or commitment device, then to a choice. Give one concrete example for each stage.
 \end{enumerate}
 
 \subsection*{Analytical exercises}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item Explain how an opt-out pension default may affect saving while preserving choice.
-  \item Give an example in which a behavioural intervention may be less appropriate than a price-based policy.
+  \item In the simple value function \(v(x)=x\) for gains and \(v(x)=-2(-x)\) for losses, calculate \(v(\text{\euro10})\) and \(v(-\text{\euro10})\). How large must a gain be to offset the perceived loss of \euro10 in this example?
+  \item A student faces an immediate study cost of \euro10 and a benefit of \euro15 next period. With \(\delta=0.95\), compare the choice under standard discounting with the choice under present bias \(\beta=0.60\). Calculate the net present value in each case.
+  \item A pension plan has participation of \(35\%\) under active opt-in and \(75\%\) under automatic enrolment with opt-out. Calculate the change in percentage points. What evidence would be needed before attributing all of the difference to the default?
+  \item A clinic wants to reduce missed appointments, which also prevent other patients from using scarce slots. Compare a reminder-and-easy-rescheduling policy with a financial no-show charge. State one advantage, one limitation, and one fairness question for each.
 \end{enumerate}
 
 \subsection*{Exam-style multiple-choice questions}
 \begin{enumerate}[resume,label=\arabic*.]
-  \item The availability heuristic involves: (a) using all information equally; (b) relying on easily recalled information; (c) ignoring memory; or (d) maximising expected utility exactly.
-  \item Loss aversion means that: (a) gains and losses are valued equally; (b) losses are felt more strongly than equivalent gains; (c) people never take risks; or (d) prices cannot affect choice.
+  \item The availability heuristic involves: (a) using all information equally; (b) relying too heavily on easily recalled information; (c) ignoring memory; or (d) maximising expected utility exactly.
+  \item Loss aversion means that: (a) gains and losses are valued equally; (b) a loss relative to a reference point often has more weight than an equal-sized gain; (c) people never take risks; or (d) prices cannot affect choice.
+  \item Which policy is most clearly a nudge? (a) Automatically enrolling workers in a pension plan while making opt-out easy; (b) forbidding private saving; (c) taxing all savings; or (d) requiring everyone to buy the same pension product.
 \end{enumerate}
 
 \subsection*{PPE discussion question}
 
-\noindent Are nudges compatible with individual autonomy? Discuss transparency, democratic legitimacy, and the case for preserving freedom of choice.
+\noindent Are nudges compatible with individual autonomy? Evaluate a real or
+plausible default policy using transparency, ease of opting out, evidence of a
+decision problem, distributional effects, and democratic legitimacy.
