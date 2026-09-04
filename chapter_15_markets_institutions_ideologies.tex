@@ -144,16 +144,16 @@ exists.
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[node distance=0.32cm]
-    \node[ppebox,minimum width=2.42cm] (goal)
+    \node[ppebox,minimum width=2.08cm,text width=1.86cm] (goal)
       {State the\\social objective};
-    \node[ppebox,minimum width=2.42cm,right=of goal] (diagnosis)
+    \node[ppebox,minimum width=2.08cm,text width=1.86cm,right=of goal] (diagnosis)
       {Diagnose the\\institutional problem};
-    \node[ppebox,minimum width=2.42cm,right=of diagnosis] (options)
+    \node[ppebox,minimum width=2.08cm,text width=1.86cm,right=of diagnosis] (options)
       {Compare feasible\\arrangements};
-    \node[ppebox,minimum width=2.42cm,right=of options] (evidence)
+    \node[ppebox,minimum width=2.08cm,text width=1.86cm,right=of options] (evidence)
       {Test incentives\\and evidence};
-    \node[ppebox,minimum width=2.42cm,right=of evidence] (values)
-      {Examine distribution,\\rights, and legitimacy};
+    \node[ppebox,minimum width=2.08cm,text width=1.86cm,right=of evidence] (values)
+      {Examine\\distribution, rights,\\and legitimacy};
     \draw[ppearrow] (goal) -- (diagnosis);
     \draw[ppearrow] (diagnosis) -- (options);
     \draw[ppearrow] (options) -- (evidence);
