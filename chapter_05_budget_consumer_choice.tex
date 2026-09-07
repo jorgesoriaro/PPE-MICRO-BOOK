@@ -14,8 +14,9 @@ After completing this chapter, you should be able to:
 \section{Preferences meet constraints}
 
 Preferences describe what a consumer would like; a budget constraint describes
-what the consumer can afford. Consumer choice combines the two. The consumer
-selects a most-preferred bundle among all bundles in the feasible set.
+what the consumer can afford. One is a wish list, the other is the limit set
+by income and prices. Consumer choice combines the two: the consumer selects
+a most-preferred bundle among all bundles in the feasible set.
 
 \begin{keyidea}
 \textbf{Preferences, prices, and choice.} Indifference curves describe the
@@ -30,14 +31,18 @@ Assume throughout that $x,y\geq0$, $p_x,p_y>0$, and $I>0$. The
 \[
 B=\{(x,y)\in\mathbb{R}_+^2:p_xx+p_yy\leq I\}.
 \]
-The left-hand side is total expenditure. The inequality allows the consumer to spend less than income. With monotonic preferences, the consumer normally chooses a bundle on the \keyterm{budget line}, where all income is spent:
+The left-hand side is total expenditure. The inequality allows the consumer
+to spend less than income. With monotonic preferences, the consumer normally
+chooses a bundle on the \keyterm{budget line}, where all income is spent:
 \[
 p_xx+p_yy=I.
 \]
 More precisely, locally non-satiated preferences are enough for budget
 exhaustion: if expenditure were below $I$, the consumer could afford a small
 increase in a desirable good. If preferences include satiation or a bad, an
-optimum need not lie on the budget line.
+optimum need not lie on the budget line. Someone who has already bought all
+the tickets they can use, for example, may have no reason to spend the final
+euro on another ticket.
 
 \section{The budget line}
 
@@ -45,7 +50,10 @@ Solving the budget line for $y$ gives
 \[
 y=\frac{I}{p_y}-\frac{p_x}{p_y}x.
 \]
-The vertical intercept is $I/p_y$: the maximum quantity of $y$ if all income is spent on $y$. The horizontal intercept is $I/p_x$. The slope is $-p_x/p_y$, the negative of the relative price of $x$ in terms of $y$.
+The vertical intercept is $I/p_y$: the maximum quantity of $y$ if all income
+is spent on $y$. The horizontal intercept is $I/p_x$. The slope is
+$-p_x/p_y$, the negative of the relative price of $x$ in terms of $y$. It
+shows the market's exchange rate between the two goods.
 
 For example, suppose $I=100$, $p_x=10$, and $p_y=5$. Then
 \[
@@ -53,15 +61,27 @@ For example, suppose $I=100$, $p_x=10$, and $p_y=5$. Then
 \qquad\text{or}\qquad
 y=20-2x.
 \]
-The intercepts are $(0,20)$ and $(10,0)$, and the slope is $-2$. One extra unit of $x$ costs two units of $y$: this is the opportunity cost of $x$ in terms of $y$.
+The intercepts are $(0,20)$ and $(10,0)$, and the slope is $-2$. One extra
+unit of $x$ costs two units of $y$: this is the opportunity cost of $x$ in
+terms of $y$. If $x$ is a cinema ticket and $y$ is a meal out, the line makes
+the trade-off visible.
 
 \section{Changes in income and prices}
 
-When income changes but prices remain fixed, the budget line shifts in a parallel way. A higher income moves both intercepts outward; a lower income moves both inward.
+When income changes but prices remain fixed, the budget line shifts in a
+parallel way. A higher income moves both intercepts outward; a lower income
+moves both inward. A scholarship increase, for example, expands the set of
+affordable bundles without changing the relative price of the two goods.
 
-When the price of one good changes, the budget line pivots around the intercept of the good whose price did not change. If $p_x$ falls, $I/p_x$ rises, so the horizontal intercept moves outward while the vertical intercept stays fixed. The line becomes flatter because $x$ is relatively cheaper.
+When the price of one good changes, the budget line pivots around the
+intercept of the good whose price did not change. If $p_x$ falls, $I/p_x$
+rises, so the horizontal intercept moves outward while the vertical intercept
+stays fixed. The line becomes flatter because $x$ is relatively cheaper. A
+discount on rail travel changes the budget line in this way; extra income
+does not.
 
-These changes are fundamental for demand analysis. They show both a change in purchasing power and a change in the relative attractiveness of goods.
+These changes are fundamental for demand analysis. They distinguish a change
+in purchasing power from a change in the relative price of goods.
 
 \begin{exercisebox}
 \textbf{A student's monthly choices.} Suppose Marta divides a monthly budget
@@ -127,8 +147,9 @@ $y$-intercept.}
 
 With smooth, locally non-satiated, convex preferences, the optimal bundle is
 normally the point where the highest attainable indifference curve is tangent
-to the budget line. At a smooth interior optimum with positive marginal
-utilities,
+to the budget line. In plain language, there is no small affordable swap that
+would make the consumer better off. At a smooth interior optimum with
+positive marginal utilities,
 \[
 MRS_{x,y}=\frac{p_x}{p_y}.
 \]
@@ -136,7 +157,8 @@ The consumer's willingness to trade $y$ for $x$ equals the trade-off required
 by the market. If the MRS were greater than the price ratio, the consumer
 would be willing to give up more $y$ for $x$ than the market requires, so
 moving toward more $x$ would raise utility. If the MRS were lower, moving
-toward more $y$ would raise utility.
+toward more $y$ would raise utility. Tangency is therefore a useful visual
+test of whether the two trade-offs agree.
 
 \begin{keyidea}
 \textbf{Two trade-offs, one interior choice.}
@@ -189,7 +211,8 @@ $u=75$ is unattainable.}
 
 \section{Utility maximisation algebraically}
 
-Consider $u(x,y)=xy$, $I=100$, $p_x=10$, and $p_y=5$. From the budget constraint,
+Consider $u(x,y)=xy$, $I=100$, $p_x=10$, and $p_y=5$. We can solve this
+problem by reducing it to one choice variable. From the budget constraint,
 \[
 y=20-2x.
 \]
@@ -197,7 +220,10 @@ Substitute into utility:
 \[
 u(x)=x(20-2x)=20x-2x^2.
 \]
-The first derivative is $20-4x$. Setting it equal to zero gives $x^*=5$. Substitution into the budget line gives $y^*=10$. The bundle $(5,10)$ exhausts income and maximises utility.
+The first derivative is $20-4x$. Setting it equal to zero gives $x^*=5$.
+Substitution into the budget line gives $y^*=10$. The bundle $(5,10)$
+exhausts income and maximises utility. Each algebraic step corresponds to the
+diagram in the previous section: it locates the best affordable bundle.
 
 Because $y=20-2x$ and both quantities must be non-negative, the feasible
 domain is $0\leq x\leq10$. Moreover,
@@ -237,7 +263,11 @@ the fraction $\beta/(\alpha+\beta)$ on $y$.
 
 \section{Interior and corner solutions}
 
-The tangency condition applies only to an \keyterm{interior solution}, where positive quantities of both goods are consumed. With perfect substitutes, the best bundle may be a \keyterm{corner solution}: all income is spent on one good.
+The tangency condition applies only to an \keyterm{interior solution}, where
+positive quantities of both goods are consumed. With perfect substitutes, the
+best bundle may be a \keyterm{corner solution}: all income is spent on one
+good. Think of two nearly identical products where one offers plainly better
+value for money.
 
 Suppose $u(x,y)=x+2y$, $p_x=4$, and $p_y=1$. Comparing marginal utility
 per euro gives
@@ -248,7 +278,9 @@ per euro gives
 \]
 Every euro spent on $y$ produces more utility than every euro spent on $x$,
 so the consumer spends the entire budget on $y$. There is no interior tangency
-because the MRS is constant and does not equal the price ratio.
+because the MRS is constant and does not equal the price ratio. It would be
+unhelpful to force a tangency calculation where the consumer has no reason to
+buy both goods.
 
 For perfect complements, the consumer chooses the kink on the highest attainable indifference curve. The budget line need not be tangent to the indifference curve.
 
@@ -273,7 +305,10 @@ indifference curve.
 
 \section{From consumer choice to demand}
 
-Solving the consumer's problem for different prices produces an individual demand function. The next chapter develops this link in detail. For now, remember that demand is not simply a psychological desire for a good; it is the quantity that maximises utility given prices, income, and preferences.
+Solving the consumer's problem for different prices produces an individual
+demand function. The next chapter develops this link in detail. For now,
+remember that demand is not simply a psychological desire for a good. It is
+the quantity that maximises utility given prices, income, and preferences.
 
 \section*{Chapter Review}
 

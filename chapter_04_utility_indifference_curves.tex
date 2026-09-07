@@ -15,9 +15,10 @@ After completing this chapter, you should be able to:
 \section{Utility as a representation of preferences}
 
 Preferences rank consumption bundles. A \keyterm{utility function} assigns a
-number to each bundle in a way that represents this ranking. More precisely,
-$u$ represents a preference relation $\succeq$ when, for every pair of
-bundles $A$ and $B$,
+number to each bundle in a way that represents this ranking. Think of the
+number as a score for ordering options, not as a thermometer for happiness.
+More precisely, $u$ represents a preference relation $\succeq$ when, for
+every pair of bundles $A$ and $B$,
 \[
 A\succeq B
 \quad\Longleftrightarrow\quad
@@ -30,12 +31,16 @@ For example, the utility function
 \[
 u(x,y)=xy
 \]
-represents a consumer who values both goods. The bundle $(2,6)$ gives utility $12$, while $(3,5)$ gives utility $15$, so the latter is preferred. The numerical values do not measure happiness in an objective sense. Their purpose is to preserve the ordering of bundles.
+represents a consumer who values both goods. The bundle $(2,6)$ gives utility
+$12$, while $(3,5)$ gives utility $15$, so the latter is preferred. The
+numbers do not measure happiness in an objective sense. Their only job here
+is to preserve the ordering of bundles.
 
 \section{Ordinal and cardinal utility}
 
 In standard consumer theory, utility is \keyterm{ordinal}. Only the ranking
-matters, not the size of utility differences. If $u(x,y)=xy$ represents a
+matters, not the size of utility differences. Unlike euros or kilometres, a
+utility unit has no fixed common scale. If $u(x,y)=xy$ represents a
 consumer's preferences, then $v(x,y)=100xy+7$ represents exactly the same
 preferences: both functions rank all bundles in the same order. More
 generally, if $u(x,y)$ represents preferences, then
@@ -57,7 +62,9 @@ that the former is preferred.
 The ordinal interpretation is important in welfare analysis. Comparing utility
 numbers across different individuals requires additional ethical assumptions.
 Economics can describe choices and trade-offs, but interpersonal comparisons
-of well-being cannot be read mechanically from a utility function.
+of well-being cannot be read mechanically from a utility function. This is why
+a policy calculation needs a stated view about fairness as well as a model of
+behaviour.
 
 \begin{keyidea}
 \textbf{PPE focus: utility numbers do not settle public policy.} If a policy
@@ -70,7 +77,10 @@ calculation.
 
 \section{Indifference curves}
 
-An \keyterm{indifference curve} is the set of all bundles that give a consumer the same utility. For $u(x,y)=xy$, the indifference curve associated with utility level $\bar{u}$ is
+An \keyterm{indifference curve} is the set of all bundles that give a
+consumer the same utility. In everyday language, it joins combinations the
+consumer regards as equally good. For $u(x,y)=xy$, the indifference curve
+associated with utility level $\bar{u}$ is
 \[
 xy=\bar{u},
 \]
@@ -79,7 +89,11 @@ or equivalently
 y=\frac{\bar{u}}{x}.
 \]
 
-For instance, the bundles $(2,6)$, $(3,4)$, and $(4,3)$ all lie on the indifference curve $xy=12$. The consumer is indifferent among them because each provides the same utility.
+For instance, the bundles $(2,6)$, $(3,4)$, and $(4,3)$ all lie on the
+indifference curve $xy=12$. The consumer is indifferent among them because
+each provides the same utility. You might imagine different weekly
+combinations of meals out and home-cooked meals that feel equally satisfactory
+to a particular student.
 
 Indifference curves have three important properties, each supported by a
 different assumption:
@@ -95,7 +109,10 @@ indifference curves are straight lines.
 
 \section{Marginal utility}
 
-The \keyterm{marginal utility} of a good is the additional utility associated with a small increase in its quantity, holding the quantity of the other good fixed. For a two-good utility function $u(x,y)$,
+The \keyterm{marginal utility} of a good is the additional utility associated
+with a small increase in its quantity, holding the quantity of the other good
+fixed. The word marginal always directs attention to the next small unit, not
+to the total amount. For a two-good utility function $u(x,y)$,
 \[
 MU_x=\frac{\partial u}{\partial x}
 \qquad\text{and}\qquad
@@ -108,15 +125,19 @@ MU_x=y
 \qquad\text{and}\qquad
 MU_y=x.
 \]
-An additional unit of $x$ is more valuable when the consumer has more $y$, because the two goods complement each other in the utility function.
+An additional unit of $x$ is more valuable when the consumer has more $y$,
+because the two goods complement each other in the utility function. For
+example, an extra serving of sauce may be more useful when there is more pasta
+to eat it with.
 
 \section{The marginal rate of substitution}
 
 The \keyterm{marginal rate of substitution} of $x$ for $y$, written
 $MRS_{x,y}$, measures the amount of $y$ a consumer is willing to give up for a
 very small additional amount of $x$ at the current bundle, while remaining on
-the same indifference curve. At a smooth point where $MU_y>0$, utility is held
-fixed:
+the same indifference curve. It is a local trade-off: the answer can differ
+when the consumer starts with a different bundle. At a smooth point where
+$MU_y>0$, utility is held fixed:
 \[
 0=du=MU_x\,dx+MU_y\,dy.
 \]
@@ -134,7 +155,11 @@ For $u(x,y)=xy$,
 \[
 MRS_{x,y}=\frac{y}{x}.
 \]
-At a bundle with much $y$ and little $x$, the consumer is willing to give up a relatively large amount of $y$ for another unit of $x$. As $x$ becomes more abundant and $y$ scarcer, the willingness to substitute falls. This is the \keyterm{diminishing marginal rate of substitution}, which produces bowed-in indifference curves.
+At a bundle with much $y$ and little $x$, the consumer is willing to give up a
+relatively large amount of $y$ for another unit of $x$. As $x$ becomes more
+abundant and $y$ scarcer, the willingness to substitute falls. This is the
+\keyterm{diminishing marginal rate of substitution}, which produces bowed-in
+indifference curves.
 
 \begin{keyidea}
 \textbf{Watch the sign.} The slope of an indifference curve is negative. By
@@ -205,7 +230,10 @@ The utility function
 \[
 u(x,y)=x^\alpha y^\beta,
 \]
-where $\alpha>0$ and $\beta>0$, is called \keyterm{Cobb--Douglas}. It represents smooth, downward-sloping, convex indifference curves. Its marginal rate of substitution is
+where $\alpha>0$ and $\beta>0$, is called \keyterm{Cobb--Douglas}. It
+represents smooth, downward-sloping, convex indifference curves. This is the
+workhorse case when we want a consumer who values both goods and likes
+variety. Its marginal rate of substitution is
 \[
 MRS_{x,y}=\frac{\alpha}{\beta}\frac{y}{x}.
 \]
@@ -218,7 +246,10 @@ preferences.
 
 \subsection{Perfect substitutes}
 
-If two goods are perfect substitutes, the consumer is willing to replace one with the other at a constant rate. A utility function is
+If two goods are perfect substitutes, the consumer is willing to replace one
+with the other at a constant rate. Two brands of bottled water may be close
+to this case for a consumer who cares only about the amount of water. A
+utility function is
 \[
 u(x,y)=x+2y.
 \]
@@ -226,7 +257,8 @@ Its indifference curves are straight lines. Here, one additional unit of $y$ giv
 
 \subsection{Perfect complements}
 
-If goods are valuable only when consumed in fixed proportions, they are perfect complements. For example,
+If goods are valuable only when consumed in fixed proportions, they are
+perfect complements. For example,
 \[
 u(x,y)=\min\{x,y\}
 \]
@@ -242,7 +274,11 @@ The utility function
 \[
 u(x,y)=v(x)+y
 \]
-is called \keyterm{quasilinear}. Its marginal utility of $y$ is constant, while the marginal utility of $x$ may diminish. Such preferences are useful in analysing choices where one good is a general ``outside good,'' such as money spent on other consumption.
+is called \keyterm{quasilinear}. Its marginal utility of $y$ is constant,
+while the marginal utility of $x$ may diminish. Such preferences are useful
+in analysing choices where one good is a general ``outside good,'' such as
+money spent on other consumption. For instance, $x$ might be visits to a
+museum and $y$ all other spending.
 
 When $v$ is differentiable,
 \[
@@ -301,11 +337,16 @@ and perfect complements require fixed-proportion consumption.}
 
 \section{What indifference curves do not say}
 
-Indifference curves are not psychological maps. They do not imply that consumers consciously calculate marginal utilities, and they do not show how preferences were formed. They provide a compact way to represent observed or hypothetical rankings. Their value lies in showing the trade-offs implied by those rankings.
+Indifference curves are not psychological maps. They do not imply that
+consumers consciously calculate marginal utilities, and they do not show how
+preferences were formed. They provide a compact way to represent observed or
+hypothetical rankings. Their value lies in making the trade-offs implied by
+those rankings visible.
 
 Indifference curves describe the trade-offs a consumer is willing to make. A
-budget line will describe the trade-offs the market requires. Consumer choice
-occurs where these two elements meet.
+budget line will describe the trade-offs the market requires. The next chapter
+puts these two parts together: what someone wants, and what their income and
+prices allow.
 
 \section*{Chapter Review}
 

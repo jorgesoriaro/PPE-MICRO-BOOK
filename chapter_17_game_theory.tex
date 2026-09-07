@@ -17,10 +17,11 @@ After completing this chapter, you should be able to:
 \section{When choices are interdependent}
 
 \keyterm{Game theory} studies situations in which one person's outcome depends
-on their own action \emph{and} on the actions of others. It is useful whenever
-people must anticipate one another: firms choosing prices, parties choosing
-campaign messages, states deciding whether to negotiate, or students deciding
-how much effort to put into a group project.
+on their own action \emph{and} on the actions of others. In these situations,
+there is often no single best action in isolation: what makes sense for you depends
+on what you expect others to do. This is useful when firms choose prices,
+parties choose campaign messages, states decide whether to negotiate, or
+students decide how much effort to put into a group project.
 
 A game has four basic ingredients:
 \begin{itemize}
@@ -32,6 +33,8 @@ A game has four basic ingredients:
 
 Payoffs need not be money, and the numbers need not be comparable across
 players. They simply represent how each player ranks outcomes in the model.
+For a firm they might represent profit; for a student group they might combine
+a grade, effort, and the value of a good working relationship.
 In a simultaneous game an \keyterm{action} is usually also a complete strategy.
 In a sequential game, a strategy must say what a player would do at every
 decision point that they might face, including one that is never reached.
@@ -62,7 +65,8 @@ each ordered pair gives the payoffs in the order \((\text{row player},
 \subsection{Best responses, dominance, and Nash equilibrium}
 
 A \keyterm{best response} is a strategy that gives a player the highest payoff
-given the other players' strategies. A \keyterm{strictly dominant strategy}
+given the other players' strategies. It is a conditional idea: it asks what is
+best for me if the other players do that. A \keyterm{strictly dominant strategy}
 gives a higher payoff than every alternative for every possible strategy of the
 opponent. A \keyterm{strictly dominated strategy} is always worse than another
 available strategy, so a rational player would never need to use it.
@@ -76,8 +80,10 @@ u_i(s_i^*,s_{-i}^*)\geq u_i(s_i,s_{-i}^*)
 \]
 Here \(s_{-i}^*\) means the strategies chosen by everyone other than player
 \(i\). At a Nash equilibrium, no individual can improve their own payoff by
-changing strategy alone. The concept predicts stability; it does \emph{not}
-guarantee cooperation, fairness, or efficiency.
+changing strategy alone. It is a resting point for the model: given what the
+others do, no player wants to be the only person to switch. The concept
+predicts stability; it does \emph{not} guarantee cooperation, fairness, or
+efficiency.
 
 \begin{keyidea}
 \textbf{How to read a payoff matrix.}
@@ -132,8 +138,9 @@ contracts, monitoring, repeated interaction, changed payoffs, or a shared norm.
 
 Not every strategic problem is a conflict. In a \keyterm{coordination game},
 players benefit from selecting compatible actions but may disagree about which
-compatible outcome is best. The \keyterm{Battle of the Sexes} is a compact
-example:
+compatible outcome is best. Two friends choosing the same meeting point are
+better off coordinating than arriving at different places, even if each has a
+different favourite. The \keyterm{Battle of the Sexes} is a compact example:
 \[
 \begin{array}{c|cc}
  & \text{Player 2: Opera} & \text{Player 2: Football}\\
@@ -156,9 +163,10 @@ salient or by supplying a reliable way to coordinate.
 
 The exercise set for this course contains several useful variants of the
 games introduced so far. Their names are less important than their incentive
-structures. The following examples add five distinct structures: risky
-coordination, anti-coordination, zero-sum competition, strategic pricing with
-more than two actions, and a larger political game.
+structures, and their numerical payoffs are deliberately stylised. The
+following examples add five distinct structures: risky coordination,
+anti-coordination, zero-sum competition, strategic pricing with more than two
+actions, and a larger political game.
 
 \subsubsection{Stag Hunt: coordination with an assurance problem}
 
@@ -289,10 +297,12 @@ behind the payoffs.
 \section{Sequential games, credibility, and backward induction}
 
 In a \keyterm{dynamic game}, players move in sequence. An
-\keyterm{extensive-form game} uses a tree to show the order of moves,
-information, available actions, and terminal payoffs. \keyterm{Backward
-induction} solves a finite extensive-form game with perfect information from
-the final decision nodes back to the first move.
+\keyterm{extensive-form game} uses a tree to tell the whole strategic story:
+who moves first, what the next player observes, which actions remain, and the
+payoffs at the end. \keyterm{Backward induction} solves a finite
+extensive-form game with perfect information from the final decision nodes
+back to the first move. It asks what a player would actually choose when the
+last decision arrives, then works backwards from that answer.
 
 Consider entry into a market. If the entrant stays out, payoffs are
 \((0,3)\): the entrant earns zero and the incumbent retains monopoly profit.
@@ -337,8 +347,10 @@ threat of fighting after entry when fighting would actually harm the incumbent.
 
 Repeated play can change the incentives in a one-shot Prisoner's Dilemma. If
 players expect to meet again, a short-run gain from defection can be outweighed
-by the loss of future cooperation. This is one reason why reputation,
-long-lived relationships, and transparent records can matter in markets.
+by the loss of future cooperation. A local supplier who cuts quality once may
+gain today but lose repeat customers tomorrow. This is one reason why
+reputation, long-lived relationships, and transparent records can matter in
+markets.
 
 For a simple illustration, suppose each player receives \(3\) every period if
 both cooperate. A player who defects while the other cooperates receives \(5\)
@@ -366,9 +378,11 @@ monitoring can all make collusion difficult to sustain.
 Game theory helps compare institutions because a rule can change a game in
 several ways: it can alter payoffs through taxes or penalties, reveal
 information through disclosure, change which actions are feasible through
-contracts, or coordinate expectations through a clear procedure. The central
-PPE question is therefore not whether strategic behaviour is good or bad, but
-which institutional design produces the most defensible outcomes.
+contracts, or coordinate expectations through a clear procedure. A deposit
+for returning a reusable cup, for example, changes the private cost of
+discarding it. The central PPE question is therefore not whether strategic
+behaviour is good or bad, but which institutional design produces the most
+defensible outcomes.
 
 \section*{Chapter Review}
 

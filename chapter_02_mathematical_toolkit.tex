@@ -13,7 +13,12 @@ After completing this chapter, you should be able to:
 
 \section{Why mathematics matters in microeconomics}
 
-Microeconomics uses mathematics to make an argument precise. A diagram can show that a higher price is associated with a lower quantity demanded; an equation states exactly how the two variables are related. A derivative tells us how rapidly an outcome changes when one variable changes. Mathematics is not an end in itself: it is a language for describing choices, constraints, and trade-offs.
+Microeconomics uses mathematics to make an argument precise. A diagram can
+show that a higher price is associated with a lower quantity demanded; an
+equation says exactly how the two variables are related. A derivative tells us
+how quickly an outcome changes when one variable changes. Mathematics is not
+an end in itself. It is a language for describing choices, constraints, and
+trade-offs---and a way to check that our verbal reasoning is consistent.
 
 \begin{keyidea}
 \textbf{Mathematics is a translation tool.} In this course, the same economic
@@ -29,16 +34,24 @@ looks like in a diagram.
 
 \section{Variables, parameters, and functions}
 
-A \keyterm{variable} is a quantity that can take different values. In consumer theory, $x$ and $y$ may denote quantities of two goods; in a market, $p$ may denote price and $q$ quantity. A \keyterm{parameter} is treated as fixed within a particular problem, even though it may differ across situations. Income, $I$, and a price, $p_x$, are often parameters when we study a consumer's choices.
+A \keyterm{variable} is a quantity that can take different values. In
+consumer theory, $x$ and $y$ may denote quantities of two goods; in a market,
+$p$ may denote price and $q$ quantity. A \keyterm{parameter} is treated as
+fixed within a particular problem, even though it may differ across
+situations. For example, income is held fixed while we ask how a change in
+the price of coffee affects a student's purchases. In another question,
+income itself may be the variable of interest.
 
-A \keyterm{function} describes how one variable depends on one or more others. For example,
+A \keyterm{function} describes how one variable depends on one or more
+others. You can think of it as a rule that takes an input and returns an
+output. For example,
 \[
 q(p)=100-2p
 \]
 is a demand function. It states that quantity demanded $q$ depends on price
 $p$. The notation $q(p)$ says that price is the input and quantity is the
 output: for example, $q(20)=60$. The parentheses do not mean multiplication;
-they identify the value produced by the rule when $p=20$. An equation can
+they ask the rule for the value produced when $p=20$. An equation can
 describe a relationship, while functional notation highlights which quantity
 the model is currently treating as the output.
 
@@ -59,7 +72,10 @@ Many introductory models use linear equations:
 \[
 y=a+bx,
 \]
-where $a$ is the vertical intercept and $b$ is the slope. The intercept is the value of $y$ when $x=0$. The slope measures the change in $y$ associated with a one-unit increase in $x$.
+where $a$ is the vertical intercept and $b$ is the slope. The intercept is the
+value of $y$ when $x=0$. The slope measures the change in $y$ associated with
+a one-unit increase in $x$. A taxi fare with a fixed starting charge plus a
+charge per kilometre has exactly this form.
 
 The direct demand function above can also be written in inverse form:
 \[
@@ -99,8 +115,9 @@ uses price on the vertical axis and quantity on the horizontal axis.}
 Demand can be written in direct form, $q=D(p)$, or inverse form, $p=P(q)$.
 The numerical slope depends on which variable is on the vertical axis. In
 this example, the direct-demand slope is $-2$ units per euro, whereas the
-inverse-demand slope is $-1/2$ euros per unit. They describe the same
-relationship, not two different demand curves.
+inverse-demand slope is $-1/2$ euros per unit. This can feel like two
+different answers at first, but the two equations describe the same
+relationship from two useful directions.
 
 \paragraph{Domains and units.} An equation is not automatically an
 economically meaningful model at every number. Quantities cannot normally be
@@ -109,7 +126,9 @@ stated range. For the inverse demand curve above, the economically relevant
 range is $0\leq q\leq100$. The slope is not merely $-1/2$: it is minus
 \euro0.50 per additional unit of output.
 
-To solve an equation, isolate the unknown. If $300-5x=0$, then $5x=300$, and therefore $x=60$. Check an answer by substituting it into the original equation.
+To solve an equation, isolate the unknown. If $300-5x=0$, then $5x=300$, and
+therefore $x=60$. Think of this as undoing operations one at a time. Check an
+answer by substituting it into the original equation.
 
 The slope between two points is
 \[
@@ -121,7 +140,8 @@ For a straight line, the slope is the same everywhere. A positive slope indicate
 
 Market equilibrium, later chapters on oligopoly, and many policy examples
 require two equations to hold at once. At a competitive equilibrium, for
-example, quantity demanded equals quantity supplied. If
+example, quantity demanded equals quantity supplied. The task is simply to
+find the price that makes both sides describe the same quantity. If
 \[
 Q_D=80-2p
 \qquad\text{and}\qquad
@@ -144,9 +164,13 @@ vertical axis a dependent variable. These labels describe the presentation;
 they do not automatically establish causation. In a market-equilibrium model,
 price and quantity are jointly determined. Economics nevertheless usually
 places quantity on the horizontal axis and price on the vertical axis because
-this makes market diagrams easier to read.
+this makes market diagrams easier to read and compare.
 
-When reading a graph, first identify the variables and units on both axes. Then ask whether a movement is caused by a change in a variable shown on an axis, or by a change in another factor that shifts the curve. A price change produces a movement along a demand curve; a change in income, tastes, or the price of a related good may shift the curve.
+When reading a graph, first identify the variables and units on both axes.
+Then ask a simple question: did something on an axis change, or did another
+factor change the relationship itself? A price change produces a movement
+along a demand curve; a change in income, tastes, or the price of a related
+good may shift the curve. This distinction will return throughout the book.
 
 \section{Derivatives and marginal change}
 
@@ -156,10 +180,12 @@ An average rate of change compares two points:
 \]
 The \keyterm{derivative} of a function measures the instantaneous rate of
 change: the limit of this average rate as $h$ becomes very small. Formal
-limit calculations are not required for most of this book; the important
+limit calculations are not required for most of this book. The important
 intuition is that derivatives describe what happens at the margin. If $f(x)$
 is an economic outcome, the derivative $f'(x)$, or $\frac{df}{dx}$, measures
-how $f$ changes when $x$ changes by a very small amount.
+how $f$ changes when $x$ changes by a very small amount. It answers questions
+such as: how much extra cost is associated with producing one more unit at
+the current output level?
 
 For a power function,
 \[
@@ -187,11 +213,19 @@ x^{-1/2}=\frac{1}{\sqrt{x}},
 \frac{d}{dx}x^\alpha=\alpha x^{\alpha-1}.
 \]
 
-In economics, derivatives are usually called \keyterm{marginal} values. If $C(q)$ is total cost, then $C'(q)$ is marginal cost: the additional cost of producing one more unit, approximately. If $U(x)$ is utility, then $U'(x)$ is marginal utility.
+In economics, derivatives are usually called \keyterm{marginal} values. If
+$C(q)$ is total cost, then $C'(q)$ is marginal cost: approximately the
+additional cost of producing one more unit. If $U(x)$ is utility, then
+$U'(x)$ is marginal utility. The word marginal should therefore make you ask:
+what changes if we take one small additional step?
 
 \section{Partial derivatives}
 
-Economic choices often involve more than one variable. A utility function may be $u(x,y)$, where $x$ and $y$ are two goods. A \keyterm{partial derivative} measures the effect of changing one variable while holding the other variables fixed.
+Economic choices often involve more than one variable. A utility function may
+be $u(x,y)$, where $x$ and $y$ are two goods. A \keyterm{partial derivative}
+measures the effect of changing one variable while holding the other variables
+fixed. It is the mathematical version of asking how one ingredient changes a
+recipe while leaving the others untouched.
 
 For
 \[
@@ -216,7 +250,8 @@ to $y$ is
 
 \section{Optimisation}
 
-Many microeconomic problems ask an agent to choose the best feasible option. The structure is always similar:
+Many microeconomic problems ask an agent to choose the best feasible option.
+The structure is always similar:
 \begin{enumerate}
   \item identify the objective, such as maximising utility or profit;
   \item identify the constraint, such as a budget or available technology;
@@ -226,8 +261,9 @@ Many microeconomic problems ask an agent to choose the best feasible option. The
 \end{enumerate}
 
 For a differentiable objective with an interior solution, a first-order
-condition identifies a \emph{candidate} optimum, not a conclusion. Boundary
-points and the shape of the objective still matter.
+condition identifies a \emph{candidate} optimum, not a conclusion. It tells
+us where to look first; boundary points and the shape of the objective still
+matter.
 
 Consider a student's net benefit from $h$ hours of revision:
 \[
@@ -238,7 +274,8 @@ The derivative is
 \[
 \frac{dF}{dh}=20-4h.
 \]
-Setting it equal to zero gives the candidate $h=5$. Since
+Setting it equal to zero gives the candidate $h=5$. Intuitively, the next
+hour is beneficial before this point and costly after it. Since
 \[
 \frac{d^2F}{dh^2}=-4<0
 \]

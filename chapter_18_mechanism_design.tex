@@ -15,16 +15,19 @@ After completing this chapter, you should be able to:
 \section{From predicting games to designing rules}
 
 Game theory starts with a set of rules and asks what strategic participants
-will do. \keyterm{Mechanism design} reverses the direction. It begins with an
+will do. \keyterm{Mechanism design} reverses the direction. It starts with an
 objective---such as allocating a scarce resource well---and asks which rules
 will lead self-interested participants to reveal information or take actions
-that produce a desirable outcome.
+that produce a desirable outcome. Put simply, game theory studies a given
+rulebook; mechanism design asks how to write a better rulebook.
 
 The designer may be a government allocating school places, a hospital assigning
 appointments, a platform matching drivers and passengers, a firm procuring a
-service, or a group choosing a collective project. In each case the challenge
-is that people often know more than the designer about their own values, costs,
-needs, or abilities.
+service, or a group choosing a collective project. Consider a university
+allocating a few popular seminar places: students know more than the university
+about their interest and timetable. In each case the challenge is that people
+often know more than the designer about their own values, costs, needs, or
+abilities.
 
 \begin{figure}[htbp]
   \centering
@@ -64,8 +67,10 @@ needs, or abilities.
 \textbf{A mechanism is not only an algorithm.}
 It is a complete rule for interaction: it tells participants what they may
 report or do, how those reports affect allocation and payment, and what happens
-if they decline to participate. A technically elegant rule that people cannot
-understand, verify, or regard as legitimate may fail in practice.
+if they decline to participate. A school-admission form, a queueing rule, and
+an online auction are all mechanisms in this broad sense. A technically elegant
+rule that people cannot understand, verify, or regard as legitimate may fail
+in practice.
 \end{keyidea}
 
 \section{The ingredients of a mechanism}
@@ -75,7 +80,8 @@ A \keyterm{mechanism} specifies the messages participants can send, the
 \keyterm{transfers} such as prices, taxes, rewards, or penalties. A
 \keyterm{type} is the private information relevant to a participant's choice:
 for example, a valuation for a permit, the cost of supplying a service, or the
-severity of a medical need.
+severity of a medical need. It is not a personality label; it is simply the
+piece of private information the rule needs to handle.
 
 For \(n\) participants, let \(m=(m_1,\ldots,m_n)\) denote the reported
 messages. A mechanism can be represented compactly by an allocation
@@ -109,7 +115,9 @@ A \keyterm{direct mechanism} asks participants to report their types directly.
 If student \(i\)'s value for a place is \(\theta_i\), the student reports
 \(\hat{\theta}_i\). The report can be truthful,
 \(\hat{\theta}_i=\theta_i\), or strategic. The mechanism then uses all reports
-to choose the allocation and transfers.
+to choose the allocation and transfers. A direct report is therefore a claim
+about private information; the designer must decide whether the rule makes an
+honest claim worthwhile.
 
 \begin{figure}[htbp]
   \centering
@@ -134,8 +142,9 @@ to choose the allocation and transfers.
 \FloatBarrier
 
 Suppose utility is quasi-linear: a participant values the allocated outcome and
-then pays a transfer. With positive \(t_i\) denoting a payment by participant
-\(i\),
+then pays a transfer. This lets us separate the value of receiving something
+from the money paid for it. With positive \(t_i\) denoting a payment by
+participant \(i\),
 \[
 u_i=v_i\!\left(x_i(\hat{\theta}_i,\theta_{-i}),\theta_i\right)
     -t_i(\hat{\theta}_i,\theta_{-i}).
@@ -201,12 +210,14 @@ the place nor pays.
 \end{center}
 
 Why is truthful bidding a \emph{weakly dominant} strategy in this setting?
-Let \(b_{-i}\) be the other bid and \(v_i\) be student \(i\)'s value. If
-\(b_{-i}<v_i\), bidding above \(b_{-i}\) wins at price \(b_{-i}\), so bidding
-too low can lose a profitable allocation. If \(b_{-i}>v_i\), truthful bidding
-loses and gives payoff zero, while bidding above \(b_{-i}\) wins but pays more
-than the item is worth. A bid of \(v_i\) avoids both mistakes. It need not be
-the only best bid in every case, which is why the dominance is weak.
+Think of the bid as a cut-off: win if the other bid is below my value; lose if
+it is above my value. Let \(b_{-i}\) be the other bid and \(v_i\) be student
+\(i\)'s value. If \(b_{-i}<v_i\), bidding above \(b_{-i}\) wins at price
+\(b_{-i}\), so bidding too low can lose a profitable allocation. If
+\(b_{-i}>v_i\), truthful bidding loses and gives payoff zero, while bidding
+above \(b_{-i}\) wins but pays more than the item is worth. A bid of \(v_i\)
+avoids both mistakes. It need not be the only best bid in every case, which is
+why the dominance is weak.
 
 The result depends on assumptions: private values, a genuine second-price rule,
 and no important collusion or bidding costs. Chapter~19 develops auction
@@ -242,14 +253,17 @@ familiar mechanisms.
 
 No mechanism is neutral. A designer must state which criterion matters and
 then evaluate whether the rule actually advances it. A lottery may be more
-legitimate than a price in one setting; a price may communicate useful
-information in another. The relevant comparison is between feasible
+legitimate than a price when every eligible person has an equal claim; a price
+may communicate useful information when the aim is to allocate a commercial
+good to the highest-value user. The relevant comparison is between feasible
 alternatives, not between a real mechanism and an idealised one.
 
 \section{Trade-offs, limits, and legitimacy}
 
 Mechanism design does not produce a magic rule. Desirable properties can
-conflict. \keyterm{Budget balance} requires a stated convention. \emph{Weak
+conflict: a rule that is simple for applicants may reveal less information, and
+a rule that targets need closely may require intrusive verification.
+\keyterm{Budget balance} requires a stated convention. \emph{Weak
 budget balance} requires that a mechanism not need an outside subsidy; \emph{
 exact budget balance} requires total funds received to equal total funds paid
 out plus stated costs. Efficiency can require payments or information that are
