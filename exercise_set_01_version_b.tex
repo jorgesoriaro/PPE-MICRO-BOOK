@@ -1,0 +1,310 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2.4cm,bottom=2.5cm,left=2.6cm,right=2.6cm,headsep=12pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{avant}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{hyperref}
+
+\definecolor{PPEBurgundy}{RGB}{112,28,47}
+\definecolor{PPENavarraRed}{RGB}{211,32,46}
+\definecolor{PPEGold}{RGB}{185,143,57}
+\definecolor{PPEAccentLight}{RGB}{248,235,238}
+\definecolor{PPEInk}{RGB}{37,31,33}
+\definecolor{PPEMuted}{RGB}{101,83,88}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=PPEBurgundy,
+  urlcolor=PPEBurgundy
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{topsep=0.35em,itemsep=0.2em,leftmargin=1.55em}
+\setlist[enumerate]{topsep=0.35em,itemsep=0.35em,leftmargin=1.9em}
+
+\titleformat{\section}
+  {\sffamily\bfseries\large\color{PPEInk}}
+  {\color{PPEBurgundy}\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.55em}{0.55em}
+
+\newmdenv[
+  skipabove=0.8em,
+  skipbelow=1.0em,
+  leftline=true,rightline=false,topline=false,bottomline=false,
+  linewidth=3pt,
+  linecolor=PPEBurgundy,
+  backgroundcolor=PPEAccentLight,
+  innerleftmargin=0.8em,innerrightmargin=0.8em,
+  innertopmargin=0.6em,innerbottommargin=0.6em
+]{instructionsbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small Microeconomics \textbar{} Exercise Set I \textbar{} Version B}
+\fancyhead[R]{\sffamily\small\color{PPEBurgundy}\thepage}
+\renewcommand{\headrulewidth}{0.45pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{PPEGold}\leaders\hrule height \headrulewidth\hfill}}
+\setlength{\headheight}{15pt}
+
+\newcommand{\Rplus}{\mathbb{R}_{+}}
+
+\begin{document}
+
+\begin{center}
+  \includegraphics[width=0.38\textwidth]{assets/branding/unav-logo-black.png}\par
+  \vspace{0.8em}
+  {\sffamily\color{PPENavarraRed}\large\textsc{Politics, Philosophy and Economics}\par}
+  \vspace{0.35em}
+  {\color{PPEGold}\rule{0.78\textwidth}{1.3pt}\par}
+  \vspace{0.65em}
+  {\sffamily\bfseries\color{PPEBurgundy}\LARGE Microeconomics: Exercise Set I\par}
+  \vspace{0.2em}
+  {\sffamily\large Version B --- Lectures 1--4\par}
+\end{center}
+
+\begin{instructionsbox}
+\textbf{Instructions.} Answer all ten exercises and show your work. For
+conceptual questions, begin with a precise definition and then explain its
+economic meaning. For computational questions, show clean algebra and state
+what the result means. You may work with classmates, but submit your own
+written answers. Unless stated otherwise, quantities are non-negative and
+continuously divisible. No Lagrangians are required.
+\end{instructionsbox}
+
+\noindent\textbf{Name:} \rule{0.53\textwidth}{0.4pt}
+\hfill
+\textbf{Group:} \rule{0.18\textwidth}{0.4pt}
+
+\section{Mathematical tools}
+
+\subsection*{1.1 Equations}
+Solve the following equations. State every admissible solution.
+
+\begin{enumerate}[label=(\arabic*)]
+  \item \(420-7x=0\).
+  \item \(\dfrac{144}{x}=9\).
+  \item \((x-7)^2=0\).
+  \item \((x-3)^2=49\).
+  \item \(8x-72+25x=324\).
+\end{enumerate}
+
+\subsection*{1.2 Derivatives}
+\begin{enumerate}[label=(\arabic*),start=6]
+  \item Define a derivative in one sentence. Give one microeconomic
+  interpretation of a derivative.
+  \item Find \(\dfrac{df}{dx}\) when \(f(x)=x^3\).
+  \item Find \(\dfrac{df}{dx}\) when
+  \(f(x)=\dfrac{2}{5}x^4+5x^2-8x\).
+  \item Find \(\dfrac{df}{dx}\) when
+  \(f(x)=\dfrac{2}{5}x^4+5x^2-8x+430\).
+  \item Find \(\dfrac{df}{dx}\) when
+  \(f(x)=3x^{18}-4x^{12}+7x^6-9x+100\).
+  \item Find \(\dfrac{\partial f}{\partial x}\) when
+  \(f(x,y)=3x^2+4xy+y^2-7\).
+  \item Find \(\dfrac{\partial f}{\partial x}\) when
+  \(f(x,y)=x^3y-2xy+5x\).
+  \item Find \(\dfrac{\partial f}{\partial x}\) when
+  \(f(x,y)=x^{2/5}y^{3/5}\).
+\end{enumerate}
+
+\section{Preference language and monotonicity}
+
+\begin{enumerate}[label=\textbf{2.\alph*}]
+  \item Translate each expression into words:
+  \[
+    A\sim B
+    \qquad\text{and}\qquad
+    A\succeq B\succ C.
+  \]
+  \item The diagram below shows four bundles of two ordinary goods. Assuming
+  monotonic preferences, compare \(B\) with \(A\),
+  \(C\) with \(A\), \(D\) with \(B\), \(D\) with \(C\), and \(B\) with \(C\).
+  Use \(\succ\), \(\sim\), or \(\succeq\) where the comparison follows from
+  monotonicity. Say explicitly when monotonicity alone is insufficient.
+\end{enumerate}
+
+\begin{center}
+  \begin{tikzpicture}[x=0.9cm,y=0.72cm,>=Latex]
+    \draw[->,thick] (0,0) -- (6.6,0) node[right] {good \(x\)};
+    \draw[->,thick] (0,0) -- (0,7.3) node[above] {good \(y\)};
+    \foreach \x in {1,2,3,4,5}
+      \draw (\x,0.09) -- (\x,-0.09) node[below=3pt] {\(\x\)};
+    \foreach \y in {1,2,3,4,5,6}
+      \draw (0.09,\y) -- (-0.09,\y) node[left=3pt] {\(\y\)};
+    \filldraw[PPEBurgundy] (1,2) circle (2.2pt) node[below left] {\(A\)};
+    \filldraw[PPEBurgundy] (5,2) circle (2.2pt) node[below right] {\(B\)};
+    \filldraw[PPEBurgundy] (1,6) circle (2.2pt) node[above left] {\(C\)};
+    \filldraw[PPENavarraRed] (5,6) circle (2.2pt) node[above right] {\(D\)};
+    \draw[densely dashed,PPEMuted] (1,2) -- (5,2) -- (5,6);
+    \draw[densely dashed,PPEMuted] (1,2) -- (1,6);
+  \end{tikzpicture}
+
+  {\small Figure 1: Bundles for Exercise 2.}
+\end{center}
+
+\section{Utility, budget constraints, and consumer choice}
+
+\begin{enumerate}[label=\textbf{3.\alph*}]
+  \item Elena has \euro72 to divide between museum tickets \(x\) and caf\'e
+  lunches \(y\). Tickets cost \(p_x=\euro6\) and lunches cost
+  \(p_y=\euro3\). Her utility function is
+  \[
+    u(x,y)=xy.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Write and draw Elena's budget constraint.
+    \item Draw the indifference curves for \(u=36\), \(u=54\), and \(u=72\).
+    \item Rewrite the budget line as \(y\) as a function of \(x\). Substitute
+    it into utility to obtain \(u(x)\).
+    \item Find the bundle that maximises utility using the first derivative.
+    \item Recover the optimal quantity of \(y\). State the utility level at
+    the optimum and verify the tangency condition.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}[label=\textbf{4.\alph*}]
+  \item A student chooses quantities of two goods \(x\) and \(y\). Income is
+  \(I=\euro66\), prices are \(p_x=\euro6\) and \(p_y=\euro7\), and utility is
+  \[
+    u(x,y)=xy+3y=y(x+3).
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Write the budget line and draw the indifference curves for
+    \(u=21\) and \(u=42\).
+    \item Solve the consumer problem using \(MRS_{x,y}=p_x/p_y\) and the
+    budget line.
+    \item Verify the answer by substituting the budget line into utility and
+    maximising the resulting one-variable function.
+  \end{enumerate}
+\end{enumerate}
+
+\section{Rational preferences}
+
+\begin{enumerate}[label=\textbf{5.\alph*}]
+  \item State precisely the following axioms of rational preferences:
+  completeness, transitivity, reflexivity, monotonicity (non-satiation),
+  continuity, and convexity. For each axiom, give a short everyday consumption
+  example that illustrates its economic meaning.
+  \item A student ranks tacos as at least as good as pizza, pizza as at least
+  as good as salad, and salad as strictly better than tacos. Which axiom is
+  violated? Explain briefly.
+\end{enumerate}
+
+\section{Budget sets, relative prices, and opportunity cost}
+
+\begin{enumerate}[label=\textbf{6.\alph*}]
+  \item A student has income \(I=\euro30\). Campus lunches are good \(x\) and
+  cost \(p_x=\euro6\); drinks are good \(y\) and cost \(p_y=\euro3\).
+  \begin{enumerate}[label=(\roman*)]
+    \item Write the budget set and the budget line. Find both intercepts.
+    \item What is the opportunity cost of one extra lunch in units of drinks?
+    \item Suppose income rises to \(I=\euro42\), with prices unchanged.
+    Describe or draw the change in the feasible set.
+    \item Keeping income at \euro42, suppose the price of a drink rises to
+    \euro6. Write the new budget line and explain the pivot relative to part
+    (iii).
+  \end{enumerate}
+\end{enumerate}
+
+\section{Consumer maximisation and a price change}
+
+\begin{enumerate}[label=\textbf{7.\alph*}]
+  \item Let
+  \[
+    u(x,y)=2x+y+xy,
+    \qquad
+    p_x=2,
+    \qquad
+    p_y=1,
+    \qquad
+    I=12.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Solve the consumer problem using the condition
+    \(MRS_{x,y}=p_x/p_y\) and the budget line.
+    \item Verify the solution by substituting the budget line into utility.
+    Check that the stationary point is a maximum.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}[label=\textbf{8.\alph*}]
+  \item Keep the utility function and income from Exercise 7, and keep
+  \(p_y=1\). The price of \(x\) rises from \(2\) to \(3\).
+  \begin{enumerate}[label=(\roman*)]
+    \item Find the new optimal bundle.
+    \item Describe how the budget line changes.
+    \item Is the resulting change in the quantity of \(x\) a movement along
+    the demand curve for \(x\), or a shift of that curve? Name two factors
+    that would shift the demand curve for \(x\) instead.
+  \end{enumerate}
+\end{enumerate}
+
+\section{MRS, convexity, and demand classifications}
+
+\begin{enumerate}[label=\textbf{9.\alph*}]
+  \item Return to the utility function in Exercise 4,
+  \(u(x,y)=y(x+3)\).
+  \begin{enumerate}[label=(\roman*)]
+    \item Derive \(MRS_{x,y}\).
+    \item Along a positive indifference curve \(u(x,y)=\bar u>0\), show that
+    \[
+      MRS_{x,y}=\frac{\bar u}{(x+3)^2}.
+    \]
+    Does the MRS diminish as \(x\) increases? Explain how your result relates
+    to convex indifference curves and the convexity axiom.
+  \end{enumerate}
+  \item Define normal (sometimes called superior) and inferior goods in terms of
+  \(\partial q/\partial I\), holding prices fixed. For
+  \(0\leq I\leq 400\), classify
+  \[
+    q_{\mathrm{bus}}(I)=12-0.02I
+    \qquad\text{and}\qquad
+    q_{\mathrm{coffee}}(I)=1+0.015I.
+  \]
+  \item Explain why a Giffen good must be inferior. Your answer should refer
+  to the income and substitution effects of a price fall.
+\end{enumerate}
+
+\section{Aggregating individual demands}
+
+\begin{enumerate}[label=\textbf{10.\alph*}]
+  \item At a campus pop-up, two groups have weekly demand for reusable bottles
+  given by
+  \[
+    q_A(p)=\max\{0,8-p\}
+    \qquad\text{and}\qquad
+    q_B(p)=\max\left\{0,5-\frac{1}{2}p\right\},
+    \qquad p\geq0.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Construct the market demand \(Q(p)=q_A(p)+q_B(p)\) as a piecewise
+    function.
+    \item Identify each individual choke price, the interior kink in market
+    demand, and the aggregate choke price.
+    \item Sketch the market demand curve. Why do we add quantities at a common
+    price rather than adding prices?
+  \end{enumerate}
+\end{enumerate}
+
+\vfill
+\begin{center}
+  {\sffamily\small\color{PPEMuted}
+  Version B: same core skills as Exercise Set I, with new contexts and data.}
+\end{center}
+
+\end{document}
