@@ -1,0 +1,616 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2.35cm,bottom=2.45cm,left=2.55cm,right=2.55cm,headsep=12pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{enumitem}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{avant}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{needspace}
+\usepackage{hyperref}
+\usetikzlibrary{arrows.meta,positioning}
+
+\definecolor{PPEBurgundy}{RGB}{112,28,47}
+\definecolor{PPENavarraRed}{RGB}{211,32,46}
+\definecolor{PPEGold}{RGB}{185,143,57}
+\definecolor{PPEAccentLight}{RGB}{248,235,238}
+\definecolor{PPEInk}{RGB}{37,31,33}
+\definecolor{PPEMuted}{RGB}{101,83,88}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=PPEBurgundy,
+  urlcolor=PPEBurgundy
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{topsep=0.3em,itemsep=0.2em,leftmargin=1.5em}
+\setlist[enumerate]{topsep=0.35em,itemsep=0.35em,leftmargin=1.9em}
+\raggedbottom
+\allowdisplaybreaks[2]
+
+\titleformat{\section}
+  {\sffamily\bfseries\large\color{PPEInk}}
+  {\color{PPEBurgundy}\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.45em}{0.55em}
+
+\newmdenv[
+  skipabove=0.7em,
+  skipbelow=0.9em,
+  leftline=true,rightline=false,topline=false,bottomline=false,
+  linewidth=3pt,
+  linecolor=PPEBurgundy,
+  backgroundcolor=PPEAccentLight,
+  innerleftmargin=0.8em,innerrightmargin=0.8em,
+  innertopmargin=0.55em,innerbottommargin=0.55em
+]{solutionbox}
+
+\newmdenv[
+  skipabove=0.65em,
+  skipbelow=0.75em,
+  leftline=true,rightline=false,topline=false,bottomline=false,
+  linewidth=2pt,
+  linecolor=PPEGold,
+  backgroundcolor=white,
+  innerleftmargin=0.75em,innerrightmargin=0.75em,
+  innertopmargin=0.45em,innerbottommargin=0.45em
+]{tipbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,LO]{\sffamily\small Microeconomics \textbar{} Exercise Set I \textbar{} Worked solutions}
+\fancyhead[RE,RO]{\sffamily\small\color{PPEBurgundy}\thepage}
+\fancyfoot[C]{\sffamily\scriptsize\color{PPEMuted}Companion to Exercise Set I, Version B}
+\renewcommand{\headrulewidth}{0.45pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{PPEGold}\leaders\hrule height \headrulewidth\hfill}}
+\setlength{\headheight}{15pt}
+
+\newcommand{\MRS}{\operatorname{MRS}}
+\newcommand{\MU}{\operatorname{MU}}
+
+\begin{document}
+
+\begin{center}
+  \includegraphics[width=0.28\textwidth]{assets/branding/unav-logo-black.png}\par
+  \vspace{0.55em}
+  {\sffamily\color{PPENavarraRed}\large\textsc{Politics, Philosophy and Economics}\par}
+  \vspace{0.3em}
+  {\color{PPEGold}\rule{0.72\textwidth}{1.3pt}\par}
+  \vspace{0.55em}
+  {\sffamily\bfseries\color{PPEBurgundy}\LARGE Microeconomics: Exercise Set I\par}
+  \vspace{0.16em}
+  {\sffamily\large Worked solutions --- Version B --- Lectures 1--4\par}
+\end{center}
+
+\begin{solutionbox}
+\textbf{How to use this key.} Try each question before reading its solution.
+The worked answers show the set-up, calculation, conclusion, and the economic
+interpretation. Equivalent algebra and clearly explained diagrams are also
+valid answers.
+\end{solutionbox}
+
+\section{Mathematical tools}
+
+\subsection*{1.1 Equations}
+\begin{align*}
+\text{(1)}\quad 420-7x&=0
+&&\Longrightarrow& 7x&=420
+&&\Longrightarrow& \boxed{x=60}.\\[0.3em]
+\text{(2)}\quad \frac{144}{x}&=9
+&&\Longrightarrow& 144&=9x
+&&\Longrightarrow& \boxed{x=16}.\\[0.3em]
+\text{(3)}\quad (x-7)^2&=0
+&&\Longrightarrow& \boxed{x=7}.\\[0.3em]
+\text{(4)}\quad (x-3)^2&=49
+&&\Longrightarrow& x-3&=\pm7
+&&\Longrightarrow& \boxed{x=10\text{ or }x=-4}.\\[0.3em]
+\text{(5)}\quad 8x-72+25x&=324
+&&\Longrightarrow& 33x&=396
+&&\Longrightarrow& \boxed{x=12}.
+\end{align*}
+
+\subsection*{1.2 Derivatives}
+\textbf{(6)} A derivative is the instantaneous rate at which a function
+changes with its argument:
+\[
+  f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h},
+\]
+when this limit exists. Geometrically it is the slope of the tangent line.
+For example, if \(C(q)\) is total cost, then \(C'(q)\) is marginal cost:
+the approximate additional cost of producing one more unit near output \(q\).
+
+\begin{align*}
+\text{(7)}\quad f(x)=x^3
+&&\Longrightarrow& f'(x)&=\boxed{3x^2}.\\[0.3em]
+\text{(8)}\quad f(x)=\frac25x^4+5x^2-8x
+&&\Longrightarrow& f'(x)&=\boxed{\frac85x^3+10x-8}.\\[0.3em]
+\text{(9)}\quad f(x)=\frac25x^4+5x^2-8x+430
+&&\Longrightarrow& f'(x)&=\boxed{\frac85x^3+10x-8}.
+\end{align*}
+The constant \(430\) disappears because the derivative of a constant is zero.
+\begin{align*}
+\text{(10)}\quad f(x)&=3x^{18}-4x^{12}+7x^6-9x+100\\
+&&\Longrightarrow\quad f'(x)&=\boxed{54x^{17}-48x^{11}+42x^5-9}.\\[0.3em]
+\text{(11)}\quad f(x,y)&=3x^2+4xy+y^2-7
+&&\Longrightarrow\quad \frac{\partial f}{\partial x}
+  &=\boxed{6x+4y}.\\[0.3em]
+\text{(12)}\quad f(x,y)&=x^3y-2xy+5x
+&&\Longrightarrow\quad \frac{\partial f}{\partial x}
+  &=\boxed{3x^2y-2y+5}.\\[0.3em]
+\text{(13)}\quad f(x,y)&=x^{2/5}y^{3/5}
+&&\Longrightarrow\quad \frac{\partial f}{\partial x}
+  &=\boxed{\frac25x^{-3/5}y^{3/5}}.
+\end{align*}
+In (11)--(13), \(y\) is held fixed while differentiating with respect to
+\(x\).
+
+\section{Preference language and monotonicity}
+
+\textbf{2.a Preference notation.} The statement \(A\sim B\) means that the
+consumer is indifferent between bundles \(A\) and \(B\): each is at least as
+good as the other. The statement \(A\succeq B\succ C\) means that \(A\) is
+weakly preferred to \(B\), and \(B\) is strictly preferred to \(C\). With
+transitive preferences, it also follows that \(A\succ C\).
+
+\textbf{2.b Comparing the bundles.} The diagram gives
+\[
+  A=(1,2),\qquad B=(5,2),\qquad C=(1,6),\qquad D=(5,6).
+\]
+For ordinary goods, a bundle with at least as much of both goods and more of
+one is strictly preferred. Therefore,
+\[
+  \boxed{B\succ A,\qquad C\succ A,\qquad D\succ B,\qquad D\succ C.}
+\]
+The comparison between \(B\) and \(C\) cannot be determined from monotonicity
+alone: \(B\) has more \(x\), while \(C\) has more \(y\). The consumer's
+trade-off between the goods is needed; \(B\succ C\), \(C\succ B\), and
+\(B\sim C\) are all possible.
+
+\begin{tipbox}
+\textbf{Useful distinction.} Monotonicity compares bundles only when one
+bundle has weakly more of every ordinary good. It does not tell us how a
+consumer trades one good for another.
+\end{tipbox}
+
+\section{Utility, budget constraints, and consumer choice}
+
+\needspace{10\baselineskip}
+\textbf{3.a Elena's choice.}
+
+\textit{Set-up.} The budget set and its boundary are
+\[
+  B=\{(x,y)\in\mathbb{R}_+^2:6x+3y\leq72\},
+  \qquad
+  6x+3y=72,
+\]
+or, solving for \(y\),
+\[
+  y=24-2x.
+\]
+The intercepts are \((12,0)\) and \((0,24)\); the slope is
+\(-p_x/p_y=-2\). The indifference curves are
+\[
+  xy=\bar u
+  \qquad\Longleftrightarrow\qquad
+  y=\frac{\bar u}{x}.
+\]
+Thus the requested curves are \(y=36/x\), \(y=54/x\), and \(y=72/x\).
+
+\textit{Optimisation by substitution.} On the budget line,
+\[
+  u(x) = x(24-2x)=24x-2x^2.
+\]
+Hence
+\[
+  u'(x)=24-4x=0
+  \quad\Longrightarrow\quad x^*=6,
+  \qquad
+  u''(x)=-4<0.
+\]
+The negative second derivative shows that this stationary point is a maximum.
+The budget line gives
+\[
+  y^*=24-2(6)=12,
+  \qquad
+  u(x^*,y^*)=6\cdot12=72.
+\]
+The marginal utilities are \(\MU_x=y\) and \(\MU_y=x\), so
+\[
+  \MRS_{x,y}=\frac{\MU_x}{\MU_y}=\frac{y}{x}.
+\]
+At \((6,12)\), \(\MRS_{x,y}=12/6=2=p_x/p_y=6/3\), which verifies
+tangency.
+
+\begin{center}
+\begin{tikzpicture}[x=0.43cm,y=0.23cm,>=Latex]
+  \draw[->,thick] (0,0) -- (13.2,0) node[right] {\(x\): tickets};
+  \draw[->,thick] (0,0) -- (0,25.8) node[above] {\(y\): lunches};
+  \draw[PPEBurgundy,very thick] (0,24) -- (12,0)
+    node[pos=0.22,above right,black] {budget line};
+  \draw[PPEGold,thick,domain=1.6:11.5,samples=80,smooth]
+    plot (\x,{72/\x});
+  \node[PPEGold,above] at (8.2,8.8) {\(u=72\)};
+  \filldraw[PPENavarraRed] (6,12) circle (2.4pt)
+    node[above right,black] {\((6,12)\)};
+  \draw[densely dashed,PPEMuted] (6,0) -- (6,12) -- (0,12);
+  \node[below] at (6,0) {\(6\)};
+  \node[left] at (0,12) {\(12\)};
+\end{tikzpicture}
+\end{center}
+
+\begin{solutionbox}
+\textbf{Result for Exercise 3.} Elena chooses
+\[
+  \boxed{(x^*,y^*)=(6,12),\qquad u^*=72.}
+\]
+\end{solutionbox}
+
+\needspace{9\baselineskip}
+\textbf{4.a Choice with \(u(x,y)=y(x+3)\).}
+
+\textit{Set-up.} The budget line is
+\[
+  6x+7y=66
+  \qquad\Longleftrightarrow\qquad
+  y=\frac{66-6x}{7}.
+\]
+Its intercepts are \((11,0)\) and \((0,66/7)\). The requested indifference
+curves are \(y=21/(x+3)\) and \(y=42/(x+3)\).
+
+The marginal utilities are
+\[
+  \MU_x=y,
+  \qquad
+  \MU_y=x+3,
+  \qquad
+  \MRS_{x,y}=\frac{y}{x+3}.
+\]
+At an interior optimum,
+\[
+  \frac{y}{x+3}=\frac{p_x}{p_y}=\frac67,
+  \qquad\text{so}\qquad
+  y=\frac67(x+3).
+\]
+Substitution into the budget line gives
+\[
+  6x+7\left[\frac67(x+3)\right]=66
+  \Longrightarrow
+  12x+18=66
+  \Longrightarrow
+  x^*=4.
+\]
+Then \(y^*=6\), and utility is \(u^*=6(4+3)=42\).
+
+\textit{Verification by substitution.}
+\[
+  u(x)=\frac{66-6x}{7}(x+3)
+  =\frac{-6x^2+48x+198}{7}.
+\]
+Therefore,
+\[
+  u'(x)=\frac{-12x+48}{7}=0
+  \Longrightarrow x=4,
+  \qquad
+  u''(x)=-\frac{12}{7}<0.
+\]
+This confirms a maximum.
+
+\begin{solutionbox}
+\textbf{Result for Exercise 4.}
+\[
+  \boxed{(x^*,y^*)=(4,6),\qquad u^*=42,\qquad
+  \MRS_{x,y}=\frac67.}
+\]
+\end{solutionbox}
+
+\section{Rational preferences}
+
+\textbf{5.a The axioms.} Let \(A\), \(B\), and \(C\) be feasible bundles.
+
+\begin{description}[style=nextline,font=\sffamily\bfseries,leftmargin=2.65cm]
+  \item[Completeness]
+  The consumer can compare every pair: \(A\succeq B\) or \(B\succeq A\)
+  (or both). For example, the student can say whether a coffee-and-sandwich
+  bundle is better than, worse than, or as good as a tea-and-cake bundle.
+
+  \item[Transitivity]
+  If \(A\succeq B\) and \(B\succeq C\), then \(A\succeq C\). It rules out
+  cycles: ranking tacos at least as highly as pizza and pizza at least as
+  highly as salad requires ranking tacos at least as highly as salad.
+
+  \item[Reflexivity]
+  Every bundle is at least as good as itself: \(A\succeq A\). The lunch
+  bundle a student has today is, trivially, at least as good as that same
+  lunch bundle.
+
+  \item[Monotonicity]
+  If \(A\) has at least as much of every ordinary good as \(B\), and more of
+  at least one, then \(A\succ B\). Holding everything else fixed, an extra
+  museum ticket or an extra lunch makes the bundle strictly better.
+
+  \item[Continuity]
+  Preference rankings do not reverse after an arbitrarily small change in a
+  bundle. Formally, if \(A_n\succeq B_n\) for every \(n\), \(A_n\to A\), and
+  \(B_n\to B\), then \(A\succeq B\). A tiny change in the size of a meal
+  should not create an abrupt, unexplained reversal of a ranking.
+
+  \item[Convexity]
+  If \(A\succeq C\) and \(B\succeq C\), then every mixture
+  \(tA+(1-t)B\), with \(0\leq t\leq1\), is also at least as good as \(C\).
+  It captures a taste for variety: if two weekly food bundles are both
+  acceptable alternatives to a third, a balanced combination is also
+  acceptable.
+\end{description}
+
+\textbf{5.b The food ranking.} The ranking violates \textbf{transitivity}.
+From tacos \(\succeq\) pizza and pizza \(\succeq\) salad, transitivity
+requires tacos \(\succeq\) salad. But salad \(\succ\) tacos means that tacos
+are not at least as good as salad. The three statements cannot all describe
+one transitive ordering.
+
+\section{Budget sets, relative prices, and opportunity cost}
+
+\textbf{6.a Campus lunches and drinks.}
+
+\begin{enumerate}[label=(\roman*)]
+  \item The budget set and budget line are
+  \[
+    B=\{(x,y)\in\mathbb{R}_+^2:6x+3y\leq30\},
+    \qquad
+    y=10-2x.
+  \]
+  The intercepts are \(\boxed{(5,0)}\) and \(\boxed{(0,10)}\).
+
+  \item One lunch costs \euro6 and one drink costs \euro3. One additional
+  lunch therefore costs
+  \[
+    \frac{p_x}{p_y}=\frac63=\boxed{2\text{ drinks}}.
+  \]
+  This is also the absolute value of the budget-line slope.
+
+  \item With \(I=42\), the new line is
+  \[
+    6x+3y=42
+    \qquad\Longleftrightarrow\qquad
+    y=14-2x.
+  \]
+  Both intercepts increase to \((7,0)\) and \((0,14)\). With prices
+  unchanged, the budget line shifts outward in parallel.
+
+  \item When \(p_y=6\), the new line is
+  \[
+    6x+6y=42
+    \qquad\Longleftrightarrow\qquad
+    y=7-x.
+  \]
+  The \(x\)-intercept remains \(7\), whereas the \(y\)-intercept falls from
+  \(14\) to \(7\). The line pivots inward around the \(x\)-intercept and
+  becomes flatter, changing from slope \(-2\) to slope \(-1\).
+\end{enumerate}
+
+\section{Consumer maximisation and a price change}
+
+\needspace{9\baselineskip}
+\textbf{7.a Initial consumer problem.} The budget line is
+\[
+  2x+y=12
+  \qquad\Longleftrightarrow\qquad
+  y=12-2x.
+\]
+The marginal utilities are
+\[
+  \MU_x=2+y,
+  \qquad
+  \MU_y=1+x,
+  \qquad
+  \MRS_{x,y}=\frac{2+y}{1+x}.
+\]
+The tangency condition is
+\[
+  \frac{2+y}{1+x}=\frac{p_x}{p_y}=2
+  \Longrightarrow y=2x.
+\]
+Together with \(2x+y=12\), this yields
+\[
+  4x=12
+  \Longrightarrow
+  x^*=3,
+  \qquad
+  y^*=6.
+\]
+For a direct check, substitute the budget line:
+\[
+  u(x)=2x+(12-2x)+x(12-2x)=12+12x-2x^2.
+\]
+Thus
+\[
+  u'(x)=12-4x=0
+  \Longrightarrow x=3,
+  \qquad
+  u''(x)=-4<0.
+\]
+The stationary point is therefore a maximum; indeed,
+\(\MRS_{x,y}=8/4=2\) at \((3,6)\).
+
+\begin{solutionbox}
+\textbf{Result for Exercise 7.}
+\[
+  \boxed{(x^*,y^*)=(3,6),\qquad u^*=30.}
+\]
+\end{solutionbox}
+
+\needspace{9\baselineskip}
+\textbf{8.a Higher price of \(x\).} The new budget line is
+\[
+  3x+y=12
+  \qquad\Longleftrightarrow\qquad
+  y=12-3x.
+\]
+The tangency condition now becomes
+\[
+  \frac{2+y}{1+x}=3
+  \Longrightarrow y=1+3x.
+\]
+Combining this condition with the budget line gives
+\[
+  3x+(1+3x)=12
+  \Longrightarrow
+  x^*=\frac{11}{6},
+  \qquad
+  y^*=\frac{13}{2}.
+\]
+Equivalently,
+\[
+  u(x)=2x+(12-3x)+x(12-3x)=12+11x-3x^2,
+\]
+so \(u'(x)=11-6x=0\) and \(u''(x)=-6<0\).
+
+The line rotates inward around the \(y\)-intercept: the \(y\)-intercept
+remains \(12\), but the \(x\)-intercept falls from \(6\) to \(4\), and the
+slope changes from \(-2\) to \(-3\). The quantity of \(x\) falls from \(3\)
+to \(11/6\).
+
+This is a \textbf{movement along} the demand curve for \(x\), because
+\(p_x\) itself changed while income, preferences, and \(p_y\) were fixed.
+Changes in income or in the price of the related good \(y\), for example,
+would shift the demand curve for \(x\) instead.
+
+\begin{tipbox}
+\textbf{Common terminology error.} A change in the good's own price moves
+the consumer along its demand curve. A shift requires another determinant of
+demand to change.
+\end{tipbox}
+
+\begin{solutionbox}
+\textbf{Result for Exercise 8.}
+\[
+  \boxed{(x^*,y^*)=\left(\frac{11}{6},\frac{13}{2}\right).}
+\]
+\end{solutionbox}
+
+\section{MRS, convexity, and demand classifications}
+
+\textbf{9.a MRS and convexity.} For \(u(x,y)=y(x+3)\),
+\[
+  \MU_x=y,
+  \qquad
+  \MU_y=x+3,
+  \qquad
+  \MRS_{x,y}=\frac{\MU_x}{\MU_y}=\frac{y}{x+3}.
+\]
+The MRS is the amount of \(y\) the consumer is willing to give up for one
+additional unit of \(x\), while remaining on the same indifference curve.
+The slope of an indifference curve is \(-\MRS_{x,y}\).
+
+Along \(u(x,y)=\bar u>0\),
+\[
+  y=\frac{\bar u}{x+3}.
+\]
+Substitution into the MRS gives
+\[
+  \MRS_{x,y}
+  =\frac{\bar u/(x+3)}{x+3}
+  =\boxed{\frac{\bar u}{(x+3)^2}}.
+\]
+Moreover,
+\[
+  \frac{d\MRS_{x,y}}{dx}
+  =-\frac{2\bar u}{(x+3)^3}<0.
+\]
+Thus the MRS diminishes as \(x\) rises: the indifference curve becomes
+flatter. This is the smooth graphical expression of convex preferences and
+a taste for balanced bundles.
+
+\textbf{9.b Normal and inferior goods.} Holding prices fixed, a good is
+\textbf{normal} if \(\partial q/\partial I>0\), and \textbf{inferior} if
+\(\partial q/\partial I<0\). Here,
+\[
+  \frac{\partial q_{\mathrm{bus}}}{\partial I}=-0.02<0,
+  \qquad
+  \frac{\partial q_{\mathrm{coffee}}}{\partial I}=0.015>0.
+\]
+Therefore, bus trips are \(\boxed{\text{inferior}}\), and coffee is
+\(\boxed{\text{normal}}\) (also called superior in some introductory
+terminology). Both quantities remain non-negative over the stated income
+range.
+
+\textbf{9.c Why a Giffen good is inferior.} When the price of \(x\) falls,
+the substitution effect always encourages consumption of \(x\), because it
+has become relatively cheaper. A Giffen good is one for which total demand
+nevertheless falls when its price falls. Therefore the negative income
+effect of the price fall must be larger than the positive substitution
+effect. An income effect that reduces consumption as real income rises is
+the defining feature of an inferior good. Hence every Giffen good is
+inferior, although most inferior goods are not Giffen goods.
+
+\section{Aggregating individual demands}
+
+\textbf{10.a Market demand.} Group \(A\) buys while \(p<8\), and group \(B\)
+buys while \(p<10\). Add their quantities at each common price:
+\[
+  Q(p)=
+  \begin{cases}
+    13-\dfrac32p, & 0\leq p<8,\\[0.45em]
+    5-\dfrac12p, & 8\leq p<10,\\[0.45em]
+    0, & p\geq10.
+  \end{cases}
+\]
+
+\textbf{10.b Choke prices and kink.} Group \(A\)'s choke price is
+\(\boxed{\euro8}\), and group \(B\)'s is \(\boxed{\euro10}\). At
+\(p=8\), group \(A\) stops buying but group \(B\) still demands one bottle.
+Thus \(p=8\) is the interior kink. The aggregate choke price is
+\(\boxed{\euro10}\), where market demand reaches zero.
+
+\textbf{10.c Sketch and interpretation.} With quantity on the horizontal
+axis and price on the vertical axis, the market curve passes through
+\[
+  (Q,p)=(13,0),\qquad (1,8),\qquad (0,10).
+\]
+\begin{center}
+\begin{tikzpicture}[x=0.48cm,y=0.48cm,>=Latex]
+  \draw[->,thick] (0,0) -- (14.3,0) node[right] {quantity \(Q\)};
+  \draw[->,thick] (0,0) -- (0,11.5) node[above] {price \(p\)};
+  \draw[PPEBurgundy,very thick] (13,0) -- (1,8) -- (0,10);
+  \filldraw[PPENavarraRed] (13,0) circle (2.2pt)
+    node[below right,black] {\((13,0)\)};
+  \filldraw[PPENavarraRed] (1,8) circle (2.2pt)
+    node[above right,black] {\((1,8)\)};
+  \filldraw[PPENavarraRed] (0,10) circle (2.2pt)
+    node[above left,black] {\((0,10)\)};
+  \draw[densely dashed,PPEMuted] (1,0) -- (1,8) -- (0,8);
+  \node[below] at (1,0) {\(1\)};
+  \node[left] at (0,8) {\(8\)};
+  \node[left] at (0,10) {\(10\)};
+\end{tikzpicture}
+\end{center}
+
+We add quantities horizontally because all consumers face the same market
+price, and the total number of bottles demanded is the sum of their
+quantities. Adding prices would not make economic sense: price is one common
+unit price, whereas quantities are the objects that can be added across
+buyers.
+
+\begin{solutionbox}
+\textbf{Result for Exercise 10.} The market demand curve has an interior
+kink at \(p=8\), and its final choke price is \(p=10\).
+\end{solutionbox}
+
+\vfill
+\begin{center}
+  {\sffamily\small\color{PPEMuted}
+  Worked solutions for Exercise Set I, Version B.}
+\end{center}
+
+\end{document}
