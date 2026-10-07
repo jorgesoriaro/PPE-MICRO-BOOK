@@ -1,0 +1,295 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2.4cm,bottom=2.5cm,left=2.6cm,right=2.6cm,headsep=12pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{avant}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usetikzlibrary{arrows.meta,positioning}
+
+\definecolor{PPEBurgundy}{RGB}{112,28,47}
+\definecolor{PPENavarraRed}{RGB}{211,32,46}
+\definecolor{PPEGold}{RGB}{185,143,57}
+\definecolor{PPEAccentLight}{RGB}{248,235,238}
+\definecolor{PPEInk}{RGB}{37,31,33}
+\definecolor{PPEMuted}{RGB}{101,83,88}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=PPEBurgundy,
+  urlcolor=PPEBurgundy
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{topsep=0.35em,itemsep=0.2em,leftmargin=1.55em}
+\setlist[enumerate]{topsep=0.35em,itemsep=0.35em,leftmargin=1.9em}
+
+\titleformat{\section}
+  {\sffamily\bfseries\large\color{PPEInk}}
+  {\color{PPEBurgundy}\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.55em}{0.55em}
+
+\newmdenv[
+  skipabove=0.8em,
+  skipbelow=1.0em,
+  leftline=true,rightline=false,topline=false,bottomline=false,
+  linewidth=3pt,
+  linecolor=PPEBurgundy,
+  backgroundcolor=PPEAccentLight,
+  innerleftmargin=0.8em,innerrightmargin=0.8em,
+  innertopmargin=0.6em,innerbottommargin=0.6em
+]{instructionsbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,LO]{\sffamily\small Microeconomics \textbar{} Exercise Set II \textbar{} Version B}
+\fancyhead[RE,RO]{\sffamily\small\color{PPEBurgundy}\thepage}
+\renewcommand{\headrulewidth}{0.45pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{PPEGold}\leaders\hrule height \headrulewidth\hfill}}
+\setlength{\headheight}{15pt}
+
+\begin{document}
+
+\begin{center}
+  \includegraphics[width=0.38\textwidth]{assets/branding/unav-logo-black.png}\par
+  \vspace{0.8em}
+  {\sffamily\color{PPENavarraRed}\large\textsc{Politics, Philosophy and Economics}\par}
+  \vspace{0.35em}
+  {\color{PPEGold}\rule{0.78\textwidth}{1.3pt}\par}
+  \vspace{0.65em}
+  {\sffamily\bfseries\color{PPEBurgundy}\LARGE Microeconomics: Exercise Set II\par}
+  \vspace{0.2em}
+  {\sffamily\large Version B --- Chapters 6--13\par}
+\end{center}
+
+\begin{instructionsbox}
+\textbf{Instructions.} Answer all eight exercises and show your work. For
+conceptual questions, give a definition before applying it. For computations,
+show the set-up, the algebra, and a brief economic interpretation. Unless
+stated otherwise, quantities are non-negative and continuously divisible.
+Draw labelled diagrams whenever requested. No Lagrangians are required.
+\end{instructionsbox}
+
+\noindent\textbf{Name:} \rule{0.53\textwidth}{0.4pt}
+\hfill
+\textbf{Group:} \rule{0.18\textwidth}{0.4pt}
+
+\section{Demand and market demand}
+
+\begin{enumerate}[label=\textbf{1.\alph*}]
+  \item At a campus pop-up, two groups have weekly demand for reusable
+  bottles:
+  \[
+    q_A(p)=\max\{0,18-2p\},
+    \qquad
+    q_B(p)=\max\{0,12-p\},
+    \qquad p\geq0.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Construct market demand \(Q(p)=q_A(p)+q_B(p)\) as a piecewise
+    function.
+    \item Identify both individual choke prices, the interior kink in market
+    demand, and the aggregate choke price.
+    \item Sketch market demand with quantity on the horizontal axis and price
+    on the vertical axis. Why are quantities, rather than prices, added at a
+    common market price?
+  \end{enumerate}
+
+  \item Holding all prices fixed, a student's monthly demand is
+  \[
+    q_{\mathrm{bus}}(I)=18-0.015I
+    \qquad\text{and}\qquad
+    q_{\mathrm{coffee}}(I)=1+0.01I,
+    \qquad 0\leq I\leq800.
+  \]
+  Classify each good as normal or inferior. Then explain whether an increase
+  in the price of bus travel is a movement along the demand curve for bus
+  travel or a shift of that curve. Give two changes that would shift that
+  curve instead.
+\end{enumerate}
+
+\section{Elasticity and revenue}
+
+\begin{enumerate}[label=\textbf{2.\alph*}]
+  \item A cinema's weekly demand for tickets is
+  \[
+    q(p)=120-3p,
+    \qquad 0\leq p\leq40.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Calculate point price elasticity of demand at \(p=10\), \(p=20\),
+    and \(p=30\). Classify demand at each price.
+    \item Calculate total revenue at each of these three prices. Explain how
+    the revenue changes relate to your elasticity results.
+    \item Using the midpoint formula, calculate arc price elasticity when
+    price rises from \(10\) to \(20\).
+    \item At which price is total revenue maximised? Show your reasoning.
+  \end{enumerate}
+
+  \item The price of coffee rises by \(12\%\), while demand for tea rises by
+  \(6\%\). Calculate the cross-price elasticity of demand for tea with
+  respect to the price of coffee, and interpret the sign.
+\end{enumerate}
+
+\section{Production and technology}
+
+\begin{enumerate}[label=\textbf{3.\alph*}]
+  \item A workshop has production function
+  \[
+    q=4L^{1/2}K^{1/2},
+  \]
+  where \(L\) is labour and \(K\) is capital.
+  \begin{enumerate}[label=(\roman*)]
+    \item Find \(MP_L\), \(MP_K\), and
+    \(MRTS_{L,K}=MP_L/MP_K\).
+    \item Evaluate \(q\), \(MP_L\), \(MP_K\), and \(MRTS_{L,K}\) at
+    \(L=4\) and \(K=9\).
+    \item Does this technology have increasing, constant, or decreasing
+    returns to scale? Demonstrate your answer by comparing
+    \(q(2L,2K)\) with \(q(L,K)\).
+    \item Sketch the isoquant for \(q=24\). Label the axes and indicate the
+    direction in which output rises.
+  \end{enumerate}
+\end{enumerate}
+
+\section{Cost minimisation and economic cost}
+
+\begin{enumerate}[label=\textbf{4.\alph*}]
+  \item A firm produces
+  \[
+    q=L^{1/2}K^{1/2}.
+  \]
+  The wage is \(w=\euro4\), the rental price of capital is \(r=\euro1\), and
+  the firm must produce \(\bar q=12\).
+  \begin{enumerate}[label=(\roman*)]
+    \item Write the isocost line for a total cost of \euro60 and state its
+    slope when labour is on the horizontal axis and capital is on the
+    vertical axis.
+    \item Use the tangency condition and the production target to find the
+    cost-minimising input bundle \((L^*,K^*)\).
+    \item Calculate the minimum cost of producing 12 units.
+    \item Sketch the target isoquant and the isocost line through the
+    cost-minimising bundle.
+  \end{enumerate}
+
+  \item A student uses a room she owns as a small tutoring office. She could
+  rent the room to someone else for \euro500 per month. Explain how this
+  opportunity cost affects economic profit and accounting profit.
+\end{enumerate}
+
+\section{Cost curves and competitive supply}
+
+\begin{enumerate}[label=\textbf{5.\alph*}]
+  \item A price-taking firm's total cost is
+  \[
+    TC(q)=80+5q+q^2,
+    \qquad q\geq0.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Find fixed cost, variable cost, \(AVC(q)\), \(ATC(q)\), and
+    \(MC(q)\).
+    \item At market price \(p=\euro21\), find the firm's profit-maximising
+    output. Calculate revenue, total cost, and profit.
+    \item At \(p=\euro4\), should the firm produce in the short run? Explain
+    using the shutdown rule.
+    \item State the firm's short-run supply function for prices at which it
+    operates.
+    \item Sketch \(MC\), \(AVC\), and \(ATC\). Mark the shutdown price and
+    the output selected when \(p=21\).
+  \end{enumerate}
+\end{enumerate}
+
+\section{Competitive markets, welfare, and tax}
+
+\begin{enumerate}[label=\textbf{6.\alph*}]
+  \item A competitive market has
+  \[
+    Q_D=100-2P,
+    \qquad
+    Q_S=2P-20.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Find the competitive equilibrium price and quantity.
+    \item Calculate consumer surplus, producer surplus, and total surplus at
+    equilibrium.
+    \item The government introduces a per-unit tax of \(t=\euro8\). Find the
+    buyer price, seller price, quantity traded, tax revenue, and deadweight
+    loss.
+    \item On one labelled diagram, show demand, supply, the tax wedge, tax
+    revenue, and deadweight loss.
+    \item Which side of this market bears more of the tax burden? Explain
+    using the slopes or elasticities of demand and supply.
+  \end{enumerate}
+\end{enumerate}
+
+\section{Monopoly}
+
+\begin{enumerate}[label=\textbf{7.\alph*}]
+  \item A monopolist faces inverse demand and total cost
+  \[
+    p(Q)=90-Q,
+    \qquad
+    C(Q)=30+10Q.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Derive total revenue, marginal revenue, and marginal cost.
+    \item Find the profit-maximising monopoly quantity, monopoly price, and
+    profit.
+    \item Find the competitive quantity and price for the same demand and
+    marginal cost.
+    \item Calculate the deadweight loss created by monopoly relative to
+    competition.
+    \item Draw demand, marginal revenue, and marginal cost. Mark monopoly
+    output and price, competitive output, and the deadweight-loss triangle.
+  \end{enumerate}
+
+  \item A museum charges students less than tourists for the same exhibition.
+  State two conditions that make price discrimination feasible, and explain
+  one possible welfare effect.
+\end{enumerate}
+
+\section{Oligopoly and Cournot competition}
+
+\begin{enumerate}[label=\textbf{8.\alph*}]
+  \item Two firms choose quantities simultaneously. Market demand is
+  \[
+    p(Q)=80-Q,
+    \qquad Q=q_1+q_2,
+  \]
+  and each firm has cost
+  \[
+    C_i(q_i)=20+20q_i.
+  \]
+  \begin{enumerate}[label=(\roman*)]
+    \item Write firm \(i\)'s profit as a function of its own output and the
+    rival's output. Derive both reaction functions.
+    \item Solve for the Cournot--Nash equilibrium quantities, total output,
+    market price, and each firm's profit.
+    \item Compare total output and price with the monopoly and perfectly
+    competitive outcomes for the same market.
+    \item Sketch the two reaction functions and mark their intersection.
+    \item Explain briefly why a cartel agreement that restricts output may be
+    unstable, even when both firms would earn more if it were respected.
+  \end{enumerate}
+\end{enumerate}
+
+\vfill
+\begin{center}
+  {\sffamily\small\color{PPEMuted}
+  Version B: Chapters 6--13, with new contexts and data.}
+\end{center}
+
+\end{document}

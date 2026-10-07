@@ -35,6 +35,12 @@ jobs:
           root_file: exercise_set_01_version_b_solutions.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
+      - name: Compile Exercise Set II (Version B)
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: exercise_set_02_version_b.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
       - name: Report PDF length
         shell: bash
         run: |
@@ -69,4 +75,11 @@ jobs:
         with:
           name: exercise-set-01-version-b-solutions
           path: exercise_set_01_version_b_solutions.pdf
+          if-no-files-found: error
+
+      - name: Upload Exercise Set II (Version B)
+        uses: actions/upload-artifact@v7
+        with:
+          name: exercise-set-02-version-b
+          path: exercise_set_02_version_b.pdf
           if-no-files-found: error
