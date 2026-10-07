@@ -191,6 +191,28 @@ the technology has \textbf{constant returns to scale}.
 It is downward sloping and convex: the firm can replace some capital with
 labour while holding output fixed, but the trade-off changes along the curve.
 
+\begin{center}
+\begin{tikzpicture}[x=0.42cm,y=0.12cm,>=Latex]
+  \draw[->,thick] (0,0) -- (14.2,0) node[right] {labour \(L\)};
+  \draw[->,thick] (0,0) -- (0,33.5) node[above] {capital \(K\)};
+  \draw[PPEBurgundy,very thick,domain=1.2:12.5,samples=100,smooth]
+    plot (\x,{36/\x});
+  \node[PPEBurgundy,above right] at (8.7,4.5) {\(q=24\)};
+  \filldraw[PPENavarraRed] (4,9) circle (2.2pt)
+    node[above right,black] {\((4,9)\)};
+  \filldraw[PPENavarraRed] (6,6) circle (2.2pt)
+    node[above right,black] {\((6,6)\)};
+  \draw[densely dashed,PPEMuted] (4,0) -- (4,9) -- (0,9);
+  \draw[densely dashed,PPEMuted] (6,0) -- (6,6) -- (0,6);
+  \draw[->,PPEGold,thick] (9.2,17) -- (12.3,28)
+    node[above,align=center,black] {higher\\output};
+  \node[below] at (4,0) {\(4\)};
+  \node[below] at (6,0) {\(6\)};
+  \node[left] at (0,6) {\(6\)};
+  \node[left] at (0,9) {\(9\)};
+\end{tikzpicture}
+\end{center}
+
 \section{Cost minimisation and economic cost}
 
 \textbf{4.a Isocost.} With \(w=4\) and \(r=1\),
@@ -394,4 +416,3 @@ reach the competitive outcome.
 \end{solutionbox}
 
 \end{document}
-
