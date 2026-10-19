@@ -163,8 +163,12 @@ price of \(y\) is \(\text{\euro}4\), and utility is \(u(x,y)=xy\).
 
 \vspace{1.0em}
 \begin{center}
-\begin{tikzpicture}[x=0.43cm,y=0.24cm,>=Latex]
-  \draw[->,thick] (0,0) -- (11.4,0) node[right] {\(x\)};
+\begin{tikzpicture}[x=0.45cm,y=0.16cm,>=Latex]
+  \foreach \x in {0,...,10}
+    \draw[gray!24,very thin] (\x,0) -- (\x,30);
+  \foreach \y in {0,3,...,30}
+    \draw[gray!24,very thin] (0,\y) -- (10,\y);
+  \draw[->,thick] (0,0) -- (10.45,0) node[right] {\(x\)};
   \draw[->,thick] (0,0) -- (0,31.8) node[above] {\(y\)};
   \node[below left] at (0,0) {\(0\)};
 \end{tikzpicture}
@@ -191,8 +195,12 @@ u(x,y)=x^{2/3}y^{1/3}.
 
 \vspace{1.0em}
 \begin{center}
-\begin{tikzpicture}[x=0.55cm,y=0.27cm,>=Latex]
-  \draw[->,thick] (0,0) -- (10.4,0) node[right] {\(x\)};
+\begin{tikzpicture}[x=0.50cm,y=0.24cm,>=Latex]
+  \foreach \x in {0,...,9}
+    \draw[gray!24,very thin] (\x,0) -- (\x,18);
+  \foreach \y in {0,2,...,18}
+    \draw[gray!24,very thin] (0,\y) -- (9,\y);
+  \draw[->,thick] (0,0) -- (9.45,0) node[right] {\(x\)};
   \draw[->,thick] (0,0) -- (0,19.0) node[above] {\(y\)};
   \node[below left] at (0,0) {\(0\)};
 \end{tikzpicture}
