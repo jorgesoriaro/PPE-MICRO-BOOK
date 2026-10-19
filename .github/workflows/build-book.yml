@@ -47,6 +47,12 @@ jobs:
           root_file: exercise_set_02_version_b_solutions.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
+      - name: Compile Midterm Examination (Chapters 1--10)
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: midterm_exam_2026_chapters_01_10.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
       - name: Report PDF length
         shell: bash
         run: |
@@ -95,4 +101,11 @@ jobs:
         with:
           name: exercise-set-02-version-b-solutions
           path: exercise_set_02_version_b_solutions.pdf
+          if-no-files-found: error
+
+      - name: Upload Midterm Examination (Chapters 1--10)
+        uses: actions/upload-artifact@v7
+        with:
+          name: midterm-exam-2026-chapters-01-10
+          path: midterm_exam_2026_chapters_01_10.pdf
           if-no-files-found: error
