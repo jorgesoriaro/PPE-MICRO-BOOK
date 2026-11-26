@@ -65,6 +65,12 @@ jobs:
           root_file: final_exam_2026.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
+      - name: Compile Final Examination answer sheet
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: final_exam_2026_solutions.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
       - name: Report PDF length
         shell: bash
         run: |
@@ -134,4 +140,11 @@ jobs:
         with:
           name: final-exam-2026
           path: final_exam_2026.pdf
+          if-no-files-found: error
+
+      - name: Upload Final Examination answer sheet
+        uses: actions/upload-artifact@v7
+        with:
+          name: final-exam-2026-solutions
+          path: final_exam_2026_solutions.pdf
           if-no-files-found: error
