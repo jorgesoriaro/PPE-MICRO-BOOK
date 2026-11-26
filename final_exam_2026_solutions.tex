@@ -365,7 +365,7 @@ R(t^*)=10(20)=\boxed{200}.
 \end{tikzpicture}
 \end{center}
 
-\section{Game theory \hfill (15 points)}
+\section{Game theory \hfill (10 points)}
 
 \textbf{38.a Prisoner's Dilemma.} For each player, Defect gives a higher
 payoff whether the other player cooperates or defects. Thus Defect is a
@@ -424,30 +424,79 @@ and the equilibrium outcome is \((4,2)\).
   \item \(\boxed{\text{their own bid}}\).
 \end{enumerate}
 
-\section{Market failures: a positive externality \hfill (3 points)}
+\section{Oligopoly and Cournot competition \hfill (8 points)}
 
-The competitive market equates private marginal benefit and private marginal
-cost:
+\begin{tipbox}
+\textbf{Interpreting the notation.} The displayed expression
+\(Q=q_1+q_2\) specifies a duopoly. The numerical solution below therefore
+uses two firms; the general symmetric \(N\)-firm formula is also reported for
+the final comparison.
+\end{tipbox}
+
+\textbf{(i) Profit and reaction functions.} With the other firm's output
+denoted by \(q_j\), firm \(i\)'s profit is
 \[
-40-Q=Q
+\begin{aligned}
+\pi_i(q_i,q_j)
+  &= (80-q_i-q_j)q_i-(20+20q_i)\\
+  &= (60-q_i-q_j)q_i-20.
+\end{aligned}
+\]
+The first-order condition is
+\[
+\frac{\partial\pi_i}{\partial q_i}=60-2q_i-q_j=0.
+\]
+Thus firm \(i\)'s reaction function is
+\[
+\boxed{q_i=30-\frac{q_j}{2}.}
+\]
+Symmetrically, \(q_j=30-q_i/2\).
+
+\textbf{(ii) Cournot--Nash equilibrium.} In a symmetric equilibrium,
+\(q_1=q_2=q\), so
+\[
+q=30-\frac{q}{2}
 \quad\Longrightarrow\quad
-\boxed{Q_{\mathrm{market}}=20.}
+\boxed{q_1^*=q_2^*=20.}
 \]
-The marginal external benefit is 4, so
+Consequently,
 \[
-MSB=PMB+MEB=44-Q.
+\boxed{Q^*=40,\qquad p^*=80-40=40.}
 \]
-The socially efficient quantity solves
+Each firm's profit is
 \[
-44-Q=Q
+\pi_i^*=40(20)-(20+20\cdot20)
+=\boxed{380}.
+\]
+
+\textbf{(iii) Comparison with monopoly and perfect competition.} A monopoly
+chooses \(Q\) to maximise
+\[
+\pi(Q)=(80-Q)Q-(20+20Q)=60Q-Q^2-20.
+\]
+Therefore, \(60-2Q=0\), giving
+\[
+\boxed{Q_M=30,\qquad p_M=50.}
+\]
+Under perfect competition, price equals marginal cost, so
+\[
+80-Q=20
 \quad\Longrightarrow\quad
-\boxed{Q_{\mathrm{efficient}}=22.}
+\boxed{Q_{PC}=60,\qquad p_{PC}=20.}
 \]
-A subsidy equal to the marginal external benefit aligns private incentives
-with social benefit:
+Hence
 \[
-\boxed{\text{subsidy}=4\text{ per vaccination}.}
+\boxed{Q_M=30<Q_C=40<Q_{PC}=60,\qquad
+p_M=50>p_C=40>p_{PC}=20.}
 \]
+
+More generally, with \(N\) identical Cournot firms, each firm supplies
+\[
+q_i^*=\frac{60}{N+1},
+\]
+so total output is \(Q_N^*=60N/(N+1)\) and the price is
+\(p_N^*=20+60/(N+1)\). As \(N\to\infty\), these converge to the
+perfectly competitive outcome \((Q,p)=(60,20)\).
 
 \section{Definitions \hfill (10 points)}
 
