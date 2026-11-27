@@ -185,14 +185,24 @@ x_1^*=2,\qquad x_2^*=12.
 Both methods must give the same optimum.
 \end{solutionbox}
 
+The indifference curve through the optimum satisfies
+\[
+x_1x_2^3=2(12)^3=3456,
+\qquad\text{so}\qquad
+x_2=\left(\frac{3456}{x_1}\right)^{1/3}.
+\]
+Its slope at \((2,12)\) is \(-x_2/(3x_1)=-2\), exactly the slope of the
+budget line; the two curves are therefore tangent at the optimum.
+
 \begin{center}
 \begin{tikzpicture}[x=0.56cm,y=0.25cm,>=Latex]
   \draw[->,thick] (0,0) -- (8.6,0) node[right] {\(x_1\)};
   \draw[->,thick] (0,0) -- (0,17.0) node[above] {\(x_2\)};
   \draw[PPEBurgundy,very thick] (0,16) -- (8,0)
     node[pos=0.27,above right,black] {budget line};
-  \draw[PPEGold,thick,domain=0.8:7.0,samples=90,smooth]
-    plot (\x,{24/\x});
+  \draw[PPEGold,thick,domain=0.8:8.0,samples=100,smooth]
+    plot (\x,{pow(3456/\x,1/3)})
+    node[pos=0.62,above right,black] {indifference curve \(u^*\)};
   \filldraw[PPENavarraRed] (2,12) circle (2.4pt)
     node[above right,black] {\((2,12)\)};
   \draw[densely dashed,PPEMuted] (2,0) -- (2,12) -- (0,12);
